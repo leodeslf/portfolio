@@ -1,0 +1,29 @@
+[
+  {
+    "id": 0,
+    "title": "Principales",
+    "tools": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "SASS",
+      "Git",
+      "Markdown",
+      "THREE"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Interesado",
+    "tools": [
+      "TypeScript",
+      "Redux",
+      "GraphQL",
+      "jQuery",
+      "Electron",
+      "Grunt",
+      "webpack"
+    ]
+  }
+]

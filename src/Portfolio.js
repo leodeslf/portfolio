@@ -188,17 +188,17 @@ Project.propTypes = {
     about: PropTypes.string.isRequired,
     argument: PropTypes.string.isRequired,
     old_stack: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired
+      id: PropTypes.string,
+      name: PropTypes.string
     })),
     new_stack: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired
+      id: PropTypes.string,
+      name: PropTypes.string
     })),
     src: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      link: PropTypes.string.isRequired,
-      linkName: PropTypes.string.isRequired,
+      name: PropTypes.string,
+      link: PropTypes.string,
+      linkName: PropTypes.string,
     })),
     web: PropTypes.string,
     repo: PropTypes.string,

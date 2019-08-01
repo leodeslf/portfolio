@@ -1,0 +1,269 @@
+@charset "UTF-8";
+@-webkit-keyframes text-appear-keyframe {
+  from {
+    color: #ffffff;
+  }
+}
+@keyframes text-appear-keyframe {
+  from {
+    color: #ffffff;
+  }
+}
+
+* {
+  font-family: Segoe UI, sans-serif, monospace, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffffff;
+  color: #232628;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.25em;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+h1,
+h2 {
+  border-bottom: 1px solid #00000017;
+  padding-bottom: 0.3em;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+em {
+  color: #0000008c;
+  font-style: italic;
+  font-size: inherit;
+}
+
+strong {
+  font-weight: 600;
+}
+
+p {
+  max-width: 660px;
+  margin-bottom: 1rem;
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+ul {
+  padding-left: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#root {
+  -webkit-animation: text-appear-keyframe 300ms 1 ease-out;
+          animation: text-appear-keyframe 300ms 1 ease-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Portfolio {
+  border-right: 1px solid #00000017;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 64px 64px 64px 128px;
+  max-width: 960px;
+}
+
+.Portfolio > :first-child {
+  margin-top: 0 !important;
+}
+
+.Portfolio__elem > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.project__elem {
+  -webkit-box-shadow: 0 2px 3px #00000017;
+          box-shadow: 0 2px 3px #00000017;
+  border-radius: 2px;
+  border: 1px solid #00000017;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project__elem > :first-child {
+  margin-top: 0 !important;
+}
+
+.project__elem > h3 {
+  display: inline-block;
+}
+
+.project__elem > h3 + em {
+  float: right;
+}
+
+.description {
+  border-top: 1px solid #00000017;
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.description > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.old-stack-item {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.new-stack-item {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.new-stack-item::before {
+  color: #0000008c;
+  content: "new";
+  font-family: monospace;
+  font-size: 10px;
+  position: absolute;
+  right: -1.1rem;
+  top: 0px;
+}
+
+.custom-chk__chk {
+  display: none;
+}
+
+.custom-chk__chk:checked + .custom-chk__lbl::before {
+  content: "Mostrar menos";
+}
+
+.custom-chk__chk:checked ~ .description {
+  display: block;
+}
+
+.custom-chk__lbl {
+  color: #0000008c;
+}
+
+.custom-chk__lbl:hover,
+.custom-chk__lbl:active {
+  color: #232628;
+}
+
+.custom-chk__lbl::before {
+  content: "Mostrar más";
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.stepper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.stepper__elem {
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.stepper__elem h4 {
+  padding: 0 16px;
+}
+
+.stepper__elem ul {
+  padding-left: 0 !important;
+}
+
+.step {
+  list-style: none;
+}
+
+.step a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: inherit;
+  font-size: 12px;
+  padding: 4px 0 4px 16px;
+  text-decoration: none;
+}
+
+.step a.step--active {
+  border-left: 4px solid #00000017;
+  padding: 4px 0 4px 12px;
+}
+
+@media screen and (max-width: 899px) {
+  .Portfolio {
+    padding: 64px 32px;
+  }
+}
+
+@media screen and (max-width: 649px) {
+  .Portfolio {
+    padding: 32px 24px;
+  }
+  .stepper {
+    display: none;
+  }
+}
+/*# sourceMappingURL=main.css.map */

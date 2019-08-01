@@ -1,0 +1,137 @@
+#root {
+  animation: text-appear-keyframe 300ms 1 ease-out;
+  display: flex;
+}
+
+.Portfolio {
+  border-right: 1px solid $color-c;
+  box-sizing: border-box;
+  padding: 64px 64px 64px 128px;
+  max-width: 960px;
+  & > :first-child {
+    margin-top: 0 !important;
+  }
+}
+
+.Portfolio__elem {
+  & > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+.project__elem {
+  box-shadow: 0 2px 3px $color-c;
+  border-radius: 2px;
+  border: 1px solid $color-c;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  & > :first-child {
+    margin-top: 0 !important;
+  }
+}
+.project__elem > h3 {
+  display: inline-block;
+}
+.project__elem > h3 + em {
+  float: right;
+}
+
+.description {
+  border-top: 1px solid $color-c;
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  & > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+.old-stack-item {
+  width: fit-content;
+}
+
+.new-stack-item {
+  position: relative;
+  width: fit-content;
+}
+.new-stack-item::before {
+  color: $color-b;
+  content: "new";
+  font-family: monospace;
+  font-size: $font-size--extra-small;
+  position: absolute;
+  right: -1.1rem;
+  top: 0px;
+}
+
+.custom-chk__chk {
+  display: none;
+}
+.custom-chk__chk:checked + .custom-chk__lbl::before {
+  content: "Mostrar menos";
+}
+.custom-chk__chk:checked ~ .description {
+  display: block;
+}
+
+.custom-chk__lbl {
+  color: $color-b;
+}
+.custom-chk__lbl:hover,
+.custom-chk__lbl:active {
+  color: $color-a;
+}
+.custom-chk__lbl::before {
+  content: "Mostrar más";
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.stepper {
+  display: flex;
+}
+
+.stepper__elem {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  width: max-content;
+}
+.stepper__elem h4 {
+  padding: 0 16px;
+}
+.stepper__elem ul {
+  padding-left: 0 !important;
+}
+
+.step {
+  list-style: none;
+}
+.step a {
+  display: flex;
+  box-sizing: border-box;
+  color: inherit;
+  font-size: $font-size--small;
+  padding: 4px 0 4px 16px;
+  text-decoration: none;
+}
+.step a.step--active {
+  border-left: 4px solid $color-c;
+  padding: 4px 0 4px 12px;
+}
+
+@media screen and (max-width: 1199px) {
+}
+@media screen and (max-width: 899px) {
+  .Portfolio {
+    padding: 64px 32px;
+  }
+}
+@media screen and (max-width: 649px) {
+  .Portfolio {
+    padding: 32px 24px;
+  }
+  .stepper {
+    display: none;
+  }
+}

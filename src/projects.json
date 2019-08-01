@@ -1,0 +1,177 @@
+[
+  {
+    "id": 0,
+    "title": "TFP",
+    "date": "26/05/2019",
+    "about": "Texturas Fractales y Procedurales - Generador de imágenes parametrizadas de Ruido Perlin y Worley",
+    "argument": "Conocer el rendimiento de JavaScript",
+    "old_stack": null,
+    "new_stack": [
+      {
+        "id": "p_0_new_0",
+        "name": "HTML"
+      },
+      {
+        "id": "p_0_new_1",
+        "name": "CSS"
+      },
+      {
+        "id": "p_0_new_2",
+        "name": "JavaScript"
+      }
+    ],
+    "src": [
+      {
+        "id": 0,
+        "name": "Improved Noise ref. imp.",
+        "link": "https://mrl.nyu.edu/~perlin/noise/",
+        "linkName": "Ken Perlin - Noise"
+      },
+      {
+        "id": 1,
+        "name": "Improving Noise",
+        "link": "https://mrl.nyu.edu/~perlin/paper445.pdf",
+        "linkName": "Ken Perlin - Paper"
+      },
+      {
+        "id": 2,
+        "name": "Noise and Turbulence",
+        "link": "https://mrl.nyu.edu/~perlin/doc/oscar.html",
+        "linkName": "Ken Perlin - Oscar"
+      },
+      {
+        "id": 3,
+        "name": "The Perlin noise math FAQ",
+        "link": " https://mzucker.github.io/html/perlin-noise-math-faq.html",
+        "linkName": "Matt Zucker"
+      },
+      {
+        "id": 4,
+        "name": "Understanding Perlin Noise",
+        "link": "http://flafla2.github.io/2014/08/09/perlinnoise.html",
+        "linkName": "Adrian Biagioli"
+      },
+      {
+        "id": 5,
+        "name": "Perlin Noise",
+        "link": "https://web.archive.org/web/20080724063449/http://freespace.virgin.net/hugo.elias/models/m_perlin.htm",
+        "linkName": "Hugo Elias"
+      },
+      {
+        "id": 6,
+        "name": "Flow Noise",
+        "link": "http://evasion.imag.fr/Publications/2001/PN01/",
+        "linkName": "Ken Perlin & Fabrice Neyret"
+      },
+      {
+        "id": 7,
+        "name": "Domain Warping",
+        "link": "http://www.iquilezles.org/www/articles/warp/warp.htm",
+        "linkName": "Inigo Quilez"
+      }
+    ],
+    "web": "https://wikarot.github.io/TFP/",
+    "repo": "https://github.com/Wikarot/TFP"
+  },
+  {
+    "id": 1,
+    "title": "this.weather",
+    "date": "10/06/2019",
+    "about": "Un medio de acceso al estado del tiempo",
+    "argument": "Aprender a utilizar APIs y crear escenas 3D",
+    "old_stack": [
+      {
+        "id": "p_1_old_0",
+        "name": "HTML"
+      },
+      {
+        "id": "p_1_old_1",
+        "name": "JavaScript"
+      }
+    ],
+    "new_stack": [
+      {
+        "id": "p_1_new_0",
+        "name": "React"
+      },
+      {
+        "id": "p_1_new_1",
+        "name": "SASS"
+      },
+      {
+        "id": "p_1_new_2",
+        "name": "THREE"
+      }
+    ],
+    "src": [
+      {
+        "id": 0,
+        "name": "Geolocalización",
+        "link": "https://ipgeolocation.io",
+        "linkName": "ipgeolocation"
+      },
+      {
+        "id": 1,
+        "name": "Meteorología",
+        "link": "https://openweathermap.org",
+        "linkName": "OpenWeatherMaps"
+      },
+      {
+        "id": 2,
+        "name": "Datos",
+        "link": "https://restcountries.eu",
+        "linkName": "REST Countries"
+      },
+      {
+        "id": 3,
+        "name": "Mapas",
+        "link": "http://www.shadedrelief.com/natural3/",
+        "linkName": "Natural Earth III"
+      },
+      {
+        "id": 4,
+        "name": "Mapas",
+        "link": "https://visibleearth.nasa.gov",
+        "linkName": "NASA Visible Earth"
+      },
+      {
+        "id": 5,
+        "name": "Banderas",
+        "link": "https://www.countryflags.io",
+        "linkName": "CountryFlags"
+      },
+      {
+        "id": 6,
+        "name": "Fuentes",
+        "link": "https://fonts.google.com",
+        "linkName": "Google Fonts"
+      },
+      {
+        "id": 7,
+        "name": "Iconos",
+        "link": "https://material.io",
+        "linkName": "Material design"
+      },
+      {
+        "id": 8,
+        "name": "Favicon (paquete)",
+        "link": "https://realfavicongenerator.net",
+        "linkName": "RealFaviconGenerator"
+      }
+    ],
+    "web": "https://wikarot.github.io/this.weather/",
+    "repo": "https://github.com/Wikarot/this.weather"
+  },
+  {
+    "id": 2,
+    "title": "---",
+    "date": "07/08/2019",
+    "about": "---",
+    "argument": "---",
+    "old_stack": null,
+    "new_stack": null,
+    "src": null,
+    "web": null,
+    "repo": null
+  }
+]

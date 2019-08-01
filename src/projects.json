@@ -3,7 +3,7 @@
     "id": 0,
     "title": "TFP",
     "date": "26/05/2019",
-    "about": "Generador de imagenes parametrizadas de Ruido Perlin y Worley",
+    "about": "Texturas Fractales y Procedurales - Generador de imágenes parametrizadas de Ruido Perlin y Worley",
     "argument": "Conocer el rendimiento de JavaScript",
     "old_stack": null,
     "new_stack": [

@@ -15,15 +15,13 @@
   },
   {
     "id": 2,
-    "title": "Interesado",
+    "title": "Interesado en aprender",
     "tools": [
       "TypeScript",
       "Redux",
       "GraphQL",
       "jQuery",
-      "Electron",
-      "Grunt",
-      "webpack"
+      "Electron"
     ]
   }
 ]

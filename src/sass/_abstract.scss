@@ -1,0 +1,13 @@
+$bg: #ffffff;
+$color-a: #232628;
+$color-b: #0000008c;
+$color-c: #00000017;
+$font-size--normal: 16px; // 1em
+$font-size--small: 12px; // 0.75em
+$font-size--extra-small: 10px; // 0.625em
+
+@keyframes text-appear-keyframe {
+  from {
+    color: $bg;
+  }
+}

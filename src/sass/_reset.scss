@@ -8,7 +8,6 @@
 }
 body {
   background-color: $bg;
-  //background-color: black;
   color: $color-a;
 }
 h1,
@@ -22,27 +21,28 @@ h6 {
   margin-bottom: 1rem;
   margin-top: 1.5rem;
 }
-h1 {
-  font-size: $font-size--h1;
-  padding-bottom: 0.3em;
+h1,
+h2 {
   border-bottom: 1px solid $color-c;
+  padding-bottom: 0.3em;
+}
+h1 {
+  font-size: 32px; // 2em
 }
 h2 {
-  font-size: $font-size--h2;
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid $color-c;
+  font-size: 24px; // 1.5em
 }
 h3 {
-  font-size: $font-size--h3;
+  font-size: 20px; // 1.25em
 }
 h4 {
-  font-size: $font-size--h4;
+  font-size: 16px; // 1em
 }
 h5 {
-  font-size: $font-size--h5;
+  font-size: 14px; // 0.875em
 }
 h6 {
-  font-size: $font-size--h6;
+  font-size: 12px; // 0.75em
 }
 em {
   color: $color-b;
@@ -66,22 +66,9 @@ ul {
   padding-left: 1.75rem;
   margin-bottom: 1rem;
 }
-span,
-p,
-strong,
-ul,
-li,
-label,
-div,
-article,
-section {
-  color: inherit;
-  font-size: inherit;
-}
 a {
   text-decoration: none;
-  font-size: inherit;
-}
-a:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }

@@ -1,7 +1,6 @@
 #root {
+  animation: text-appear-keyframe 300ms 1 ease-out;
   display: flex;
-  position: relative;
-  @include text-appear-mixin(300ms, ease-out);
 }
 
 .Portfolio {
@@ -19,21 +18,6 @@
     margin-bottom: 0 !important;
   }
 }
-
-/* .about {
-} */
-
-/* .about__elem {
-} */
-
-/* .tool {
-} */
-
-/* .tool__elem {
-} */
-
-/* .project {
-} */
 
 .project__elem {
   box-shadow: 0 2px 3px $color-c;
@@ -76,28 +60,9 @@
   font-family: monospace;
   font-size: $font-size--extra-small;
   position: absolute;
-  right: -1.2rem;
+  right: -1.1rem;
   top: 0px;
 }
-
-/* .project__elem__tag {
-  color: $color-b;
-} */
-
-/* .ss {
-  cursor: pointer;
-  height: 135px;
-  width: 240px;
-  background-color: $color-c;
-  box-shadow: 0 1px 2px $color-c;
-  margin-bottom: 1rem;
-  transition: 200ms;
-  transition-property: box-shadow;
-}
-.ss:hover,
-.ss:active {
-  box-shadow: 0 3px 2px $color-c;
-} */
 
 .custom-chk__chk {
   display: none;
@@ -110,7 +75,6 @@
 }
 
 .custom-chk__lbl {
-  cursor: pointer;
   color: $color-b;
 }
 .custom-chk__lbl:hover,
@@ -118,22 +82,10 @@
   color: $color-a;
 }
 .custom-chk__lbl::before {
-  content: "Mostrar mas";
+  content: "Mostrar más";
+  cursor: pointer;
   text-decoration: underline;
 }
-
-/* .curriculum {
-} */
-
-/* .curriculum__elem {
-} */
-
-/* .contact {
-}
-.contact__elem {
-}
-.contact__elem {
-} */
 
 .stepper {
   display: flex;
@@ -141,21 +93,12 @@
 
 .stepper__elem {
   height: 100vh;
-  margin-bottom: 0 !important;
-  box-sizing: border-box;
-  padding: 64px 0;
   position: sticky;
   top: 0;
-  width: 200px;
-  & > :first-child {
-    margin-top: 0 !important;
-  }
-  & > :last-child {
-    margin-bottom: 0 !important;
-  }
+  width: max-content;
 }
 .stepper__elem h4 {
-  padding-left: 16px;
+  padding: 0 16px;
 }
 .stepper__elem ul {
   padding-left: 0 !important;
@@ -178,9 +121,6 @@
 }
 
 @media screen and (max-width: 1199px) {
-  .Portfolio {
-    //padding: 64px;
-  }
 }
 @media screen and (max-width: 899px) {
   .Portfolio {

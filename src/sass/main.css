@@ -1,8 +1,4 @@
-/* @keyframes portfolio-appear {
-  from {
-    box-shadow: 0px 0 $bg inset, 0px 0 $bg inset, 0px 0 $bg, 0px 0 $bg;
-  }
-} */
+@charset "UTF-8";
 @-webkit-keyframes text-appear-keyframe {
   from {
     color: #ffffff;
@@ -25,7 +21,7 @@
 
 body {
   background-color: #ffffff;
-  color: #242629;
+  color: #232628;
 }
 
 h1,
@@ -40,16 +36,18 @@ h6 {
   margin-top: 1.5rem;
 }
 
+h1,
+h2 {
+  border-bottom: 1px solid #00000017;
+  padding-bottom: 0.3em;
+}
+
 h1 {
   font-size: 32px;
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 }
 
 h2 {
   font-size: 24px;
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 }
 
 h3 {
@@ -69,7 +67,7 @@ h6 {
 }
 
 em {
-  color: rgba(0, 0, 0, 0.55);
+  color: #0000008c;
   font-style: italic;
   font-size: inherit;
 }
@@ -95,22 +93,8 @@ ul {
   margin-bottom: 1rem;
 }
 
-span,
-p,
-strong,
-ul,
-li,
-label,
-div,
-article,
-section {
-  color: inherit;
-  font-size: inherit;
-}
-
 a {
   text-decoration: none;
-  font-size: inherit;
 }
 
 a:hover {
@@ -118,16 +102,15 @@ a:hover {
 }
 
 #root {
+  -webkit-animation: text-appear-keyframe 300ms 1 ease-out;
+          animation: text-appear-keyframe 300ms 1 ease-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
-  -webkit-animation: text-appear-keyframe 300ms 1 ease-out;
-          animation: text-appear-keyframe 300ms 1 ease-out;
 }
 
 .Portfolio {
-  border-right: 1px solid rgba(0, 0, 0, 0.09);
+  border-right: 1px solid #00000017;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 64px 64px 64px 128px;
@@ -142,21 +125,11 @@ a:hover {
   margin-bottom: 0 !important;
 }
 
-/* .about {
-} */
-/* .about__elem {
-} */
-/* .tool {
-} */
-/* .tool__elem {
-} */
-/* .project {
-} */
 .project__elem {
-  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.09);
-          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.09);
+  -webkit-box-shadow: 0 2px 3px #00000017;
+          box-shadow: 0 2px 3px #00000017;
   border-radius: 2px;
-  border: 1px solid rgba(0, 0, 0, 0.09);
+  border: 1px solid #00000017;
   padding: 1rem;
   margin-bottom: 1rem;
 }
@@ -174,7 +147,7 @@ a:hover {
 }
 
 .description {
-  border-top: 1px solid rgba(0, 0, 0, 0.09);
+  border-top: 1px solid #00000017;
   display: none;
   margin-top: 1rem;
   padding-top: 1rem;
@@ -198,32 +171,15 @@ a:hover {
 }
 
 .new-stack-item::before {
-  color: rgba(0, 0, 0, 0.55);
+  color: #0000008c;
   content: "new";
   font-family: monospace;
   font-size: 10px;
   position: absolute;
-  right: -1.2rem;
+  right: -1.1rem;
   top: 0px;
 }
 
-/* .project__elem__tag {
-  color: $color-b;
-} */
-/* .ss {
-  cursor: pointer;
-  height: 135px;
-  width: 240px;
-  background-color: $color-c;
-  box-shadow: 0 1px 2px $color-c;
-  margin-bottom: 1rem;
-  transition: 200ms;
-  transition-property: box-shadow;
-}
-.ss:hover,
-.ss:active {
-  box-shadow: 0 3px 2px $color-c;
-} */
 .custom-chk__chk {
   display: none;
 }
@@ -237,30 +193,20 @@ a:hover {
 }
 
 .custom-chk__lbl {
-  cursor: pointer;
-  color: rgba(0, 0, 0, 0.55);
+  color: #0000008c;
 }
 
 .custom-chk__lbl:hover,
 .custom-chk__lbl:active {
-  color: #242629;
+  color: #232628;
 }
 
 .custom-chk__lbl::before {
-  content: "Mostrar mas";
+  content: "Mostrar más";
+  cursor: pointer;
   text-decoration: underline;
 }
 
-/* .curriculum {
-} */
-/* .curriculum__elem {
-} */
-/* .contact {
-}
-.contact__elem {
-}
-.contact__elem {
-} */
 .stepper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -269,26 +215,16 @@ a:hover {
 
 .stepper__elem {
   height: 100vh;
-  margin-bottom: 0 !important;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 64px 0;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  width: 200px;
-}
-
-.stepper__elem > :first-child {
-  margin-top: 0 !important;
-}
-
-.stepper__elem > :last-child {
-  margin-bottom: 0 !important;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .stepper__elem h4 {
-  padding-left: 16px;
+  padding: 0 16px;
 }
 
 .stepper__elem ul {
@@ -312,7 +248,7 @@ a:hover {
 }
 
 .step a.step--active {
-  border-left: 4px solid rgba(0, 0, 0, 0.09);
+  border-left: 4px solid #00000017;
   padding: 4px 0 4px 12px;
 }
 

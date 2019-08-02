@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import TOOLS from './tools.json';
 import PROJECTS from './projects.json';
 
@@ -120,10 +120,10 @@ function ToolGroup(props) {
   )
 }
 
-/* ToolGroup.propTypes = {
+ToolGroup.propTypes = {
   title: PropTypes.string.isRequired,
   tools: PropTypes.arrayOf(PropTypes.string).isRequired,
-} */
+}
 
 function ToolGroupItems(props) {
   return (
@@ -135,9 +135,9 @@ function ToolGroupItems(props) {
   )
 }
 
-/* ToolGroupItems.propTypes = {
+ToolGroupItems.propTypes = {
   tools: PropTypes.arrayOf(PropTypes.string).isRequired
-} */
+}
 
 function Project(props) {
   return (
@@ -180,7 +180,7 @@ function Project(props) {
   )
 }
 
-/* Project.propTypes = {
+Project.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
@@ -188,22 +188,22 @@ function Project(props) {
     about: PropTypes.string.isRequired,
     argument: PropTypes.string.isRequired,
     old_stack: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired
     })),
     new_stack: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired
     })),
     src: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string,
-      link: PropTypes.string,
-      linkName: PropTypes.string,
+      name: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+      linkName: PropTypes.string.isRequired,
     })),
     web: PropTypes.string,
     repo: PropTypes.string,
   })
-} */
+}
 
 function OldStackItems(props) {
   return (
@@ -217,12 +217,12 @@ function OldStackItems(props) {
   )
 }
 
-/* OldStackItems.propTypes = {
+OldStackItems.propTypes = {
   old_stack: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired
   })).isRequired,
-} */
+}
 
 function NewStackItems(props) {
   return (
@@ -236,12 +236,12 @@ function NewStackItems(props) {
   )
 }
 
-/* NewStackItems.propTypes = {
+NewStackItems.propTypes = {
   new_stack: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired
   })).isRequired,
-} */
+}
 
 function Src(props) {
   return (
@@ -253,13 +253,13 @@ function Src(props) {
   )
 }
 
-/* Src.prototypes = {
+Src.prototypes = {
   src: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
     linkName: PropTypes.string.isRequired,
   })),
-} */
+}
 
 /* {
   "id": 1,

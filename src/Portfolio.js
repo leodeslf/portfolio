@@ -74,7 +74,7 @@ export default class Portfolio extends Component {
           <section id="curriculum" className="curriculum Portfolio__elem">
             <h2>Curriculum Vitae</h2>
             <p>
-              Ver y descargar <a href="/Leonardo-de-Souza-Leal-Figueira-CV.pdf">aqui</a>.
+              Ver y descargar <a href="portfolio/Leonardo-de-Souza-Leal-Figueira-CV.pdf">aqui</a>.
             </p>
           </section>
           <section id="contact" className="contact Portfolio__elem">

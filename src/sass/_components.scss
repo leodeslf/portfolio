@@ -1,13 +1,13 @@
 #root {
-  animation: text-appear-keyframe 300ms 1 ease-out;
+  //animation: text-appear-keyframe 300ms 1 ease-out;
   display: flex;
 }
 
 .Portfolio {
   border-right: 1px solid $color-c;
   box-sizing: border-box;
-  padding: 64px 64px 64px 128px;
   max-width: 960px;
+  padding: 64px 64px 64px 128px;
   & > :first-child {
     margin-top: 0 !important;
   }
@@ -20,9 +20,8 @@
 }
 
 .project__elem {
-  box-shadow: 0 2px 3px $color-c;
+  box-shadow: 0 0 2px $color-c, 0px 2px 2px $color-c;
   border-radius: 2px;
-  border: 1px solid $color-c;
   padding: 1rem;
   margin-bottom: 1rem;
   & > :first-child {
@@ -32,7 +31,8 @@
 .project__elem > h3 {
   display: inline-block;
 }
-.project__elem > h3 + em {
+.project__elem > h3 + em.date {
+  color: $color-b;
   float: right;
 }
 

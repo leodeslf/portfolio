@@ -1,26 +1,24 @@
 [
   {
     "id": 0,
-    "title": "Principales",
+    "title": "Stack actual",
     "tools": [
       "HTML",
       "CSS",
       "JavaScript",
       "React",
       "SASS",
+      "THREE",
       "Git",
-      "Markdown",
-      "THREE"
+      "Markdown"
     ]
   },
   {
     "id": 2,
-    "title": "Interesado en aprender",
+    "title": "Me interesa también",
     "tools": [
-      "TypeScript",
       "Redux",
       "GraphQL",
-      "jQuery",
       "Electron"
     ]
   }

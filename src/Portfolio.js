@@ -41,27 +41,30 @@ export default class Portfolio extends Component {
     return (
       <>
         <section className="Portfolio">
-          <h1>Leonardo de S.L.F</h1>
+          <h1 title="Leonardo de Souza Leal Figueira">Leonardo de S.L.F</h1>
           <section id="about" className="about Portfolio__elem">
             <h2>Sobre mi</h2>
             <p className="about__elem">
-              Autodidacta (futuro) front-end developer, descubriendo, paso a
-              paso, la manera en que <strong>creamos información y
+              Hola, soy Leo, como autodidacta espero ser Desarrollador Frontend en 2020.<br />
+              Mientras tanto descubro, paso a paso, la manera en que <strong>creamos información y
               experiencias</strong> mediante la web.
             </p>
             <p className="about__elem">
-              Desde Mayo de 2018 me he dedicado a conocer herramientas que
-              puedan <strong>favorecer al usuario final y companeros de equipo</strong>.
+              A mediados de 2018, casi por accidente, descubrí el rol de Frontend. Desde entonces he
+              aprendido conceptos y herramientas que puedan <strong>favorecer a compañeros de equipo y
+              al usuario final</strong>.
             </p>
           </section>
           <section id="tool" className="tool Portfolio__elem">
             <h2>Herramientas</h2>
-            {TOOLS.map(item => (
-              <ToolGroup
-                key={item.id}
-                title={item.title}
-                tools={item.tools} />
-            ))}
+            <div className="tool__elem">
+              {TOOLS.map(item => (
+                <ToolGroup
+                  key={item.id}
+                  title={item.title}
+                  tools={item.tools} />
+              ))}
+            </div>
           </section>
           <section id="project" className="project Portfolio__elem">
             <h2>Proyectos</h2>
@@ -74,17 +77,17 @@ export default class Portfolio extends Component {
           <section id="curriculum" className="curriculum Portfolio__elem">
             <h2>Curriculum Vitae</h2>
             <p>
-              Ver y descargar <a href="./Leonardo-de-Souza-Leal-Figueira-CV.pdf">aqui</a>.
+              <a href="./Leonardo-de-Souza-Leal-Figueira-CV.pdf">Ver y descargar</a>.
             </p>
           </section>
           <section id="contact" className="contact Portfolio__elem">
             <h2>Contacto</h2>
             <p>
               leodeslf@gmail.com<br />
-              099 705 972<br />
+              +598 99 705 972<br />
               <a href="https://www.linkedin.com/in/leonardo-de-souza-leal-figueira-8570b18a/">LinkedIn</a><br />
               <a href="https://github.com/Wikarot">GitHub</a><br />
-              <a href="https://dribbble.com/Wikarot">Dribbble</a>
+              {/* <a href="https://dribbble.com/Wikarot">Dribbble</a> */}
             </p>
           </section>
         </section>
@@ -113,10 +116,10 @@ function Stepper() {
 
 function ToolGroup(props) {
   return (
-    <article className="tool__elem">
-      <h3>{props.title}</h3>
+    <div>
+      <strong>{props.title}: </strong>
       <ToolGroupItems tools={props.tools} />
-    </article>
+    </div>
   )
 }
 
@@ -142,17 +145,17 @@ ToolGroupItems.propTypes = {
 function Project(props) {
   return (
     <article className="project__elem">
-      <h3>{props.data.title}</h3><em>{props.data.date}</em>
+      <h3>{props.data.title}</h3><em className="date">{props.data.date}</em>
       <p>{`${props.data.about}.`}</p>
       <input id={`chk_${props.data.id}`} type="checkbox" className="custom-chk__chk" />
       <label htmlFor={`chk_${props.data.id}`} className="custom-chk__lbl"></label>
       <div className="description">
         <p>
-          <em>Objetivo: </em>{`${props.data.argument}.`}
+          <strong>Objetivo: </strong>{`${props.data.argument}.`}
         </p>
         {(props.data.old_stack || props.data.new_stack) &&
           <>
-            <em>Stack: </em>
+            <strong>Stack: </strong>
             <ul>
               {props.data.old_stack &&
                 <OldStackItems old_stack={props.data.old_stack} />}
@@ -163,16 +166,18 @@ function Project(props) {
         }
         {props.data.src &&
           <>
-            <em>Recursos: </em>
+            <strong>Recursos: </strong>
             <Src src={props.data.src} />
           </>
         }
         {props.data.web &&
           <p>
-            <em>Links: </em>
+            <strong>Links: </strong>
             <a href={props.data.web}>Web</a>
             {props.data.repo &&
-              <span>, <a href={props.data.repo}>Repositorio</a></span>}.
+              <>
+                , <a href={props.data.repo}>Repositorio</a>
+              </>}.
           </p>
         }
       </div>
@@ -262,13 +267,13 @@ Src.prototypes = {
 }
 
 /* {
-  "id": 1,
-  "title": "Familiarizado",
-  "tools": [
-    "Java",
-    "VisualBasic.NET",
-    "SQL",
-    "MySQL",
-    "Linux Bash"
-  ]
-}, */
+          "id": 1,
+        "title": "Familiarizado",
+        "tools": [
+          "Java",
+          "VisualBasic.NET",
+          "SQL",
+          "MySQL",
+          "Linux Bash"
+        ]
+      }, */

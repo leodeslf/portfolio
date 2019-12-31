@@ -1,12 +1,12 @@
 @charset "UTF-8";
 @-webkit-keyframes text-appear-keyframe {
   from {
-    color: #ffffff;
+    color: white;
   }
 }
 @keyframes text-appear-keyframe {
   from {
-    color: #ffffff;
+    color: white;
   }
 }
 
@@ -20,12 +20,18 @@
 }
 
 body {
-  background-color: #ffffff;
-  color: #232628;
+  background-color: white;
+  color: #262626;
 }
 
 h1,
-h2,
+h2 {
+  font-weight: 600;
+  line-height: 1.25em;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
 h3,
 h4,
 h5,
@@ -38,7 +44,7 @@ h6 {
 
 h1,
 h2 {
-  border-bottom: 1px solid #00000017;
+  border-bottom: 1px solid #e6e6e6;
   padding-bottom: 0.3em;
 }
 
@@ -67,7 +73,6 @@ h6 {
 }
 
 em {
-  color: #0000008c;
   font-style: italic;
   font-size: inherit;
 }
@@ -102,19 +107,17 @@ a:hover {
 }
 
 #root {
-  -webkit-animation: text-appear-keyframe 300ms 1 ease-out;
-          animation: text-appear-keyframe 300ms 1 ease-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .Portfolio {
-  border-right: 1px solid #00000017;
+  border-right: 1px solid #e6e6e6;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 64px 64px 64px 128px;
   max-width: 960px;
+  padding: 64px 64px 64px 128px;
 }
 
 .Portfolio > :first-child {
@@ -126,10 +129,9 @@ a:hover {
 }
 
 .project__elem {
-  -webkit-box-shadow: 0 2px 3px #00000017;
-          box-shadow: 0 2px 3px #00000017;
+  -webkit-box-shadow: 0 0 2px #e6e6e6, 0px 2px 2px #e6e6e6;
+          box-shadow: 0 0 2px #e6e6e6, 0px 2px 2px #e6e6e6;
   border-radius: 2px;
-  border: 1px solid #00000017;
   padding: 1rem;
   margin-bottom: 1rem;
 }
@@ -142,12 +144,13 @@ a:hover {
   display: inline-block;
 }
 
-.project__elem > h3 + em {
+.project__elem > h3 + em.date {
+  color: #737373;
   float: right;
 }
 
 .description {
-  border-top: 1px solid #00000017;
+  border-top: 1px solid #e6e6e6;
   display: none;
   margin-top: 1rem;
   padding-top: 1rem;
@@ -171,7 +174,7 @@ a:hover {
 }
 
 .new-stack-item::before {
-  color: #0000008c;
+  color: #737373;
   content: "new";
   font-family: monospace;
   font-size: 10px;
@@ -193,12 +196,12 @@ a:hover {
 }
 
 .custom-chk__lbl {
-  color: #0000008c;
+  color: #737373;
 }
 
 .custom-chk__lbl:hover,
 .custom-chk__lbl:active {
-  color: #232628;
+  color: #262626;
 }
 
 .custom-chk__lbl::before {
@@ -248,7 +251,7 @@ a:hover {
 }
 
 .step a.step--active {
-  border-left: 4px solid #00000017;
+  border-left: 4px solid #e6e6e6;
   padding: 4px 0 4px 12px;
 }
 

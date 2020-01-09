@@ -1,0 +1,41 @@
+nav.stepper {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  width: max-content;
+}
+nav.stepper h4 {
+  padding: 0 16px;
+}
+nav.stepper ul {
+  padding-left: 0 !important;
+}
+
+li.step {
+  list-style: none;
+}
+li.step a {
+  display: flex;
+  box-sizing: border-box;
+  color: inherit;
+  font-size: $font-size--small;
+  padding: 4px 0 4px 16px;
+  text-decoration: none;
+}
+li.step a.step--active {
+  border-left: 4px solid $color-d;
+  padding: 4px 0 4px 12px;
+}
+
+@media screen and (max-width: 1199px) {
+}
+@media screen and (max-width: 899px) {
+  .Portfolio {
+    padding: 64px 32px;
+  }
+}
+@media screen and (max-width: 649px) {
+  .stepper {
+    display: none;
+  }
+}

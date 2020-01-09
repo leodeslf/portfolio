@@ -1,0 +1,26 @@
+.Portfolio {
+  border-right: 1px solid $color-d;
+  box-sizing: border-box;
+  max-width: 960px;
+  padding: 64px 64px 64px 128px;
+  & > :first-child {
+    margin-top: 0 !important;
+  }
+}
+
+.Portfolio__elem {
+  & > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .Portfolio {
+    padding: 64px 32px;
+  }
+}
+@media screen and (max-width: 649px) {
+  .Portfolio {
+    padding: 32px 24px;
+  }
+}

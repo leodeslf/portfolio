@@ -2,23 +2,21 @@
   {
     "id": 0,
     "title": "Stack actual",
-    "tools": [
+    "tool_list": [
       "HTML",
       "CSS",
       "JavaScript",
       "React",
-      "SASS",
-      "THREE",
-      "Git",
-      "Markdown"
+      "SASS"
     ]
   },
   {
-    "id": 2,
-    "title": "Me interesa también",
-    "tools": [
-      "Redux",
-      "GraphQL",
+    "id": 1,
+    "title": "Otras herramientas",
+    "tool_list": [
+      "Markdown",
+      "Git",
+      "THREE",
       "Electron"
     ]
   }

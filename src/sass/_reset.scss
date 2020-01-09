@@ -10,12 +10,17 @@ body {
   background-color: $bg-a;
   color: $color-a;
 }
+aside {
+  display: flex;
+}
 h1,
 h2 {
   font-weight: 600;
   line-height: 1.25em;
   margin-bottom: 1rem;
   margin-top: 1.5rem;
+  border-bottom: 1px solid $color-c;
+  padding-bottom: 0.3em;
 }
 h3,
 h4,
@@ -25,11 +30,6 @@ h6 {
   line-height: 1.25em;
   margin-bottom: 1rem;
   margin-top: 1.5rem;
-}
-h1,
-h2 {
-  border-bottom: 1px solid $color-c;
-  padding-bottom: 0.3em;
 }
 h1 {
   font-size: 32px; // 2em

@@ -1,7 +1,13 @@
 $bg-a: hsl(0, 0%, 100%);
-$color-a: hsl(0, 0%, 15%);
-$color-b: hsl(0, 0%, 45%);
-$color-c: hsl(0, 0%, 90%);
+$color-a: hsl(0, 0%, 12%);
+$color-b: hsl(0, 0%, 49%);
+$color-c: hsl(0, 0%, 88%);
+$color-d: hsl(0, 0%, 90%);
+/* $bg-a: hsl(0, 0%, 0%);
+$color-a: hsl(0, 0%, 88%);
+$color-b: hsl(0, 0%, 51%);
+$color-c: hsl(0, 0%, 12%);
+$color-d: hsl(0, 0%, 10%); */
 $font-size--normal: 16px; // 1em
 $font-size--small: 12px; // 0.75em
 $font-size--extra-small: 10px; // 0.625em
@@ -10,4 +16,11 @@ $font-size--extra-small: 10px; // 0.625em
   from {
     color: $bg-a;
   }
+}
+
+@media screen and (max-width: 1199px) {
+}
+@media screen and (max-width: 899px) {
+}
+@media screen and (max-width: 649px) {
 }

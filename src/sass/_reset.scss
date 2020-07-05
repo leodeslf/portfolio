@@ -18,8 +18,8 @@ h2 {
   font-weight: 600;
   line-height: 1.25em;
   margin-bottom: 1rem;
-  margin-top: 1.5rem;
-  border-bottom: 1px solid $color-c;
+  margin-top: 4rem;
+  border-bottom: 1px solid $color-d;
   padding-bottom: 0.3em;
 }
 h3,
@@ -29,7 +29,7 @@ h6 {
   font-weight: 600;
   line-height: 1.25em;
   margin-bottom: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 4rem;
 }
 h1 {
   font-size: 32px; // 2em
@@ -50,6 +50,7 @@ h6 {
   font-size: 12px; // 0.75em
 }
 em {
+  color: $color-b;
   font-style: italic;
   font-size: inherit;
 }
@@ -75,4 +76,7 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+table {
+  border-spacing: 0;
 }

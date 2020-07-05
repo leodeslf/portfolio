@@ -1,18 +1,11 @@
 .projects__elem {
-  box-shadow: 0 0 5px $color-c, 0px 2px 3px $color-c;
-  border-radius: 3px;
+  box-shadow: $card-shadow;
+  border-radius: $card-radius;
   padding: 1rem;
   margin-bottom: 1rem;
   & > :first-child {
     margin-top: 0 !important;
   }
-}
-.projects__elem > h3 {
-  display: inline-block;
-}
-.projects__elem > h3 + em.date {
-  color: $color-b;
-  float: right;
 }
 
 .description {
@@ -33,6 +26,7 @@
   position: relative;
   width: fit-content;
 }
+
 .new-stack-item::before {
   color: $color-b;
   content: "new";
@@ -43,12 +37,20 @@
   top: 0px;
 }
 
+.chk_date {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
 .custom-chk__chk {
   display: none;
 }
-.custom-chk__chk:checked + .custom-chk__lbl::before {
+
+.custom-chk__chk:checked + div > .custom-chk__lbl::before {
   content: "Menos";
 }
+
 .custom-chk__chk:checked ~ .description {
   display: block;
 }
@@ -56,12 +58,19 @@
 .custom-chk__lbl {
   color: $color-b;
   cursor: pointer;
+  text-decoration: underline;
+  font-size: $font-size--small;
 }
+
 .custom-chk__lbl:hover,
 .custom-chk__lbl:active {
   color: $color-a;
 }
+
 .custom-chk__lbl::before {
   content: "Más";
-  text-decoration: underline;
+}
+
+.projects__elem .date {
+  font-size: $font-size--small;
 }

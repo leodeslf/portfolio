@@ -4,13 +4,22 @@ export default function Contact() {
   return (
     <section id="contact" className="contact Portfolio__elem">
       <h2>Contacto</h2>
-      <p>
-        leodeslf@gmail.com<br />
-        +598 99 705 972<br />
-        <a href="https://www.linkedin.com/in/leonardo-de-souza-leal-figueira-8570b18a/">LinkedIn</a><br />
-        <a href="https://github.com/Wikarot">GitHub</a><br />
-        {/* <a href="https://dribbble.com/Wikarot">Dribbble</a> */}
-      </p>
+      <div className="contact__card">
+        <div className="card__pic">
+          <img src="./portfolio/x116.png" alt="id_pic" title="A human" />
+        </div>
+        <ul className="card__data">
+          <li>Montevideo, UY</li>
+          <li>+598 99 705 972</li>
+          <li>leodeslf@gmail.com</li>
+          <li>
+            <a href="https://github.com/leodeslf">GitHub</a> / <a
+              href="https://www.linkedin.com/in/leodeslf/">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
     </section>
   );
 }
+
+/* <a href="https://dribbble.com/Wikarot">Dribbble</a> */

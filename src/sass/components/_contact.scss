@@ -1,0 +1,32 @@
+/* .contact {
+} */
+
+.contact__card {
+  box-shadow: $card-shadow;
+  border-radius: $card-radius;
+  display: flex;
+  max-width: fit-content;
+}
+
+.card__pic {
+  display: flex;
+}
+
+.card__pic > img {
+  border-top-left-radius: $card-radius;
+  border-bottom-left-radius: $card-radius;
+  height: auto;
+  max-width: 100%;
+}
+
+.card__data {
+  padding: 1rem;
+}
+
+.card__data {
+  margin: 0;
+}
+
+.card__data li {
+  list-style: none;
+}

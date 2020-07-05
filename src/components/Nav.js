@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+const OFFSET = 100;
+
 export default class Nav extends Component {
   constructor() {
     super();
@@ -14,8 +16,8 @@ export default class Nav extends Component {
     window.addEventListener('scroll', () => {
       const SCROLL_TOP = document.documentElement.scrollTop;
       for (let i = 0; i < this.titles.length; i++) {
-        if (this.titles[i].offsetTop - 48 <= SCROLL_TOP) {
-          if (i < this.titles.length - 1 && this.titles[i + 1].offsetTop - 48 > SCROLL_TOP) {
+        if (this.titles[i].offsetTop - OFFSET <= SCROLL_TOP) {
+          if (i < this.titles.length - 1 && this.titles[i + 1].offsetTop - OFFSET > SCROLL_TOP) {
             for (let j = 0; j < this.titles.length; j++) {
               if (j === i) {
                 this.titlesLinks[j].classList.add('step--active');
@@ -25,7 +27,7 @@ export default class Nav extends Component {
             }
           }
         }
-        else if (this.titles[0].offsetTop - 48 > SCROLL_TOP) {
+        else if (this.titles[0].offsetTop - OFFSET > SCROLL_TOP) {
           this.titlesLinks[0].classList.remove('step--active');
         }
       }
@@ -46,10 +48,10 @@ export default class Nav extends Component {
       <nav className="stepper Portfolio__elem">
         <h4>Tabla de Contenido</h4>
         <ul>
-          <li className="step"><a href="#about">Sobre mi</a></li>
+          {/* <li className="step"><a href="#about">Sobre mí</a></li> */}
           <li className="step"><a href="#tools">Herramientas</a></li>
           <li className="step"><a href="#projects">Proyectos</a></li>
-          <li className="step"><a href="#cv">Curriculum Vitae</a></li>
+          <li className="step"><a href="#cv">Currículum Vitae</a></li>
           <li className="step"><a href="#contact">Contacto</a></li>
         </ul>
       </nav>

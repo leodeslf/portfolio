@@ -26,7 +26,7 @@ $color-d: hsl(0, 0%, 10%); */
 
 body {
   background-color: white;
-  color: #1f1f1f;
+  color: #0f0f0f;
 }
 
 aside {
@@ -40,8 +40,8 @@ h2 {
   font-weight: 600;
   line-height: 1.25em;
   margin-bottom: 1rem;
-  margin-top: 1.5rem;
-  border-bottom: 1px solid #e0e0e0;
+  margin-top: 4rem;
+  border-bottom: 1px solid #ebebeb;
   padding-bottom: 0.3em;
 }
 
@@ -52,7 +52,7 @@ h6 {
   font-weight: 600;
   line-height: 1.25em;
   margin-bottom: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 4rem;
 }
 
 h1 {
@@ -80,6 +80,7 @@ h6 {
 }
 
 em {
+  color: #737373;
   font-style: italic;
   font-size: inherit;
 }
@@ -113,16 +114,20 @@ a:hover {
   text-decoration: underline;
 }
 
+table {
+  border-spacing: 0;
+}
+
 #root {
-  -webkit-animation: text-appear-keyframe 320ms 1 ease-out;
-          animation: text-appear-keyframe 320ms 1 ease-out;
+  -webkit-animation: text-appear-keyframe 120ms 1 ease-out;
+          animation: text-appear-keyframe 120ms 1 ease-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .Portfolio {
-  border-right: 1px solid #e6e6e6;
+  border-right: 1px solid #ebebeb;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   max-width: 960px;
@@ -131,10 +136,6 @@ a:hover {
 
 .Portfolio > :first-child {
   margin-top: 0 !important;
-}
-
-.Portfolio__elem > :last-child {
-  margin-bottom: 0 !important;
 }
 
 @media screen and (max-width: 899px) {
@@ -149,10 +150,14 @@ a:hover {
   }
 }
 
+.Portfolio__elem > :last-child {
+  margin-bottom: 0 !important;
+}
+
 .projects__elem {
-  -webkit-box-shadow: 0 0 5px #e0e0e0, 0px 2px 3px #e0e0e0;
-          box-shadow: 0 0 5px #e0e0e0, 0px 2px 3px #e0e0e0;
-  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13), 0 1px 2px rgba(0, 0, 0, 0.13);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13), 0 1px 2px rgba(0, 0, 0, 0.13);
+  border-radius: 4px;
   padding: 1rem;
   margin-bottom: 1rem;
 }
@@ -161,17 +166,8 @@ a:hover {
   margin-top: 0 !important;
 }
 
-.projects__elem > h3 {
-  display: inline-block;
-}
-
-.projects__elem > h3 + em.date {
-  color: #7d7d7d;
-  float: right;
-}
-
 .description {
-  border-top: 1px solid #e6e6e6;
+  border-top: 1px solid #ebebeb;
   display: none;
   margin-top: 1rem;
   padding-top: 1rem;
@@ -195,7 +191,7 @@ a:hover {
 }
 
 .new-stack-item::before {
-  color: #7d7d7d;
+  color: #737373;
   content: "new";
   font-family: monospace;
   font-size: 10px;
@@ -204,11 +200,23 @@ a:hover {
   top: 0px;
 }
 
+.chk_date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .custom-chk__chk {
   display: none;
 }
 
-.custom-chk__chk:checked + .custom-chk__lbl::before {
+.custom-chk__chk:checked + div > .custom-chk__lbl::before {
   content: "Menos";
 }
 
@@ -217,18 +225,23 @@ a:hover {
 }
 
 .custom-chk__lbl {
-  color: #7d7d7d;
+  color: #737373;
   cursor: pointer;
+  text-decoration: underline;
+  font-size: 12px;
 }
 
 .custom-chk__lbl:hover,
 .custom-chk__lbl:active {
-  color: #1f1f1f;
+  color: #0f0f0f;
 }
 
 .custom-chk__lbl::before {
   content: "Más";
-  text-decoration: underline;
+}
+
+.projects__elem .date {
+  font-size: 12px;
 }
 
 nav.stepper {
@@ -239,6 +252,12 @@ nav.stepper {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+@media screen and (max-width: 649px) {
+  nav.stepper {
+    display: none;
+  }
 }
 
 nav.stepper h4 {
@@ -266,19 +285,46 @@ li.step a {
 }
 
 li.step a.step--active {
-  border-left: 4px solid #e6e6e6;
+  border-left: 4px solid #ebebeb;
   padding: 4px 0 4px 12px;
 }
 
-@media screen and (max-width: 899px) {
-  .Portfolio {
-    padding: 64px 32px;
-  }
+/* .contact {
+} */
+.contact__card {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13), 0 1px 2px rgba(0, 0, 0, 0.13);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13), 0 1px 2px rgba(0, 0, 0, 0.13);
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 
-@media screen and (max-width: 649px) {
-  .stepper {
-    display: none;
-  }
+.card__pic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card__pic > img {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  height: auto;
+  max-width: 100%;
+}
+
+.card__data {
+  padding: 1rem;
+}
+
+.card__data {
+  margin: 0;
+}
+
+.card__data li {
+  list-style: none;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,8 +1,8 @@
-$bg-a: hsl(0, 0%, 100%);
-$color-a: hsl(0, 0%, 12%);
-$color-b: hsl(0, 0%, 49%);
-$color-c: hsl(0, 0%, 88%);
-$color-d: hsl(0, 0%, 90%);
+$bg-a: hsl(0, 0%, 100%); // background
+$color-a: hsl(0, 0%, 6%); // main color
+$color-b: hsl(0, 0%, 45%); // secondary color
+$color-c: hsla(0, 0%, 0%, 0.13); // shadow
+$color-d: hsl(0, 0%, 92%); // border
 /* $bg-a: hsl(0, 0%, 0%);
 $color-a: hsl(0, 0%, 88%);
 $color-b: hsl(0, 0%, 51%);
@@ -11,6 +11,8 @@ $color-d: hsl(0, 0%, 10%); */
 $font-size--normal: 16px; // 1em
 $font-size--small: 12px; // 0.75em
 $font-size--extra-small: 10px; // 0.625em
+$card-shadow: 0 1px 3px $color-c, 0 1px 2px $color-c;
+$card-radius: 4px;
 
 @keyframes text-appear-keyframe {
   from {

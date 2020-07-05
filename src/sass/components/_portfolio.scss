@@ -6,21 +6,20 @@
   & > :first-child {
     margin-top: 0 !important;
   }
+  @media screen and (max-width: 899px) {
+    & {
+      padding: 64px 32px;
+    }
+  }
+  @media screen and (max-width: 649px) {
+    & {
+      padding: 32px 24px;
+    }
+  }
 }
 
 .Portfolio__elem {
   & > :last-child {
     margin-bottom: 0 !important;
-  }
-}
-
-@media screen and (max-width: 899px) {
-  .Portfolio {
-    padding: 64px 32px;
-  }
-}
-@media screen and (max-width: 649px) {
-  .Portfolio {
-    padding: 32px 24px;
   }
 }

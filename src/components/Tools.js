@@ -7,9 +7,9 @@ export default function Tools() {
     <section id="tools" className="tools Portfolio__elem">
       <h2>Herramientas</h2>
       <div className="tools__elem">
-        {TOOLS.map(item => (
+        {TOOLS.map((item, i) => (
           <ToolGroup
-            key={item.id}
+            key={i}
             title={item.title}
             tool_list={item.tool_list} />
         ))}

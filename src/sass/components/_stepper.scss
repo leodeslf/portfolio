@@ -3,6 +3,11 @@ nav.stepper {
   position: sticky;
   top: 0;
   width: max-content;
+  @media screen and (max-width: 649px) {
+    & {
+      display: none;
+    }
+  }
 }
 nav.stepper h4 {
   padding: 0 16px;
@@ -30,12 +35,4 @@ li.step a.step--active {
 @media screen and (max-width: 1199px) {
 }
 @media screen and (max-width: 899px) {
-  .Portfolio {
-    padding: 64px 32px;
-  }
-}
-@media screen and (max-width: 649px) {
-  .stepper {
-    display: none;
-  }
 }

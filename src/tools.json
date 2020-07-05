@@ -1,7 +1,6 @@
 [
   {
-    "id": 0,
-    "title": "Stack actual",
+    "title": "Stack",
     "tool_list": [
       "HTML",
       "CSS",
@@ -11,13 +10,13 @@
     ]
   },
   {
-    "id": 1,
-    "title": "Otras herramientas",
+    "title": "Otras",
     "tool_list": [
-      "Markdown",
       "Git",
-      "THREE",
-      "Electron"
+      "GitHub / GitHub Pages",
+      "Markdown",
+      "Netlify",
+      "THREE"
     ]
   }
 ]

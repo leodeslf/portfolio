@@ -1,28 +1,35 @@
-$bg-a: hsl(0, 0%, 100%); // background
-$color-a: hsl(0, 0%, 6%); // main color
-$color-b: hsl(0, 0%, 45%); // secondary color
-$color-c: hsla(0, 0%, 0%, 0.13); // shadow
-$color-d: hsl(0, 0%, 92%); // border
-/* $bg-a: hsl(0, 0%, 0%);
-$color-a: hsl(0, 0%, 88%);
-$color-b: hsl(0, 0%, 51%);
-$color-c: hsl(0, 0%, 12%);
-$color-d: hsl(0, 0%, 10%); */
-$font-size--normal: 16px; // 1em
-$font-size--small: 12px; // 0.75em
-$font-size--extra-small: 10px; // 0.625em
-$card-shadow: 0 1px 3px $color-c, 0 1px 2px $color-c;
+$color--bg: hsl(0, 0%, 97%); // background
+$color--bg-up: hsl(0, 0%, 100%); // background up
+$color--main: hsl(0, 0%, 6%); // main color
+$color--alt: hsl(0, 0%, 37%); // secondary color
+$color--shadow: hsla(0, 0%, 0%, 0.12); // shadow
+$color--border: hsl(0, 0%, 89%); // border
+$color--link: hsl(216, 87%, 42%); // link
+$card-shadow: 0 1px 3px $color--shadow, 0 1px 2px $color--shadow;
+
+$color--bg--dark: hsl(225, 9%, 9%); // background
+$color--bg-up--dark: hsl(222, 12%, 12%); // background up
+$color--main--dark: hsl(0, 0%, 91%); // main color
+$color--alt--dark: hsl(0, 0%, 62%); // secondary color
+$color--shadow--dark: hsla(0, 0%, 0%, 0.4); // shadow
+$color--border--dark: hsl(0, 0%, 6%); // border
+$color--link--dark: hsl(216, 87%, 59%); // link
+$card-shadow--dark: 0 1px 3px $color--shadow--dark, 0 1px 2px $color--shadow--dark;
+
+$font-size--normal: 16px; // 1rem
+$font-size--small: 12px; // 0.75rem
+$font-size--extra-small: 10px; // 0.625rem
 $card-radius: 4px;
+$media--max-big: 1199px; // 1200
+$media--max-medium: 959px; // 960
+$media--max-small: 679px; // 680
 
-@keyframes text-appear-keyframe {
-  from {
-    color: $bg-a;
-  }
+@media screen and (max-width: $media--max-big) {
+  /* Leonardo de Souza Leal Figueira */
 }
-
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: $media--max-medium) {
+  /* Leonardo de S. Leal Figueira */
 }
-@media screen and (max-width: 899px) {
-}
-@media screen and (max-width: 649px) {
+@media screen and (max-width: $media--max-small) {
+  /* Leonardo de S.L.F */
 }

@@ -1,11 +1,14 @@
-/* .contact {
-} */
-
 .contact__card {
-  box-shadow: $card-shadow;
+  background-color: $color--bg-up;
+  //box-shadow: $card-shadow;
+  border: 1px solid $color--border;
   border-radius: $card-radius;
   display: flex;
   max-width: fit-content;
+  .dark & {
+    background-color: $color--bg-up--dark;
+    border-color: $color--border--dark;
+  }
 }
 
 .card__pic {

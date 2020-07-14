@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TOOLS from '../tools.json';
+import TOOLS from '../json/tools.json';
 
 export default function Tools() {
   return (
@@ -22,7 +22,7 @@ export default function Tools() {
 function ToolGroup(props) {
   return (
     <div>
-      <strong>{props.title}: </strong>
+      <strong>{props.title}</strong>
       <ToolList list={props.tool_list} />
     </div>
   );
@@ -30,19 +30,23 @@ function ToolGroup(props) {
 
 ToolGroup.propTypes = {
   title: PropTypes.string.isRequired,
-  tool_list: PropTypes.arrayOf(PropTypes.string).isRequired,
+  tool_list: PropTypes.arrayOf(
+    PropTypes.string.isRequired
+  ).isRequired,
 }
 
 function ToolList(props) {
   return (
     <ul>
-      {props.list.map(item => (
-        <li key={item}>{item}</li>
+      {props.list.map((item, i) => (
+        <li key={i}>{item}</li>
       ))}
     </ul>
   );
 }
 
 ToolList.propTypes = {
-  list: PropTypes.arrayOf(PropTypes.string).isRequired
+  list: PropTypes.arrayOf(
+    PropTypes.string.isRequired
+  ).isRequired
 }

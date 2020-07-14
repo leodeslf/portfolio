@@ -1,38 +1,43 @@
-nav.stepper {
-  height: 100vh;
+.stepper {
+  color: $color--alt;
+  height: fit-content;
   position: sticky;
   top: 0;
-  width: max-content;
-  @media screen and (max-width: 649px) {
+  width: 180px;
+  .dark & {
+    color: $color--alt--dark;
+  }
+  @media screen and (max-width: $media--max-small) {
     & {
       display: none;
     }
   }
 }
-nav.stepper h4 {
-  padding: 0 16px;
+.stepper h4 {
+  padding: 0 1rem;
 }
-nav.stepper ul {
+.stepper ul {
   padding-left: 0 !important;
 }
 
-li.step {
+.step {
   list-style: none;
 }
-li.step a {
+.step a {
   display: flex;
   box-sizing: border-box;
-  color: inherit;
+  color: $color--alt;
   font-size: $font-size--small;
-  padding: 4px 0 4px 16px;
+  padding: 0.25rem 0 0.25rem 1rem;
   text-decoration: none;
+  .dark & {
+    color: $color--alt--dark;
+  }
 }
-li.step a.step--active {
-  border-left: 4px solid $color-d;
-  padding: 4px 0 4px 12px;
-}
-
-@media screen and (max-width: 1199px) {
-}
-@media screen and (max-width: 899px) {
+.step a.step--active {
+  border-left: 0.25rem solid $color--border;
+  padding: 0.25rem 0 0.25rem 0.75rem;
+  .dark & {
+    border-color: $color--border--dark;
+  }
 }

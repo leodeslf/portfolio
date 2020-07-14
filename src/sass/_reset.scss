@@ -6,22 +6,34 @@
   margin: 0;
   padding: 0;
 }
+
 body {
-  background-color: $bg-a;
-  color: $color-a;
+  background-color: $color--bg;
+  color: $color--main;
+  &.dark {
+    background-color: $color--bg--dark;
+    color: $color--main--dark;
+  }
 }
+
 aside {
   display: flex;
+  flex-direction: column;
 }
+
 h1,
 h2 {
   font-weight: 600;
   line-height: 1.25em;
   margin-bottom: 1rem;
-  margin-top: 4rem;
-  border-bottom: 1px solid $color-d;
+  margin-top: 2rem;
+  border-bottom: 1px solid $color--border;
   padding-bottom: 0.3em;
+  .dark & {
+    border-bottom: 1px solid $color--border--dark;
+  }
 }
+
 h3,
 h4,
 h5,
@@ -31,52 +43,82 @@ h6 {
   margin-bottom: 1rem;
   margin-top: 4rem;
 }
+
 h1 {
-  font-size: 32px; // 2em
+  font-size: 2rem; // 2em
 }
+
 h2 {
-  font-size: 24px; // 1.5em
+  font-size: 1.5rem; // 1.5em
 }
+
 h3 {
-  font-size: 20px; // 1.25em
+  font-size: 1.25rem; // 1.25em
 }
+
 h4 {
-  font-size: 16px; // 1em
+  font-size: 1rem; // 1em
 }
+
 h5 {
-  font-size: 14px; // 0.875em
+  font-size: 0.875rem; // 0.875em
 }
+
 h6 {
-  font-size: 12px; // 0.75em
+  font-size: 0.75rem; // 0.75em
 }
+
 em {
-  color: $color-b;
+  color: $color--alt;
   font-style: italic;
   font-size: inherit;
+  .dark & {
+    color: $color--alt--dark;
+  }
 }
+
 strong {
   font-weight: 600;
 }
+
 p {
-  max-width: 660px;
+  max-width: 640px;
   margin-bottom: 1rem;
 }
+
 button {
   background: transparent;
   border: none;
   outline: none;
   cursor: pointer;
 }
+
 ul {
   padding-left: 1.75rem;
   margin-bottom: 1rem;
 }
+
 a {
   text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
+  &:link,
+  &:visited,
+  &:active {
+    color: $color--link;
+    .dark & {
+      color: $color--link--dark;
+    }
+  }
 }
+
 table {
   border-spacing: 0;
+}
+
+img {
+  .dark & {
+    filter: brightness(0.8) contrast(1.1);
+  }
 }

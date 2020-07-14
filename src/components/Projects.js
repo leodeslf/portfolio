@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PROJECTS from '../projects.json';
+import PROJECTS from '../json/projects.json';
 
 export default function Projects() {
   return (
@@ -16,9 +16,9 @@ export default function Projects() {
 function ProjectItem(props) {
   return (
     <article className="projects__elem">
-      <h3>{props.title}</h3>
+      <h3><a href={props.web}>{props.title}</a></h3>
       <p>{`${props.about}.`}</p>
-      <input id={`chk-${props.id}`} type="checkbox" className="custom-chk__chk" />
+      <input id={`chk-${props.id}`} type="checkbox" className="custom-chk__chk" defaultChecked={false} />
       <div className="chk_date">
         <label htmlFor={`chk-${props.id}`} className="custom-chk__lbl"></label>
         <span className="date"><em>{props.date}</em></span>
@@ -44,16 +44,11 @@ function ProjectItem(props) {
             <ResourceList src={props.src} top_key={props.id} />
           </>
         }
-        {props.web &&
-          <p>
-            <strong>Links: </strong>
-            <a href={props.web}>Web</a>
-            {props.repo &&
-              <>
-                , <a href={props.repo}>Repositorio</a>
-              </>}.
+        <p>
+          <strong>Links: </strong>
+          <a href={props.web}>Web</a>
+          , <a href={props.repo}>Repositorio</a>.
           </p>
-        }
       </div>
     </article>
   );

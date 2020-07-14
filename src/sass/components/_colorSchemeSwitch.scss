@@ -1,0 +1,48 @@
+.color-scheme-switch {
+  bottom: 0px;
+  box-sizing: border-box;
+  margin-top: auto;
+  padding: 1rem;
+  position: sticky;
+  user-select: none;
+}
+
+.color-scheme-switch__input {
+  display: none;
+}
+
+.color-scheme-switch__label {
+  cursor: pointer;
+  background-color: $color--alt;
+  border: 2px solid $color--alt;
+  border-radius: 1rem;
+  box-shadow: $card-shadow;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  width: 1rem;
+  .dark & {
+    background-color: $color--alt--dark;
+    border-color: $color--alt--dark;
+  }
+}
+
+.color-scheme-switch__label::before {
+  content: "";
+  background-color: $color--bg;
+  height: 100%;
+  transition: transform 100ms ease-out;
+  transform: rotateZ(0deg);
+  transform-origin: center right;
+  width: 50%;
+  .dark & {
+    background-color: $color--bg--dark;
+  }
+}
+
+.color-scheme-switch__input:checked + label {
+}
+
+.color-scheme-switch__input:checked + label::before {
+  transform: rotateZ(180deg);
+}

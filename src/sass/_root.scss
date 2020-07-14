@@ -1,4 +1,5 @@
 #root {
-  animation: text-appear-keyframe 120ms 1 ease-out;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

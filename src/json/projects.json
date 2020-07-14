@@ -168,9 +168,7 @@
       "React",
       "SASS"
     ],
-    "new_stack": [
-      "Netlify"
-    ],
+    "new_stack": null,
     "src": null,
     "web": "https://tfp-v2.netlify.app/",
     "repo": "https://github.com/leodeslf/tfp-v2"

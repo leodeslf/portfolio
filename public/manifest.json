@@ -1,5 +1,5 @@
 {
-  "short_name": "Leonardo de S.L.F - Portfolio",
+  "short_name": "Leo de S.L.F - Portfolio",
   "name": "Leonardo de Souza Leal Figueira - Portfolio",
   "icons": [
     {
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#fafafa",
+  "background_color": "#151619"
 }

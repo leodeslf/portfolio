@@ -12,12 +12,25 @@
 }
 
 * {
-  font-family: Segoe UI, sans-serif, monospace, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-family: "Roboto", sans-serif, Apple Color Emoji, Segoe UI Emoji;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   margin: 0;
   padding: 0;
+}
+
+#root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body {
@@ -42,7 +55,7 @@ aside {
 
 h1,
 h2 {
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25em;
   margin-bottom: 1rem;
   margin-top: 2rem;
@@ -59,7 +72,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25em;
   margin-bottom: 1rem;
   margin-top: 4rem;
@@ -100,12 +113,13 @@ em {
 }
 
 strong {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 p {
   max-width: 640px;
   margin-bottom: 1rem;
+  line-height: 1.25em;
 }
 
 button {
@@ -143,19 +157,6 @@ table {
 .dark img {
   -webkit-filter: brightness(0.8) contrast(1.1);
           filter: brightness(0.8) contrast(1.1);
-}
-
-#root {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .Portfolio {
@@ -294,7 +295,7 @@ table {
 .custom-chk__lbl {
   color: #5e5e5e;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .dark .custom-chk__lbl {
@@ -316,7 +317,7 @@ table {
 }
 
 .projects__elem .date {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .stepper {
@@ -359,7 +360,7 @@ table {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #5e5e5e;
-  font-size: 12px;
+  font-size: 13px;
   padding: 0.25rem 0 0.25rem 1rem;
   text-decoration: none;
 }
@@ -461,23 +462,26 @@ table {
   content: "";
   background-color: #f7f7f7;
   height: 100%;
-  -webkit-transition: -webkit-transform 100ms ease-out;
-  transition: -webkit-transform 100ms ease-out;
-  transition: transform 100ms ease-out;
-  transition: transform 100ms ease-out, -webkit-transform 100ms ease-out;
-  -webkit-transform: rotateZ(0deg);
-          transform: rotateZ(0deg);
-  -webkit-transform-origin: center right;
-          transform-origin: center right;
+  -webkit-transition: margin-left 120ms;
+  transition: margin-left 120ms;
   width: 50%;
+  margin-left: 0%;
 }
 
 .dark .color-scheme-switch__label::before {
   background-color: #151619;
+  margin-left: 50%;
 }
 
-.color-scheme-switch__input:checked + label::before {
-  -webkit-transform: rotateZ(180deg);
-          transform: rotateZ(180deg);
+@-webkit-keyframes wooble {
+  50% {
+    height: 50%;
+  }
+}
+
+@keyframes wooble {
+  50% {
+    height: 50%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -17,12 +17,14 @@ $color--link--dark: hsl(216, 87%, 59%); // link
 $card-shadow--dark: 0 1px 3px $color--shadow--dark, 0 1px 2px $color--shadow--dark;
 
 $font-size--normal: 16px; // 1rem
-$font-size--small: 12px; // 0.75rem
+$font-size--small: 13px; // 0.8125rem
 $font-size--extra-small: 10px; // 0.625rem
 $card-radius: 4px;
-$media--max-big: 1199px; // 1200
-$media--max-medium: 959px; // 960
-$media--max-small: 679px; // 680
+$media--max-big: 1199px; // ~1200
+$media--max-medium: 959px; // ~960
+$media--max-small: 679px; // ~680
+$wght--normal: 400;
+$wght--black: 500;
 
 @media screen and (max-width: $media--max-big) {
   /* Leonardo de Souza Leal Figueira */

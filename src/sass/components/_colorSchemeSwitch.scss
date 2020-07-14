@@ -31,18 +31,21 @@
   content: "";
   background-color: $color--bg;
   height: 100%;
-  transition: transform 100ms ease-out;
-  transform: rotateZ(0deg);
-  transform-origin: center right;
+  //transition: transform 100ms ease-out;
+  //transform: rotateZ(0deg);
+  //transform-origin: center right;
+  transition: margin-left 120ms;
   width: 50%;
+  margin-left: 0%;
   .dark & {
     background-color: $color--bg--dark;
+    //transform: rotateZ(180deg);
+    margin-left: 50%;
   }
 }
 
-.color-scheme-switch__input:checked + label {
-}
-
-.color-scheme-switch__input:checked + label::before {
-  transform: rotateZ(180deg);
+@keyframes wooble {
+  50% {
+    height: 50%;
+  }
 }

@@ -6,7 +6,7 @@ export default function Contact() {
       <h2>Contacto</h2>
       <div className="contact__card">
         <div className="card__pic">
-          <img src="./x116.png" alt="id_pic" title="A human" />
+          <img src="./x116.png" alt="id_pic" title="A Human Been" />
         </div>
         <ul className="card__data">
           <li>Montevideo, UY</li>

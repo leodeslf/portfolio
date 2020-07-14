@@ -3,6 +3,7 @@
   font-size: $font-size--normal;
   font-style: normal;
   font-weight: $wght--normal;
+  line-height: 1.4em;
   margin: 0;
   padding: 0;
 }
@@ -30,7 +31,6 @@ aside {
 h1,
 h2 {
   font-weight: $wght--black;
-  line-height: 1.25em;
   margin-bottom: 1rem;
   margin-top: 2rem;
   border-bottom: 1px solid $color--border;
@@ -45,7 +45,6 @@ h4,
 h5,
 h6 {
   font-weight: $wght--black;
-  line-height: 1.25em;
   margin-bottom: 1rem;
   margin-top: 4rem;
 }
@@ -90,7 +89,6 @@ strong {
 p {
   max-width: 640px;
   margin-bottom: 1rem;
-  line-height: 1.25em;
 }
 
 button {

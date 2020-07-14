@@ -14,7 +14,8 @@
     "tool_list": [
       "Git",
       "Markdown",
-      "THREE"
+      "THREE",
+      "Netlify"
     ]
   }
 ]

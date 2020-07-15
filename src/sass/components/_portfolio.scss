@@ -17,6 +17,8 @@
   @media screen and (max-width: $media--max-small) {
     & {
       padding: 2rem 1rem;
+      border-right: none;
+      border-bottom: 1px solid $color--border;
     }
   }
 }

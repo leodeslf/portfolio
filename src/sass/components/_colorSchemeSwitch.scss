@@ -5,6 +5,11 @@
   padding: 1rem;
   position: sticky;
   user-select: none;
+  @media screen and (max-width: $media--max-small) {
+    & {
+      margin-left: auto;
+    }
+  }
 }
 
 .color-scheme-switch__input {
@@ -31,21 +36,11 @@
   content: "";
   background-color: $color--bg;
   height: 100%;
-  //transition: transform 100ms ease-out;
-  //transform: rotateZ(0deg);
-  //transform-origin: center right;
   transition: margin-left 120ms;
   width: 50%;
   margin-left: 0%;
   .dark & {
     background-color: $color--bg--dark;
-    //transform: rotateZ(180deg);
     margin-left: 50%;
-  }
-}
-
-@keyframes wooble {
-  50% {
-    height: 50%;
   }
 }

@@ -34,6 +34,15 @@
           justify-content: center;
 }
 
+@media screen and (max-width: 679px) {
+  #root {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 body {
   background-color: #f7f7f7;
   color: #0f0f0f;
@@ -182,6 +191,8 @@ table {
 @media screen and (max-width: 679px) {
   .Portfolio {
     padding: 2rem 1rem;
+    border-right: none;
+    border-bottom: 1px solid #e3e3e3;
   }
 }
 
@@ -433,6 +444,12 @@ table {
           user-select: none;
 }
 
+@media screen and (max-width: 679px) {
+  .color-scheme-switch {
+    margin-left: auto;
+  }
+}
+
 .color-scheme-switch__input {
   display: none;
 }
@@ -470,17 +487,5 @@ table {
 .dark .color-scheme-switch__label::before {
   background-color: #151619;
   margin-left: 50%;
-}
-
-@-webkit-keyframes wooble {
-  50% {
-    height: 50%;
-  }
-}
-
-@keyframes wooble {
-  50% {
-    height: 50%;
-  }
 }
 /*# sourceMappingURL=main.css.map */

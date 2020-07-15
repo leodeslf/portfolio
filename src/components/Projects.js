@@ -98,7 +98,7 @@ function NewStack(props) {
   return (
     <>
       {props.new_stack.map((item, i) => (
-        <li className="new-stack-item" title="Nuevo" key={`${props.top_key}_${i}`}>
+        <li className="new-stack-item" key={`${props.top_key}_${i}`}>
           {`${item}`}
         </li>
       ))}

@@ -12,7 +12,7 @@ export default function About() {
       <p className="about__elem">
         A mediados de 2018, casi por accidente, descubrí el rol de Frontend. Desde entonces he
         aprendido conceptos y herramientas que puedan <strong>favorecer tanto a compañeros de
-        equipo como al usuario final</strong> (y continuaré ahciéndolo).
+        equipo como al usuario final</strong> (y continuaré haciéndolo).
       </p>
     </section>
   );

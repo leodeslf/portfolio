@@ -9,7 +9,7 @@ $card-shadow: 0 1px 3px $color--shadow, 0 1px 2px $color--shadow;
 
 $color--bg--dark: hsl(225, 9%, 9%); // background
 $color--bg-up--dark: hsl(222, 12%, 12%); // background up
-$color--main--dark: hsl(0, 0%, 91%); // main color
+$color--main--dark: hsl(0, 0%, 88%); // main color
 $color--alt--dark: hsl(0, 0%, 62%); // secondary color
 $color--shadow--dark: hsla(0, 0%, 0%, 0.4); // shadow
 $color--border--dark: hsl(0, 0%, 6%); // border
@@ -24,7 +24,7 @@ $media--max-big: 1199px; // ~1200
 $media--max-medium: 959px; // ~960
 $media--max-small: 679px; // ~680
 $wght--normal: 400;
-$wght--black: 500;
+$wght--bold: 500;
 
 @media screen and (max-width: $media--max-big) {
   /* Leonardo de Souza Leal Figueira */

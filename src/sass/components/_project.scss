@@ -56,8 +56,9 @@
   content: "new";
   font-family: monospace;
   font-size: $font-size--extra-small;
+  line-height: 1em;
   position: absolute;
-  right: -1.18rem;
+  right: -1.15rem;
   top: 0px;
   .dark & {
     color: $color--alt--dark;

@@ -1,5 +1,5 @@
 * {
-  font-family: "Roboto", sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-family: "Rubik", sans-serif;
   font-size: $font-size--normal;
   font-style: normal;
   font-weight: $wght--normal;
@@ -30,7 +30,7 @@ aside {
 
 h1,
 h2 {
-  font-weight: $wght--black;
+  font-weight: $wght--bold;
   margin-bottom: 1rem;
   margin-top: 2rem;
   border-bottom: 1px solid $color--border;
@@ -44,7 +44,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: $wght--black;
+  font-weight: $wght--bold;
   margin-bottom: 1rem;
   margin-top: 4rem;
 }
@@ -83,7 +83,7 @@ em {
 }
 
 strong {
-  font-weight: $wght--black;
+  font-weight: $wght--bold;
 }
 
 p {

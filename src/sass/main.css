@@ -12,7 +12,7 @@
 }
 
 * {
-  font-family: "Roboto", sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-family: "Rubik", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -41,7 +41,7 @@ body {
 
 body.dark {
   background-color: #151619;
-  color: #e8e8e8;
+  color: #e0e0e0;
 }
 
 aside {
@@ -257,8 +257,9 @@ table {
   content: "new";
   font-family: monospace;
   font-size: 10px;
+  line-height: 1em;
   position: absolute;
-  right: -1.18rem;
+  right: -1.15rem;
   top: 0px;
 }
 
@@ -307,7 +308,7 @@ table {
 
 .dark .custom-chk__lbl:hover, .dark
 .custom-chk__lbl:active {
-  color: #e8e8e8;
+  color: #e0e0e0;
 }
 
 .custom-chk__lbl::before {

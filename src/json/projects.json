@@ -1,60 +1,55 @@
 [
   {
-    "id": 0,
-    "title": "TFP (Texturas Fractales y Procedurales)",
-    "date": "26/05/2019",
-    "about": "Visualizador de Ruido Perlin y Worley",
-    "argument": "Familiarizarme con JavaScript",
-    "old_stack": null,
-    "new_stack": [
+    "id": 4,
+    "title": "TFP v2",
+    "date": "04/07/2020",
+    "about": "Segunda versión del proyecto TFP",
+    "argument": "Migrar de GitHub Pages a Netlify. Optimizar performance, control de datos, experiencia e interfaz de usuario",
+    "old_stack": [
       "HTML",
-      "CSS",
-      "JavaScript"
+      "JavaScript",
+      "React",
+      "SASS"
     ],
-    "src": [
-      {
-        "name": "Improved Noise ref. imp.",
-        "link": "https://mrl.nyu.edu/~perlin/noise/",
-        "linkName": "Ken Perlin - Noise"
-      },
-      {
-        "name": "Improving Noise",
-        "link": "https://mrl.nyu.edu/~perlin/paper445.pdf",
-        "linkName": "Ken Perlin - Paper"
-      },
-      {
-        "name": "Noise and Turbulence",
-        "link": "https://mrl.nyu.edu/~perlin/doc/oscar.html",
-        "linkName": "Ken Perlin - Oscar"
-      },
-      {
-        "name": "The Perlin noise math FAQ",
-        "link": " https://mzucker.github.io/html/perlin-noise-math-faq.html",
-        "linkName": "Matt Zucker"
-      },
-      {
-        "name": "Understanding Perlin Noise",
-        "link": "http://flafla2.github.io/2014/08/09/perlinnoise.html",
-        "linkName": "Adrian Biagioli"
-      },
-      {
-        "name": "Perlin Noise",
-        "link": "https://web.archive.org/web/20080724063449/http://freespace.virgin.net/hugo.elias/models/m_perlin.htm",
-        "linkName": "Hugo Elias"
-      },
-      {
-        "name": "Flow Noise",
-        "link": "http://evasion.imag.fr/Publications/2001/PN01/",
-        "linkName": "Ken Perlin & Fabrice Neyret"
-      },
-      {
-        "name": "Domain Warping",
-        "link": "http://www.iquilezles.org/www/articles/warp/warp.htm",
-        "linkName": "Inigo Quilez"
-      }
+    "new_stack": null,
+    "src": null,
+    "web": "https://tfp-v2.netlify.app/",
+    "repo": "https://github.com/leodeslf/tfp-v2"
+  },
+  {
+    "id": 3,
+    "title": "Le cuenta un pajarito",
+    "date": "04/09/2019",
+    "about": "El pajarito más (in)útil de la web",
+    "argument": "Conocer informaciones expuestas a la web",
+    "old_stack": [
+      "HTML",
+      "JavaScript",
+      "React",
+      "SASS"
     ],
-    "web": "https://leodeslf.github.io/tfp/",
-    "repo": "https://github.com/leodeslf/tfp"
+    "new_stack": null,
+    "src": null,
+    "web": "https://leodeslf.github.io/le-cuenta-un-pajarito/",
+    "repo": "https://github.com/leodeslf/le-cuenta-un-pajarito"
+  },
+  {
+    "id": 2,
+    "title": "Postage Stamps",
+    "date": "08/08/2019",
+    "about": "Estampas postales '3D'",
+    "argument": "Comparar PixiJS vs THREE",
+    "old_stack": [
+      "HTML",
+      "React",
+      "SASS"
+    ],
+    "new_stack": [
+      "PixieJS"
+    ],
+    "src": null,
+    "web": "https://leodeslf.github.io/postage-stamps/",
+    "repo": "https://github.com/leodeslf/postage-stamps"
   },
   {
     "id": 1,
@@ -122,55 +117,60 @@
     "repo": "https://github.com/leodeslf/this.weather"
   },
   {
-    "id": 2,
-    "title": "Postage Stamps",
-    "date": "08/08/2019",
-    "about": "Estampas postales '3D'",
-    "argument": "Comparar PixiJS vs THREE",
-    "old_stack": [
-      "HTML",
-      "React",
-      "SASS"
-    ],
+    "id": 0,
+    "title": "TFP (Texturas Fractales y Procedurales)",
+    "date": "26/05/2019",
+    "about": "Visualizador de Ruido Perlin y Worley",
+    "argument": "Familiarizarme con JavaScript",
+    "old_stack": null,
     "new_stack": [
-      "PixieJS"
-    ],
-    "src": null,
-    "web": "https://leodeslf.github.io/postage-stamps/",
-    "repo": "https://github.com/leodeslf/postage-stamps"
-  },
-  {
-    "id": 3,
-    "title": "Le cuenta un pajarito",
-    "date": "04/09/2019",
-    "about": "El pajarito más (in)útil de la web",
-    "argument": "Conocer informaciones expuestas a la web",
-    "old_stack": [
       "HTML",
-      "JavaScript",
-      "React",
-      "SASS"
+      "CSS",
+      "JavaScript"
     ],
-    "new_stack": null,
-    "src": null,
-    "web": "https://leodeslf.github.io/le-cuenta-un-pajarito/",
-    "repo": "https://github.com/leodeslf/le-cuenta-un-pajarito"
-  },
-  {
-    "id": 4,
-    "title": "TFP v2",
-    "date": "04/07/2020",
-    "about": "Segunda versión del proyecto TFP",
-    "argument": "Migrar de GitHub Pages a Netlify. Optimizar performance, control de datos, experiencia e interfaz de usuario",
-    "old_stack": [
-      "HTML",
-      "JavaScript",
-      "React",
-      "SASS"
+    "src": [
+      {
+        "name": "Improved Noise ref. imp.",
+        "link": "https://mrl.nyu.edu/~perlin/noise/",
+        "linkName": "Ken Perlin - Noise"
+      },
+      {
+        "name": "Improving Noise",
+        "link": "https://mrl.nyu.edu/~perlin/paper445.pdf",
+        "linkName": "Ken Perlin - Paper"
+      },
+      {
+        "name": "Noise and Turbulence",
+        "link": "https://mrl.nyu.edu/~perlin/doc/oscar.html",
+        "linkName": "Ken Perlin - Oscar"
+      },
+      {
+        "name": "The Perlin noise math FAQ",
+        "link": " https://mzucker.github.io/html/perlin-noise-math-faq.html",
+        "linkName": "Matt Zucker"
+      },
+      {
+        "name": "Understanding Perlin Noise",
+        "link": "http://flafla2.github.io/2014/08/09/perlinnoise.html",
+        "linkName": "Adrian Biagioli"
+      },
+      {
+        "name": "Perlin Noise",
+        "link": "https://web.archive.org/web/20080724063449/http://freespace.virgin.net/hugo.elias/models/m_perlin.htm",
+        "linkName": "Hugo Elias"
+      },
+      {
+        "name": "Flow Noise",
+        "link": "http://evasion.imag.fr/Publications/2001/PN01/",
+        "linkName": "Ken Perlin & Fabrice Neyret"
+      },
+      {
+        "name": "Domain Warping",
+        "link": "http://www.iquilezles.org/www/articles/warp/warp.htm",
+        "linkName": "Inigo Quilez"
+      }
     ],
-    "new_stack": null,
-    "src": null,
-    "web": "https://tfp-v2.netlify.app/",
-    "repo": "https://github.com/leodeslf/tfp-v2"
+    "web": "https://leodeslf.github.io/tfp/",
+    "repo": "https://github.com/leodeslf/tfp"
   }
 ]

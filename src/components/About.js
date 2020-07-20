@@ -5,9 +5,9 @@ export default function About() {
     <section id="about" className="about Portfolio__elem">
       {/* <h2>Sobre mí</h2> */}
       <p className="about__elem">
-        Como autodidacta espero ser Desarrollador Frontend en 2020.
-        Mientras tanto descubro, paso a paso, la manera en que <strong>creamos información y
-        experiencias</strong> mediante la web.
+        Como autodidacta espero convertirme en Desarrollador Frontend en 2020.
+        Mientras tanto: descubro, paso a paso, la manera en que <strong>creamos
+        información y experiencias</strong> mediante la web.
       </p>
       <p className="about__elem">
         A mediados de 2018, casi por accidente, descubrí el rol de Frontend. Desde entonces he

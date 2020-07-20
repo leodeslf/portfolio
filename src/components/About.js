@@ -3,7 +3,6 @@ import React from 'react';
 export default function About() {
   return (
     <section id="about" className="about Portfolio__elem">
-      {/* <h2>Sobre mí</h2> */}
       <p className="about__elem">
         Como autodidacta espero convertirme en Desarrollador Frontend en 2020.
         Mientras tanto: descubro, paso a paso, la manera en que <strong>creamos

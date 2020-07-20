@@ -48,7 +48,6 @@ export default class Nav extends Component {
       <nav className="stepper Portfolio__elem">
         <h4>Tabla de Contenido</h4>
         <ul>
-          {/* <li className="step"><a href="#about">Sobre mí</a></li> */}
           <li className="step"><a href="#tools">Herramientas</a></li>
           <li className="step"><a href="#projects">Proyectos</a></li>
           <li className="step"><a href="#cv">Currículum Vitae</a></li>

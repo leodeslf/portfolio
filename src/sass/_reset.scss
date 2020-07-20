@@ -1,9 +1,9 @@
 * {
-  font-family: "Rubik", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen, Ubuntu, sans-serif, sans-serif;
   font-size: $font-size--normal;
   font-style: normal;
   font-weight: $wght--normal;
-  line-height: 1.4em;
+  line-height: 1.5em;
   margin: 0;
   padding: 0;
 }
@@ -18,11 +18,11 @@
 }
 
 body {
-  background-color: $color--bg;
-  color: $color--main;
+  background-color: $bg;
+  color: $color;
   &.dark {
-    background-color: $color--bg--dark;
-    color: $color--main--dark;
+    background-color: $bg--dark;
+    color: $color--dark;
   }
 }
 
@@ -36,10 +36,10 @@ h2 {
   font-weight: $wght--bold;
   margin-bottom: 1rem;
   margin-top: 2rem;
-  border-bottom: 1px solid $color--border;
+  border-bottom: 1px solid $border-color;
   padding-bottom: 0.3em;
   .dark & {
-    border-bottom: 1px solid $color--border--dark;
+    border-bottom: 1px solid $border-color--dark;
   }
 }
 
@@ -77,11 +77,11 @@ h6 {
 }
 
 em {
-  color: $color--alt;
+  color: $color--ascent;
   font-style: italic;
   font-size: inherit;
   .dark & {
-    color: $color--alt--dark;
+    color: $color--ascent--dark;
   }
 }
 
@@ -90,15 +90,8 @@ strong {
 }
 
 p {
-  max-width: 640px;
+  max-width: 60ch;
   margin-bottom: 1rem;
-}
-
-button {
-  background: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
 }
 
 ul {
@@ -114,9 +107,9 @@ a {
   &:link,
   &:visited,
   &:active {
-    color: $color--link;
+    color: $anchor-color;
     .dark & {
-      color: $color--link--dark;
+      color: $anchor-color--dark;
     }
   }
 }

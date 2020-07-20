@@ -1,4 +1,4 @@
-.color-scheme-switch {
+.dark-mode {
   bottom: 0px;
   box-sizing: border-box;
   margin-top: auto;
@@ -12,14 +12,14 @@
   }
 }
 
-.color-scheme-switch__input {
+.dark-mode__input {
   display: none;
 }
 
-.color-scheme-switch__label {
+.dark-mode__label {
   cursor: pointer;
-  background-color: $color--alt;
-  border: 2px solid $color--alt;
+  background-color: $color--ascent;
+  border: 2px solid $color--ascent;
   border-radius: 1rem;
   box-shadow: $card-shadow;
   display: flex;
@@ -27,20 +27,20 @@
   overflow: hidden;
   width: 1rem;
   .dark & {
-    background-color: $color--alt--dark;
-    border-color: $color--alt--dark;
+    background-color: $color--ascent--dark;
+    border-color: $color--ascent--dark;
   }
 }
 
-.color-scheme-switch__label::before {
+.dark-mode__label::before {
   content: "";
-  background-color: $color--bg;
+  background-color: $bg;
   height: 100%;
   transition: margin-left 120ms;
   width: 50%;
   margin-left: 0%;
   .dark & {
-    background-color: $color--bg--dark;
+    background-color: $bg--dark;
     margin-left: 50%;
   }
 }

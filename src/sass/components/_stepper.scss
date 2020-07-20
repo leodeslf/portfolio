@@ -1,11 +1,11 @@
 .stepper {
-  color: $color--alt;
+  color: $color--ascent;
   height: fit-content;
   position: sticky;
   top: 0;
   width: 180px;
   .dark & {
-    color: $color--alt--dark;
+    color: $color--ascent--dark;
   }
   @media screen and (max-width: $media--max-small) {
     & {
@@ -26,18 +26,18 @@
 .step a {
   display: flex;
   box-sizing: border-box;
-  color: $color--alt;
+  color: $color--ascent;
   font-size: $font-size--small;
   padding: 0.25rem 0 0.25rem 1rem;
   text-decoration: none;
   .dark & {
-    color: $color--alt--dark;
+    color: $color--ascent--dark;
   }
 }
 .step a.step--active {
-  border-left: 0.25rem solid $color--border;
+  border-left: 0.25rem solid $border-color;
   padding: 0.25rem 0 0.25rem 0.75rem;
   .dark & {
-    border-color: $color--border--dark;
+    border-color: $border-color--dark;
   }
 }

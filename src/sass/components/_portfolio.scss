@@ -1,5 +1,5 @@
 .Portfolio {
-  border-right: 1px solid $color--border;
+  border-right: 1px solid $border-color;
   box-sizing: border-box;
   max-width: 960px;
   padding: 4rem 4rem 4rem 180px;
@@ -7,7 +7,7 @@
     margin-top: 0 !important;
   }
   .dark & {
-    border-color: $color--border--dark;
+    border-color: $border-color--dark;
   }
   @media screen and (max-width: $media--max-medium) {
     & {
@@ -18,7 +18,7 @@
     & {
       padding: 2rem 1rem;
       border-right: none;
-      border-bottom: 1px solid $color--border;
+      border-bottom: 1px solid $border-color;
     }
   }
 }

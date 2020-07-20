@@ -1,28 +1,33 @@
-$color--bg: hsl(0, 0%, 97%); // background
-$color--bg-up: hsl(0, 0%, 100%); // background up
-$color--main: hsl(0, 0%, 6%); // main color
-$color--alt: hsl(0, 0%, 37%); // secondary color
-$color--shadow: hsla(0, 0%, 0%, 0.12); // shadow
-$color--border: hsl(0, 0%, 89%); // border
-$color--link: hsl(216, 87%, 42%); // link
-$card-shadow: 0 1px 3px $color--shadow, 0 1px 2px $color--shadow;
+// Light mode
+$bg: hsl(0, 0%, 97%);
+$bg--ascent: hsl(0, 0%, 100%);
+$color: hsl(0, 0%, 6%);
+$color--ascent: hsl(0, 0%, 37%);
+$shadow-color: hsla(0, 0%, 0%, 0.12);
+$border-color: hsl(0, 0%, 89%);
+$anchor-color: hsl(216, 87%, 42%);
+$card-shadow: 0 1px 3px $shadow-color, 0 1px 2px $shadow-color;
 
-$color--bg--dark: hsl(225, 9%, 9%); // background
-$color--bg-up--dark: hsl(222, 12%, 12%); // background up
-$color--main--dark: hsl(0, 0%, 88%); // main color
-$color--alt--dark: hsl(0, 0%, 62%); // secondary color
-$color--shadow--dark: hsla(0, 0%, 0%, 0.4); // shadow
-$color--border--dark: hsl(0, 0%, 6%); // border
-$color--link--dark: hsl(216, 87%, 59%); // link
-$card-shadow--dark: 0 1px 3px $color--shadow--dark, 0 1px 2px $color--shadow--dark;
+// Dark mode
+$bg--dark: hsl(225, 9%, 9%);
+$bg--ascent--dark: hsl(222, 12%, 12%);
+$color--dark: hsl(0, 0%, 88%);
+$color--ascent--dark: hsl(0, 0%, 62%);
+$shadow-color--dark: hsla(0, 0%, 0%, 0.4);
+$border-color--dark: hsl(0, 0%, 6%);
+$anchor-color--dark: hsl(216, 87%, 59%);
+$card-shadow--dark: 0 1px 3px $shadow-color--dark, 0 1px 2px $shadow-color--dark;
 
-$font-size--normal: 16px; // 1rem
-$font-size--small: 13px; // 0.8125rem
-$font-size--extra-small: 10px; // 0.625rem
+// 1rem
+$font-size--normal: 16px;
+// 0.8125rem
+$font-size--small: 13px;
+// 0.625rem
+$font-size--extra-small: 10px;
 $card-radius: 4px;
-$media--max-big: 1199px; // ~1200
-$media--max-medium: 959px; // ~960
-$media--max-small: 679px; // ~680
+$media--max-big: 1199px;
+$media--max-medium: 959px;
+$media--max-small: 679px;
 $wght--normal: 400;
 $wght--bold: 500;
 

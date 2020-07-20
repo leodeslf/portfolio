@@ -1,13 +1,13 @@
 .contact__card {
-  background-color: $color--bg-up;
+  background-color: $bg--ascent;
   //box-shadow: $card-shadow;
-  border: 1px solid $color--border;
+  border: 1px solid $border-color;
   border-radius: $card-radius;
   display: flex;
   max-width: fit-content;
   .dark & {
-    background-color: $color--bg-up--dark;
-    border-color: $color--border--dark;
+    background-color: $bg--ascent--dark;
+    border-color: $border-color--dark;
   }
 }
 

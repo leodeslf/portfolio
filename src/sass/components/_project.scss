@@ -1,5 +1,5 @@
 .projects__elem {
-  background-color: $color--bg-up;
+  background-color: $bg--ascent;
   box-shadow: $card-shadow;
   border-radius: $card-radius;
   padding: 1rem;
@@ -8,7 +8,7 @@
     margin-top: 0 !important;
   }
   .dark & {
-    background-color: $color--bg-up--dark;
+    background-color: $bg--ascent--dark;
     box-shadow: $card-shadow--dark;
   }
 }
@@ -30,7 +30,7 @@
 }
 
 .description {
-  border-top: 1px solid $color--border;
+  border-top: 1px solid $border-color;
   display: none;
   margin-top: 1rem;
   padding-top: 1rem;
@@ -38,7 +38,7 @@
     margin-bottom: 0 !important;
   }
   .dark & {
-    border-color: $color--border--dark;
+    border-color: $border-color--dark;
   }
 }
 
@@ -52,7 +52,7 @@
 }
 
 .new-stack-item::before {
-  color: $color--alt;
+  color: $color--ascent;
   content: "new";
   font-family: monospace;
   font-size: $font-size--extra-small;
@@ -61,7 +61,7 @@
   right: -1.15rem;
   top: 0px;
   .dark & {
-    color: $color--alt--dark;
+    color: $color--ascent--dark;
   }
 }
 
@@ -84,19 +84,19 @@
 }
 
 .custom-chk__lbl {
-  color: $color--alt;
+  color: $color--ascent;
   cursor: pointer;
   font-size: $font-size--small;
   .dark & {
-    color: $color--alt--dark;
+    color: $color--ascent--dark;
   }
 }
 
 .custom-chk__lbl:hover,
 .custom-chk__lbl:active {
-  color: $color--main;
+  color: $color;
   .dark & {
-    color: $color--main--dark;
+    color: $color--dark;
   }
 }
 

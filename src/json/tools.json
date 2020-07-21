@@ -13,8 +13,9 @@
     "title": "Otras",
     "tool_list": [
       "Git",
+      "GitHub",
       "Markdown",
-      "THREE",
+      "Three.js",
       "Netlify"
     ]
   }

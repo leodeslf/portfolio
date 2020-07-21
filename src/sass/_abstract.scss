@@ -6,17 +6,15 @@ $color--ascent: hsl(0, 0%, 45%);
 $shadow-color: hsla(0, 0%, 0%, 0.12);
 $border-color: hsl(0, 0%, 89%);
 $anchor-color: hsl(216, 87%, 42%);
-$card-shadow: 0 1px 3px $shadow-color, 0 1px 2px $shadow-color;
 
 // Dark mode
 $bg--dark: hsl(225, 9%, 9%);
-$bg--ascent--dark: hsl(222, 12%, 12%);
-$color--dark: hsl(0, 0%, 88%);
+$bg--ascent--dark: hsl(222, 12%, 13%);
+$color--dark: hsl(0, 0%, 93%);
 $color--ascent--dark: hsl(0, 0%, 62%);
 $shadow-color--dark: hsla(0, 0%, 0%, 0.4);
 $border-color--dark: hsl(0, 0%, 6%);
 $anchor-color--dark: hsl(216, 87%, 59%);
-$card-shadow--dark: 0 1px 3px $shadow-color--dark, 0 1px 2px $shadow-color--dark;
 
 // 1rem
 $font-size--normal: 16px;
@@ -24,12 +22,117 @@ $font-size--normal: 16px;
 $font-size--small: 13px;
 // 0.625rem
 $font-size--extra-small: 10px;
-$card-radius: 4px;
+$border-radius: 4px;
 $media--max-big: 1199px;
 $media--max-medium: 959px;
 $media--max-small: 679px;
 $wght--normal: 400;
 $wght--bold: 500;
+
+@mixin color($ascent: false, $self: false) {
+  @if not $ascent {
+    color: $color;
+    @if not $self {
+      .dark & {
+        color: $color--dark;
+      }
+    } @else {
+      &.dark {
+        color: $color--dark;
+      }
+    }
+  } @else {
+    color: $color--ascent;
+    @if not $self {
+      .dark & {
+        color: $color--ascent--dark;
+      }
+    } @else {
+      &.dark {
+        color: $color--ascent--dark;
+      }
+    }
+  }
+}
+
+@mixin bg($ascent: false, $self: false) {
+  @if not $ascent {
+    background-color: $bg;
+    @if not $self {
+      .dark & {
+        background-color: $bg--dark;
+      }
+    } @else {
+      &.dark {
+        background-color: $bg--dark;
+      }
+    }
+  } @else {
+    background-color: $bg--ascent;
+    @if not $self {
+      .dark & {
+        background-color: $bg--ascent--dark;
+      }
+    } @else {
+      &.dark {
+        background-color: $bg--ascent--dark;
+      }
+    }
+  }
+}
+
+@mixin anchor-color {
+  color: $anchor-color;
+  text-decoration-color: $anchor-color;
+  .dark & {
+    color: $anchor-color--dark;
+    text-decoration-color: $anchor-color--dark;
+  }
+}
+
+@mixin border($prop, $line-width) {
+  #{$prop}: $line-width solid $border-color;
+  .dark & {
+    #{$prop}: $line-width solid $border-color--dark;
+  }
+}
+
+@mixin box-shadow($ascent: false) {
+  $a: 0 1px 4px;
+  $b: 0 1px 2px;
+  @if $ascent == false {
+    box-shadow: $a $shadow-color, $b $shadow-color;
+  } @else {
+    box-shadow: $a $shadow-color--dark, $b $shadow-color--dark;
+  }
+}
+
+@mixin base-container {
+  @include color;
+  @include bg;
+}
+
+@mixin ascent-container {
+  @include color;
+  @include bg(true);
+}
+
+@mixin base-card {
+  @include ascent-container;
+  border-radius: $border-radius;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+@mixin plain-card {
+  @include base-card;
+  @include border(border, 1px);
+}
+
+@mixin relief-card {
+  @include base-card;
+  @include box-shadow;
+}
 
 @media screen and (max-width: $media--max-big) {
   /* Leonardo de Souza Leal Figueira */

@@ -1,9 +1,6 @@
 .stepper {
-  color: $color--ascent;
+  @include color(ascent);
   min-width: 180px;
-  .dark & {
-    color: $color--ascent--dark;
-  }
   @media screen and (max-width: $media--max-small) {
     & {
       display: none;
@@ -24,32 +21,22 @@
 }
 
 .step a {
+  @include color(ascent);
   display: flex;
   box-sizing: border-box;
-  color: $color--ascent;
   font-size: $font-size--small;
   text-decoration: none;
   line-height: 2em;
   padding: 0 1rem;
-  .dark & {
-    color: $color--ascent--dark;
-  }
 }
 
 .step a:hover,
 .step a:active {
-  color: $color;
-  .dark & {
-    color: $color--dark;
-  }
+  @include color;
 }
 
 .step a.step--active {
-  color: $color;
-  border-left: 0.25rem solid $border-color;
+  @include color;
+  @include border(border-left, 0.25rem);
   padding-left: 0.75rem;
-  .dark & {
-    color: $color--dark;
-    border-color: $border-color--dark;
-  }
 }

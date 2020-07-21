@@ -6,7 +6,6 @@
   line-height: 1.5em;
   margin: 0;
   padding: 0;
-  text-rendering: optimizeLegibility;
 }
 
 #root {
@@ -19,12 +18,8 @@
 }
 
 body {
-  background-color: $bg;
-  color: $color;
-  &.dark {
-    background-color: $bg--dark;
-    color: $color--dark;
-  }
+  @include color($self: true);
+  @include bg($self: true);
 }
 
 aside {
@@ -44,14 +39,11 @@ aside {
 
 h1,
 h2 {
+  @include border(border-bottom, 1px);
   font-weight: $wght--bold;
   margin-bottom: 1rem;
   margin-top: 2rem;
-  border-bottom: 1px solid $border-color;
   padding-bottom: 0.3em;
-  .dark & {
-    border-bottom: 1px solid $border-color--dark;
-  }
 }
 
 h3,
@@ -111,17 +103,10 @@ ul {
 }
 
 a {
+  @include anchor-color;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
-  }
-  &:link,
-  &:visited,
-  &:active {
-    color: $anchor-color;
-    .dark & {
-      color: $anchor-color--dark;
-    }
   }
 }
 
@@ -131,6 +116,6 @@ table {
 
 img {
   .dark & {
-    filter: brightness(0.8) contrast(1.1);
+    filter: brightness(0.85);
   }
 }

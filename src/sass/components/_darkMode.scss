@@ -15,11 +15,11 @@
 }
 
 .dark-mode__label {
+  @include box-shadow;
   cursor: pointer;
   background-color: $color--ascent;
   border: 2px solid $color--ascent;
   border-radius: 1rem;
-  box-shadow: $card-shadow;
   display: flex;
   height: 1rem;
   overflow: hidden;
@@ -31,14 +31,13 @@
 }
 
 .dark-mode__label::before {
+  @include bg;
   content: "";
-  background-color: $bg;
   height: 100%;
   transition: margin-left 120ms;
   width: 50%;
   margin-left: 0%;
   .dark & {
-    background-color: $bg--dark;
     margin-left: 50%;
   }
 }

@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 const OFFSET = 100;
 
-export default class Nav extends Component {
+export default class Stepper extends Component {
   constructor() {
     super();
     this.titles = undefined;

@@ -6,14 +6,12 @@ export default function Tools() {
   return (
     <section id="tools" className="tools Portfolio__elem">
       <h2>Herramientas</h2>
-      <div className="tools__elem">
-        {TOOLS.map((item, i) => (
-          <ToolGroup
-            key={i}
-            title={item.title}
-            tool_list={item.tool_list} />
-        ))}
-      </div>
+      {TOOLS.map((item, i) => (
+        <ToolGroup
+          key={i}
+          title={item.title}
+          tool_list={item.tool_list} />
+      ))}
     </section>
   );
 }
@@ -21,10 +19,10 @@ export default function Tools() {
 
 function ToolGroup(props) {
   return (
-    <div>
+    <>
       <strong>{props.title}</strong>
       <ToolList list={props.tool_list} />
-    </div>
+    </>
   );
 }
 

@@ -6,6 +6,7 @@
   line-height: 1.5em;
   margin: 0;
   padding: 0;
+  text-rendering: optimizeLegibility;
 }
 
 #root {
@@ -27,8 +28,18 @@ body {
 }
 
 aside {
-  display: flex;
-  flex-direction: column;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto;
+  align-content: space-between;
+  position: sticky;
+  top: 0;
+  @media screen and (max-width: $media--max-small) {
+    & {
+      height: min-content;
+      position: inherit;
+    }
+  }
 }
 
 h1,
@@ -90,7 +101,7 @@ strong {
 }
 
 p {
-  max-width: 60ch;
+  max-width: 65ch;
   margin-bottom: 1rem;
 }
 

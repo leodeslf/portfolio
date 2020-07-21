@@ -1,12 +1,10 @@
 .dark-mode {
-  bottom: 0px;
   box-sizing: border-box;
-  margin-top: auto;
-  padding: 1rem;
-  position: sticky;
+  margin: 1rem;
   user-select: none;
   @media screen and (max-width: $media--max-small) {
     & {
+      position: inherit;
       margin-left: auto;
     }
   }

@@ -117,9 +117,9 @@ function ResourceList(props) {
   return (
     <ul className="src-list">
       {props.src.map((item, i) => (
-        <li key={`${props.top_key}_${i}`}>{item.name} - <a href={item.link}>
-          {item.linkName}
-        </a></li>
+        <li key={`${props.top_key}_${i}`}>
+          {item.name} - <a href={item.link}>{item.linkName}</a>
+        </li>
       ))}
     </ul>
   );

@@ -5,7 +5,7 @@ import Tools from './components/Tools.js';
 import Projects from './components/Projects.js';
 import Cv from './components/Cv.js';
 import Contact from './components/Contact.js';
-import Nav from './components/Nav.js';
+import Stepper from './components/Stepper.js';
 import DarkMode from './components/DarkMode.js';
 
 export default function Portfolio() {
@@ -20,7 +20,7 @@ export default function Portfolio() {
         <Contact />
       </main>
       <aside>
-        <Nav />
+        <Stepper />
         <DarkMode />
       </aside>
     </>

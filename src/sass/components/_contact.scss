@@ -8,10 +8,10 @@
 }
 
 .card__pic {
-  display: grid;
+  display: flex;
 }
 
-.card__pic > img {
+.card__pic img {
   border-radius: $border-radius;
 }
 

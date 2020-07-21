@@ -170,7 +170,7 @@ table {
   border-spacing: 0;
 }
 
-.dark img {
+.dark picture {
   -webkit-filter: brightness(0.85);
           filter: brightness(0.85);
 }
@@ -481,11 +481,12 @@ table {
 }
 
 .card__pic {
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.card__pic > img {
+.card__pic img {
   border-radius: 4px;
 }
 

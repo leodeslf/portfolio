@@ -5,9 +5,10 @@ export default function Contact() {
     <section id="contact" className="contact Portfolio__elem">
       <h2>Contacto</h2>
       <div className="contact__card">
-        <div className="card__pic">
+        <picture className="card__pic">
+          <source type="image/webp" srcSet="./x120.webp" />
           <img src="./x120.png" alt="id_pic" title="A Human Been" />
-        </div>
+        </picture>
         <ul className="card__data">
           <li>Montevideo, UY</li>
           <li>+598 99 705 972</li>

@@ -17,10 +17,6 @@ export default class Stepper extends Component {
     this.updateActiveStep = this.updateActiveStep.bind(this);
   }
 
-  componentDidUpdate() {
-    this.updateActiveStep();
-  }
-
   componentDidMount() {
     this.anchorElems = document.querySelectorAll('.step a');
     this.updateActiveStep();
@@ -31,10 +27,9 @@ export default class Stepper extends Component {
     // Set active one by clicking
     this.anchorElems.forEach(item => {
       item.addEventListener('click', () => {
-        item.classList.add('step--active');
-        for (let i = 0; i < this.titles.length; i++) {
-          this.anchorElems[i].classList.remove('step--active');
-        }
+
+        // Check by scroll values
+        this.updateActiveStep();
       });
     });
   }
@@ -78,7 +73,7 @@ export default class Stepper extends Component {
   render() {
     return (
       <nav className="stepper Portfolio__elem">
-        <h4>Contenido</h4>
+        <strong className="stepper__caption">Contenido</strong>
         <ul>
           {anchors.map((item, i) => (
             <Step to={item[0]} content={item[1]} key={i} />

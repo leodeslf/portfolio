@@ -1,6 +1,5 @@
 * {
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen, Ubuntu, sans-serif, sans-serif;
-  font-size: $font-size--normal;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Ubuntu, sans-serif;
   font-style: normal;
   font-weight: $wght--normal;
   line-height: 1.5em;
@@ -9,17 +8,15 @@
 }
 
 #root {
+  @include font-size;
+  @include color;
+  @include bg;
   display: flex;
   flex-direction: row;
   justify-content: center;
   @media screen and (max-width: $media--max-small) {
     flex-direction: column;
   }
-}
-
-body {
-  @include color($self: true);
-  @include bg($self: true);
 }
 
 aside {
@@ -31,7 +28,7 @@ aside {
   top: 0;
   @media screen and (max-width: $media--max-small) {
     & {
-      height: min-content;
+      height: fit-content;
       position: inherit;
     }
   }
@@ -43,7 +40,7 @@ h2 {
   font-weight: $wght--bold;
   margin-bottom: 1rem;
   margin-top: 2rem;
-  padding-bottom: 0.3em;
+  padding-bottom: 0.25em;
 }
 
 h3,
@@ -52,31 +49,31 @@ h5,
 h6 {
   font-weight: $wght--bold;
   margin-bottom: 1rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 h1 {
-  font-size: 2rem; // 2em
+  font-size: 2em; // 2em
 }
 
 h2 {
-  font-size: 1.5rem; // 1.5em
+  font-size: 1.5em; // 1.5em
 }
 
 h3 {
-  font-size: 1.25rem; // 1.25em
+  font-size: 1.25em; // 1.25em
 }
 
 h4 {
-  font-size: 1rem; // 1em
+  font-size: 1em; // 1em
 }
 
 h5 {
-  font-size: 0.875rem; // 0.875em
+  font-size: 0.875em; // 0.875em
 }
 
 h6 {
-  font-size: 0.75rem; // 0.75em
+  font-size: 0.75em; // 0.75em
 }
 
 em {
@@ -93,7 +90,7 @@ strong {
 }
 
 p {
-  max-width: 65ch;
+  max-width: 60ch;
   margin-bottom: 1rem;
 }
 
@@ -115,7 +112,8 @@ table {
 }
 
 picture {
+  filter: opacity(0.93) contrast(1.04);
   .dark & {
-    filter: brightness(0.85);
+    filter: opacity(0.84) contrast(1.1);
   }
 }

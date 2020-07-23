@@ -1,27 +1,28 @@
 // Light mode
 $bg: hsl(0, 0%, 98%);
 $bg--ascent: hsl(0, 0%, 100%);
-$color: hsl(0, 0%, 6%);
+$color: hsla(0, 0%, 0%, 0.86);
 $color--ascent: hsl(0, 0%, 45%);
-$shadow-color: hsla(0, 0%, 0%, 0.12);
-$border-color: hsl(0, 0%, 89%);
-$anchor-color: hsl(216, 87%, 42%);
+$shadow-color: hsla(0, 0%, 0%, 0.09);
+$border-color: hsl(0, 0%, 92%);
+$anchor-color: hsl(222, 100%, 44%);
 
 // Dark mode
-$bg--dark: hsl(225, 9%, 9%);
-$bg--ascent--dark: hsl(222, 12%, 13%);
-$color--dark: hsl(0, 0%, 93%);
+$bg--dark: hsl(240, 10%, 8%);
+$bg--ascent--dark: hsl(240, 10%, 12%);
+$color--dark: hsla(0, 0%, 100%, 0.86);
 $color--ascent--dark: hsl(0, 0%, 62%);
-$shadow-color--dark: hsla(0, 0%, 0%, 0.4);
-$border-color--dark: hsl(0, 0%, 6%);
-$anchor-color--dark: hsl(216, 87%, 59%);
+$shadow-color--dark: hsla(0, 0%, 0%, 0.21);
+$border-color--dark: hsl(240, 5%, 6%);
+$anchor-color--dark: hsl(216, 100%, 72%);
 
 // 1rem
 $font-size--normal: 16px;
-// 0.8125rem
-$font-size--small: 13px;
-// 0.625rem
-$font-size--extra-small: 10px;
+// 13px
+$font-size--small: 0.8125rem;
+// 10px
+$font-size--extra-small: 0.625rem;
+
 $border-radius: 4px;
 $media--max-big: 1199px;
 $media--max-medium: 959px;
@@ -29,28 +30,28 @@ $media--max-small: 679px;
 $wght--normal: 400;
 $wght--bold: 500;
 
-@mixin color($ascent: false, $self: false) {
+@mixin font-size {
+  @media screen and (max-width: $media--max-big) {
+    font-size: $font-size--normal;
+  }
+  @media screen and (max-width: $media--max-medium) {
+    font-size: clamp(14px, 2vw, $font-size--normal);
+  }
+  @media screen and (max-width: $media--max-small) {
+    font-size: 14px;
+  }
+}
+
+@mixin color($ascent: false) {
   @if not $ascent {
     color: $color;
-    @if not $self {
-      .dark & {
-        color: $color--dark;
-      }
-    } @else {
-      &.dark {
-        color: $color--dark;
-      }
+    .dark & {
+      color: $color--dark;
     }
   } @else {
     color: $color--ascent;
-    @if not $self {
-      .dark & {
-        color: $color--ascent--dark;
-      }
-    } @else {
-      &.dark {
-        color: $color--ascent--dark;
-      }
+    .dark & {
+      color: $color--ascent--dark;
     }
   }
 }
@@ -58,25 +59,13 @@ $wght--bold: 500;
 @mixin bg($ascent: false, $self: false) {
   @if not $ascent {
     background-color: $bg;
-    @if not $self {
-      .dark & {
-        background-color: $bg--dark;
-      }
-    } @else {
-      &.dark {
-        background-color: $bg--dark;
-      }
+    .dark & {
+      background-color: $bg--dark;
     }
   } @else {
     background-color: $bg--ascent;
-    @if not $self {
-      .dark & {
-        background-color: $bg--ascent--dark;
-      }
-    } @else {
-      &.dark {
-        background-color: $bg--ascent--dark;
-      }
+    .dark & {
+      background-color: $bg--ascent--dark;
     }
   }
 }
@@ -97,12 +86,11 @@ $wght--bold: 500;
   }
 }
 
-@mixin box-shadow($ascent: false) {
+@mixin box-shadow {
   $a: 0 1px 4px;
   $b: 0 1px 2px;
-  @if $ascent == false {
-    box-shadow: $a $shadow-color, $b $shadow-color;
-  } @else {
+  box-shadow: $a $shadow-color, $b $shadow-color;
+  .dark & {
     box-shadow: $a $shadow-color--dark, $b $shadow-color--dark;
   }
 }
@@ -114,7 +102,7 @@ $wght--bold: 500;
 
 @mixin ascent-container {
   @include color;
-  @include bg(true);
+  @include bg($ascent: true);
 }
 
 @mixin base-card {

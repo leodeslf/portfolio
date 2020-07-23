@@ -1,18 +1,19 @@
-import React from 'react';
-import Title from './components/Title.js';
-import About from './components/About.js';
-import Tools from './components/Tools.js';
-import Projects from './components/Projects.js';
-import Cv from './components/Cv.js';
-import Contact from './components/Contact.js';
-import Stepper from './components/Stepper.js';
-import DarkMode from './components/DarkMode.js';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+
+const Title = lazy(() => import(/* webpackChunkName: "title" */ './components/Title'));
+const About = lazy(() => import(/* webpackChunkName: "about" */ './components/About.js'));
+const Tools = lazy(() => import(/* webpackChunkName: "tools" */ './components/Tools.js'));
+const Projects = lazy(() => import(/* webpackChunkName: "projects" */ './components/Projects.js'));
+const Cv = lazy(() => import(/* webpackChunkName: "cv" */ './components/Cv.js'));
+const Contact = lazy(() => import(/* webpackChunkName: "contact" */ './components/Contact.js'));
+const Stepper = lazy(() => import(/* webpackChunkName: "stepper" */ './components/Stepper.js'));
+const DarkMode = lazy(() => import(/* webpackChunkName: "darkmode" */ './components/DarkMode.js'));
 
 export default function Portfolio() {
   return (
-    <>
-      <Router>
+    <Router>
+      <Suspense fallback="">
         <main className="Portfolio">
           <Title />
           <About />
@@ -25,7 +26,7 @@ export default function Portfolio() {
           <Stepper />
           <DarkMode />
         </aside>
-      </Router>
-    </>
+      </Suspense>
+    </Router>
   );
 }

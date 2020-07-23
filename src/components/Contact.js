@@ -7,7 +7,7 @@ export default function Contact() {
       <div className="contact__card">
         <picture className="card__pic">
           <source type="image/webp" srcSet="./x120.webp" />
-          <img src="./x120.png" alt="id_pic" title="A Human Been" />
+          <img src="./x120.gif" alt="id_pic" title="A Human Been" />
         </picture>
         <ul className="card__data">
           <li>Montevideo, UY</li>

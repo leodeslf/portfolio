@@ -1,42 +1,67 @@
 import React, { Component } from 'react'
 
+/**
+ * If defined: "false" || "true".
+ * If not: null.
+ */
+const INIT_COLOR = localStorage.getItem('colorScheme');
+const DARK_MEDIA = window.matchMedia('(prefers-color-scheme: dark)');
+
 export default class DarkMode extends Component {
   constructor() {
     super();
+    this.hasManualConfig = INIT_COLOR !== null;
     this.state = {
-      // Get current state of color scheme
-      isDark: localStorage.getItem('colorScheme') === 'dark'
+
+      // Sett current state of color scheme
+      isDark: this.hasManualConfig ?
+        (INIT_COLOR === 'true' ? true : false) :
+        DARK_MEDIA.matches
     }
+    this.metaTag = document.querySelector('meta[name="theme-color"]');
   }
 
   componentDidMount() {
+
     // Sets current state of color scheme (if it exists)
     if (this.state.isDark) document.body.classList.add('dark');
+    // this.metaTag.setAttribute('content', '')
+
+    // Listen to media
+    DARK_MEDIA.addListener(e => {
+      if (this.hasManualConfig) {
+        return;
+      } else {
+        this.resetScheme(e.matches, false);
+      }
+    })
   }
 
-  resetScheme(e) {
-    // True = dark mode active
-    const checked = e.target.checked;
-    if (checked) {
+  resetScheme(darkModeOn, save) {
+    if (darkModeOn) {
       /**
        * If used:
        * - Add class for CSS
-       * - Save local config
        */
       document.body.classList.add('dark');
-      localStorage.setItem('colorScheme', 'dark');
+      if (save) {
+        this.hasManualConfig = true;
+        localStorage.setItem('colorScheme', 'true');
+      }
     }
     else {
       /**
        * If not:
        * - Remove class for CSS
-       * - Delete local config
        */
       document.body.classList.remove('dark');
-      localStorage.removeItem('colorScheme');
+      if (save) {
+        this.hasManualConfig = true;
+        localStorage.setItem('colorScheme', 'false');
+      }
     }
     // Finally update state
-    this.setState({ isDark: checked });
+    this.setState({ isDarkMode: darkModeOn });
   }
 
   render() {
@@ -47,7 +72,7 @@ export default class DarkMode extends Component {
           className="dark-mode__input"
           type="checkbox"
           defaultChecked={this.state.isDark}
-          onChange={e => this.resetScheme(e)} />
+          onChange={e => this.resetScheme(e.target.checked, true)} />
         <label
           className="dark-mode__label"
           htmlFor="mode" title="Cambiar modo de color">

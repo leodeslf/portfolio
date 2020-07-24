@@ -13,42 +13,45 @@ export default function Projects() {
   );
 }
 
-function ProjectItem(props) {
+function ProjectItem({
+  id, title, date, about, argument, old_stack, new_stack, src, web, repo
+}) {
   return (
-    <article className="projects__elem">
-      <h3><a href={props.web}>{props.title}</a></h3>
-      <p>{`${props.about}.`}</p>
-      <input id={`chk-${props.id}`} type="checkbox" className="custom-chk__chk" defaultChecked={false} />
-      <div className="chk_date">
-        <label htmlFor={`chk-${props.id}`} className="custom-chk__lbl"></label>
-        <span className="date"><em>{props.date}</em></span>
-      </div>
-      <div className="description">
-        <p>
-          <strong>Objetivo: </strong>{`${props.argument}.`}
+    <article className="project">
+      <h3 className="project__title"><a href={web}>{title}</a></h3>
+      <p className="project__desc">{`${about}.`}</p>
+      <input
+        id={`switch-${id}`}
+        type="checkbox"
+        className="switch__input"
+        defaultChecked={false} />
+      <label
+        htmlFor={`switch-${id}`}
+        className="switch__label" />
+      <span className="project__date"><em>{date}</em></span>
+      <div className="project__details">
+        <p className="details__objective">
+          <strong>Objetivo: </strong>{`${argument}.`}
         </p>
-        {(props.old_stack || props.new_stack) &&
-          <>
+        {(old_stack || new_stack) &&
+          <div className="details__stack">
             <strong>Stack: </strong>
             <ul>
-              {props.old_stack &&
-                <OldStack old_stack={props.old_stack} top_key={props.id} />}
-              {props.new_stack &&
-                <NewStack new_stack={props.new_stack} top_key={props.id} />}
+              {old_stack && <OldStack old_stack={old_stack} top_key={id} />}
+              {new_stack && <NewStack new_stack={new_stack} top_key={id} />}
             </ul>
-          </>
+          </div>
         }
-        {props.src &&
-          <>
+        {src &&
+          <div className="details__rsc">
             <strong>Recursos: </strong>
-            <ResourceList src={props.src} top_key={props.id} />
-          </>
+            <ResourceList src={src} top_key={id} />
+          </div>
         }
         <p>
           <strong>Links: </strong>
-          <a href={props.web}>Web</a>
-          , <a href={props.repo}>Repositorio</a>.
-          </p>
+          <a href={web}>Web</a>, <a href={repo}>Repositorio</a>.
+        </p>
       </div>
     </article>
   );
@@ -75,11 +78,13 @@ ProjectItem.propTypes = {
   repo: PropTypes.string
 }
 
-function OldStack(props) {
+function OldStack({ old_stack, top_key }) {
   return (
     <>
-      {props.old_stack.map((item, i) => (
-        <li className="old-stack-item" key={`${props.top_key}_${i}`}>
+      {old_stack.map((item, i) => (
+        <li
+          className="stack__old-item"
+          key={`${top_key}_${i}`}>
           {`${item}`}
         </li>
       ))}
@@ -94,12 +99,14 @@ OldStack.propTypes = {
   top_key: PropTypes.number.isRequired
 }
 
-function NewStack(props) {
+function NewStack({ new_stack, top_key }) {
   return (
     <>
-      {props.new_stack.map((item, i) => (
-        <li className="new-stack-item" key={`${props.top_key}_${i}`}>
-          {`${item}`}
+      {new_stack.map((item, i) => (
+        <li
+          className="stack__new-item"
+          key={`${top_key}_${i}`}>
+          {item}<span>new</span>
         </li>
       ))}
     </>
@@ -113,12 +120,12 @@ NewStack.propTypes = {
   top_key: PropTypes.number.isRequired
 }
 
-function ResourceList(props) {
+function ResourceList({ src, top_key }) {
   return (
     <ul className="src-list">
-      {props.src.map((item, i) => (
-        <li key={`${props.top_key}_${i}`}>
-          {item.name} - <a href={item.link}>{item.linkName}</a>
+      {src.map(({ name, link, linkName }, i) => (
+        <li key={`${top_key}_${i}`}>
+          {name} - <a href={link}>{linkName}</a>
         </li>
       ))}
     </ul>

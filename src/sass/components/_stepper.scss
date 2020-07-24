@@ -10,36 +10,35 @@
   }
 }
 
-.stepper .stepper__caption {
+.stepper__caption {
   font-size: $font-size--small;
-  padding: 1rem;
+  padding: 1em;
 }
 
-.stepper ul {
+.stepper > ul {
   padding-left: 0;
 }
 
-.stepper ul .step {
+.stepper > ul > .step {
   list-style: none;
 }
 
-.stepper ul .step a {
+.stepper > ul > .step > a {
   @include color(ascent);
   display: flex;
-  box-sizing: border-box;
   font-size: $font-size--small;
   text-decoration: none;
   line-height: 2em;
-  padding: 0 1rem;
+  padding: 0 1em;
 }
 
-.stepper ul .step a:hover,
-.stepper ul .step a:active {
+.stepper > ul > .step > a:hover,
+.stepper > ul > .step > a:active {
   @include color;
 }
 
-.stepper ul .step a.step--active {
+.stepper > ul > .step > a.step--active {
   @include color;
-  @include border(border-left, 0.25rem);
-  padding-left: 0.75rem;
+  @include border(border-left, 0.25em);
+  padding-left: 0.75em;
 }

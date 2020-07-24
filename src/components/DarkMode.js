@@ -1,81 +1,58 @@
 import React, { Component } from 'react'
+import resetColorScheme from '../js/darkModeUtil';
 
-/**
- * If defined: "false" || "true".
- * If not: null.
- */
-const INIT_COLOR = localStorage.getItem('colorScheme');
-const DARK_MEDIA = window.matchMedia('(prefers-color-scheme: dark)');
+// LOCAL_COLOR_SCHEME = "false" || "true" || null
+const LOCAL_COLOR_SCHEME = localStorage.getItem('color-scheme');
+const MEDIA_PREFERS_DARK = window.matchMedia('(prefers-color-scheme: dark)');
 
 export default class DarkMode extends Component {
   constructor() {
     super();
-    this.hasManualConfig = INIT_COLOR !== null;
+    this.isManual = LOCAL_COLOR_SCHEME !== null;
     this.state = {
-
-      // Sett current state of color scheme
-      isDark: this.hasManualConfig ?
-        (INIT_COLOR === 'true' ? true : false) :
-        DARK_MEDIA.matches
+      isDark: this.isManual ?
+        (LOCAL_COLOR_SCHEME === 'true') :
+        MEDIA_PREFERS_DARK.matches
     }
-    this.metaTag = document.querySelector('meta[name="theme-color"]');
   }
 
   componentDidMount() {
+    if (this.state.isDark) {
+      resetColorScheme(true, false);
+    }
 
-    // Sets current state of color scheme (if it exists)
-    if (this.state.isDark) document.body.classList.add('dark');
-    // this.metaTag.setAttribute('content', '')
-
-    // Listen to media
-    DARK_MEDIA.addListener(e => {
-      if (this.hasManualConfig) {
-        return;
+    // Listen to change automatically, unless
+    // user has already changed it manually
+    MEDIA_PREFERS_DARK.addListener(e => {
+      if (!this.isManual) {
+        resetColorScheme(e.matches, false);
       } else {
-        this.resetScheme(e.matches, false);
+        return;
       }
     })
   }
 
-  resetScheme(darkModeOn, save) {
-    if (darkModeOn) {
-      /**
-       * If used:
-       * - Add class for CSS
-       */
-      document.body.classList.add('dark');
-      if (save) {
-        this.hasManualConfig = true;
-        localStorage.setItem('colorScheme', 'true');
-      }
-    }
-    else {
-      /**
-       * If not:
-       * - Remove class for CSS
-       */
-      document.body.classList.remove('dark');
-      if (save) {
-        this.hasManualConfig = true;
-        localStorage.setItem('colorScheme', 'false');
-      }
-    }
-    // Finally update state
+  // Handle for manual changes
+  handleResetColorScheme(darkModeOn) {
+    resetColorScheme(darkModeOn, true);
     this.setState({ isDarkMode: darkModeOn });
+    this.isManual = true;
   }
 
   render() {
     return (
       <span className="dark-mode">
         <input
-          id="mode"
+          id="dark-mode-input"
           className="dark-mode__input"
           type="checkbox"
           defaultChecked={this.state.isDark}
-          onChange={e => this.resetScheme(e.target.checked, true)} />
+          onChange={e => this.handleResetColorScheme(e.target.checked)} />
         <label
           className="dark-mode__label"
-          htmlFor="mode" title="Cambiar modo de color">
+          htmlFor="dark-mode-input"
+          title="Cambiar modo de color">
+          <span className="label__body" />
         </label>
       </span>
     );

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { NavHashLink } from 'react-router-hash-link';
 
 const MARGIN = window.screen.height * 0.2;
 const anchors = [
@@ -21,9 +20,6 @@ export default class Stepper extends Component {
     this.anchorElems = document.querySelectorAll('.step a');
     this.updateActiveStep();
 
-    // Update active one by scrolling
-    window.addEventListener('scroll', this.updateActiveStep);
-
     // Set active one by clicking
     this.anchorElems.forEach(item => {
       item.addEventListener('click', () => {
@@ -32,6 +28,9 @@ export default class Stepper extends Component {
         this.updateActiveStep();
       });
     });
+
+    // Update active one by scrolling
+    window.addEventListener('scroll', this.updateActiveStep);
   }
 
   updateActiveStep() {
@@ -52,7 +51,7 @@ export default class Stepper extends Component {
 
         // If there are more titles below
         // but, the title below is too low:
-        // then, [i] title is on "focus".
+        // then, [i] title is "active".
         if (i < this.titles.length - 1 &&
           this.titles[i + 1].offsetTop - MARGIN > SCROLL_TOP) {
 
@@ -84,15 +83,10 @@ export default class Stepper extends Component {
   }
 }
 
-function Step(props) {
-  const { to, content } = props;
+function Step({ to, content }) {
   return (
     <li className="step">
-      <NavHashLink
-        activeClassName='step--active'
-        to={to}>
-        {content}
-      </NavHashLink>
+      <a href={to}>{content}</a>
     </li>
   );
 }

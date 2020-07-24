@@ -1,15 +1,15 @@
-.tools__group--container {
+.tools__container {
   display: grid;
-  gap: 1rem;
+  gap: 1em;
   grid-template-columns: repeat(auto-fit, minmax(20px, max-content));
 }
 
-.tools__group--container .tools__group--item {
+.tools__item {
   @include plain-card;
-  padding-right: 1.5rem;
+  padding-right: 1.5em;
 }
 
-.tools__group--container .tools__group--item,
-.tools__group--container .tools__group--item ul {
+.tools__item,
+.tools__item > ul {
   margin-bottom: 0;
 }

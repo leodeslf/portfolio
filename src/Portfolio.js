@@ -1,5 +1,4 @@
 import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 const Title = lazy(() => import(/* webpackChunkName: "title" */ './components/Title'));
 const About = lazy(() => import(/* webpackChunkName: "about" */ './components/About.js'));
@@ -12,21 +11,19 @@ const DarkMode = lazy(() => import(/* webpackChunkName: "darkmode" */ './compone
 
 export default function Portfolio() {
   return (
-    <Router>
-      <Suspense fallback="">
-        <main className="Portfolio">
-          <Title />
-          <About />
-          <Tools />
-          <Projects />
-          <Cv />
-          <Contact />
-        </main>
-        <aside>
-          <Stepper />
-          <DarkMode />
-        </aside>
-      </Suspense>
-    </Router>
+    <Suspense fallback="">
+      <main className="Portfolio">
+        <Title />
+        <About />
+        <Tools />
+        <Projects />
+        <Cv />
+        <Contact />
+      </main>
+      <aside>
+        <Stepper />
+        <DarkMode />
+      </aside>
+    </Suspense>
   );
 }

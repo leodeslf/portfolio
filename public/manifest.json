@@ -1,9 +1,7 @@
 {
   "short_name": "Leo de S.L.F - Portafolio",
   "name": "Leonardo de Souza Leal Figueira - Portafolio",
+  "description": "Portafolio de Leo de S.L.F",
   "icons": [],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#fafafa",
-  "background_color": "#fafafa"
+  "display": "standalone"
 }

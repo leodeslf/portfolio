@@ -1,28 +1,31 @@
+// 1rem
+$font-size--normal: 16px;
+// 0.875rem = 14px
+$font-size--small: 0.875rem;
+// 0.625rem = 10px
+$font-size--extra-small: 0.625rem;
+
 // Light mode
 $bg: hsl(0, 0%, 98%);
 $bg--ascent: hsl(0, 0%, 100%);
 $color: hsla(0, 0%, 0%, 0.86);
 $color--ascent: hsl(0, 0%, 45%);
 $shadow-color: hsla(0, 0%, 0%, 0.09);
-$border-color: hsl(0, 0%, 92%);
-$anchor-color: hsl(222, 100%, 44%);
+$border-color: hsla(0, 0%, 0%, 0.08);
+$border-color--ascent: hsla(0, 0%, 0%, 0.1);
+$anchor-color: hsl(222, 90%, 46%);
 
 // Dark mode
-$bg--dark: hsl(240, 10%, 8%);
-$bg--ascent--dark: hsl(240, 10%, 12%);
-$color--dark: hsla(0, 0%, 100%, 0.86);
+$bg--dark: hsl(240, 6%, 8%);
+$bg--ascent--dark: hsl(240, 6%, 12%);
+$color--dark: hsla(0, 0%, 100%, 0.82);
 $color--ascent--dark: hsl(0, 0%, 62%);
-$shadow-color--dark: hsla(0, 0%, 0%, 0.21);
-$border-color--dark: hsl(240, 5%, 6%);
+$shadow-color--dark: hsla(0, 0%, 0%, 0.15);
+$border-color--dark: hsla(240, 6%, 0%, 0.28);
+$border-color--ascent--dark: hsla(240, 10%, 0%, 0.48);
 $anchor-color--dark: hsl(216, 100%, 72%);
 
-// 1rem
-$font-size--normal: 16px;
-// 13px
-$font-size--small: 0.8125rem;
-// 10px
-$font-size--extra-small: 0.625rem;
-
+$animation-speed--fast: 120ms;
 $border-radius: 4px;
 $media--max-big: 1199px;
 $media--max-medium: 959px;
@@ -30,15 +33,67 @@ $media--max-small: 679px;
 $wght--normal: 400;
 $wght--bold: 500;
 
-@mixin font-size {
-  @media screen and (max-width: $media--max-big) {
-    font-size: $font-size--normal;
+@mixin ascent-container {
+  @include color;
+  @include bg($ascent: true);
+}
+
+@mixin anchor-color {
+  color: $anchor-color;
+  text-decoration-color: $anchor-color;
+  .dark & {
+    color: $anchor-color--dark;
+    text-decoration-color: $anchor-color--dark;
   }
-  @media screen and (max-width: $media--max-medium) {
-    font-size: clamp(14px, 2vw, $font-size--normal);
+}
+
+@mixin base-card {
+  @include ascent-container;
+  border-radius: $border-radius;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+@mixin base-container {
+  @include color;
+  @include bg;
+}
+
+@mixin bg($ascent: false, $self: false) {
+  @if not $ascent {
+    background-color: $bg;
+    .dark & {
+      background-color: $bg--dark;
+    }
+  } @else {
+    background-color: $bg--ascent;
+    .dark & {
+      background-color: $bg--ascent--dark;
+    }
   }
-  @media screen and (max-width: $media--max-small) {
-    font-size: 14px;
+}
+
+@mixin border($prop, $line-width, $ascent: false) {
+  @if $ascent {
+    #{$prop}: $line-width solid $border-color--ascent;
+    .dark & {
+      #{$prop}: $line-width solid $border-color--ascent--dark;
+    }
+  } @else {
+    #{$prop}: $line-width solid $border-color;
+    .dark & {
+      #{$prop}: $line-width solid $border-color--dark;
+    }
+  }
+}
+
+@mixin box-shadow {
+  $a: 0 1px 3px;
+  $b: 0 1px 2px;
+  box-shadow: $a $shadow-color, $b $shadow-color;
+  .dark & {
+    $a: 0 1px 4px;
+    box-shadow: $a $shadow-color--dark, $b $shadow-color--dark;
   }
 }
 
@@ -56,65 +111,22 @@ $wght--bold: 500;
   }
 }
 
-@mixin bg($ascent: false, $self: false) {
-  @if not $ascent {
-    background-color: $bg;
-    .dark & {
-      background-color: $bg--dark;
-    }
-  } @else {
-    background-color: $bg--ascent;
-    .dark & {
-      background-color: $bg--ascent--dark;
-    }
+@mixin font {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Ubuntu, sans-serif;
+  font-style: normal;
+  font-weight: $wght--normal;
+  font-size: $font-size--normal;
+  @media screen and (max-width: $media--max-medium) {
+    font-size: clamp($font-size--small, 2vw, $font-size--normal);
   }
-}
-
-@mixin anchor-color {
-  color: $anchor-color;
-  text-decoration-color: $anchor-color;
-  .dark & {
-    color: $anchor-color--dark;
-    text-decoration-color: $anchor-color--dark;
+  @media screen and (max-width: $media--max-small) {
+    font-size: $font-size--small;
   }
-}
-
-@mixin border($prop, $line-width) {
-  #{$prop}: $line-width solid $border-color;
-  .dark & {
-    #{$prop}: $line-width solid $border-color--dark;
-  }
-}
-
-@mixin box-shadow {
-  $a: 0 1px 4px;
-  $b: 0 1px 2px;
-  box-shadow: $a $shadow-color, $b $shadow-color;
-  .dark & {
-    box-shadow: $a $shadow-color--dark, $b $shadow-color--dark;
-  }
-}
-
-@mixin base-container {
-  @include color;
-  @include bg;
-}
-
-@mixin ascent-container {
-  @include color;
-  @include bg($ascent: true);
-}
-
-@mixin base-card {
-  @include ascent-container;
-  border-radius: $border-radius;
-  margin-bottom: 1rem;
-  padding: 1rem;
 }
 
 @mixin plain-card {
   @include base-card;
-  @include border(border, 1px);
+  @include border(border, 1px, ascent);
 }
 
 @mixin relief-card {

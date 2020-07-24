@@ -1,3 +1,8 @@
+$label-h: $font-size--normal * 1.5;
+$label-w: $font-size--normal * 2.5;
+$body-size: $font-size--normal * 0.75;
+$half-margin: ($label-w - $body-size) * 0.5;
+
 .dark-mode {
   box-sizing: border-box;
   margin: 1rem;
@@ -16,29 +21,63 @@
 
 .dark-mode__label {
   @include box-shadow;
+  @include bg($ascent: true);
+  border-radius: $font-size--normal * 0.75;
   cursor: pointer;
+  display: grid;
+  height: $label-h;
+  padding: $font-size--normal * ((1.5 - 0.75) * 0.5);
+  width: $label-w;
+}
+
+// Sun and moon body
+.dark-mode__label > .label__body {
   background-color: $color--ascent;
-  border: 2px solid $color--ascent;
-  border-radius: 1rem;
-  box-sizing: border-box;
-  display: flex;
-  height: 20px;
-  overflow: hidden;
-  width: 20px;
+  display: grid;
+  height: $body-size;
+  margin: 0 0 0 $half-margin;
+  place-content: center;
+  position: relative;
+  transition-property: background-color, margin, border-radius, transform;
+  transition-duration: $animation-speed--fast;
+  width: $body-size;
   .dark & {
     background-color: $color--ascent--dark;
-    border-color: $color--ascent--dark;
+    transform: rotateZ(-22.5deg);
+    margin: 0 $half-margin 0 0;
+    border-radius: 50%;
   }
 }
 
-.dark-mode__label::before {
-  @include bg;
+// Sun extra shines
+.dark-mode__label > .label__body::before {
+  background-color: $color--ascent;
   content: "";
-  height: 100%;
-  transition: margin-left 120ms;
-  width: 50%;
-  margin-left: 0%;
+  height: inherit;
+  position: absolute;
+  transform: rotateZ(45deg);
+  transition-property: background-color, transform;
+  transition-duration: $animation-speed--fast;
+  width: inherit;
   .dark & {
-    margin-left: 50%;
+    background-color: $color--ascent--dark;
+    transform: scale(0.1);
+  }
+}
+
+// Cener dot
+.dark-mode__label > .label__body::after {
+  @include bg($ascent: true);
+  border-radius: 50%;
+  content: "";
+  height: $font-size--normal * 0.5;
+  transition-property: background-color, height, transform, width;
+  transition-duration: $animation-speed--fast;
+  width: $font-size--normal * 0.5;
+  z-index: 1;
+  .dark & {
+    height: $body-size * 0.83;
+    transform: translateX($font-size--normal * 0.22);
+    width: $body-size * 0.83;
   }
 }

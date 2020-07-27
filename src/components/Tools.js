@@ -21,7 +21,7 @@ export default function Tools() {
 function ToolGroup({ title, tool_list }) {
   return (
     <div className="tools__item">
-      <strong>{title}</strong>
+      <strong>{title}:</strong>
       <ToolList list={tool_list} />
     </div>
   );

@@ -1,4 +1,4 @@
-.Portfolio {
+.portfolio {
   @include border(border-right, 1px);
   box-sizing: border-box;
   max-width: 960px;
@@ -20,7 +20,7 @@
   }
 }
 
-.Portfolio__elem {
+.portfolio__elem {
   & > :last-child {
     margin-bottom: 0 !important;
   }

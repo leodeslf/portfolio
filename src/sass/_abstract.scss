@@ -16,8 +16,8 @@ $border-color--ascent: hsla(0, 0%, 0%, 0.1);
 $anchor-color: hsl(222, 90%, 46%);
 
 // Dark mode
-$bg--dark: hsl(240, 6%, 8%);
-$bg--ascent--dark: hsl(240, 6%, 12%);
+$bg--dark: hsl(240, 7%, 8%); // 131316
+$bg--ascent--dark: hsl(240, 5%, 12%); // 1d1d20
 $color--dark: hsla(0, 0%, 100%, 0.82);
 $color--ascent--dark: hsl(0, 0%, 62%);
 $shadow-color--dark: hsla(0, 0%, 0%, 0.15);
@@ -26,6 +26,7 @@ $border-color--ascent--dark: hsla(240, 10%, 0%, 0.48);
 $anchor-color--dark: hsl(216, 100%, 72%);
 
 $animation-speed--fast: 120ms;
+$animation-speed--medium: 300ms;
 $border-radius: 4px;
 $media--max-big: 1199px;
 $media--max-medium: 959px;
@@ -132,6 +133,12 @@ $wght--bold: 500;
 @mixin relief-card {
   @include base-card;
   @include box-shadow;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
 }
 
 @media screen and (max-width: $media--max-big) {

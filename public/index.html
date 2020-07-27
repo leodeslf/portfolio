@@ -7,10 +7,39 @@
   <meta name="theme-color" content="#ffffff" />
   <meta name="description" content="Portafolio de Leo de S.L.F" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/icons/32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/icons/16.png">
   <title>Leo de S.L.F - Portafolio</title>
 </head>
 
 <body class="">
+  <script>
+    const META_THEME_COLOR = document.querySelector('meta[name="theme-color"]');
+    const MEDIA_PREFERS_DARK = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function automaticColorScheme(darkModeOn) {
+      if (darkModeOn) {
+        document.body.classList.add('dark');
+        META_THEME_COLOR.setAttribute('content', '#1c1c22');
+      } else {
+        document.body.classList.remove('dark');
+        META_THEME_COLOR.setAttribute('content', '#fff');
+      }
+    }
+
+    const LOCAL_COLOR_SCHEME = () => localStorage.getItem('color-scheme');
+
+    // First apply
+    ((init = LOCAL_COLOR_SCHEME()) => {
+      automaticColorScheme(init !== null ? init === 'true' : MEDIA_PREFERS_DARK.matches);
+    })();
+
+    MEDIA_PREFERS_DARK.addListener(e => {
+      if (LOCAL_COLOR_SCHEME() === null) automaticColorScheme(e.matches);
+      // If not: It was manually changed before, user has priority!
+    });
+  </script>
   <div id="root"></div>
 </body>
 

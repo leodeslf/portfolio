@@ -12,6 +12,7 @@
 #root {
   @include color;
   @include bg;
+  animation: appear $animation-speed--medium;
   display: flex;
   flex-direction: row;
   justify-content: center;

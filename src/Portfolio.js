@@ -12,7 +12,7 @@ const DarkMode = lazy(() => import(/* webpackChunkName: "darkmode" */ './compone
 export default function Portfolio() {
   return (
     <Suspense fallback="">
-      <main className="Portfolio">
+      <main className="portfolio">
         <Title />
         <About />
         <Tools />

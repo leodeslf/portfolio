@@ -1,4 +1,9 @@
 @charset "UTF-8";
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+}
 @media screen and (max-width: 1199px) {
   /* Leonardo de Souza Leal Figueira */
 }
@@ -35,6 +40,7 @@
 #root {
   color: rgba(0, 0, 0, 0.86);
   background-color: #fafafa;
+  animation: appear 300ms;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -155,154 +161,151 @@ picture {
   filter: opacity(0.85) contrast(1.05);
 }
 
-.Portfolio {
+.portfolio {
   border-right: 1px solid rgba(0, 0, 0, 0.08);
   box-sizing: border-box;
   max-width: 960px;
   padding: 4rem 4rem 4rem 180px;
 }
-.dark .Portfolio {
+.dark .portfolio {
   border-right: 1px solid rgba(0, 0, 0, 0.28);
 }
-.Portfolio > :first-child {
+.portfolio > :first-child {
   margin-top: 0 !important;
 }
 @media screen and (max-width: 959px) {
-  .Portfolio {
+  .portfolio {
     padding: 4rem 2rem;
   }
 }
 @media screen and (max-width: 679px) {
-  .Portfolio {
+  .portfolio {
     padding: 2rem 1rem;
     border-right: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
-  .dark .Portfolio {
+  .dark .portfolio {
     border-bottom: 1px solid rgba(0, 0, 0, 0.28);
   }
 }
 
-.Portfolio__elem > :last-child {
+.portfolio__elem > :last-child {
   margin-bottom: 0 !important;
 }
 
-.project {
+.portfolio__project {
   color: rgba(0, 0, 0, 0.86);
   background-color: white;
   border-radius: 4px;
   margin-bottom: 1rem;
   padding: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09), 0 1px 2px rgba(0, 0, 0, 0.09);
-}
-.dark .project {
-  color: rgba(255, 255, 255, 0.82);
-}
-.dark .project {
-  background-color: #1d1d20;
-}
-.dark .project {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.15);
-}
-.project > :first-child {
-  margin-top: 0 !important;
-}
-
-.project {
   display: grid;
   grid-template-rows: min-content min-content min-content auto;
   grid-template-columns: auto auto;
 }
+.dark .portfolio__project {
+  color: rgba(255, 255, 255, 0.82);
+}
+.dark .portfolio__project {
+  background-color: #1d1d20;
+}
+.dark .portfolio__project {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+.portfolio__project > :first-child {
+  margin-top: 0 !important;
+}
 
-.project > .project__title {
+.project__title {
   grid-column: 1/3;
 }
 
-.project > .project__title > a,
-.project > .project__title > a:link,
-.project > .project__title > a:active,
-.project > .project__title > a:visited {
+.project__title > a,
+.project__title > a:link,
+.project__title > a:active,
+.project__title > a:visited {
   font: inherit;
   color: rgba(0, 0, 0, 0.86);
 }
-.dark .project > .project__title > a,
-.dark .project > .project__title > a:link,
-.dark .project > .project__title > a:active,
-.dark .project > .project__title > a:visited {
+.dark .project__title > a,
+.dark .project__title > a:link,
+.dark .project__title > a:active,
+.dark .project__title > a:visited {
   color: rgba(255, 255, 255, 0.82);
 }
 
-.project > .project__desc {
+.project__desc {
   grid-column: 1/3;
   max-width: 54ch;
 }
 
-.project > .switch__input {
+.more-switch__input {
   display: none;
 }
 
-.project > .switch__input:checked + .switch__label::before {
+.more-switch__input:checked + .more-switch__label::before {
   content: "Menos";
 }
 
-.project > .switch__input:checked ~ .project__details {
+.more-switch__input:checked ~ .project__details {
   display: block;
 }
 
-.project > .switch__label {
+.more-switch__label {
   color: #737373;
   cursor: pointer;
   font-size: 0.875rem;
   grid-column: 1/2;
   width: fit-content;
 }
-.dark .project > .switch__label {
+.dark .more-switch__label {
   color: #9e9e9e;
 }
 
-.project > .switch__label::before {
+.more-switch__label::before {
   content: "Más";
 }
 
-.project > .switch__label:hover,
-.switch__label:active {
+.more-switch__label:hover,
+.more-switch__label:active {
   color: rgba(0, 0, 0, 0.86);
 }
-.dark .project > .switch__label:hover,
-.dark .switch__label:active {
+.dark .more-switch__label:hover,
+.dark .more-switch__label:active {
   color: rgba(255, 255, 255, 0.82);
 }
 
-.project > .project__date {
+.project__date {
   font-size: 0.875rem;
   grid-column: 2/3;
   justify-self: right;
 }
 
-.project > .project__details {
+.project__details {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   display: none;
   grid-column: 1/3;
   margin-top: 1em;
   padding-top: 1em;
 }
-.dark .project > .project__details {
+.dark .project__details {
   border-top: 1px solid rgba(0, 0, 0, 0.28);
 }
-.project > .project__details > :last-child {
+.project__details > :last-child {
   margin-bottom: 0 !important;
 }
 
-.project > .project__details > .details__objective {
+.project__details > .project__objective {
   max-width: 54ch;
 }
 
-.project > .project__details > .details__stack > ul > .stack__new-item {
+.project__details > .project__stack > ul > .stack__new-item {
   width: max-content;
   position: relative;
 }
 
-.project > .project__details > .details__stack > ul > .stack__new-item > span {
+.project__details > .project__stack > ul > .stack__new-item > span {
   color: #737373;
   border-radius: 4px;
   font-family: monospace;
@@ -313,7 +316,7 @@ picture {
   padding-left: 0.5ex;
   position: absolute;
 }
-.dark .project > .project__details > .details__stack > ul > .stack__new-item > span {
+.dark .project__details > .project__stack > ul > .stack__new-item > span {
   color: #9e9e9e;
 }
 
@@ -517,7 +520,7 @@ picture {
 
 .dark-mode__label > .label__body::after {
   background-color: white;
-  border-radius: 4px;
+  border-radius: 50%;
   content: "";
   height: 8px;
   transition-property: background-color, height, transform, width;
@@ -529,7 +532,6 @@ picture {
   background-color: #1d1d20;
 }
 .dark .dark-mode__label > .label__body::after {
-  border-radius: 4.98px;
   height: 9.96px;
   transform: translateX(3.52px);
   width: 9.96px;

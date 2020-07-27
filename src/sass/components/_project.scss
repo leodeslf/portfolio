@@ -1,46 +1,43 @@
-.project {
+.portfolio__project {
   @include relief-card;
+  display: grid;
+  grid-template-rows: min-content min-content min-content auto;
+  grid-template-columns: auto auto;
   & > :first-child {
     margin-top: 0 !important;
   }
 }
 
-.project {
-  display: grid;
-  grid-template-rows: min-content min-content min-content auto;
-  grid-template-columns: auto auto;
-}
-
-.project > .project__title {
+.project__title {
   grid-column: 1 / 3;
 }
 
-.project > .project__title > a,
-.project > .project__title > a:link,
-.project > .project__title > a:active,
-.project > .project__title > a:visited {
+.project__title > a,
+.project__title > a:link,
+.project__title > a:active,
+.project__title > a:visited {
   font: inherit;
   @include color;
 }
 
-.project > .project__desc {
+.project__desc {
   grid-column: 1 / 3;
   max-width: 54ch;
 }
 
-.project > .switch__input {
+.more-switch__input {
   display: none;
 }
 
-.project > .switch__input:checked + .switch__label::before {
+.more-switch__input:checked + .more-switch__label::before {
   content: "Menos";
 }
 
-.project > .switch__input:checked ~ .project__details {
+.more-switch__input:checked ~ .project__details {
   display: block;
 }
 
-.project > .switch__label {
+.more-switch__label {
   @include color($ascent: true);
   cursor: pointer;
   font-size: $font-size--small;
@@ -48,22 +45,22 @@
   width: fit-content;
 }
 
-.project > .switch__label::before {
+.more-switch__label::before {
   content: "Más";
 }
 
-.project > .switch__label:hover,
-.switch__label:active {
+.more-switch__label:hover,
+.more-switch__label:active {
   @include color;
 }
 
-.project > .project__date {
+.project__date {
   font-size: $font-size--small;
   grid-column: 2 / 3;
   justify-self: right;
 }
 
-.project > .project__details {
+.project__details {
   @include border(border-top, 1px);
   display: none;
   grid-column: 1 / 3;
@@ -74,16 +71,16 @@
   }
 }
 
-.project > .project__details > .details__objective {
+.project__details > .project__objective {
   max-width: 54ch;
 }
 
-.project > .project__details > .details__stack > ul > .stack__new-item {
+.project__details > .project__stack > ul > .stack__new-item {
   width: max-content;
   position: relative;
 }
 
-.project > .project__details > .details__stack > ul > .stack__new-item > span {
+.project__details > .project__stack > ul > .stack__new-item > span {
   @include color($ascent: true);
   border-radius: $border-radius;
   font-family: monospace;

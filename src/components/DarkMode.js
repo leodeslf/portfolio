@@ -1,42 +1,31 @@
 import React, { Component } from 'react'
-import resetColorScheme from '../js/darkModeUtil';
 
-// LOCAL_COLOR_SCHEME = "false" || "true" || null
-const LOCAL_COLOR_SCHEME = localStorage.getItem('color-scheme');
-const MEDIA_PREFERS_DARK = window.matchMedia('(prefers-color-scheme: dark)');
+const META_THEME_COLOR = document.querySelector('meta[name="theme-color"]');
+
+function manualColorScheme(darkModeOn) {
+  if (darkModeOn) {
+    document.body.classList.add('dark');
+    META_THEME_COLOR.setAttribute('content', '#1c1c22');
+    localStorage.setItem('color-scheme', 'true');
+  } else {
+    document.body.classList.remove('dark');
+    META_THEME_COLOR.setAttribute('content', '#fff');
+    localStorage.setItem('color-scheme', 'false');
+  }
+}
 
 export default class DarkMode extends Component {
   constructor() {
     super();
-    this.isManual = LOCAL_COLOR_SCHEME !== null;
     this.state = {
-      isDark: this.isManual ?
-        (LOCAL_COLOR_SCHEME === 'true') :
-        MEDIA_PREFERS_DARK.matches
+      isDark: document.body.classList.value === 'dark'
     }
-  }
-
-  componentDidMount() {
-    if (this.state.isDark) {
-      resetColorScheme(true, false);
-    }
-
-    // Listen to change automatically, unless
-    // user has already changed it manually
-    MEDIA_PREFERS_DARK.addListener(e => {
-      if (!this.isManual) {
-        resetColorScheme(e.matches, false);
-      } else {
-        return;
-      }
-    })
   }
 
   // Handle for manual changes
   handleResetColorScheme(darkModeOn) {
-    resetColorScheme(darkModeOn, true);
+    manualColorScheme(darkModeOn);
     this.setState({ isDarkMode: darkModeOn });
-    this.isManual = true;
   }
 
   render() {

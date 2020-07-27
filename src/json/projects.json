@@ -121,12 +121,12 @@
     "title": "TFP (Texturas Fractales y Procedurales)",
     "date": "26/05/2019",
     "about": "Visualizador de Ruido Perlin y Worley",
-    "argument": "Familiarizarme con JavaScript",
+    "argument": "Avanzar con JavaScript y el DOM",
     "old_stack": null,
     "new_stack": [
       "HTML",
       "CSS",
-      "JavaScript"
+      "JavaScript (en el DOM)"
     ],
     "src": [
       {
@@ -172,5 +172,18 @@
     ],
     "web": "https://leodeslf.github.io/tfp/",
     "repo": "https://github.com/leodeslf/tfp"
+  },
+  {
+    "title": "Vector",
+    "date": "07/12/2018",
+    "about": "Utilidad que trae vectores y su funcionalid a JavaScript",
+    "argument": "Familiarizarme con JavaScript",
+    "old_stack": null,
+    "new_stack": [
+      "JavaScript"
+    ],
+    "src": null,
+    "web": null,
+    "repo": "https://github.com/leodeslf/vector"
   }
 ]

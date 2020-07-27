@@ -4,53 +4,54 @@ import PROJECTS from '../json/projects.json';
 
 export default function Projects() {
   return (
-    <section id="projects" className="projects Portfolio__elem">
+    <section id="projects" className="portfolio__projects portfolio__elem">
       <h2>Proyectos</h2>
       {PROJECTS.map((item, i) => (
-        <ProjectItem key={i} {...item} />
+        <ProjectItem key={i} i={i} {...item} />
       ))}
     </section>
   );
 }
 
 function ProjectItem({
-  id, title, date, about, argument, old_stack, new_stack, src, web, repo
+  i, title, date, about, argument, old_stack, new_stack, src, web, repo
 }) {
   return (
-    <article className="project">
-      <h3 className="project__title"><a href={web}>{title}</a></h3>
+    <article className="portfolio__project">
+      <h3 className="project__title"><a href={web || repo}>{title}</a></h3>
       <p className="project__desc">{`${about}.`}</p>
       <input
-        id={`switch-${id}`}
+        id={`switch-${i}`}
         type="checkbox"
-        className="switch__input"
+        className="more-switch__input"
         defaultChecked={false} />
       <label
-        htmlFor={`switch-${id}`}
-        className="switch__label" />
+        htmlFor={`switch-${i}`}
+        className="more-switch__label" />
       <span className="project__date"><em>{date}</em></span>
       <div className="project__details">
-        <p className="details__objective">
+        <p className="project__objective">
           <strong>Objetivo: </strong>{`${argument}.`}
         </p>
         {(old_stack || new_stack) &&
-          <div className="details__stack">
+          <div className="project__stack">
             <strong>Stack: </strong>
             <ul>
-              {old_stack && <OldStack old_stack={old_stack} top_key={id} />}
-              {new_stack && <NewStack new_stack={new_stack} top_key={id} />}
+              {old_stack && <OldStack old_stack={old_stack} i={i} />}
+              {new_stack && <NewStack new_stack={new_stack} i={i} />}
             </ul>
           </div>
         }
         {src &&
-          <div className="details__rsc">
+          <div className="project__res">
             <strong>Recursos: </strong>
-            <ResourceList src={src} top_key={id} />
+            <ResourceList src={src} i={i} />
           </div>
         }
         <p>
           <strong>Links: </strong>
-          <a href={web}>Web</a>, <a href={repo}>Repositorio</a>.
+          {web && <><a href={web}>Web</a>, </>}
+          <a href={repo}>Repositorio</a>.
         </p>
       </div>
     </article>
@@ -58,7 +59,7 @@ function ProjectItem({
 }
 
 ProjectItem.propTypes = {
-  id: PropTypes.number.isRequired,
+  i: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   about: PropTypes.string.isRequired,
@@ -78,13 +79,13 @@ ProjectItem.propTypes = {
   repo: PropTypes.string
 }
 
-function OldStack({ old_stack, top_key }) {
+function OldStack({ old_stack, i }) {
   return (
     <>
-      {old_stack.map((item, i) => (
+      {old_stack.map((item, index) => (
         <li
           className="stack__old-item"
-          key={`${top_key}_${i}`}>
+          key={`${i}_${index}`}>
           {`${item}`}
         </li>
       ))}
@@ -96,16 +97,16 @@ OldStack.propTypes = {
   old_stack: PropTypes.arrayOf(
     PropTypes.string.isRequired
   ).isRequired,
-  top_key: PropTypes.number.isRequired
+  i: PropTypes.number.isRequired
 }
 
-function NewStack({ new_stack, top_key }) {
+function NewStack({ new_stack, i }) {
   return (
     <>
-      {new_stack.map((item, i) => (
+      {new_stack.map((item, index) => (
         <li
           className="stack__new-item"
-          key={`${top_key}_${i}`}>
+          key={`${i}_${index}`}>
           {item}<span>new</span>
         </li>
       ))}
@@ -117,14 +118,14 @@ NewStack.propTypes = {
   new_stack: PropTypes.arrayOf(
     PropTypes.string.isRequired
   ).isRequired,
-  top_key: PropTypes.number.isRequired
+  i: PropTypes.number.isRequired
 }
 
-function ResourceList({ src, top_key }) {
+function ResourceList({ src, i }) {
   return (
-    <ul className="src-list">
-      {src.map(({ name, link, linkName }, i) => (
-        <li key={`${top_key}_${i}`}>
+    <ul className="res__list">
+      {src.map(({ name, link, linkName }, index) => (
+        <li key={`${i}_${index}`}>
           {name} - <a href={link}>{linkName}</a>
         </li>
       ))}
@@ -138,5 +139,5 @@ ResourceList.prototypes = {
     link: PropTypes.string.isRequired,
     linkName: PropTypes.string.isRequired,
   })),
-  top_key: PropTypes.number.isRequired
+  i: PropTypes.number.isRequired
 }

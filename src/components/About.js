@@ -7,10 +7,9 @@ export default function About() {
         Work in progress... <span role="img" aria-label="working...">🚧</span>
       </p> */}
       <p>
-        <strong>Aprendiendo Desarrollo Frontend</strong> como autodidacta,
-        espero aplicar como profesional este 2020. Mientras tanto descubro,
-        paso a paso, la manera en que <strong>creamos información y
-        experiencias</strong> mediante la web.
+        <strong>Aprendiendo Desarrollo Frontend</strong>, como autodidacta,
+        estudio cómo <strong>brindamos información</strong> y <strong>creamos
+        experiencias</strong> en la web.
       </p>
       {/* Más */}
       {/* <p>

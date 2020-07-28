@@ -4,7 +4,7 @@ const NAME = 'id_pic';
 
 export default function Contact() {
   return (
-    <section id="contact" className="contact Portfolio__elem">
+    <section id="contact" className="porfolio__contact portfolio__elem">
       <h2>Contacto</h2>
       <div className="contact__card">
         <picture className="card__pic">

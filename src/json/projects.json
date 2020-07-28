@@ -122,11 +122,12 @@
     "date": "26/05/2019",
     "about": "Visualizador de Ruido Perlin y Worley",
     "argument": "Avanzar con JavaScript y el DOM",
-    "old_stack": null,
+    "old_stack": [
+      "JavaScript"
+    ],
     "new_stack": [
       "HTML",
-      "CSS",
-      "JavaScript (en el DOM)"
+      "CSS"
     ],
     "src": [
       {
@@ -176,7 +177,7 @@
   {
     "title": "Vector",
     "date": "07/12/2018",
-    "about": "Utilidad que trae vectores y su funcionalid a JavaScript",
+    "about": "Utilidad que trae vectores y su funcionalidad a JavaScript",
     "argument": "Familiarizarme con JavaScript",
     "old_stack": null,
     "new_stack": [

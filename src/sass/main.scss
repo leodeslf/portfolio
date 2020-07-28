@@ -1,2 +1,3 @@
-@import "./abstract", "./reset", "./components/portfolio", "./components/project", "./components/tools",
-  "./components/stepper", "./components/contact", "./components/darkMode";
+@import "./abstracts/variables", "./abstracts/keyframes", "./abstracts/mixins", "./abstracts/classes", "./reset",
+  "./components/portfolio", "./components/tools", "./components/project", "./components/contact", "./components/stepper",
+  "./components/darkMode";

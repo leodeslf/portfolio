@@ -12,13 +12,17 @@
 #root {
   @include color;
   @include bg;
-  animation: appear $animation-speed--medium;
   display: flex;
   flex-direction: row;
   justify-content: center;
   @media screen and (max-width: $media--max-small) {
     flex-direction: column;
   }
+}
+
+main,
+aside {
+  animation: appear $animation-speed--medium;
 }
 
 aside {
@@ -31,6 +35,8 @@ aside {
   @media screen and (max-width: $media--max-small) {
     & {
       height: fit-content;
+      grid-template-rows: auto;
+      justify-content: right;
       position: unset;
     }
   }
@@ -39,9 +45,8 @@ aside {
 h1,
 h2 {
   @include border(border-bottom, 1px);
-  font-weight: $wght--bold;
-  margin-bottom: 1em;
-  margin-top: 2em;
+  @include text-body;
+  @include title-body;
   padding-bottom: 0.25em;
 }
 
@@ -49,9 +54,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: $wght--bold;
-  margin-bottom: 1em;
-  margin-top: 2em;
+  @include text-body;
+  @include title-body;
 }
 
 h1 {
@@ -79,26 +83,22 @@ h6 {
 }
 
 em {
-  color: $color--ascent;
+  @include color($ascent: true);
   font-style: italic;
-  font-size: inherit;
-  .dark & {
-    color: $color--ascent--dark;
-  }
 }
 
 strong {
-  font-weight: $wght--bold;
+  font-weight: $weight--bold;
 }
 
 p {
+  @include text-body;
   max-width: 60ch;
-  margin-bottom: 1em;
 }
 
 ul {
-  padding-left: 1.75em;
-  margin-bottom: 1em;
+  @include text-body;
+  padding-left: 3ch;
 }
 
 a {

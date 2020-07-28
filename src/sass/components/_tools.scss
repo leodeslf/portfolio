@@ -1,15 +1,14 @@
 .tools__container {
   display: grid;
   gap: 1em;
-  grid-template-columns: repeat(auto-fit, minmax(20px, max-content));
+  grid-template-columns: repeat(3, min-content);
 }
 
 .tools__item {
   @include plain-card;
-  padding-right: 1.5em;
+  margin-bottom: 0;
 }
 
-.tools__item,
 .tools__item > ul {
-  margin-bottom: 0;
+  padding-right: 0.618em;
 }

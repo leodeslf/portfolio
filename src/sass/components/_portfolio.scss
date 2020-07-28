@@ -1,10 +1,12 @@
 .portfolio {
   @include border(border-right, 1px);
-  box-sizing: border-box;
   max-width: 960px;
   padding: 4rem 4rem 4rem 180px;
   & > :first-child {
     margin-top: 0 !important;
+  }
+  & > :last-child {
+    margin-bottom: 0 !important;
   }
   @media screen and (max-width: $media--max-medium) {
     & {
@@ -13,15 +15,9 @@
   }
   @media screen and (max-width: $media--max-small) {
     & {
-      padding: 2rem 1rem;
-      border-right: none;
       @include border(border-bottom, 1px);
+      border-right: none;
+      padding: 2rem 1rem;
     }
-  }
-}
-
-.portfolio__elem {
-  & > :last-child {
-    margin-bottom: 0 !important;
   }
 }

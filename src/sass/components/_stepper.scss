@@ -11,33 +11,27 @@
 }
 
 .stepper__caption {
-  font-size: $font-size--small;
   padding: 1em;
 }
 
-.stepper > ul {
-  padding-left: 0;
+.stepper__list {
+  @include no-style-list;
 }
 
-.stepper > ul > .step {
-  list-style: none;
-}
-
-.stepper > ul > .step > a {
+.stepper__step > .step__anchor {
   @include color(ascent);
   display: flex;
-  font-size: $font-size--small;
   text-decoration: none;
   line-height: 2em;
   padding: 0 1em;
 }
 
-.stepper > ul > .step > a:hover,
-.stepper > ul > .step > a:active {
+.stepper__step > .step__anchor:hover,
+.stepper__step > .step__anchor:active {
   @include color;
 }
 
-.stepper > ul > .step > a.step--active {
+.stepper__step > .step__anchor.step__anchor--active {
   @include color;
   @include border(border-left, 0.25em);
   padding-left: 0.75em;

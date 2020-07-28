@@ -40,7 +40,6 @@
 .more-switch__label {
   @include color($ascent: true);
   cursor: pointer;
-  font-size: $font-size--small;
   grid-column: 1 / 2;
   width: fit-content;
 }
@@ -55,7 +54,6 @@
 }
 
 .project__date {
-  font-size: $font-size--small;
   grid-column: 2 / 3;
   justify-self: right;
 }
@@ -71,16 +69,21 @@
   }
 }
 
-.project__details > .project__objective {
+// ul container
+.project__details > div {
+  @include text-body;
+}
+
+.project__objective {
   max-width: 54ch;
 }
 
-.project__details > .project__stack > ul > .stack__new-item {
+.project__stack > ul > .stack__new-item {
   width: max-content;
   position: relative;
 }
 
-.project__details > .project__stack > ul > .stack__new-item > span {
+.project__stack > ul > .stack__new-item > span {
   @include color($ascent: true);
   border-radius: $border-radius;
   font-family: monospace;

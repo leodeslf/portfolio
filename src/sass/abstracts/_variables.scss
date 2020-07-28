@@ -1,0 +1,39 @@
+// Font sizes (1rem, 0.875rem = 14px, 0.625rem = 10px)
+$font-size--normal: 16px;
+$font-size--small: 0.875rem;
+$font-size--extra-small: 0.625rem;
+
+// Font weight
+$weight--normal: 400;
+$weight--bold: 500;
+
+// Light mode
+$bg: hsl(0, 0%, 98%);
+$bg--ascent: hsl(0, 0%, 100%);
+$color: hsla(0, 0%, 0%, 0.86);
+$color--ascent: hsl(0, 0%, 45%);
+$shadow-color: hsla(0, 0%, 0%, 0.09);
+$border-color: hsla(0, 0%, 0%, 0.08);
+$border-color--ascent: hsla(0, 0%, 0%, 0.1);
+$anchor-color: hsl(222, 90%, 46%);
+
+// Dark mode
+$bg--dark: hsl(240, 7%, 8%); // 131316
+$bg--ascent--dark: hsl(240, 5%, 12%); // 1d1d20
+$color--dark: hsla(0, 0%, 100%, 0.82);
+$color--ascent--dark: hsl(0, 0%, 62%);
+$shadow-color--dark: hsla(0, 0%, 0%, 0.15);
+$border-color--dark: hsla(240, 6%, 0%, 0.28);
+$border-color--ascent--dark: hsla(240, 10%, 0%, 0.48);
+$anchor-color--dark: hsl(216, 100%, 72%);
+
+// Animation speed
+$animation-speed--fast: 120ms;
+$animation-speed--medium: 450ms;
+
+// Media queries
+$media--max-big: 1199px;
+$media--max-medium: 959px;
+$media--max-small: 679px;
+
+$border-radius: 4px;

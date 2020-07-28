@@ -1,0 +1,6 @@
+.text--small {
+  font-size: $font-size--small;
+  .dark & {
+    font-weight: 400;
+  }
+}

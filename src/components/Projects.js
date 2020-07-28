@@ -27,8 +27,8 @@ function ProjectItem({
         defaultChecked={false} />
       <label
         htmlFor={`switch-${i}`}
-        className="more-switch__label" />
-      <span className="project__date"><em>{date}</em></span>
+        className="more-switch__label text--small" />
+      <span className="project__date text--small"><em>{date}</em></span>
       <div className="project__details">
         <p className="project__objective">
           <strong>Objetivo: </strong>{`${argument}.`}

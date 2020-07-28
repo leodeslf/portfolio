@@ -4,15 +4,8 @@ $body-size: $font-size--normal * 0.75;
 $half-margin: ($label-w - $body-size) * 0.5;
 
 .dark-mode {
-  box-sizing: border-box;
   margin: 1rem;
   user-select: none;
-  @media screen and (max-width: $media--max-small) {
-    & {
-      position: inherit;
-      margin-left: auto;
-    }
-  }
 }
 
 .dark-mode__input {
@@ -31,7 +24,7 @@ $half-margin: ($label-w - $body-size) * 0.5;
 }
 
 // Sun and moon body
-.dark-mode__label > .label__body {
+.label__body {
   background-color: $color--ascent;
   display: grid;
   height: $body-size;
@@ -40,6 +33,7 @@ $half-margin: ($label-w - $body-size) * 0.5;
   position: relative;
   transition-property: background-color, margin, border-radius, transform;
   transition-duration: $animation-speed--fast;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   width: $body-size;
   .dark & {
     background-color: $color--ascent--dark;
@@ -50,7 +44,7 @@ $half-margin: ($label-w - $body-size) * 0.5;
 }
 
 // Sun extra shines
-.dark-mode__label > .label__body::before {
+.label__body::before {
   background-color: $color--ascent;
   content: "";
   height: inherit;
@@ -58,6 +52,7 @@ $half-margin: ($label-w - $body-size) * 0.5;
   transform: rotateZ(45deg);
   transition-property: background-color, transform;
   transition-duration: $animation-speed--fast;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   width: inherit;
   .dark & {
     background-color: $color--ascent--dark;
@@ -66,13 +61,14 @@ $half-margin: ($label-w - $body-size) * 0.5;
 }
 
 // Cener dot
-.dark-mode__label > .label__body::after {
+.label__body::after {
   @include bg($ascent: true);
   border-radius: 50%;
   content: "";
   height: $font-size--normal * 0.5;
   transition-property: background-color, height, transform, width;
   transition-duration: $animation-speed--fast;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   width: $font-size--normal * 0.5;
   z-index: 1;
   .dark & {

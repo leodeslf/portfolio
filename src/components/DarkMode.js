@@ -32,14 +32,14 @@ export default class DarkMode extends Component {
     return (
       <span className="dark-mode">
         <input
-          id="dark-mode-input"
+          id="dark-mode__input"
           className="dark-mode__input"
           type="checkbox"
           defaultChecked={this.state.isDark}
           onChange={e => this.handleResetColorScheme(e.target.checked)} />
         <label
           className="dark-mode__label"
-          htmlFor="dark-mode-input"
+          htmlFor="dark-mode__input"
           title="Cambiar modo de color">
           <span className="label__body" />
         </label>

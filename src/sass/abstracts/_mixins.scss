@@ -1,0 +1,122 @@
+@mixin font {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Ubuntu, sans-serif;
+  font-style: normal;
+  font-weight: $weight--normal;
+  font-size: $font-size--normal;
+  .dark {
+    font-weight: 300;
+  }
+  @media screen and (max-width: $media--max-medium) {
+    font-size: clamp($font-size--small, 2vw, $font-size--normal);
+  }
+  @media screen and (max-width: $media--max-small) {
+    font-size: $font-size--small;
+  }
+}
+
+@mixin color($ascent: false) {
+  @if not $ascent {
+    color: $color;
+    .dark & {
+      color: $color--dark;
+    }
+  } @else {
+    color: $color--ascent;
+    .dark & {
+      color: $color--ascent--dark;
+    }
+  }
+}
+
+@mixin anchor-color {
+  color: $anchor-color;
+  text-decoration-color: $anchor-color;
+  .dark & {
+    color: $anchor-color--dark;
+    text-decoration-color: $anchor-color--dark;
+  }
+}
+
+@mixin bg($ascent: false, $self: false) {
+  @if not $ascent {
+    background-color: $bg;
+    .dark & {
+      background-color: $bg--dark;
+    }
+  } @else {
+    background-color: $bg--ascent;
+    .dark & {
+      background-color: $bg--ascent--dark;
+    }
+  }
+}
+
+@mixin border($prop, $line-width, $ascent: false) {
+  @if $ascent {
+    #{$prop}: $line-width solid $border-color--ascent;
+    .dark & {
+      #{$prop}: $line-width solid $border-color--ascent--dark;
+    }
+  } @else {
+    #{$prop}: $line-width solid $border-color;
+    .dark & {
+      #{$prop}: $line-width solid $border-color--dark;
+    }
+  }
+}
+
+@mixin box-shadow {
+  $a: 0 1px 3px;
+  $b: 0 1px 2px;
+  box-shadow: $a $shadow-color, $b $shadow-color;
+  .dark & {
+    $a: 0 1px 4px;
+    box-shadow: $a $shadow-color--dark, $b $shadow-color--dark;
+  }
+}
+
+@mixin base-container {
+  @include color;
+  @include bg;
+}
+
+@mixin ascent-container {
+  @include color;
+  @include bg($ascent: true);
+}
+
+@mixin base-card {
+  @include ascent-container;
+  border-radius: $border-radius;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+@mixin plain-card {
+  @include base-card;
+  @include border(border, 1px, ascent);
+}
+
+@mixin relief-card {
+  @include base-card;
+  @include box-shadow;
+}
+
+@mixin text-body {
+  margin-bottom: 1em;
+  * > &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin title-body {
+  font-weight: $weight--bold;
+  margin-top: 2em;
+}
+
+@mixin no-style-list {
+  padding-left: 0;
+  & > li {
+    list-style: none;
+  }
+}

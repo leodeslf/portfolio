@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Cv() {
   return (
-    <section id="cv" className="cv Portfolio__elem">
+    <section id="cv" className="porfolio__cv portfolio__elem">
       <h2>Currículum Vitae</h2>
       <p>
         Para más información personal, educación formal, informal y otras cosas

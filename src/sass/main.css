@@ -59,7 +59,7 @@
 
 main,
 aside {
-  animation: appear 450ms;
+  animation: appear 200ms;
 }
 
 aside {
@@ -501,7 +501,7 @@ picture {
 
 .label__body {
   transition-property: all;
-  transition-duration: 120ms;
+  transition-duration: 100ms;
   transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   background-color: #737373;
   display: grid;
@@ -520,7 +520,7 @@ picture {
 
 .label__body::before {
   transition-property: all;
-  transition-duration: 120ms;
+  transition-duration: 100ms;
   transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   background-color: #737373;
   content: "";
@@ -537,7 +537,7 @@ picture {
 .label__body::after {
   background-color: white;
   transition-property: all;
-  transition-duration: 120ms;
+  transition-duration: 100ms;
   transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border-radius: 50%;
   content: "";

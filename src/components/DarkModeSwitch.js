@@ -1,20 +1,6 @@
 import React, { Component } from 'react'
 
-const META_THEME_COLOR = document.querySelector('meta[name="theme-color"]');
-
-function manualColorScheme(darkModeOn) {
-  if (darkModeOn) {
-    document.body.classList.add('dark');
-    META_THEME_COLOR.setAttribute('content', '#1c1c22');
-    localStorage.setItem('color-scheme', 'true');
-  } else {
-    document.body.classList.remove('dark');
-    META_THEME_COLOR.setAttribute('content', '#fff');
-    localStorage.setItem('color-scheme', 'false');
-  }
-}
-
-export default class DarkMode extends Component {
+export default class DarkModeSwitch extends Component {
   constructor() {
     super();
     this.state = {
@@ -30,21 +16,35 @@ export default class DarkMode extends Component {
 
   render() {
     return (
-      <span className="dark-mode">
+      <span className="dark-mode-switch">
         <input
-          id="dark-mode__input"
-          className="dark-mode__input"
+          id="dark-mode-switch__input"
+          className="dark-mode-switch__input"
           type="checkbox"
           defaultChecked={this.state.isDark}
           onChange={e => this.handleResetColorScheme(e.target.checked)} />
         <label
-          className="dark-mode__label"
-          htmlFor="dark-mode__input"
+          className="dark-mode-switch__label"
+          htmlFor="dark-mode-switch__input"
           title="Cambiar modo de color">
           <span className="label__body" />
         </label>
       </span>
     );
+  }
+}
+
+const META_THEME_COLOR = document.querySelector('meta[name="theme-color"]');
+
+function manualColorScheme(darkModeOn) {
+  if (darkModeOn) {
+    document.body.classList.add('dark');
+    META_THEME_COLOR.setAttribute('content', '#1c1c22');
+    localStorage.setItem('color-scheme', 'true');
+  } else {
+    document.body.classList.remove('dark');
+    META_THEME_COLOR.setAttribute('content', '#fff');
+    localStorage.setItem('color-scheme', 'false');
   }
 }
 

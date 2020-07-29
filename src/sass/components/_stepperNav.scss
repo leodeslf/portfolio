@@ -18,7 +18,7 @@
   @include no-style-list;
 }
 
-.stepper__step > .step__anchor {
+.stepper__step > .stepper__anchor {
   @include color(ascent);
   display: flex;
   text-decoration: none;
@@ -26,12 +26,12 @@
   padding: 0 1em;
 }
 
-.stepper__step > .step__anchor:hover,
-.stepper__step > .step__anchor:active {
+.stepper__step > .stepper__anchor:hover,
+.stepper__step > .stepper__anchor:active {
   @include color;
 }
 
-.stepper__step > .step__anchor.step__anchor--active {
+.stepper__step > .stepper__anchor.stepper__anchor--active {
   @include color;
   @include border(border-left, 0.25em);
   padding-left: 0.75em;

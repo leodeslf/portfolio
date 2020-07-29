@@ -25,5 +25,5 @@ yarn-error.log*
 # Local Netlify folder
 .netlify
 
-# old staff
-/old
+# just notes
+notes.md

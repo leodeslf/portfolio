@@ -1,0 +1,30 @@
+.see-more__input {
+  display: none;
+}
+
+.see-more__input:checked + div > .see-more__label::before {
+  content: "Menos";
+}
+
+.see-more__input:checked + div > .see-more__hidden-block {
+  display: block;
+}
+
+.see-more__label {
+  @include color($ascent: true);
+  cursor: pointer;
+  user-select: none;
+}
+
+.see-more__label::before {
+  content: "Más";
+}
+
+.see-more__label:hover,
+.see-more__label:active {
+  @include color;
+}
+
+.see-more__hidden-block {
+  @include hide-by-default;
+}

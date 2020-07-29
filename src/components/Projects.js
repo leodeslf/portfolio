@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import PROJECTS from '../json/projects.json';
+
+const SeeMore = lazy(() =>
+  import( /* webpackChunkName: "seemore" */ './SeeMore'));
 
 export default function Projects() {
   return (
@@ -14,46 +17,41 @@ export default function Projects() {
 }
 
 function ProjectItem({
-  i, title, date, about, argument, old_stack, new_stack, src, web, repo
+  i, title, date, about, argument, tech_stack, res, web, repo
 }) {
   return (
     <article className="portfolio__project">
       <h3 className="project__title"><a href={web || repo}>{title}</a></h3>
       <p className="project__desc">{`${about}.`}</p>
-      <input
-        id={`switch-${i}`}
-        type="checkbox"
-        className="more-switch__input"
-        defaultChecked={false} />
-      <label
-        htmlFor={`switch-${i}`}
-        className="more-switch__label text--small" />
-      <span className="project__date text--small"><em>{date}</em></span>
-      <div className="project__details">
-        <p className="project__objective">
-          <strong>Objetivo: </strong>{`${argument}.`}
-        </p>
-        {(old_stack || new_stack) &&
-          <div className="project__stack">
-            <strong>Stack: </strong>
-            <ul>
-              {old_stack && <OldStack old_stack={old_stack} i={i} />}
-              {new_stack && <NewStack new_stack={new_stack} i={i} />}
-            </ul>
-          </div>
-        }
-        {src &&
-          <div className="project__res">
-            <strong>Recursos: </strong>
-            <ResourceList src={src} i={i} />
-          </div>
-        }
-        <p>
-          <strong>Links: </strong>
-          {web && <><a href={web}>Web</a>, </>}
-          <a href={repo}>Repositorio</a>.
-        </p>
-      </div>
+      <Suspense fallback="">
+        <SeeMore i={i} children={
+          <>
+            <span className="project__date text--small"><em>{date}</em></span>
+            <div className="project__details see-more__hidden-block">
+              <p className="project__objective">
+                <strong>Objetivo: </strong>{argument}.
+              </p>
+              <div className="project__stack">
+                <strong>Stack: </strong>
+                <ul>
+                  <TechStack tech_stack={tech_stack} i={i} />
+                </ul>
+              </div>
+              {res &&
+                <div className="project__res">
+                  <strong>Recursos: </strong>
+                  <ResourceList res={res} i={i} />
+                </div>
+              }
+              <p>
+                <strong>Links: </strong>
+                {web && <><a href={web}>Web</a>, </>}
+                <a href={repo}>Repositorio</a>.
+              </p>
+            </div>
+          </>
+        } />
+      </Suspense>
     </article>
   );
 }
@@ -64,13 +62,12 @@ ProjectItem.propTypes = {
   date: PropTypes.string.isRequired,
   about: PropTypes.string.isRequired,
   argument: PropTypes.string.isRequired,
-  old_stack: PropTypes.arrayOf(
-    PropTypes.string.isRequired
-  ),
-  new_stack: PropTypes.arrayOf(
-    PropTypes.string.isRequired
-  ),
-  src: PropTypes.arrayOf(PropTypes.shape({
+  tech_stack: PropTypes.arrayOf(
+    PropTypes.arrayOf(
+      PropTypes.string
+    ).isRequired
+  ).isRequired,
+  res: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
     linkName: PropTypes.string.isRequired,
@@ -79,52 +76,38 @@ ProjectItem.propTypes = {
   repo: PropTypes.string
 }
 
-function OldStack({ old_stack, i }) {
+function TechStack({ tech_stack, i }) {
+  const OLD_TECHS_LENGTH = tech_stack[0].length;
   return (
     <>
-      {old_stack.map((item, index) => (
+      {[...tech_stack[0], ...tech_stack[1]].map((item, index) => (
         <li
-          className="stack__old-item"
+          className={
+            `stack__${
+            index >= OLD_TECHS_LENGTH ? 'new' : 'old'
+            }-item`
+          }
           key={`${i}_${index}`}>
-          {`${item}`}
+          {item}{(index >= OLD_TECHS_LENGTH) && <span>new</span>}
         </li>
       ))}
     </>
   );
 }
 
-OldStack.propTypes = {
-  old_stack: PropTypes.arrayOf(
-    PropTypes.string.isRequired
+TechStack.propTypes = {
+  tech_stack: PropTypes.arrayOf(
+    PropTypes.arrayOf(
+      PropTypes.string
+    ).isRequired
   ).isRequired,
   i: PropTypes.number.isRequired
 }
 
-function NewStack({ new_stack, i }) {
-  return (
-    <>
-      {new_stack.map((item, index) => (
-        <li
-          className="stack__new-item"
-          key={`${i}_${index}`}>
-          {item}<span>new</span>
-        </li>
-      ))}
-    </>
-  );
-}
-
-NewStack.propTypes = {
-  new_stack: PropTypes.arrayOf(
-    PropTypes.string.isRequired
-  ).isRequired,
-  i: PropTypes.number.isRequired
-}
-
-function ResourceList({ src, i }) {
+function ResourceList({ res, i }) {
   return (
     <ul className="res__list">
-      {src.map(({ name, link, linkName }, index) => (
+      {res.map(({ name, link, linkName }, index) => (
         <li key={`${i}_${index}`}>
           {name} - <a href={link}>{linkName}</a>
         </li>
@@ -134,7 +117,7 @@ function ResourceList({ src, i }) {
 }
 
 ResourceList.prototypes = {
-  src: PropTypes.arrayOf(PropTypes.shape({
+  res: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
     linkName: PropTypes.string.isRequired,

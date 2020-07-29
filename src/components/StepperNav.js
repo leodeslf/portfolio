@@ -8,16 +8,17 @@ const anchors = [
   ['#contact', 'Contacto']
 ];
 
-export default class Stepper extends Component {
+export default class StepperNav extends Component {
   constructor() {
     super();
     this.anchorElems = undefined;
     this.titles = document.getElementsByTagName('h2');
+    this.titlesLength = this.titles.length;
     this.updateActiveStep = this.updateActiveStep.bind(this);
   }
 
   componentDidMount() {
-    this.anchorElems = document.querySelectorAll('.step__anchor');
+    this.anchorElems = document.querySelectorAll('.stepper__anchor');
     this.updateActiveStep();
 
     // Set active one by clicking
@@ -37,27 +38,30 @@ export default class Stepper extends Component {
 
     // If the first anchor is too low, they all are too low.
     if (this.titles[0].offsetTop - MARGIN > SCROLL_TOP) {
-      for (let i = 0; i < this.titles.length; i++) {
-        this.anchorElems[i].classList.remove('step__anchor--active');
+      for (let i = 0; i < this.titlesLength; i++) {
+        this.anchorElems[i].classList.remove('stepper__anchor--active');
       }
       return;
     }
 
-    for (let i = 0; i < this.titles.length; i++) {
+    for (let i = 0; i < this.titlesLength; i++) {
+
       // If it's on screen or above.
       if (this.titles[i].offsetTop - MARGIN <= SCROLL_TOP) {
+
         // If there are more titles below
         // but, the title below is too low:
         // then, [i] title is "active".
-        if (i < this.titles.length - 1 &&
+        if (i < this.titlesLength - 1 &&
           this.titles[i + 1].offsetTop - MARGIN > SCROLL_TOP) {
-          // For each titile: remove class 'step--active'
+
+          // For each titile: remove class 'stepper__anchor--active'
           // unles os the one we want.
-          for (let j = 0; j < this.titles.length; j++) {
+          for (let j = 0; j < this.titlesLength; j++) {
             if (j === i) {
-              this.anchorElems[j].classList.add('step__anchor--active');
+              this.anchorElems[j].classList.add('stepper__anchor--active');
             } else {
-              this.anchorElems[j].classList.remove('step__anchor--active');
+              this.anchorElems[j].classList.remove('stepper__anchor--active');
             }
           }
         }
@@ -82,7 +86,7 @@ export default class Stepper extends Component {
 function Step({ to, content }) {
   return (
     <li className="stepper__step">
-      <a className="step__anchor" href={to}>{content}</a>
+      <a className="stepper__anchor" href={to}>{content}</a>
     </li>
   );
 }

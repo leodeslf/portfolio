@@ -22,7 +22,11 @@ function ToolGroup({ title, tool_list }) {
   return (
     <div className="tools__item">
       <strong>{title}:</strong>
-      <ToolList list={tool_list} />
+      <ul>
+        {tool_list.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -32,20 +36,4 @@ ToolGroup.propTypes = {
   tool_list: PropTypes.arrayOf(
     PropTypes.string.isRequired
   ).isRequired,
-}
-
-function ToolList({ list }) {
-  return (
-    <ul>
-      {list.map((item, i) => (
-        <li key={i}>{item}</li>
-      ))}
-    </ul>
-  );
-}
-
-ToolList.propTypes = {
-  list: PropTypes.arrayOf(
-    PropTypes.string.isRequired
-  ).isRequired
 }

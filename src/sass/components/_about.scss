@@ -1,0 +1,15 @@
+@media screen and (max-width: $media--max-small) {
+  .portfolio__about > .see-more__container > .see-more__hidden-block {
+    @include text-body--standalone;
+  }
+}
+
+.portfolio__about > .see-more__container {
+  @include text-body;
+  width: 60ch;
+  max-width: 100%;
+}
+
+.portfolio__about > .see-more__container > .see-more__hidden-block {
+  margin-top: 1em;
+}

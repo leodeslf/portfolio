@@ -25,7 +25,7 @@ $half-margin: ($label-w - $body-size) * 0.5;
 
 // Sun and moon body
 .label__body {
-  @include all-fast-transition;
+  @include transition-to-all;
   background-color: $color--ascent;
   display: grid;
   height: $body-size;
@@ -43,7 +43,7 @@ $half-margin: ($label-w - $body-size) * 0.5;
 
 // Sun extra shines
 .label__body::before {
-  @include all-fast-transition;
+  @include transition-to-all;
   background-color: $color--ascent;
   content: "";
   height: inherit;
@@ -59,7 +59,7 @@ $half-margin: ($label-w - $body-size) * 0.5;
 // Cener dot
 .label__body::after {
   @include bg($ascent: true);
-  @include all-fast-transition;
+  @include transition-to-all;
   border-radius: 50%;
   content: "";
   height: $font-size--normal * 0.5;

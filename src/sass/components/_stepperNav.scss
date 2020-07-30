@@ -11,7 +11,7 @@
 }
 
 .stepper__caption {
-  padding: 1em;
+  padding: 1rem;
 }
 
 .stepper__list {
@@ -23,7 +23,7 @@
   display: flex;
   text-decoration: none;
   line-height: 2em;
-  padding: 0 1em;
+  padding: 0 1rem;
 }
 
 .stepper__step > .stepper__anchor:hover,
@@ -33,6 +33,6 @@
 
 .stepper__step > .stepper__anchor.stepper__anchor--active {
   @include color;
-  @include border(border-left, 0.25em);
-  padding-left: 0.75em;
+  @include border(border-left, 0.25rem);
+  padding-left: 0.75rem;
 }

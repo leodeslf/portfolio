@@ -8,13 +8,7 @@
 .portfolio__elem {
   @media screen and (max-width: $media--max-small) {
     & > p {
-      text-align: center;
-    }
-    & > p {
-      padding-left: 1rem;
-      padding-right: 1rem;
-      margin-left: auto;
-      margin-right: auto;
+      @include text-body--standalone;
     }
     & > div {
       margin-left: auto;

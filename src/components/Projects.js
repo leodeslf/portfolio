@@ -9,9 +9,11 @@ export default function Projects() {
   return (
     <section id="projects" className="portfolio__projects portfolio__elem">
       <h2>Proyectos</h2>
-      {PROJECTS.map((item, i) => (
-        <ProjectItem key={i} i={i} {...item} />
-      ))}
+      <div className="projects__container">
+        {PROJECTS.map((item, i) => (
+          <ProjectItem key={i} i={i} {...item} />
+        ))}
+      </div>
     </section>
   );
 }
@@ -24,7 +26,7 @@ function ProjectItem({
       <h3 className="project__title"><a href={web || repo}>{title}</a></h3>
       <p className="project__desc">{`${about}.`}</p>
       <Suspense fallback="">
-        <SeeMore i={i} children={
+        <SeeMore mod={i} children={
           <>
             <span className="project__date text--small"><em>{date}</em></span>
             <div className="project__details see-more__hidden-block">

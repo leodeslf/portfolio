@@ -1,21 +1,29 @@
-.contact__card {
+.portfolio__contact .contact__card {
   @include plain-card;
-  column-gap: 1rem;
-  display: grid;
-  grid-template-columns: min-content max-content;
-  width: fit-content;
+  display: flex;
+  padding: 0.5rem;
   align-items: center;
+  max-width: fit-content;
+  @media screen and (max-width: $media--max-micro) {
+    flex-direction: column;
+  }
 }
 
 .card__pic {
   display: flex;
+  margin: 0.5rem;
 }
 
 .card__pic > img {
   border-radius: $border-radius;
 }
 
-.card__data {
+.portfolio__contact .contact__card .card__data {
   @include no-style-list;
   padding-right: 0.618rem;
+  margin: 0.5rem;
+  @media screen and (max-width: $media--max-micro) {
+    padding-right: 0;
+    text-align: center;
+  }
 }

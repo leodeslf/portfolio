@@ -2,8 +2,12 @@
   display: none;
 }
 
+.see-more__container {
+  display: grid;
+}
+
 .see-more__input:checked + div > .see-more__label::before {
-  content: "Menos";
+  content: "Ver menos";
 }
 
 .see-more__input:checked + div > .see-more__hidden-block {
@@ -14,10 +18,11 @@
   @include color($ascent: true);
   cursor: pointer;
   user-select: none;
+  width: fit-content;
 }
 
 .see-more__label::before {
-  content: "Más";
+  content: "Ver más";
 }
 
 .see-more__label:hover,

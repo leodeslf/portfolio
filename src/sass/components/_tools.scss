@@ -1,12 +1,19 @@
-.tools__container {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, min-content);
+.portfolio__tools > .tools__container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  height: min-content;
+  @media screen and (max-width: $media--max-small) {
+    place-content: center;
+  }
 }
 
-.tools__item {
+.portfolio__tools > .tools__container > .tools__item {
   @include plain-card;
-  margin-bottom: 0;
+  margin: 0.5rem;
+  &:last-child {
+    margin-bottom: 0.5rem;
+  }
 }
 
 .tools__item > ul {

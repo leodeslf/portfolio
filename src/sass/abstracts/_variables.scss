@@ -17,10 +17,10 @@ $border-color: hsla(0, 0%, 0%, 0.06);
 $border-color--ascent: hsla(0, 0%, 0%, 0.08);
 $anchor-color: hsl(222, 90%, 46%);
 
-// Dark mode
-$bg--dark: hsl(240, 7%, 8%); // 131316
-$bg--ascent--dark: hsl(240, 5%, 12%); // 1d1d20
-$color--dark: hsla(0, 0%, 100%, 0.82);
+// Dark mode // 131316 // 1d1d20
+$bg--dark: hsl(240, 7%, 8%);
+$bg--ascent--dark: hsl(240, 5%, 12%);
+$color--dark: hsla(0, 0%, 100%, 0.84);
 $color--ascent--dark: hsl(0, 0%, 62%);
 $shadow-color--dark: hsla(0, 0%, 0%, 0.15);
 $border-color--dark: hsla(240, 6%, 0%, 0.21);
@@ -35,5 +35,6 @@ $animation-speed--medium: 200ms;
 $media--max-big: 1199px;
 $media--max-medium: 959px;
 $media--max-small: 679px;
+$media--max-micro: 349px;
 
 $border-radius: 4px;

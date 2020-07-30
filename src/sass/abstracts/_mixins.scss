@@ -90,6 +90,9 @@
   border-radius: $border-radius;
   margin-bottom: 1rem;
   padding: 1rem;
+  * > &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 @mixin plain-card {
@@ -106,6 +109,15 @@
   margin-bottom: 1em;
   * > &:last-child {
     margin-bottom: 0;
+  }
+}
+
+@mixin text-body--standalone {
+  @media screen and (max-width: $media--max-small) {
+    @include border(border-right, 0.4rem);
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -126,10 +138,17 @@
   }
 }
 
-@mixin all-fast-transition {
+@mixin speed($prop, $speed) {
+  #{$prop}: $speed;
+  @media (prefers-reduced-motion: reduce) {
+    #{$prop}: 0ms;
+  }
+}
+
+@mixin transition-to-all {
+  @include speed(transition-duration, $animation-speed--fast);
   transition-property: all;
-  transition-duration: $animation-speed--fast;
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 @mixin hide-by-default {

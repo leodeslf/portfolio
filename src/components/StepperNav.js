@@ -12,7 +12,6 @@ const A_LENGTH = ANCHORS.length;
 export default class StepperNav extends Component {
   constructor() {
     super();
-    this.anchorElems = undefined;
     this.titles = document.getElementsByTagName('h2');
     this.updateActiveStep = this.updateActiveStep.bind(this);
   }
@@ -49,14 +48,12 @@ export default class StepperNav extends Component {
       // If it's on screen or above.
       if (this.titles[i].offsetTop - MARGIN <= SCROLL_TOP) {
 
-        // If there are more titles below
-        // but, the title below is too low:
-        // then, [i] title is "active".
-        if (i < A_LENGTH - 1 &&
+        // If there are more below, but they are too low: then, it's the one.
+        if (
+          (i < A_LENGTH - 1) &&
           this.titles[i + 1].offsetTop - MARGIN > SCROLL_TOP) {
 
-          // For each titile: remove class 'stepper__anchor--active'
-          // unles os the one we want.
+          // Remove "active" for each one unles os the one we want.
           for (let j = 0; j < A_LENGTH; j++) {
             if (j === i) {
               this.anchorElems[j].classList.add('stepper__anchor--active');

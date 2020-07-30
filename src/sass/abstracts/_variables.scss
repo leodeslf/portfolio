@@ -13,8 +13,8 @@ $bg--ascent: hsl(0, 0%, 100%);
 $color: hsla(0, 0%, 0%, 0.86);
 $color--ascent: hsl(0, 0%, 45%);
 $shadow-color: hsla(0, 0%, 0%, 0.09);
-$border-color: hsla(0, 0%, 0%, 0.08);
-$border-color--ascent: hsla(0, 0%, 0%, 0.1);
+$border-color: hsla(0, 0%, 0%, 0.06);
+$border-color--ascent: hsla(0, 0%, 0%, 0.08);
 $anchor-color: hsl(222, 90%, 46%);
 
 // Dark mode
@@ -23,8 +23,8 @@ $bg--ascent--dark: hsl(240, 5%, 12%); // 1d1d20
 $color--dark: hsla(0, 0%, 100%, 0.82);
 $color--ascent--dark: hsl(0, 0%, 62%);
 $shadow-color--dark: hsla(0, 0%, 0%, 0.15);
-$border-color--dark: hsla(240, 6%, 0%, 0.28);
-$border-color--ascent--dark: hsla(240, 10%, 0%, 0.48);
+$border-color--dark: hsla(240, 6%, 0%, 0.21);
+$border-color--ascent--dark: hsla(240, 10%, 0%, 0.44);
 $anchor-color--dark: hsl(216, 100%, 72%);
 
 // Animation speed

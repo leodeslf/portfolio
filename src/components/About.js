@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function About() {
   return (
-    <section id="about" className="porfolio__about portfolio__elem">
+    <section id="about" className="portfolio__about portfolio__elem">
       {/* <p>
         Work in progress... <span role="img" aria-label="working...">🚧</span>
       </p> */}

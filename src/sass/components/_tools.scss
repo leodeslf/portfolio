@@ -1,6 +1,6 @@
 .tools__container {
   display: grid;
-  gap: 1em;
+  gap: 1rem;
   grid-template-columns: repeat(3, min-content);
 }
 
@@ -10,5 +10,5 @@
 }
 
 .tools__item > ul {
-  padding-right: 0.618em;
+  padding-right: 0.618rem;
 }

@@ -109,9 +109,14 @@
   }
 }
 
-@mixin title-body {
+@mixin title-body($main-title: false) {
   font-weight: $weight--bold;
   margin-top: 2em;
+  @media screen and (max-width: $media--max-small) {
+    @if ($main-title) {
+      text-align: center;
+    }
+  }
 }
 
 @mixin no-style-list {

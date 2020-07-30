@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 
 const MARGIN = window.screen.height * 0.2;
-const anchors = [
+const ANCHORS = [
   ['#tools', 'Herramientas'],
   ['#projects', 'Proyectos'],
   ['#cv', 'Currículum Vitae'],
   ['#contact', 'Contacto']
 ];
+const A_LENGTH = ANCHORS.length;
 
 export default class StepperNav extends Component {
   constructor() {
     super();
     this.anchorElems = undefined;
     this.titles = document.getElementsByTagName('h2');
-    this.titlesLength = this.titles.length;
     this.updateActiveStep = this.updateActiveStep.bind(this);
   }
 
@@ -38,13 +38,13 @@ export default class StepperNav extends Component {
 
     // If the first anchor is too low, they all are too low.
     if (this.titles[0].offsetTop - MARGIN > SCROLL_TOP) {
-      for (let i = 0; i < this.titlesLength; i++) {
+      for (let i = 0; i < A_LENGTH; i++) {
         this.anchorElems[i].classList.remove('stepper__anchor--active');
       }
       return;
     }
 
-    for (let i = 0; i < this.titlesLength; i++) {
+    for (let i = 0; i < A_LENGTH; i++) {
 
       // If it's on screen or above.
       if (this.titles[i].offsetTop - MARGIN <= SCROLL_TOP) {
@@ -52,12 +52,12 @@ export default class StepperNav extends Component {
         // If there are more titles below
         // but, the title below is too low:
         // then, [i] title is "active".
-        if (i < this.titlesLength - 1 &&
+        if (i < A_LENGTH - 1 &&
           this.titles[i + 1].offsetTop - MARGIN > SCROLL_TOP) {
 
           // For each titile: remove class 'stepper__anchor--active'
           // unles os the one we want.
-          for (let j = 0; j < this.titlesLength; j++) {
+          for (let j = 0; j < A_LENGTH; j++) {
             if (j === i) {
               this.anchorElems[j].classList.add('stepper__anchor--active');
             } else {
@@ -74,7 +74,7 @@ export default class StepperNav extends Component {
       <nav className="stepper text--small">
         <strong className="stepper__caption">Contenido</strong>
         <ul className="stepper__list">
-          {anchors.map((item, i) => (
+          {ANCHORS.map((item, i) => (
             <Step to={item[0]} content={item[1]} key={i} />
           ))}
         </ul>

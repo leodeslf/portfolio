@@ -3,6 +3,9 @@
   & > :first-child {
     margin-top: 0 !important;
   }
+  @media screen and (max-width: $media--max-small) {
+    min-width: 100%;
+  }
 }
 
 .project__title > a,

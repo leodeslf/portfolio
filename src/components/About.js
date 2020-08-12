@@ -1,5 +1,7 @@
-import React from 'react';
-import SeeMore from './SeeMore';
+import React, { Suspense, lazy } from 'react';
+
+const SeeMore = lazy(() =>
+  import( /* webpackChunkName: "seemore" */ './SeeMore'));
 
 export default function About() {
   return (
@@ -13,15 +15,17 @@ export default function About() {
           estudio cómo <strong>brindamos información</strong> y <strong>creamos
           experiencias</strong> en la web.
         </p>
-        <SeeMore mod={'about'} children={
-          <p className="see-more__hidden-block">
-            Sin saber a qué área del software o diseño dedicarme, casi por accidente,
-            descubrí el rol de Frontend. Desde entonces he aprendido conceptos
+        <Suspense fallback="">
+          <SeeMore mod={'about'} children={
+            <p className="see-more__hidden-block">
+              Sin saber a qué área del software o diseño dedicarme, casi por accidente,
+              descubrí el rol de Frontend. Desde entonces he aprendido conceptos
             y herramientas que puedan <strong>favorecer</strong> a compañeros
             de equipo durante el desarrollo y <strong>facilitar</strong> la
             experiencia del usuario final (y continuaré haciéndolo).
           </p>
-        } />
+          } />
+        </Suspense>
       </section>
     </>
   );

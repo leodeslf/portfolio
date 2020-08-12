@@ -6,8 +6,9 @@ export default function Cv() {
       <h2>Currículum Vitae</h2>
       <p>
         Para más información personal, educación formal, informal y otras cosas
-        poco interesantes, ver y descargar <a href="./res/Leonardo-de-Souza-Leal-Figueira-CV.pdf">
-          mi currículum aquí</a>.
+        poco interesantes, ver y descargar <a
+          href="./res/Leonardo_de_Souza_Leal_Figueira_CV.pdf"
+          title="CV en PDF">mi currículum aquí</a>.
       </p>
     </section>
   );

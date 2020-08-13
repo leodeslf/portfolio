@@ -1,14 +1,14 @@
 import React, { lazy, Suspense } from 'react';
 
-const ORIGIN = './components/';
+const ROOT = './components/';
 
-const About = lazy(() => import( /* webpackChunkName: "about" */ `${ORIGIN}About.js`));
-const Tools = lazy(() => import( /* webpackChunkName: "tools" */ `${ORIGIN}Tools.js`));
-const Projects = lazy(() => import( /* webpackChunkName: "projects" */ `${ORIGIN}Projects.js`));
-const Cv = lazy(() => import( /* webpackChunkName: "cv" */ `${ORIGIN}Cv.js`));
-const Contact = lazy(() => import( /* webpackChunkName: "contact" */ `${ORIGIN}Contact.js`));
-const StepperNav = lazy(() => import( /* webpackChunkName: "steppernav" */ `${ORIGIN}StepperNav.js`));
-const DarkModeSwitch = lazy(() => import( /* webpackChunkName: "darkmodeswitch" */ `${ORIGIN}DarkModeSwitch.js`));
+const About = lazy(() => import( /* webpackChunkName: "about" */ `${ROOT}About.js`));
+const Tools = lazy(() => import( /* webpackChunkName: "tools" */ `${ROOT}Tools.js`));
+const Projects = lazy(() => import( /* webpackChunkName: "projects" */ `${ROOT}Projects.js`));
+const Cv = lazy(() => import( /* webpackChunkName: "cv" */ `${ROOT}Cv.js`));
+const Contact = lazy(() => import( /* webpackChunkName: "contact" */ `${ROOT}Contact.js`));
+const StepperNav = lazy(() => import( /* webpackChunkName: "steppernav" */ `${ROOT}StepperNav.js`));
+const DarkModeSwitch = lazy(() => import( /* webpackChunkName: "darkmodeswitch" */ `${ROOT}DarkModeSwitch.js`));
 
 export default function Portfolio() {
   return (

@@ -1,8 +1,8 @@
 [
   {
-    "title": "Vector",
+    "title": "Vec.js",
     "date": "07/12/2018",
-    "about": "Utilidad que trae vectores y su funcionalidad a JavaScript",
+    "about": "Una clase de JavaScript para crear y operar con vectores (2D, 3D and 4D)",
     "argument": "Familiarizarme con JavaScript",
     "tech_stack": [
       [],

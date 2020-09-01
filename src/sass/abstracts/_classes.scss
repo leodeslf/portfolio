@@ -6,14 +6,12 @@
 }
 
 .portfolio__elem {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
   @media screen and (max-width: $media--max-small) {
     & > p {
       @include text-body--standalone;
-    }
-    & > div {
-      margin-left: auto;
-      margin-right: auto;
-      width: fit-content;
     }
   }
 }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 const ANCHORS = [
+  ['#start', 'Inicio'],
+  ['#about', 'Sobre mí'],
   ['#tools', 'Herramientas'],
   ['#projects', 'Proyectos'],
   ['#cv', 'Currículum Vitae'],

@@ -1,8 +1,9 @@
 .stepper {
   @include color(ascent);
+  place-content: center;
   display: grid;
-  min-width: 180px;
-  padding-top: 50%;
+  min-width: max-content;
+  margin: auto 0;
   @media screen and (max-width: $media--max-small) {
     & {
       display: none;
@@ -23,7 +24,7 @@
   display: flex;
   text-decoration: none;
   line-height: 2em;
-  padding: 0 1rem;
+  padding: 0 2rem 0 1rem;
 }
 
 .stepper__item > .step:hover,

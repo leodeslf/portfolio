@@ -13,11 +13,8 @@
 .project__title > a:active,
 .project__title > a:visited {
   font: inherit;
+  text-decoration: underline;
   @include color;
-}
-
-.project__desc {
-  max-width: 54ch;
 }
 
 .portfolio__project .see-more__container {

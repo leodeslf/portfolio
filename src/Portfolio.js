@@ -14,6 +14,15 @@ export default function Portfolio() {
   return (
     <Suspense fallback="">
       <main className="portfolio">
+        <section id="start" className="portfolio__start portfolio__elem">
+          <h1 title="Leonardo de Souza Leal Figueira">
+            Leonardo de Souza Leal Figueira
+          </h1>
+          <p>
+            Aprendiendo <strong>Frontend</strong> como autodidacta,
+            principalmente con <strong>React</strong> y <strong>SASS</strong>.
+          </p>
+        </section>
         <About />
         <Tools />
         <Projects />

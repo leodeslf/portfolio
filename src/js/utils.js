@@ -4,7 +4,6 @@ let steps = undefined;
 
 window.addEventListener('load', () => {
   titles = document.querySelectorAll('h1, h2');
-  console.log(titles)
   steps = document.querySelectorAll('.step');
 
   steps.forEach(step => {

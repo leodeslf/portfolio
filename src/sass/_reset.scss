@@ -28,17 +28,15 @@ aside {
 }
 
 aside {
-  align-content: space-between;
-  display: grid;
-  grid-template-rows: auto auto;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   position: sticky;
   top: 0;
   @media screen and (max-width: $media--max-small) {
     & {
       height: fit-content;
-      grid-template-rows: auto;
-      justify-content: right;
+      flex-direction: row-reverse;
       position: unset;
     }
   }
@@ -48,7 +46,8 @@ h1,
 h2 {
   @include border(border-bottom, 1px);
   @include text-body;
-  @include title-body($main-title: true);
+  @include title-body($h1-or-h2: true);
+  margin-top: 0;
   padding-bottom: 0.25em;
 }
 

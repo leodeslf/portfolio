@@ -1,7 +1,7 @@
 .portfolio {
   @include border(border-right, 1px);
   max-width: 960px;
-  padding: 4rem 4rem 4rem 180px;
+  padding: 0 4rem 0 0;
   & > :first-child {
     margin-top: 0 !important;
   }
@@ -10,14 +10,14 @@
   }
   @media screen and (max-width: $media--max-medium) {
     & {
-      padding: 4rem 2rem;
+      padding: 0 2rem;
     }
   }
   @media screen and (max-width: $media--max-small) {
     & {
       @include border(border-bottom, 1px);
       border-right: none;
-      padding: 2rem 1rem;
+      padding: 0 1rem;
     }
   }
 }

@@ -14,7 +14,6 @@ export default class StepperNav extends Component {
   render() {
     return (
       <nav className="stepper text--small">
-        <strong className="stepper__caption">Contenido</strong>
         <ul className="stepper__list">
           {ANCHORS.map((item, i) => (
             <Step to={item[0]} content={item[1]} key={i} />

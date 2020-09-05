@@ -4,6 +4,7 @@
   display: grid;
   min-width: max-content;
   margin: auto 0;
+  padding-top: 56px;
   @media screen and (max-width: $media--max-small) {
     & {
       display: none;

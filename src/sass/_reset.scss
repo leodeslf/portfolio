@@ -46,9 +46,13 @@ h1,
 h2 {
   @include border(border-bottom, 1px);
   @include text-body;
-  @include title-body($h1-or-h2: true);
+  @include title-body();
   margin-top: 0;
+  //font-weight: 400;
   padding-bottom: 0.25em;
+  @media screen and (max-width: $media--max-small) {
+    text-align: center;
+  }
 }
 
 h3,
@@ -61,6 +65,8 @@ h6 {
 
 h1 {
   font-size: 2em; // 2em
+  position: sticky;
+  top: 0;
 }
 
 h2 {

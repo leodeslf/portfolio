@@ -120,14 +120,9 @@
   }
 }
 
-@mixin title-body($h1-or-h2: false) {
+@mixin title-body() {
   font-weight: $weight--bold;
   margin-top: 2em;
-  @media screen and (max-width: $media--max-small) {
-    @if ($h1-or-h2) {
-      text-align: center;
-    }
-  }
 }
 
 @mixin no-style-list {

@@ -1,3 +1,3 @@
 # Portfolio
 
-My front-end learning documentation.
+My frontend learning documentation.

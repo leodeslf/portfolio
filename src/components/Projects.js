@@ -1,9 +1,7 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import PROJECTS from '../json/projects.json';
-
-const SeeMore = lazy(() =>
-  import( /* webpackChunkName: "seemore" */ './SeeMore'));
+import seeMore from '../js/seeMore';
 
 export default function Projects() {
   return (
@@ -19,41 +17,57 @@ export default function Projects() {
 }
 
 function ProjectItem({
-  i, title, date, about, argument, tech_stack, res, web, repo
+  i, title, date, about, argument, tools, res, links, top3
 }) {
+  const { input, label } = seeMore(i);
   return (
-    <article className="portfolio__project">
-      <h3 className="project__title"><a href={web || repo}>{title}</a></h3>
-      <p className="project__desc">{`${about}.`}</p>
-      <Suspense fallback="">
-        <SeeMore mod={i} children={
+    <article className={`portfolio__project text--small${top3 ? ' top3' : ''}`}>
+      <h3 className="project__title">
+        <a href={links[0][1]} title={links[0][0]}>{title}</a>
+      </h3>
+      <input {...input} />
+      <label {...label}>
+        <svg viewBox="0 0 24 24">
+          <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+        </svg>
+      </label>
+      {top3 &&
+        <p className="project__about">{`${about}.`}</p>
+      }
+      <div className="project__details see-more__hidden-block">
+        <p className="project__type-and-date">{links[0][0]} - {date}</p>
+        {!top3 &&
           <>
-            <span className="project__date text--small"><em>{date}</em></span>
-            <div className="project__details see-more__hidden-block">
-              <p className="project__objective">
-                <strong>Objetivo: </strong>{argument}.
-              </p>
-              <div className="project__stack">
-                <strong>Stack: </strong>
-                <ul>
-                  <TechStack tech_stack={tech_stack} i={i} />
-                </ul>
-              </div>
-              {res &&
-                <div className="project__res">
-                  <strong>Recursos: </strong>
-                  <ResourceList res={res} i={i} />
-                </div>
-              }
-              <p>
-                <strong>Links: </strong>
-                {web && <><a href={web}>Web</a>, </>}
-                <a href={repo}>Repositorio</a>.
-              </p>
-            </div>
+            <p className="project__about">
+              <strong>Acerca de: </strong>{`${about}.`}
+            </p>
           </>
-        } />
-      </Suspense>
+        }
+        <p className="project__objective">
+          <strong>Objetivo: </strong>{argument}.
+        </p>
+        <div className="project__tools ul-container">
+          <strong>Herramientas: </strong>
+          <ul>
+            <TechStack tools={tools} i={i} />
+          </ul>
+        </div>
+        {res &&
+          <div className="project__res ul-container">
+            <strong>Recursos: </strong>
+            <ResourceList res={res} i={i} />
+          </div>
+        }
+        <p>
+          <strong>Links: </strong>
+          {links.map((link, i) =>
+            <Fragment key={i}>
+              <a href={link[1]}>{link[0]}</a>
+              {i < links.length - 1 ? ', ' : ''}
+            </Fragment>
+          )}.
+        </p>
+      </div>
     </article>
   );
 }
@@ -64,7 +78,7 @@ ProjectItem.propTypes = {
   date: PropTypes.string.isRequired,
   about: PropTypes.string.isRequired,
   argument: PropTypes.string.isRequired,
-  tech_stack: PropTypes.arrayOf(
+  tools: PropTypes.arrayOf(
     PropTypes.arrayOf(
       PropTypes.string
     ).isRequired
@@ -78,15 +92,14 @@ ProjectItem.propTypes = {
   repo: PropTypes.string
 }
 
-function TechStack({ tech_stack, i }) {
-  const OLD_TECHS_LENGTH = tech_stack[0].length;
+function TechStack({ tools, i }) {
+  const OLD_TECHS_LENGTH = tools[0].length;
   return (
     <>
-      {[...tech_stack[0], ...tech_stack[1]].map((item, index) => (
+      {[...tools[0], ...tools[1]].map((item, index) => (
         <li
           className={
-            `stack__${
-            index >= OLD_TECHS_LENGTH ? 'new' : 'old'
+            `stack__${index >= OLD_TECHS_LENGTH ? 'new' : 'old'
             }-item`
           }
           key={`${i}_${index}`}>
@@ -98,7 +111,7 @@ function TechStack({ tech_stack, i }) {
 }
 
 TechStack.propTypes = {
-  tech_stack: PropTypes.arrayOf(
+  tools: PropTypes.arrayOf(
     PropTypes.arrayOf(
       PropTypes.string
     ).isRequired

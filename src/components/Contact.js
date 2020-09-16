@@ -12,8 +12,8 @@ export default function Contact() {
           <li>+598 99 705 972</li>
           <li>leodeslf@gmail.com</li>
           <li>
-            <a href="github.com/leodeslf">GitHub</a> / <a
-              href="linkedin.com/in/leodeslf">LinkedIn</a>
+            <a href="https://github.com/leodeslf">GitHub</a> / <a
+              href="https://linkedin.com/in/leodeslf">LinkedIn</a>
           </li>
         </ul>
         <picture className="card__pic">

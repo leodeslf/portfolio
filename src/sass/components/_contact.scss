@@ -4,26 +4,23 @@
   padding: 0.5rem;
   align-items: center;
   max-width: fit-content;
+  .card__data {
+    @include no-style-list;
+    padding-right: 0.618rem;
+    margin: 0.5rem;
+    @media screen and (max-width: $media--max-micro) {
+      padding-right: 0;
+      text-align: center;
+    }
+  }
+  .card__pic {
+    display: flex;
+    margin: 0.5rem;
+    img {
+      border-radius: $border-radius;
+    }
+  }
   @media screen and (max-width: $media--max-micro) {
     flex-direction: column;
-  }
-}
-
-.card__pic {
-  display: flex;
-  margin: 0.5rem;
-}
-
-.card__pic > img {
-  border-radius: $border-radius;
-}
-
-.portfolio__contact .contact__card .card__data {
-  @include no-style-list;
-  padding-right: 0.618rem;
-  margin: 0.5rem;
-  @media screen and (max-width: $media--max-micro) {
-    padding-right: 0;
-    text-align: center;
   }
 }

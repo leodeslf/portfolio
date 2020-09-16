@@ -2,12 +2,6 @@
   @include border(border-right, 1px);
   max-width: 960px;
   padding: 0 4rem 0 0;
-  & > :first-child {
-    margin-top: 0 !important;
-  }
-  & > :last-child {
-    margin-bottom: 0 !important;
-  }
   @media screen and (max-width: $media--max-medium) {
     & {
       padding: 0 2rem;

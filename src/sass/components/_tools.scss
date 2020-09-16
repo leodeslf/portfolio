@@ -1,17 +1,15 @@
-.portfolio__tools > .tools__container {
+.tools__container {
   display: flex;
   flex-wrap: wrap;
   height: min-content;
   @media screen and (max-width: $media--max-small) {
     place-content: center;
   }
-}
-
-.portfolio__tools > .tools__container > .tools__item {
-  @include plain-card;
-  margin: 0 0.5rem;
-}
-
-.tools__item > ul {
-  padding-right: 0.618rem;
+  & > .tools__item {
+    @include plain-card;
+    margin: 0 0.5rem;
+    & > ul {
+      padding-right: 0.618rem;
+    }
+  }
 }

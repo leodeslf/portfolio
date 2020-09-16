@@ -1,4 +1,4 @@
-const MARGIN = window.innerHeight * .5;
+const MARGIN = window.innerHeight * .5 + 1;
 let titles = undefined;
 let steps = undefined;
 

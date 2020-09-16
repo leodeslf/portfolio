@@ -66,7 +66,7 @@
 }
 
 @mixin box-shadow {
-  $a: 0 1px 3px;
+  $a: 0 1px 4px;
   $b: 0 1px 2px;
   box-shadow: $a $shadow-color, $b $shadow-color;
   .dark & {
@@ -106,7 +106,7 @@
 }
 
 @mixin text-body {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   * > &:last-child {
     margin-bottom: 0;
   }
@@ -120,7 +120,7 @@
   }
 }
 
-@mixin title-body() {
+@mixin title-body {
   font-weight: $weight--bold;
   margin-top: 2em;
 }
@@ -143,8 +143,4 @@
   @include speed(transition-duration, $animation-speed--fast);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-@mixin hide-by-default {
-  display: none;
 }

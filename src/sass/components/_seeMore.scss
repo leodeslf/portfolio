@@ -1,35 +1,30 @@
 .see-more__input {
   display: none;
-}
-
-.see-more__container {
-  display: grid;
-}
-
-.see-more__input:checked + div > .see-more__label::before {
-  content: "Ver menos";
-}
-
-.see-more__input:checked + div > .see-more__hidden-block {
-  display: block;
+  &:checked + .see-more__label {
+    transform: rotateZ(180deg);
+  }
+  &:checked ~ .see-more__hidden-block {
+    display: block;
+  }
 }
 
 .see-more__label {
-  @include color($ascent: true);
   cursor: pointer;
   user-select: none;
-  width: fit-content;
-}
-
-.see-more__label::before {
-  content: "Ver más";
-}
-
-.see-more__label:hover,
-.see-more__label:active {
-  @include color;
+  height: 24px;
+  width: 24px;
+  & svg {
+    fill: $color--ascent;
+  }
+  & svg:hover,
+  & svg:active {
+    fill: $color;
+    .dark & {
+      fill: $color--dark;
+    }
+  }
 }
 
 .see-more__hidden-block {
-  @include hide-by-default;
+  display: none;
 }

@@ -1,24 +1,24 @@
-// Font sizes (1rem, 0.875rem = 14px, 0.625rem = 10px)
+// Font sizes (1rem, 0.875rem = 14px, 0.75rem = 11px)
 $font-size--normal: 16px;
 $font-size--small: 0.875rem;
-$font-size--extra-small: 0.625rem;
+$font-size--extra-small: 0.75rem;
 
 // Font weight
 $weight--normal: 400;
 $weight--bold: 500;
 
 // Light mode
-$bg: hsl(0, 0%, 94%);
+$bg: hsl(0, 0%, 100%);
 $bg--ascent: hsl(0, 0%, 100%);
 $color: hsla(0, 0%, 0%, 0.86);
 $color--ascent: hsl(0, 0%, 44%);
-$shadow-color: hsla(0, 0%, 0%, 0.09);
+$shadow-color: hsla(0, 0%, 0%, 0.1);
 $border-color: hsla(0, 0%, 0%, 0.066);
 $border-color--ascent: hsla(0, 0%, 0%, 0.096);
 $anchor-color: hsl(222, 90%, 46%);
 
 // Dark mode // 131316 // 1d1d20
-$bg--dark: hsl(240, 7%, 8%);
+$bg--dark: hsl(240, 5%, 8%);
 $bg--ascent--dark: hsl(240, 5%, 12%);
 $color--dark: hsla(0, 0%, 100%, 0.84);
 $color--ascent--dark: hsl(0, 0%, 62%);

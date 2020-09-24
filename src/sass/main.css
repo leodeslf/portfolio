@@ -94,7 +94,7 @@ aside {
 h1,
 h2 {
   border-bottom: 1px solid rgba(0, 0, 0, 0.066);
-  margin-bottom: 0.5em;
+  margin-bottom: 1rem;
   font-weight: 500;
   margin-top: 2em;
   margin-top: 0;
@@ -108,18 +108,12 @@ h2 {
 * > h2:last-child {
   margin-bottom: 0;
 }
-@media screen and (max-width: 679px) {
-  h1,
-h2 {
-    text-align: center;
-  }
-}
 
 h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 0.5em;
+  margin-bottom: 1rem;
   font-weight: 500;
   margin-top: 2em;
 }
@@ -167,7 +161,7 @@ strong {
 }
 
 p {
-  margin-bottom: 0.5em;
+  margin-bottom: 1rem;
   max-width: 60ch;
 }
 * > p:last-child {
@@ -175,7 +169,7 @@ p {
 }
 
 ul {
-  margin-bottom: 0.5em;
+  margin-bottom: 1rem;
   padding-left: 3ch;
 }
 * > ul:last-child {
@@ -301,7 +295,7 @@ picture {
   border-radius: 4px;
   margin-bottom: 1rem;
   padding: 1rem;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
   display: grid;
   min-width: 100%;
   grid-template-areas: "type-and-date type-and-date" "title see-more" "about about" "details details";
@@ -359,17 +353,15 @@ picture {
 .portfolio__project .project__details.see-more__hidden-block > :last-child {
   margin-bottom: 0 !important;
 }
-.portfolio__project .project__details.see-more__hidden-block .ul-container {
-  margin-bottom: 0.5em;
+.portfolio__project .project__details.see-more__hidden-block .project__tools {
+  margin-bottom: 1rem;
 }
-* > .portfolio__project .project__details.see-more__hidden-block .ul-container:last-child {
+* > .portfolio__project .project__details.see-more__hidden-block .project__tools:last-child {
   margin-bottom: 0;
 }
 .portfolio__project .project__details.see-more__hidden-block .project__type-and-date {
-  font-size: 0.75rem;
   grid-area: type-and-date;
   color: #707070;
-  margin-bottom: 1rem;
 }
 .dark .portfolio__project .project__details.see-more__hidden-block .project__type-and-date {
   color: #9e9e9e;
@@ -521,7 +513,7 @@ picture {
   display: none;
 }
 .dark-mode-switch .dark-mode-switch__label {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
   background-color: white;
   border-radius: 12px;
   cursor: pointer;

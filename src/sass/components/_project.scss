@@ -35,14 +35,13 @@
     & > :last-child {
       margin-bottom: 0 !important;
     }
-    .ul-container {
+    .project__tools {
       @include text-body;
     }
     .project__type-and-date {
-      font-size: $font-size--extra-small;
+      //font-size: $font-size--extra-small;
       grid-area: type-and-date;
       @include color(true);
-      margin-bottom: 1rem;
     }
     .project__objective {
       max-width: 54ch;

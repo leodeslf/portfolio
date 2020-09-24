@@ -50,9 +50,6 @@ h2 {
   @include title-body;
   margin-top: 0;
   padding-bottom: 0.25em;
-  @media screen and (max-width: $media--max-small) {
-    text-align: center;
-  }
 }
 
 h3,

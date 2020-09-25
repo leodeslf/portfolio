@@ -70,16 +70,6 @@
         "name": "Banderas",
         "link": "https://www.countryflags.io",
         "linkName": "CountryFlags"
-      },
-      {
-        "name": "Fuentes",
-        "link": "https://fonts.google.com",
-        "linkName": "Google Fonts"
-      },
-      {
-        "name": "Iconos",
-        "link": "https://material.io",
-        "linkName": "Material design"
       }
     ],
     "links": [

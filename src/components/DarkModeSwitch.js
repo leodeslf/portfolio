@@ -1,17 +1,26 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
+const LOCAL_COLOR_SCHEME = () => localStorage.getItem('dark-color-scheme');
+const MEDIA_PREFERS_DARK = window.matchMedia('(prefers-color-scheme: dark)');
 
 export default class DarkModeSwitch extends Component {
   constructor() {
     super();
     this.state = {
-      isDark: document.body.classList.value === 'dark'
+      checked: document.body.classList.value === 'dark'
     }
   }
 
-  // Handle for manual changes
-  handleResetColorScheme(darkModeOn) {
-    manualColorScheme(darkModeOn);
-    this.setState({ isDarkMode: darkModeOn });
+  componentDidMount() {
+    // Automatic change.
+    MEDIA_PREFERS_DARK.onchange = e => {
+      if (LOCAL_COLOR_SCHEME() === null) this.setState({ checked: e.matches });
+    }
+  }
+
+  handleOnChange = e => {
+    this.setState({ checked: e.target.checked });
+    resetColoScheme(e.target.checked);
   }
 
   render() {
@@ -21,8 +30,8 @@ export default class DarkModeSwitch extends Component {
           id="dark-mode-switch__input"
           className="dark-mode-switch__input"
           type="checkbox"
-          defaultChecked={this.state.isDark}
-          onChange={e => this.handleResetColorScheme(e.target.checked)} />
+          checked={this.state.checked}
+          onChange={this.handleOnChange} />
         <label
           className="dark-mode-switch__label"
           htmlFor="dark-mode-switch__input"
@@ -36,15 +45,16 @@ export default class DarkModeSwitch extends Component {
 
 const META_THEME_COLOR = document.querySelector('meta[name="theme-color"]');
 
-function manualColorScheme(darkModeOn) {
-  if (darkModeOn) {
+// Manual change.
+function resetColoScheme(checked) {
+  if (checked) {
     document.body.classList.add('dark');
     META_THEME_COLOR.setAttribute('content', '#1c1c22');
-    localStorage.setItem('color-scheme', 'true');
+    localStorage.setItem('dark-color-scheme', 'true');
   } else {
     document.body.classList.remove('dark');
     META_THEME_COLOR.setAttribute('content', '#fff');
-    localStorage.setItem('color-scheme', 'false');
+    localStorage.setItem('dark-color-scheme', 'false');
   }
 }
 

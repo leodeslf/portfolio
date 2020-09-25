@@ -24,9 +24,9 @@
 <body class="">
   <script>
     const META_THEME_COLOR = document.querySelector('meta[name="theme-color"]');
-    const MEDIA_PREFERS_DARK = window.matchMedia('(prefers-color-scheme: dark)');
 
-    function automaticColorScheme(darkModeOn) {
+    // Automatic change.
+    function resetColoScheme(darkModeOn) {
       if (darkModeOn) {
         document.body.classList.add('dark');
         META_THEME_COLOR.setAttribute('content', '#1c1c22');
@@ -36,17 +36,18 @@
       }
     }
 
-    const LOCAL_COLOR_SCHEME = () => localStorage.getItem('color-scheme');
+    const LOCAL_COLOR_SCHEME = () => localStorage.getItem('dark-color-scheme');
+    const MEDIA_PREFERS_DARK = window.matchMedia('(prefers-color-scheme: dark)');
 
     // First apply
     ((init = LOCAL_COLOR_SCHEME()) => {
-      automaticColorScheme(init !== null ? init === 'true' : MEDIA_PREFERS_DARK.matches);
+      resetColoScheme(init !== null ? init === 'true' : MEDIA_PREFERS_DARK.matches);
     })();
 
-    MEDIA_PREFERS_DARK.addListener(e => {
-      if (LOCAL_COLOR_SCHEME() === null) automaticColorScheme(e.matches);
+    MEDIA_PREFERS_DARK.onchange = e => {
+      if (LOCAL_COLOR_SCHEME() === null) resetColoScheme(e.matches);
       // If not: It was manually changed before, user has priority!
-    });
+    };
   </script>
   <div id="root"></div>
 </body>

@@ -39,33 +39,32 @@ function ProjectItem({
         {!top3 &&
           <>
             <p className="project__about">
-              <strong>Acerca de: </strong>{`${about}.`}
+              Acerca de: {`${about}.`}
             </p>
           </>
         }
         <p className="project__objective">
-          <strong>Objetivo: </strong>{argument}.
+          Objetivo: {argument}.
         </p>
         <div className="project__tools ul-container">
-          <strong>Herramientas: </strong>
+          Herramientas:
           <ul>
             <TechStack tools={tools} i={i} />
           </ul>
         </div>
         {res &&
           <div className="project__res ul-container">
-            <strong>Recursos: </strong>
+            Recursos:
             <ResourceList res={res} i={i} />
           </div>
         }
         <p>
-          <strong>Links: </strong>
-          {links.map((link, i) =>
-            <Fragment key={i}>
-              <a href={link[1]}>{link[0]}</a>
-              {i < links.length - 1 ? ', ' : ''}
-            </Fragment>
-          )}.
+          Links: {links.map((link, i) =>
+          <Fragment key={i}>
+            <a href={link[1]}>{link[0]}</a>
+            {i < links.length - 1 ? ', ' : ''}
+          </Fragment>
+        )}.
         </p>
       </div>
     </article>

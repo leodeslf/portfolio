@@ -29,37 +29,35 @@
   }
   .project__details.see-more__hidden-block {
     @include border(border-top, 1px);
+    @include color($ascent: true);
     grid-area: details;
     margin-top: 1em;
     padding-top: 1em;
     & > :last-child {
       margin-bottom: 0 !important;
     }
-    .project__tools {
+    & > .ul-container {
       @include text-body;
+      &.project__tools > ul > .stack__new-item {
+        width: max-content;
+        position: relative;
+        span {
+          font-family: monospace;
+          font-size: $font-size--extra-small;
+          height: 1em;
+          left: 100%;
+          line-height: 1em;
+          padding-left: 0.5ex;
+          position: absolute;
+        }
+      }
     }
     .project__type-and-date {
-      //font-size: $font-size--extra-small;
       grid-area: type-and-date;
       @include color(true);
     }
     .project__objective {
       max-width: 54ch;
-    }
-    .project__tools > ul > .stack__new-item {
-      width: max-content;
-      position: relative;
-      span {
-        @include color($ascent: true);
-        border-radius: $border-radius;
-        font-family: monospace;
-        font-size: $font-size--extra-small;
-        height: 1em;
-        left: 100%;
-        line-height: 1em;
-        padding-left: 0.5ex;
-        position: absolute;
-      }
     }
   }
 }
@@ -73,8 +71,5 @@
 .portfolio__project:not(.top3) {
   & .project__title {
     margin-bottom: 0;
-  }
-  & .project__about {
-    @include color;
   }
 }

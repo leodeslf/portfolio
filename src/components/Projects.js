@@ -17,11 +17,11 @@ export default function Projects() {
 }
 
 function ProjectItem({
-  i, title, date, about, argument, tools, res, links, top3
+  i, title, date, about, argument, tools, res, links
 }) {
   const { input, label } = seeMore(i);
   return (
-    <article className={`portfolio__project text--small${top3 ? ' top3' : ''}`}>
+    <article className={`portfolio__project text--small`}>
       <h3 className="project__title">
         <a href={links[0][1]} title={links[0][0]}>{title}</a>
       </h3>
@@ -31,18 +31,11 @@ function ProjectItem({
           <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
         </svg>
       </label>
-      {top3 &&
-        <p className="project__about">{`${about}.`}</p>
-      }
       <div className="project__details see-more__hidden-block">
         <p className="project__type-and-date">{links[0][0]} - {date}</p>
-        {!top3 &&
-          <>
-            <p className="project__about">
-              Acerca de: {`${about}.`}
-            </p>
-          </>
-        }
+        <p className="project__about">
+          Acerca de: {`${about}.`}
+        </p>
         <p className="project__objective">
           Objetivo: {argument}.
         </p>

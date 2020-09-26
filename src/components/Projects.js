@@ -81,7 +81,9 @@ ProjectItem.propTypes = {
     linkName: PropTypes.string.isRequired,
   })),
   links: PropTypes.arrayOf(
-    PropTypes.string.isRequired
+    PropTypes.arrayOf(
+      PropTypes.string.isRequired
+    ).isRequired
   ).isRequired
 }
 

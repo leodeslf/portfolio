@@ -80,8 +80,9 @@ ProjectItem.propTypes = {
     link: PropTypes.string.isRequired,
     linkName: PropTypes.string.isRequired,
   })),
-  web: PropTypes.string,
-  repo: PropTypes.string
+  links: PropTypes.arrayOf(
+    PropTypes.string.isRequired
+  ).isRequired
 }
 
 function TechStack({ tools, i }) {

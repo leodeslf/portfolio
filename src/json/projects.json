@@ -21,95 +21,7 @@
         "repositorio",
         "https://github.com/leodeslf/vector"
       ]
-    ],
-    "top3": true
-  },
-  {
-    "title": "this.weather",
-    "date": "10/06/2019",
-    "about": "Un medio de acceso al estado del tiempo",
-    "argument": "Experimentar con APIs y escenas 3D",
-    "tools": [
-      [
-        "HTML",
-        "JavaScript"
-      ],
-      [
-        "React",
-        "SASS",
-        "Three.js"
-      ]
-    ],
-    "res": [
-      {
-        "name": "Geolocalización",
-        "link": "https://ipgeolocation.io",
-        "linkName": "ipgeolocation"
-      },
-      {
-        "name": "Meteorología",
-        "link": "https://openweathermap.org",
-        "linkName": "OpenWeatherMaps"
-      },
-      {
-        "name": "Datos",
-        "link": "https://restcountries.eu",
-        "linkName": "REST Countries"
-      },
-      {
-        "name": "Mapas",
-        "link": "http://www.shadedrelief.com/natural3/",
-        "linkName": "Natural Earth III"
-      },
-      {
-        "name": "Mapas",
-        "link": "https://visibleearth.nasa.gov",
-        "linkName": "NASA Visible Earth"
-      },
-      {
-        "name": "Banderas",
-        "link": "https://www.countryflags.io",
-        "linkName": "CountryFlags"
-      }
-    ],
-    "links": [
-      [
-        "Web",
-        "https://leodeslf.github.io/this.weather/"
-      ],
-      [
-        "repositorio",
-        "https://github.com/leodeslf/this.weather"
-      ]
-    ],
-    "top3": true
-  },
-  {
-    "title": "TFP v2",
-    "date": "04/07/2020",
-    "about": "Segunda versión del proyecto TFP",
-    "argument": "Migrar de GitHub Pages a Netlify. Optimizar performance, control de datos, experiencia e interfaz de usuario",
-    "tools": [
-      [
-        "HTML",
-        "JavaScript",
-        "React",
-        "SASS"
-      ],
-      []
-    ],
-    "res": null,
-    "links": [
-      [
-        "Web",
-        "https://tfp-v2.netlify.app/"
-      ],
-      [
-        "repositorio",
-        "https://github.com/leodeslf/tfp-v2"
-      ]
-    ],
-    "top3": true
+    ]
   },
   {
     "title": "TFP",
@@ -179,6 +91,65 @@
     ]
   },
   {
+    "title": "this.weather",
+    "date": "10/06/2019",
+    "about": "Un medio de acceso al estado del tiempo",
+    "argument": "Experimentar con APIs y escenas 3D",
+    "tools": [
+      [
+        "HTML",
+        "JavaScript"
+      ],
+      [
+        "React",
+        "SASS",
+        "Three.js"
+      ]
+    ],
+    "res": [
+      {
+        "name": "Geolocalización",
+        "link": "https://ipgeolocation.io",
+        "linkName": "ipgeolocation"
+      },
+      {
+        "name": "Meteorología",
+        "link": "https://openweathermap.org",
+        "linkName": "OpenWeatherMaps"
+      },
+      {
+        "name": "Datos",
+        "link": "https://restcountries.eu",
+        "linkName": "REST Countries"
+      },
+      {
+        "name": "Mapas",
+        "link": "http://www.shadedrelief.com/natural3/",
+        "linkName": "Natural Earth III"
+      },
+      {
+        "name": "Mapas",
+        "link": "https://visibleearth.nasa.gov",
+        "linkName": "NASA Visible Earth"
+      },
+      {
+        "name": "Banderas",
+        "link": "https://www.countryflags.io",
+        "linkName": "CountryFlags"
+      }
+    ],
+    "links": [
+      [
+        "Web",
+        "https://leodeslf.github.io/this.weather/"
+      ],
+      [
+        "repositorio",
+        "https://github.com/leodeslf/this.weather"
+      ]
+    ]
+  },
+  {
     "title": "Le cuenta un pajarito",
     "date": "04/09/2019",
     "about": "Un pajarito realmente (in)útil",
@@ -201,6 +172,32 @@
       [
         "repositorio",
         "https://github.com/leodeslf/le-cuenta-un-pajarito"
+      ]
+    ]
+  },
+  {
+    "title": "TFP v2",
+    "date": "04/07/2020",
+    "about": "Segunda versión del proyecto TFP",
+    "argument": "Migrar de GitHub Pages a Netlify. Optimizar performance, control de datos, experiencia e interfaz de usuario",
+    "tools": [
+      [
+        "HTML",
+        "JavaScript",
+        "React",
+        "SASS"
+      ],
+      []
+    ],
+    "res": null,
+    "links": [
+      [
+        "Web",
+        "https://tfp-v2.netlify.app/"
+      ],
+      [
+        "repositorio",
+        "https://github.com/leodeslf/tfp-v2"
       ]
     ]
   }

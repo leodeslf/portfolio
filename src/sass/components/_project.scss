@@ -3,73 +3,71 @@
 }
 
 .portfolio__project {
-  @include relief-card;
+  @include plain-card;
   display: grid;
   min-width: 100%;
   grid-template-areas: "type-and-date type-and-date" "title see-more" "about about" "details details";
   grid-template-columns: auto 24px;
-  .see-more__label {
-    grid-area: see-more;
-  }
-  .project__title {
-    grid-area: title;
-    margin-top: 0;
-    margin-right: 1rem;
-    a,
-    a:link,
-    a:active,
-    a:visited {
-      font: inherit;
-      @include color;
-    }
-  }
-  .project__about {
-    grid-area: about;
-    @include color(true);
-  }
-  .project__details.see-more__hidden-block {
-    @include border(border-top, 1px);
-    @include color($ascent: true);
-    grid-area: details;
-    margin-top: 1em;
-    padding-top: 1em;
-    & > :last-child {
-      margin-bottom: 0 !important;
-    }
-    & > .ul-container {
-      @include text-body;
-      &.project__tools > ul > .stack__new-item {
-        width: max-content;
-        position: relative;
-        span {
-          font-family: monospace;
-          font-size: $font-size--extra-small;
-          height: 1em;
-          left: 100%;
-          line-height: 1em;
-          padding-left: 0.5ex;
-          position: absolute;
-        }
-      }
-    }
-    .project__type-and-date {
-      grid-area: type-and-date;
-      @include color(true);
-    }
-    .project__objective {
-      max-width: 54ch;
-    }
+}
+
+.see-more__label {
+  grid-area: see-more;
+  margin: auto 0;
+}
+
+.project__title {
+  grid-area: title;
+  margin-bottom: 0;
+  margin-right: 1rem;
+  margin-top: 0;
+  a,
+  a:link,
+  a:active,
+  a:visited {
+    //font: inherit;
+    @include color;
   }
 }
 
-.portfolio__project.top3 {
-  .project__about {
-    margin-bottom: 0;
+.project__details {
+  @include border(border-top, 1px);
+  @include color($ascent: true);
+  grid-area: details;
+  margin-top: calc(1em + 2px);
+  padding-top: 1em;
+  & > :last-child {
+    margin-bottom: 0 !important;
   }
 }
 
-.portfolio__project:not(.top3) {
-  & .project__title {
-    margin-bottom: 0;
+.project__about {
+  grid-area: about;
+  @include color(true);
+}
+
+.ul-container {
+  @include text-body;
+}
+
+.stack__new-item {
+  width: max-content;
+  position: relative;
+  span {
+    font-family: monospace;
+    font-size: $font-size--extra-small;
+    height: 1em;
+    left: 100%;
+    line-height: 1em;
+    padding-left: 0.5ex;
+    position: absolute;
   }
+}
+
+.project__type-and-date {
+  grid-area: type-and-date;
+  @include color(true);
+}
+
+.project__objective {
+  max-width: 54ch;
 }

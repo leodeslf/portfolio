@@ -70,7 +70,6 @@
   $b: 0 1px 2px;
   box-shadow: $a $shadow-color, $b $shadow-color;
   .dark & {
-    $a: 0 1px 4px;
     box-shadow: $a $shadow-color--dark, $b $shadow-color--dark;
   }
 }

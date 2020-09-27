@@ -5,11 +5,12 @@
   @media screen and (max-width: $media--max-small) {
     place-content: center;
   }
-  & > .tools__item {
-    @include plain-card;
-    margin: 0 0.5rem;
-    & > ul {
-      padding-right: 0.618rem;
-    }
+}
+
+.tools__item {
+  @include plain-card;
+  margin: 0 0.5rem;
+  & > ul {
+    padding-right: 0.66rem;
   }
 }

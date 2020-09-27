@@ -14,20 +14,21 @@
 
 .stepper__list {
   @include no-style-list;
-  .stepper__item > .step {
-    @include color(ascent);
-    display: flex;
-    text-decoration: none;
-    line-height: 2em;
-    padding: 0 2rem 0 1rem;
-    &.step--active {
-      @include color;
-      @include border(border-left, 0.25rem);
-      padding-left: 0.75rem;
-    }
-    &:hover,
-    &:active {
-      @include color;
-    }
+}
+
+.stepper__item > .step {
+  @include color(ascent);
+  display: flex;
+  line-height: 2em;
+  padding: 0 2rem 0 1rem;
+  text-decoration: none;
+  &.step--active {
+    @include color;
+    @include border(border-left, 0.25rem);
+    padding-left: 0.75rem;
+  }
+  &:hover,
+  &:active {
+    @include color;
   }
 }

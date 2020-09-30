@@ -6,43 +6,51 @@
   @include plain-card;
   display: grid;
   min-width: 100%;
-  grid-template-areas: "type-and-date type-and-date" "title see-more" "about about" "details details";
+  grid-template-areas: "title see-more" "about see-more" "details details";
   grid-template-columns: auto 24px;
 }
 
 .see-more__label {
   grid-area: see-more;
-  margin: auto 0;
+  margin: 0 0 auto;
 }
 
 .project__title {
   grid-area: title;
-  margin-bottom: 0;
+  margin-bottom: 0rem;
   margin-right: 1rem;
   margin-top: 0;
   a,
   a:link,
   a:active,
   a:visited {
-    //font: inherit;
+    font: inherit;
     @include color;
   }
 }
 
+.project__about {
+  grid-area: about;
+  margin-bottom: 0;
+  margin-right: 1rem;
+  @include color(true);
+}
+
 .project__details {
   @include border(border-top, 1px);
-  @include color($ascent: true);
+  @include color(true);
   grid-area: details;
   margin-top: calc(1em + 2px);
   padding-top: 1em;
   & > :last-child {
     margin-bottom: 0 !important;
   }
-}
-
-.project__about {
-  grid-area: about;
-  @include color(true);
+  & > footer {
+    @include border(border-top, 1px);
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .ul-container {
@@ -61,11 +69,6 @@
     padding-left: 0.5ex;
     position: absolute;
   }
-}
-
-.project__type-and-date {
-  grid-area: type-and-date;
-  @include color(true);
 }
 
 .project__objective {

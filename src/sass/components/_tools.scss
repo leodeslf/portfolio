@@ -2,14 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   height: min-content;
-  @media screen and (max-width: $media--max-small) {
-    place-content: center;
-  }
 }
 
 .tools__item {
   @include plain-card;
-  margin: 0 0.5rem;
+  margin: 0.5rem;
+  &:last-child {
+    margin-bottom: 0.5rem;
+  }
   & > ul {
     padding-right: 0.66rem;
   }

@@ -10,7 +10,6 @@ const ANCHORS = [
 ];
 
 export default class StepperNav extends Component {
-
   render() {
     return (
       <nav className="stepper text--small">

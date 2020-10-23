@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "netlify-cli": "^2.63.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "netlify-cli": "^2.65.7",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "devDependencies": {
-    "react-scripts": "^3.4.3"
+    "react-scripts": "^3.4.4"
   },
   "scripts": {
     "start": "set PORT=8002 && react-scripts start",

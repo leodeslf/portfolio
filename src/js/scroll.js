@@ -1,4 +1,4 @@
-const MARGIN = window.innerHeight * .5 + 1;
+const PADDING = 128; // 16 * 6
 let titles = undefined;
 let steps = undefined;
 
@@ -22,19 +22,12 @@ window.addEventListener('load', () => {
 const setActiveStep = () => {
   const SCROLLED = document.documentElement.scrollTop;
 
-  // Check if first title is too low
-  // Then, they all are too low (inactive).
-  if (titles[0].offsetTop - MARGIN > SCROLLED) {
-    steps.forEach(step => step.classList.remove('step--active'));
-    return;
-  }
-
   // If not, find the active one.
   for (let i = 0; i < titles.length; i++) {
     // Check if current (i) is the active one.
     if (
       // The next one is too low (and it exists) or...
-      (titles[i + 1] && titles[i + 1].offsetTop - MARGIN > SCROLLED) ||
+      (titles[i + 1] && titles[i + 1].offsetTop - PADDING > SCROLLED) ||
       // It (i) is the last one.
       (i === titles.length - 1)
     ) {

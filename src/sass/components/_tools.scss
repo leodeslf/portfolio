@@ -5,7 +5,7 @@
 }
 
 .tools__item {
-  @include plain-card;
+  //@include plain-card;
   margin: 0.5rem;
   &:last-child {
     margin-bottom: 0.5rem;

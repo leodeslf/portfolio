@@ -23,7 +23,7 @@
 
 main,
 aside {
-  animation-name: appear;
+  animation-name: fade-opacity;
   animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   @include speed(animation-duration, $animation-speed--medium);
 }

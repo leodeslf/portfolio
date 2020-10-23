@@ -1,4 +1,4 @@
-@keyframes appear {
+@keyframes fade-opacity {
   from {
     opacity: 0;
   }
@@ -12,13 +12,32 @@
 
 .portfolio__elem {
   display: grid;
-  place-content: center;
-  min-height: 100vh;
+  align-content: center;
+  padding: 4rem 0;
+}
+.portfolio__elem:first-of-type {
+  padding-top: 12rem;
+}
+.portfolio__elem:last-of-type {
+  padding-bottom: 12rem;
 }
 
-.svg-24 {
-  max-width: 24px;
+.icon-24 {
+  cursor: pointer;
   max-height: 24px;
+  user-select: none;
+  max-width: 24px;
+}
+.icon-24 svg {
+  fill: #707070;
+  height: 100%;
+  width: 100%;
+}
+.icon-24 svg:hover, .icon-24 svg:active {
+  fill: rgba(0, 0, 0, 0.86);
+}
+.dark .icon-24 svg:hover, .dark .icon-24 svg:active {
+  fill: rgba(255, 255, 255, 0.84);
 }
 
 * {
@@ -33,16 +52,14 @@
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
+  /* @media screen and (max-width: $media--max-medium) {
+    font-size: clamp($font-size--small, 2vw, $font-size--normal);
+  } */
 }
 :root .dark {
   font-weight: 300;
 }
-@media screen and (max-width: 959px) {
-  :root {
-    font-size: clamp(0.875rem, 2vw, 16px);
-  }
-}
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 359px) {
   :root {
     font-size: 0.875rem;
   }
@@ -61,7 +78,7 @@
 .dark #root {
   background-color: #131315;
 }
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 639px) {
   #root {
     flex-direction: column;
   }
@@ -69,7 +86,7 @@
 
 main,
 aside {
-  animation-name: appear;
+  animation-name: fade-opacity;
   animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   animation-duration: 200ms;
 }
@@ -87,7 +104,7 @@ aside {
   position: sticky;
   top: 0;
 }
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 639px) {
   aside {
     height: fit-content;
     flex-direction: row-reverse;
@@ -201,6 +218,7 @@ picture {
 }
 
 .portfolio {
+  position: relative;
   border-right: 1px solid rgba(0, 0, 0, 0.066);
   max-width: 960px;
   padding: 0 4rem 0 0;
@@ -213,7 +231,7 @@ picture {
     padding: 0 2rem;
   }
 }
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 639px) {
   .portfolio {
     border-bottom: 1px solid rgba(0, 0, 0, 0.066);
     border-right: none;
@@ -231,25 +249,7 @@ picture {
 }
 
 .tools__item {
-  color: rgba(0, 0, 0, 0.86);
-  background-color: white;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.096);
   margin: 0.5rem;
-}
-.dark .tools__item {
-  color: rgba(255, 255, 255, 0.84);
-}
-.dark .tools__item {
-  background-color: #1d1d20;
-}
-* > .tools__item:last-child {
-  margin-bottom: 0;
-}
-.dark .tools__item {
-  border: 1px solid rgba(0, 0, 0, 0.44);
 }
 .tools__item:last-child {
   margin-bottom: 0.5rem;
@@ -268,22 +268,8 @@ picture {
   display: block;
 }
 
-.see-more__label {
-  cursor: pointer;
-  user-select: none;
-  height: 24px;
-  width: 24px;
-}
-.see-more__label svg {
-  fill: #707070;
-}
-.see-more__label svg:hover, .see-more__label svg:active {
-  fill: rgba(0, 0, 0, 0.86);
-}
-.dark .see-more__label svg:hover, .dark .see-more__label svg:active {
-  fill: rgba(255, 255, 255, 0.84);
-}
-
+/* .see-more__label {
+} */
 .see-more__hidden-block {
   display: none;
 }
@@ -410,9 +396,10 @@ picture {
   margin-bottom: 1rem;
   padding: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.096);
-  display: flex;
-  padding: 0.5rem;
   align-items: center;
+  display: flex;
+  justify-self: center;
+  padding: 0.5rem;
   max-width: fit-content;
 }
 .dark .contact__card {
@@ -427,7 +414,7 @@ picture {
 .dark .contact__card {
   border: 1px solid rgba(0, 0, 0, 0.44);
 }
-@media screen and (max-width: 349px) {
+@media screen and (max-width: 359px) {
   .contact__card {
     flex-direction: column;
   }
@@ -441,7 +428,7 @@ picture {
 .card__data > li {
   list-style: none;
 }
-@media screen and (max-width: 349px) {
+@media screen and (max-width: 359px) {
   .card__data {
     padding-right: 0;
     text-align: center;
@@ -467,7 +454,7 @@ picture {
 .dark .stepper {
   color: #9e9e9e;
 }
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 639px) {
   .stepper {
     display: none;
   }

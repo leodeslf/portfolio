@@ -8,22 +8,8 @@
   }
 }
 
-.see-more__label {
-  cursor: pointer;
-  user-select: none;
-  height: 24px;
-  width: 24px;
-  & svg {
-    fill: $color--ascent;
-  }
-  & svg:hover,
-  & svg:active {
-    fill: $color;
-    .dark & {
-      fill: $color--dark;
-    }
-  }
-}
+/* .see-more__label {
+} */
 
 .see-more__hidden-block {
   display: none;

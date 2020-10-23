@@ -7,11 +7,31 @@
 
 .portfolio__elem {
   display: grid;
-  place-content: center;
-  min-height: 100vh;
+  align-content: center;
+  padding: 4rem 0;
+  &:first-of-type {
+    padding-top: 12rem;
+  }
+  &:last-of-type {
+    padding-bottom: 12rem;
+  }
 }
 
-.svg-24 {
-  max-width: 24px;
+.icon-24 {
+  cursor: pointer;
   max-height: 24px;
+  user-select: none;
+  max-width: 24px;
+  & svg {
+    fill: $color--ascent;
+    height: 100%;
+    width: 100%;
+  }
+  & svg:hover,
+  & svg:active {
+    fill: $color;
+    .dark & {
+      fill: $color--dark;
+    }
+  }
 }

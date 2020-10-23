@@ -6,10 +6,10 @@
   .dark {
     font-weight: 300;
   }
-  @media screen and (max-width: $media--max-medium) {
+  /* @media screen and (max-width: $media--max-medium) {
     font-size: clamp($font-size--small, 2vw, $font-size--normal);
-  }
-  @media screen and (max-width: $media--max-small) {
+  } */
+  @media screen and (max-width: $media--max-micro) {
     font-size: $font-size--small;
   }
 }

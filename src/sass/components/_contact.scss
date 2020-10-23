@@ -1,8 +1,9 @@
 .contact__card {
   @include plain-card;
-  display: flex;
-  padding: 0.5rem;
   align-items: center;
+  display: flex;
+  justify-self: center;
+  padding: 0.5rem;
   max-width: fit-content;
   @media screen and (max-width: $media--max-micro) {
     flex-direction: column;

@@ -51,17 +51,10 @@
   }
 }
 
-@mixin border($prop, $line-width, $ascent: false) {
-  @if $ascent {
-    #{$prop}: $line-width solid $border-color;
-    .dark & {
-      #{$prop}: $line-width solid $border-color--ascent--dark;
-    }
-  } @else {
-    #{$prop}: $line-width solid $border-color;
-    .dark & {
-      #{$prop}: $line-width solid $border-color--dark;
-    }
+@mixin border($prop, $line-width) {
+  #{$prop}: $line-width solid $border-color;
+  .dark & {
+    #{$prop}: $line-width solid $border-color--dark;
   }
 }
 
@@ -86,6 +79,7 @@
 
 @mixin base-card {
   @include ascent-container;
+  @include border(border, 1px);
   border-radius: $border-radius;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -96,7 +90,6 @@
 
 @mixin plain-card {
   @include base-card;
-  @include border(border, 1px, ascent);
 }
 
 @mixin relief-card {
@@ -141,5 +134,5 @@
 @mixin transition-to-all {
   @include speed(transition-duration, $animation-speed--fast);
   transition-property: all;
-  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-timing-function: $animation-function;
 }

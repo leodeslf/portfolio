@@ -10,26 +10,26 @@ $weight--bold: 500;
 // Light mode
 $bg: hsl(0, 0%, 100%);
 $bg--ascent: hsl(0, 0%, 100%);
-$color: hsla(0, 0%, 0%, 0.86);
+$color: hsla(0, 0%, 0%, 0.9);
 $color--ascent: hsl(0, 0%, 44%);
 $shadow-color: hsla(0, 0%, 0%, 0.1);
 $border-color: hsla(0, 0%, 0%, 0.096);
-//$border-color--ascent: hsla(0, 0%, 0%, 0.096);
+//$border-color--ascent: hsla(0, 0%, 0%, 0.096); // temp.
 $anchor-color: hsl(222, 90%, 46%);
 
 // Dark mode // 131316 // 1d1d20
 $bg--dark: hsl(240, 5%, 8%);
 $bg--ascent--dark: hsl(240, 5%, 12%);
-$color--dark: hsla(0, 0%, 100%, 0.84);
+$color--dark: hsla(0, 0%, 100%, 0.86);
 $color--ascent--dark: hsl(0, 0%, 62%);
 $shadow-color--dark: hsla(0, 0%, 0%, 0.18);
-$border-color--dark: hsla(240, 6%, 0%, 0.24);
-$border-color--ascent--dark: hsla(240, 6%, 0%, 0.44);
+$border-color--dark: hsla(240, 6%, 0%, 0.44);
 $anchor-color--dark: hsl(216, 100%, 72%);
 
-// Animation speed
+// Animation
 $animation-speed--fast: 100ms;
-$animation-speed--medium: 200ms;
+$animation-speed--medium: 225ms;
+$animation-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 
 // Media queries
 $media--max-big: 1199px;

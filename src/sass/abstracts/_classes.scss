@@ -8,13 +8,11 @@
 .portfolio__elem {
   display: grid;
   align-content: center;
-  padding: 4rem 0;
-  &:first-of-type {
-    padding-top: 12rem;
-  }
-  &:last-of-type {
-    padding-bottom: 12rem;
-  }
+  padding-top: 4rem;
+  margin-bottom: 4rem;
+  animation-name: raise;
+  animation-timing-function: $animation-function;
+  @include speed(animation-duration, $animation-speed--medium);
 }
 
 .icon-24 {

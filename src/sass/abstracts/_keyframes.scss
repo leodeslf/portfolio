@@ -3,3 +3,19 @@
     opacity: 0;
   }
 }
+
+@keyframes raise {
+  from {
+    transform: translateY(1rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes grow-height {
+  from {
+    top: 50%;
+    height: 0;
+  }
+}

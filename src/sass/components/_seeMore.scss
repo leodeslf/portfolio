@@ -1,15 +1,17 @@
 .see-more__input {
   display: none;
   &:checked + .see-more__label {
-    transform: rotateZ(180deg);
+    transform: rotateZ(0deg);
   }
   &:checked ~ .see-more__hidden-block {
     display: block;
   }
 }
 
-/* .see-more__label {
-} */
+.see-more__label {
+  @include transition-to-all;
+  transform: rotateZ(90deg);
+}
 
 .see-more__hidden-block {
   display: none;

@@ -2,17 +2,19 @@
   position: relative;
   @include border(border-right, 1px);
   max-width: 960px;
-  padding: 0 4rem 0 0;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  padding-right: 4rem;
   @media screen and (max-width: $media--max-medium) {
     & {
-      padding: 0 2rem;
+      padding: 2rem;
     }
   }
   @media screen and (max-width: $media--max-small) {
     & {
       @include border(border-bottom, 1px);
       border-right: none;
-      padding: 0 1rem;
+      padding: 1rem;
     }
   }
 }

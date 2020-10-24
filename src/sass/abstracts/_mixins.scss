@@ -53,7 +53,7 @@
 
 @mixin border($prop, $line-width, $ascent: false) {
   @if $ascent {
-    #{$prop}: $line-width solid $border-color--ascent;
+    #{$prop}: $line-width solid $border-color;
     .dark & {
       #{$prop}: $line-width solid $border-color--ascent--dark;
     }

@@ -13,8 +13,8 @@ $bg--ascent: hsl(0, 0%, 100%);
 $color: hsla(0, 0%, 0%, 0.86);
 $color--ascent: hsl(0, 0%, 44%);
 $shadow-color: hsla(0, 0%, 0%, 0.1);
-$border-color: hsla(0, 0%, 0%, 0.066);
-$border-color--ascent: hsla(0, 0%, 0%, 0.096);
+$border-color: hsla(0, 0%, 0%, 0.096);
+//$border-color--ascent: hsla(0, 0%, 0%, 0.096);
 $anchor-color: hsl(222, 90%, 46%);
 
 // Dark mode // 131316 // 1d1d20
@@ -38,3 +38,5 @@ $media--max-small: 639px;
 $media--max-micro: 359px;
 
 $border-radius: 4px;
+
+$grad: to top right, #d2faff, #80ddff, #3aa2f8, #0055c2, #002790;

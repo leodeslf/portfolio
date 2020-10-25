@@ -1,4 +1,4 @@
-const MARGIN = 64; // 16 * 4
+const MARGIN = 64; // 16rem * 4
 let distToScroll = [];
 let titles = undefined;
 let links = undefined;

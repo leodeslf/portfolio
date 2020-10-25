@@ -20,7 +20,6 @@
         display: block;
         pointer-events: all;
         background-color: rgba(0, 0, 0, 33%);
-        z-index: -1;
       }
       & .sticky__slide {
         @include visible;
@@ -41,6 +40,7 @@
   position: fixed;
   transition-property: background-color;
   width: 100vw;
+  z-index: -1;
 }
 
 .aside__sticky {

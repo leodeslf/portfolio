@@ -1,10 +1,10 @@
 .stepper {
   @include color(ascent);
-  place-content: center;
   display: grid;
-  min-width: max-content;
   margin: auto 0;
+  min-width: max-content;
   padding-top: 56px;
+  place-content: center;
   @media screen and (max-width: $media--max-small) {
     & {
       display: none;
@@ -29,12 +29,10 @@ a.step {
 }
 
 a.step.step--active {
-  position: relative;
   @include color;
+  position: relative;
   &::before {
-    @include speed(animation-duration, $animation-speed--medium);
-    animation-name: grow-height;
-    animation-timing-function: $animation-function;
+    @include animation(grow-height, $animation-speed--medium);
     background-color: $border-color;
     content: "";
     height: 100%;

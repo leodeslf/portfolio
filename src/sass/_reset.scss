@@ -6,7 +6,7 @@
 }
 
 :root {
-  //scroll-behavior: smooth;
+  scroll-behavior: smooth;
   @include font;
 }
 
@@ -23,9 +23,7 @@
 
 main,
 aside {
-  animation-name: fade-opacity;
-  animation-timing-function: $animation-function;
-  @include speed(animation-duration, $animation-speed--medium);
+  @include animation(fade-opacity, $animation-speed--medium);
 }
 
 aside {

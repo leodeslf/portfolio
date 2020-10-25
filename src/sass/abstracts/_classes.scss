@@ -10,9 +10,6 @@
   align-content: center;
   padding-top: 4rem;
   margin-bottom: 4rem;
-  animation-name: raise;
-  animation-timing-function: $animation-function;
-  @include speed(animation-duration, $animation-speed--medium);
 }
 
 .icon-24 {

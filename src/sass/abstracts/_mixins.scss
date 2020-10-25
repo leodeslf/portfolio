@@ -136,3 +136,9 @@
   transition-property: all;
   transition-timing-function: $animation-function;
 }
+
+@mixin animation($name, $animation-speed) {
+  @include speed(animation-duration, $animation-speed);
+  animation-name: $name;
+  animation-timing-function: $animation-function;
+}

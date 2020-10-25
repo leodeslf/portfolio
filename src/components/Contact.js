@@ -18,7 +18,12 @@ export default function Contact() {
         </ul>
         <picture className="card__pic">
           <source type="image/webp" srcSet={`${ORIGIN}.webp`} />
-          <img src={`${ORIGIN}.gif`} alt={`${ORIGIN}`} title="A human been" />
+          <img
+            src={`${ORIGIN}.gif`}
+            alt={`${ORIGIN}`}
+            title="A human been"
+            width="102"
+            height="150" />
         </picture>
       </div>
     </section>

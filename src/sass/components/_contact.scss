@@ -24,6 +24,7 @@
   display: flex;
   margin: 0.5rem;
   img {
+    aspect-ratio: 102/150;
     border-radius: $border-radius;
   }
 }

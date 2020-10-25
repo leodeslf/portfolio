@@ -53,6 +53,10 @@
   }
 }
 
+.project__res .res__list a {
+  @include color(true);
+}
+
 .ul-container {
   @include text-body;
 }

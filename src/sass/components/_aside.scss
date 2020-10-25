@@ -1,0 +1,81 @@
+@mixin visible {
+  @include bg;
+  transform: translateX(0%);
+  z-index: 2;
+}
+
+@mixin hidden {
+  margin-left: auto;
+  transform: translateX(100%);
+}
+
+.aside {
+  @media screen and (max-width: $media--max-small) {
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    &[isvisible="true"] {
+      & .aside__bg {
+        display: block;
+        pointer-events: all;
+        background-color: rgba(0, 0, 0, 33%);
+        z-index: -1;
+      }
+      & .sticky__slide {
+        @include visible;
+      }
+      & + .aside__button {
+        z-index: -1;
+      }
+    }
+  }
+}
+
+.aside__bg {
+  @include speed(transition-duration, $animation-speed--fast);
+  background-color: rgba(0, 0, 0, 0%);
+  height: 100%;
+  user-select: none;
+  pointer-events: none;
+  position: fixed;
+  transition-property: background-color;
+  width: 100%;
+}
+
+.aside__sticky {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-x: hidden;
+  position: sticky;
+  top: 0;
+}
+
+.sticky__slide {
+  @include border(border-left, 1px);
+  @include speed(transition-duration, $animation-speed--fast);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  transition-property: transform;
+  width: max-content;
+  @media screen and (max-width: $media--max-small) {
+    pointer-events: all;
+    @include hidden;
+  }
+}
+
+.aside__button {
+  @include relief-card;
+  border-radius: 50%;
+  bottom: 1.5rem;
+  display: none;
+  margin-left: auto;
+  position: fixed;
+  right: 1.5rem;
+  width: fit-content;
+  @media screen and (max-width: $media--max-small) {
+    display: flex;
+    pointer-events: all;
+  }
+}

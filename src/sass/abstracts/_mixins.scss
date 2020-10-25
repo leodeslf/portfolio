@@ -6,12 +6,6 @@
   .dark {
     font-weight: 300;
   }
-  /* @media screen and (max-width: $media--max-medium) {
-    font-size: clamp($font-size--small, 2vw, $font-size--normal);
-  } */
-  @media screen and (max-width: $media--max-micro) {
-    font-size: $font-size--small;
-  }
 }
 
 @mixin color($ascent: false) {
@@ -104,14 +98,6 @@
   }
 }
 
-@mixin text-body--standalone {
-  @media screen and (max-width: $media--max-small) {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 @mixin title-body {
   font-weight: $weight--bold;
   margin-top: 2em;
@@ -134,11 +120,9 @@
 @mixin transition-to-all {
   @include speed(transition-duration, $animation-speed--fast);
   transition-property: all;
-  transition-timing-function: $animation-function;
 }
 
 @mixin animation($name, $animation-speed) {
   @include speed(animation-duration, $animation-speed);
   animation-name: $name;
-  animation-timing-function: $animation-function;
 }

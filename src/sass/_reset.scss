@@ -3,6 +3,7 @@
   padding: 0;
   line-height: 1.5em;
   box-sizing: border-box;
+  transition-timing-function: $animation-function;
 }
 
 :root {
@@ -11,34 +12,19 @@
 }
 
 #root {
-  @include color;
   @include bg;
+  @include color;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  position: relative;
   @media screen and (max-width: $media--max-small) {
-    flex-direction: column;
   }
 }
 
 main,
 aside {
   @include animation(fade-opacity, $animation-speed--medium);
-}
-
-aside {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  @media screen and (max-width: $media--max-small) {
-    & {
-      height: fit-content;
-      flex-direction: row-reverse;
-      position: unset;
-    }
-  }
 }
 
 h1,

@@ -12,18 +12,23 @@
   margin-bottom: 4rem;
 }
 
-.icon-24 {
+.icon-label {
   cursor: pointer;
-  max-height: 24px;
-  user-select: none;
-  max-width: 24px;
-  & svg {
-    fill: $color--ascent;
-    height: 100%;
-    width: 100%;
+  & > .icon-24 {
+    max-height: 24px;
+    max-width: 24px;
+    user-select: none;
+    & > svg {
+      fill: $color--ascent;
+      height: 100%;
+      width: 100%;
+      .dark & {
+        fill: $color--ascent--dark;
+      }
+    }
   }
-  & svg:hover,
-  & svg:active {
+  &:hover > .icon-24 > svg,
+  &:active > .icon-24 > svg {
     fill: $color;
     .dark & {
       fill: $color--dark;

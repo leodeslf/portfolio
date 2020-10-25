@@ -1,6 +1,6 @@
 .see-more__input {
   display: none;
-  &:checked + .see-more__label {
+  &:checked + .see-more__label svg {
     transform: rotateZ(0deg);
   }
   &:checked ~ .see-more__hidden-block {
@@ -8,7 +8,7 @@
   }
 }
 
-.see-more__label {
+.see-more__label svg {
   @include transition-to-all;
   transform: rotateZ(90deg);
 }

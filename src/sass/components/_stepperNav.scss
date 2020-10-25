@@ -3,12 +3,8 @@
   display: grid;
   margin: auto 0;
   min-width: max-content;
-  padding-top: 56px;
   place-content: center;
   @media screen and (max-width: $media--max-small) {
-    & {
-      display: none;
-    }
   }
 }
 

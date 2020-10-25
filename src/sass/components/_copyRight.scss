@@ -1,0 +1,10 @@
+.copy-right {
+  @include color(true);
+  font-size: $font-size--extra-small;
+  padding: 1rem;
+  .dark & {
+    font-weight: 400;
+  }
+  @media screen and (max-width: $media--max-small) {
+  }
+}

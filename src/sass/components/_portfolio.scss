@@ -1,20 +1,12 @@
 .portfolio {
-  @include border(border-right, 1px);
   max-width: 960px;
   padding-bottom: 8rem;
   padding-right: 4rem;
   padding-top: 8rem;
-  position: relative;
   @media screen and (max-width: $media--max-medium) {
-    & {
-      padding: 2rem;
-    }
+    padding: 4rem 2rem;
   }
   @media screen and (max-width: $media--max-small) {
-    & {
-      @include border(border-bottom, 1px);
-      border-right: none;
-      padding: 1rem;
-    }
+    padding: 2rem 1rem;
   }
 }

@@ -458,19 +458,19 @@ picture {
 @media screen and (max-width: 639px) {
   .aside {
     height: 100vh;
+    left: 0;
     pointer-events: none;
     position: fixed;
+    top: 0;
     width: 100vw;
   }
   .aside[isvisible=true] .aside__bg {
-    display: block;
     pointer-events: all;
     background-color: rgba(0, 0, 0, 0.33);
   }
   .aside[isvisible=true] .sticky__slide {
     background-color: white;
     transform: translateX(0%);
-    z-index: 2;
   }
   .dark .aside[isvisible=true] .sticky__slide {
     background-color: #131315;
@@ -481,14 +481,14 @@ picture {
 }
 
 .aside__bg {
-  transition-duration: 100ms;
+  transition-duration: 225ms;
   background-color: rgba(0, 0, 0, 0);
-  height: 100vh;
+  height: 100%;
   user-select: none;
   pointer-events: none;
   position: fixed;
   transition-property: background-color;
-  width: 100vw;
+  width: 100%;
   z-index: -1;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -501,19 +501,20 @@ picture {
   display: flex;
   flex-direction: column-reverse;
   overflow-x: hidden;
-  position: sticky;
-  top: 0;
+  position: fixed;
+  right: 0;
 }
 
 .sticky__slide {
   border-left: 1px solid rgba(0, 0, 0, 0.096);
-  transition-duration: 100ms;
+  transition-duration: 225ms;
   display: flex;
   flex-direction: column;
   height: 100vh;
   position: relative;
   transition-property: transform;
   width: max-content;
+  z-index: 1;
 }
 .dark .sticky__slide {
   border-left: 1px solid rgba(0, 0, 0, 0.44);
@@ -525,9 +526,8 @@ picture {
 }
 @media screen and (max-width: 639px) {
   .sticky__slide {
-    pointer-events: all;
-    margin-left: auto;
     transform: translateX(100%);
+    pointer-events: all;
   }
 }
 
@@ -539,12 +539,11 @@ picture {
   margin-bottom: 1rem;
   padding: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  bottom: 1.5rem;
+  bottom: 2rem;
   display: none;
-  margin-left: auto;
+  padding: 12.8px;
   position: fixed;
-  right: 1.5rem;
+  right: 2rem;
   width: fit-content;
 }
 .dark .aside__button {
@@ -666,14 +665,10 @@ picture {
 }
 
 .stepper {
-  color: #707070;
   display: grid;
   margin: auto 0;
   min-width: max-content;
   place-content: center;
-}
-.dark .stepper {
-  color: #9e9e9e;
 }
 .stepper__list {
   padding-left: 0;
@@ -729,7 +724,8 @@ a.step.step--active::before {
 .copy-right {
   color: #707070;
   font-size: 0.75rem;
-  padding: 1rem;
+  padding: 1rem 2px 1rem 0;
+  margin: 0 auto;
 }
 .dark .copy-right {
   color: #9e9e9e;

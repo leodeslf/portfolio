@@ -10,23 +10,13 @@ const CopyRight = lazy(() =>
 const bigMedia = window.matchMedia('screen and (min-width: 640px)');
 
 export default function Aside() {
-  const [visible, setVisible] = useState(0);
+  const [visible, setVisible] = useState(false);
   bigMedia.onchange = e => {
     if (e.matches) setVisible(false);
   }
 
   return (
     <>
-      <aside className="aside" isvisible={visible.toString()}>
-        <div className="aside__bg" onClick={() => setVisible(false)} />
-        <div className="aside__sticky">
-          <div className="sticky__slide">
-            <Menu />
-            <StepperNav />
-            <CopyRight />
-          </div>
-        </div>
-      </aside>
       <button
         className="icon-label aside__button"
         onClick={() => setVisible(true)}>
@@ -37,6 +27,16 @@ export default function Aside() {
           </svg>
         </span>
       </button>
+      <aside className="aside" isvisible={visible.toString()}>
+        <div className="aside__bg" onClick={() => setVisible(false)} />
+        <div className="aside__sticky">
+          <div className="sticky__slide">
+            <Menu />
+            <StepperNav />
+            <CopyRight />
+          </div>
+        </div>
+      </aside>
     </>
   );
 }

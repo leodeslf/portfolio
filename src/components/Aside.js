@@ -19,7 +19,8 @@ export default function Aside() {
     <>
       <button
         className="icon-label aside__button"
-        onClick={() => setVisible(true)}>
+        onClick={() => setVisible(true)}
+        aria-label="Mostrar menú">
         <span className="icon-24">
           <svg viewBox="0 0 24 24">
             <path d="M0 0h24v24H0z" fill="none" />

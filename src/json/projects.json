@@ -11,7 +11,6 @@
       ]
     ],
     "res": null,
-    "web": null,
     "links": [
       [
         "Paquete",
@@ -198,6 +197,32 @@
       [
         "repositorio",
         "https://github.com/leodeslf/tfp-v2"
+      ]
+    ]
+  },
+  {
+    "title": "CASI",
+    "date": "02/12/2020",
+    "about": "Calculadora basada en la Casio fx-82MS",
+    "argument": "Experimentar con Vue",
+    "tools": [
+      [
+        "HTML",
+        "JavaScript"
+      ],
+      [
+        "Vue"
+      ]
+    ],
+    "res": null,
+    "links": [
+      [
+        "Web",
+        "https://casi-fx-leodeslf.netlify.app/"
+      ],
+      [
+        "repositorio",
+        "https://github.com/leodeslf/casi"
       ]
     ]
   }

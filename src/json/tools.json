@@ -13,9 +13,10 @@
     "title": "Otras",
     "tool_list": [
       "Git",
-      "GitHub",
+      "Three.js",
+      "TypeScript",
       "Markdown",
-      "Three.js"
+      "Vue"
     ]
   }
 ]

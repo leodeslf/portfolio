@@ -1,8 +1,6 @@
 .portfolio {
   max-width: 960px;
-  padding-bottom: 8rem;
-  padding-right: 4rem;
-  padding-top: 8rem;
+  padding: 8rem 4rem;
   @media screen and (max-width: $media--max-medium) {
     padding: 4rem 2rem;
   }

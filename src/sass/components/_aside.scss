@@ -22,9 +22,8 @@
       & .sticky__slide {
         @include visible;
       }
-      & + .aside__button {
-        //z-index: -1;
-      }
+      /* & + .aside__button {
+      } */
     }
   }
 }

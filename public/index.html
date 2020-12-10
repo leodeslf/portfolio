@@ -20,9 +20,7 @@
   <meta name="msapplication-TileColor" content="#1d1d20">
   <link rel="canonical" href="https://leodeslf.com" />
   <meta name="google-site-verification" content="VHkXfJGJmtuPbiHotYrHQa4HdPD-yfHmmRum2MRYTJI" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com/s/roboto/v20/">
   <title>leodeslf</title>
 </head>
 
@@ -37,21 +35,21 @@
         META_THEME_COLOR.setAttribute('content', '#1c1c22');
       } else {
         document.body.classList.remove('dark');
-        META_THEME_COLOR.setAttribute('content', '#fff');
+        META_THEME_COLOR.setAttribute('content', '#ffffff');
       }
     }
 
     const LOCAL_COLOR_SCHEME = () => localStorage.getItem('dark-color-scheme');
     const MEDIA_PREFERS_DARK = window.matchMedia('(prefers-color-scheme: dark)');
 
-    // First apply
+    // First apply.
     ((init = LOCAL_COLOR_SCHEME()) => {
       resetColoScheme(init !== null ? init === 'true' : MEDIA_PREFERS_DARK.matches);
     })();
 
     MEDIA_PREFERS_DARK.onchange = e => {
       if (LOCAL_COLOR_SCHEME() === null) resetColoScheme(e.matches);
-      // If not: It was manually changed before, user has priority!
+      // If not: It was manually changed before, user has priority.
     };
   </script>
   <div id="root"></div>

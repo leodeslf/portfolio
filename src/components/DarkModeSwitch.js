@@ -53,7 +53,7 @@ function resetColoScheme(checked) {
     localStorage.setItem('dark-color-scheme', 'true');
   } else {
     document.body.classList.remove('dark');
-    META_THEME_COLOR.setAttribute('content', '#fff');
+    META_THEME_COLOR.setAttribute('content', '#ffffff');
     localStorage.setItem('dark-color-scheme', 'false');
   }
 }

@@ -25,6 +25,8 @@ yarn-error.log*
 # Local Netlify folder
 .netlify
 
-# other
+# Other
 notes.md
 leodeslf_logo.ai
+leodeslf_logo_old.ai
+leodeslf_logo.png

@@ -1,3 +1,12 @@
+/* $grad: to top right, #d2faff, #80ddff, #3aa2f8, #0055c2, #002790;
+
+$b: #01acf6;
+$b-dark: #0069f2;
+$b-grad: to bottom right, $b, $b-dark;
+
+$y: hsl(47, 100%, 50%);
+$y-dark: hsl(39, 100%, 51%);
+$y-grad: to bottom, $y, $y-dark; */
 @keyframes fade-opacity {
   from {
     opacity: 0;
@@ -25,10 +34,14 @@
 }
 
 .portfolio__elem {
-  display: grid;
-  align-content: center;
-  padding-top: 4rem;
   margin-bottom: 4rem;
+  padding-top: 4rem;
+  /* padding: 2rem;
+  &:first-of-type {
+    background: $b-dark;
+    color: white;
+    border-radius: 3px;
+  } */
 }
 
 .icon-label {
@@ -64,7 +77,7 @@
 
 :root {
   scroll-behavior: smooth;
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Ubuntu, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", Ubuntu, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -679,7 +692,7 @@ a.step {
   color: #707070;
   display: flex;
   line-height: 2em;
-  padding: 0 2rem 0 1rem;
+  padding: 2px 2rem 0 1rem;
   text-decoration: none;
 }
 .dark a.step {
@@ -722,14 +735,29 @@ a.step.step--active::before {
 .copy-right {
   color: #707070;
   font-size: 0.75rem;
-  padding: 1rem 2px 1rem 0;
+  font-style: italic;
   margin: 0 auto;
+  padding: 1rem 2px 1rem 0;
 }
 .dark .copy-right {
   color: #9e9e9e;
 }
 .dark .copy-right {
   font-weight: 400;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo > img {
+  margin-right: 0.75ch;
+}
+
+/* .logo__icon {
+} */
+.logo__text {
+  padding-top: 2px;
 }
 
 /*# sourceMappingURL=main.css.map */

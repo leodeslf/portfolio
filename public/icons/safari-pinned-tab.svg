@@ -1,9 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="_x30_"
-	xmlns="http://www.w3.org/2000/svg"
-	xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-	<path d="M64,192l128,128V192H64z M192,192l128,128V192H192z M192,192l128,128V192H192z M192,320V192H64L192,320z M0,0v512h512V0H0z
-	 M448,192L320,64v128l128,128L320,448V320L192,448V320L64,448V64l128,128L320,64h128V192z M320,320V192H192L320,320z M64,192
-	l128,128V192H64z M64,192l128,128V192H64z M64,192l128,128V192H64z"/>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+ preserveAspectRatio="xMidYMid meet">
+<metadata>
+Created by potrace 1.11, written by Peter Selinger 2001-2013
+</metadata>
+<g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M0 2560 l0 -2560 2560 0 2560 0 0 2560 0 2560 -2560 0 -2560 0 0
+-2560z m3840 0 l0 -1280 -1280 0 -1280 0 0 1280 0 1280 1280 0 1280 0 0 -1280z"/>
+</g>
 </svg>

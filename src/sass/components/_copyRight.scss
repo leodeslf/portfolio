@@ -1,11 +1,25 @@
 .copy-right {
   @include color(true);
   font-size: $font-size--extra-small;
-  padding: 1rem 2px 1rem 0;
+  font-style: italic;
   margin: 0 auto;
+  padding: 1rem 2px 1rem 0;
   .dark & {
     font-weight: 400;
   }
-  @media screen and (max-width: $media--max-small) {
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  & > img {
+    margin-right: 0.75ch;
   }
+}
+
+/* .logo__icon {
+} */
+
+.logo__text {
+  padding-top: 2px;
 }

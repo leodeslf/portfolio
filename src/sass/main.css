@@ -124,7 +124,7 @@ $y-grad: to bottom, $y, $y-dark; */
 }
 main,
 aside {
-  animation-duration: 225ms;
+  animation-duration: 200ms;
   animation-name: fade-opacity;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -511,7 +511,7 @@ picture {
 }
 
 .aside__bg {
-  transition-duration: 225ms;
+  transition-duration: 200ms;
   background-color: rgba(0, 0, 0, 0);
   height: 100vh;
   user-select: none;
@@ -539,7 +539,7 @@ picture {
 .sticky__slide {
   background-color: white;
   border-left: 1px solid rgba(0, 0, 0, 0.096);
-  transition-duration: 225ms;
+  transition-duration: 200ms;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -737,7 +737,7 @@ a.step.step--active {
   color: rgba(255, 255, 255, 0.86);
 }
 a.step.step--active::before {
-  animation-duration: 225ms;
+  animation-duration: 200ms;
   animation-name: grow-height;
   background-color: rgba(0, 0, 0, 0.096);
   content: "";

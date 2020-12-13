@@ -2,14 +2,9 @@
 <html lang="es">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#ffffff" />
-  <meta name="description" content="Leonardo de S. Leal Figueira,
-    Frontend autodidacta." />
-  <meta name="author" content="Leonardo de Souza Leal Figueira" />
-  <meta name="copyright" content="Leo de S.L.F" />
-  <meta name="keywords" content="leodeslf, Leonardo de Souza Leal Figueira" />
+  <!-- Net -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- Internal Links -->
   <link rel="manifest" href="/manifest.json" />
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
@@ -18,10 +13,18 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#1d1d20">
   <meta name="msapplication-TileColor" content="#1d1d20">
+  <!-- Web Data -->
   <link rel="canonical" href="https://leodeslf.com" />
-  <meta name="google-site-verification" content="VHkXfJGJmtuPbiHotYrHQa4HdPD-yfHmmRum2MRYTJI" />
-  <link rel="preconnect" href="https://fonts.gstatic.com/s/roboto/v20/">
   <title>leodeslf</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="Leonardo de S. Leal Figueira, Frontend autodidacta." />
+  <meta name="author" content="Leonardo de Souza Leal Figueira" />
+  <meta name="copyright" content="Leo de S.L.F" />
+  <meta name="keywords" content="leodeslf, Leonardo de Souza Leal Figueira" />
+  <!-- Extras -->
+  <meta name="google-site-verification" content="VHkXfJGJmtuPbiHotYrHQa4HdPD-yfHmmRum2MRYTJI" />
 </head>
 
 <body class="">
@@ -40,12 +43,14 @@
     }
 
     const LOCAL_COLOR_SCHEME = () => localStorage.getItem('dark-color-scheme');
+
     // First apply based on previouse user cfg.
     ((init = LOCAL_COLOR_SCHEME()) => {
       resetColoScheme(init !== null ? init === 'true' : false);
     })();
 
     const MEDIA_PREFERS_DARK = window.matchMedia('(prefers-color-scheme: dark)');
+
     // First apply.
     ((init = MEDIA_PREFERS_DARK.matches) => {
       if (LOCAL_COLOR_SCHEME === null) resetColoScheme(init);

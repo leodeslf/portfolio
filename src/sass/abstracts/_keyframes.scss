@@ -3,3 +3,10 @@
     opacity: 0;
   }
 }
+
+@keyframes grow-height {
+  from {
+    height: 0%;
+    top: 50%;
+  }
+}

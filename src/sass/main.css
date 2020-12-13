@@ -39,6 +39,12 @@
     opacity: 0;
   }
 }
+@keyframes grow-height {
+  from {
+    height: 0%;
+    top: 50%;
+  }
+}
 .text--small {
   font-size: 0.875rem;
 }

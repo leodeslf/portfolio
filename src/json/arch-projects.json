@@ -25,5 +25,31 @@
         "https://github.com/leodeslf/postage-stamps"
       ]
     ]
+  },
+  {
+    "title": "Le cuenta un pajarito",
+    "date": "04/09/2019",
+    "about": "Un pajarito realmente (in)útil",
+    "argument": "Conocer informaciones expuestas a la web",
+    "tools": [
+      [
+        "HTML",
+        "JavaScript",
+        "React",
+        "SASS"
+      ],
+      []
+    ],
+    "res": null,
+    "links": [
+      [
+        "Web",
+        "https://leodeslf.github.io/le-cuenta-un-pajarito/"
+      ],
+      [
+        "repositorio",
+        "https://github.com/leodeslf/le-cuenta-un-pajarito"
+      ]
+    ]
   }
 ]

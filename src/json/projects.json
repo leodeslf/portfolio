@@ -149,32 +149,6 @@
     ]
   },
   {
-    "title": "Le cuenta un pajarito",
-    "date": "04/09/2019",
-    "about": "Un pajarito realmente (in)útil",
-    "argument": "Conocer informaciones expuestas a la web",
-    "tools": [
-      [
-        "HTML",
-        "JavaScript",
-        "React",
-        "SASS"
-      ],
-      []
-    ],
-    "res": null,
-    "links": [
-      [
-        "Web",
-        "https://leodeslf.github.io/le-cuenta-un-pajarito/"
-      ],
-      [
-        "repositorio",
-        "https://github.com/leodeslf/le-cuenta-un-pajarito"
-      ]
-    ]
-  },
-  {
     "title": "TFP v2",
     "date": "04/07/2020",
     "about": "Segunda versión del proyecto TFP",
@@ -208,7 +182,8 @@
     "tools": [
       [
         "HTML",
-        "JavaScript"
+        "JavaScript",
+        "SASS"
       ],
       [
         "Vue"
@@ -223,6 +198,35 @@
       [
         "repositorio",
         "https://github.com/leodeslf/casi"
+      ]
+    ]
+  },
+  {
+    "title": "IK",
+    "date": "10/12/2020",
+    "about": "Módulo y articulaciones de cinemática inversa",
+    "argument": "Experimentar con TypeScript",
+    "tools": [
+      [],
+      [
+        "TypeScript"
+      ]
+    ],
+    "res": [
+      {
+        "name": "Referencia en P5.js",
+        "link": "https://github.com/CodingTrain/website/tree/main/CodingChallenges/CC_064.2_InverseKinematics/P5",
+        "linkName": "Daniel Shiffman"
+      }
+    ],
+    "links": [
+      [
+        "Demo",
+        "https://codepen.io/leodeslf/project/full/XYnBQg"
+      ],
+      [
+        "repositorio",
+        "https://github.com/leodeslf/ik"
       ]
     ]
   }

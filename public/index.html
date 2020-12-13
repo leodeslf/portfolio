@@ -48,7 +48,7 @@
     const MEDIA_PREFERS_DARK = window.matchMedia('(prefers-color-scheme: dark)');
     // First apply.
     ((init = MEDIA_PREFERS_DARK.matches) => {
-      resetColoScheme(init);
+      if (LOCAL_COLOR_SCHEME === null) resetColoScheme(init);
     })();
 
     // Listen for future media changes.

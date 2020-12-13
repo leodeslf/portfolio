@@ -7,7 +7,7 @@ export default function Cv() {
       <p>
         Para más información personal, formación complementaria,
         orientación educativa y poco más: ver y descargar <a
-          href="./res/Leonardo_de_Souza_Leal_Figueira_CV.pdf"
+          href="./res/Leonardo_de_Souza_Leal_Figueira_CV_2020.pdf"
           title="CV en PDF">mi currículum aquí</a>.
       </p>
     </section>

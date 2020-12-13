@@ -1,7 +1,7 @@
 .see-more__input {
   display: none;
   &:checked + .see-more__label svg {
-    transform: rotateZ(0deg);
+    transform: rotateZ(-180deg);
   }
   &:checked ~ .see-more__hidden-block {
     display: block;
@@ -9,8 +9,7 @@
 }
 
 .see-more__label svg {
-  @include transition-to-all;
-  transform: rotateZ(90deg);
+  transform: rotateZ(0deg);
 }
 
 .see-more__hidden-block {

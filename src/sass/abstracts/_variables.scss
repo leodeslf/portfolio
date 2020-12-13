@@ -14,7 +14,6 @@ $color: hsla(0, 0%, 0%, 0.9);
 $color--ascent: hsl(0, 0%, 44%);
 $shadow-color: hsla(0, 0%, 0%, 0.1);
 $border-color: hsla(0, 0%, 0%, 0.096);
-//$border-color--ascent: hsla(0, 0%, 0%, 0.096); // temp.
 $anchor-color: hsl(222, 90%, 46%);
 
 // Dark mode // 131315 // 1d1d20
@@ -39,12 +38,12 @@ $media--max-micro: 359px;
 
 $border-radius: 4px;
 
-/* $grad: to top right, #d2faff, #80ddff, #3aa2f8, #0055c2, #002790;
-
 $b: #01acf6;
 $b-dark: #0069f2;
 $b-grad: to bottom right, $b, $b-dark;
 
 $y: hsl(47, 100%, 50%);
 $y-dark: hsl(39, 100%, 51%);
-$y-grad: to bottom, $y, $y-dark; */
+$y-grad: to bottom, $y, $y-dark;
+
+//$grad: to top right, #d2faff, #80ddff, #3aa2f8, #0055c2, #002790;

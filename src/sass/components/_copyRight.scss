@@ -14,6 +14,10 @@
   align-items: center;
   & > img {
     margin-right: 0.75ch;
+    filter: drop-shadow(0 0 1px $shadow-color);
+    .dark > & {
+      filter: drop-shadow(0 0 1px $shadow-color--dark);
+    }
   }
 }
 

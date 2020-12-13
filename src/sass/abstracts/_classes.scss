@@ -18,24 +18,34 @@
 
 .icon-label {
   cursor: pointer;
-  & > .icon-24 {
-    max-height: 24px;
-    max-width: 24px;
-    user-select: none;
-    & > svg {
-      fill: $color--ascent;
-      height: 100%;
-      width: 100%;
-      .dark & {
-        fill: $color--ascent--dark;
-      }
-    }
-  }
-  &:hover > .icon-24 > svg,
-  &:active > .icon-24 > svg {
+  &:hover > .icon > svg,
+  &:active > .icon > svg {
     fill: $color;
     .dark & {
       fill: $color--dark;
     }
   }
+}
+
+.icon {
+  display: flex;
+  user-select: none;
+  & > svg {
+    fill: $color--ascent;
+    height: 100%;
+    width: 100%;
+    .dark & {
+      fill: $color--ascent--dark;
+    }
+  }
+}
+
+.icon--21 {
+  height: 21px;
+  width: 21px;
+}
+
+.icon--24 {
+  height: 24px;
+  width: 24px;
 }

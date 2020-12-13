@@ -28,13 +28,26 @@ function ProjectItem({
       <p className="project__about">
         {about}.
       </p>
+      {tools[1].length > 0 &&
+        <p className="new-tools"
+          title={
+            tools[1].length > 1 ?
+              "Nuevas herramientas." :
+              "Nueva herramienta."
+          }>
+          <span className="new-tools__new">+</span>
+          {tools[1].map((tool, i) =>
+            <span key={i} className="new-tools__tool">
+              {(i > 0) && ", "}{tool}
+            </span>)}
+        </p>}
       <input {...input} />
       <label {...label}>
-        <div className="icon-24">
-          <svg viewBox="0 0 24 24">
-            <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+        <span className="icon icon--21">
+          <svg viewBox="0 0 21 21">
+            <path d="M10.5,6.5l-6,6l1.4,1.4l4.6-4.6l4.6,4.6l1.4-1.4L10.5,6.5z" />
           </svg>
-        </div>
+        </span>
       </label>
       <div className="project__details see-more__hidden-block">
         <p className="project__objective">
@@ -44,15 +57,18 @@ function ProjectItem({
         <div className="project__tools ul-container">
           <strong>Herramientas</strong>
           <ul>
-            <TechStack tools={tools} i={i} />
+            {[...tools[0], ...tools[1]].map((item, index) => (
+              <li key={`${i}_${index}`}>
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
         {res &&
           <div className="project__res ul-container">
             <strong>Recursos</strong>
             <ResourceList res={res} i={i} />
-          </div>
-        }
+          </div>}
         <footer>
           <span>
             {links.map((link, i) =>
@@ -95,17 +111,11 @@ ProjectItem.propTypes = {
 }
 
 function TechStack({ tools, i }) {
-  const OLD_TECHS_LENGTH = tools[0].length;
   return (
     <>
       {[...tools[0], ...tools[1]].map((item, index) => (
-        <li
-          className={
-            `stack__${index >= OLD_TECHS_LENGTH ? 'new' : 'old'
-            }-item`
-          }
-          key={`${i}_${index}`}>
-          {item}{(index >= OLD_TECHS_LENGTH) && <span>new</span>}
+        <li key={`${i}_${index}`}>
+          {item}
         </li>
       ))}
     </>

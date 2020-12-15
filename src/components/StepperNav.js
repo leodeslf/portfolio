@@ -5,8 +5,7 @@ const ANCHORS = [
   ['#about', 'Sobre mí'],
   ['#tools', 'Herramientas'],
   ['#projects', 'Proyectos'],
-  ['#cv', 'Currículum Vitae'],
-  ['#contact', 'Contacto']
+  ['#cv', 'Currículum Vitae']
 ];
 
 export default class StepperNav extends Component {
@@ -15,18 +14,18 @@ export default class StepperNav extends Component {
       <nav className="stepper text--small">
         <ul className="stepper__list">
           {ANCHORS.map((item, i) => (
-            <Step to={item[0]} content={item[1]} key={i} />
+            <li className="stepper__item" key={i}>
+              <a className="step" href={item[0]}>{item[1]}</a>
+            </li>
           ))}
+          <li className="stepper__item">
+            <a className="cta"
+              href='#contact'>
+              Conectemos
+            </a>
+          </li>
         </ul>
       </nav>
     );
   }
-}
-
-function Step({ to, content }) {
-  return (
-    <li className="stepper__item">
-      <a className="step" href={to}>{content}</a>
-    </li>
-  );
 }

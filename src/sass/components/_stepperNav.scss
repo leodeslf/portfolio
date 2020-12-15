@@ -40,3 +40,15 @@ a.step.step--active {
     }
   }
 }
+
+a.cta {
+  @extend .step;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding-right: 0.5rem;
+  border: 1px solid;
+  border-color: $b--alpha;
+  border-radius: $border-radius;
+  //width: fit-content;
+}

@@ -38,7 +38,7 @@
 
 .new-tools {
   border: solid 1px;
-  border-color: #3aa2f8;
+  border-color: $b--alpha;
   border-radius: $border-radius;
   display: flex;
   font-size: $font-size--extra-small;
@@ -49,18 +49,18 @@
   padding: 0 0.5rem;
   width: fit-content;
   .dark & {
-    border-color: #5eacec;
+    border-color: $b--alpha;
   }
 }
 
 .new-tools__new {
   border-right: solid 1px;
-  border-color: #3aa2f8;
+  border-color: $b--alpha;
   padding-top: 1px;
   padding-right: 0.5rem;
   margin-right: 0.5rem;
   .dark & {
-    border-color: hsl(207, 83%, 70%);
+    border-color: $b--alpha;
   }
 }
 

@@ -1,9 +1,13 @@
 .contact__card {
   @include plain-card;
+  border-color: $b--alpha;
   align-items: center;
   display: flex;
   padding: 1rem;
   max-width: fit-content;
+  .dark & {
+    border-color: $b--alpha;
+  }
   @media screen and (max-width: $media--max-micro) {
     flex-direction: column;
     padding: 2rem;
@@ -13,6 +17,7 @@
 .card__data {
   @include no-style-list;
   padding-right: 2rem;
+  padding-top: 2px;
   margin-bottom: 0;
   @media screen and (max-width: $media--max-micro) {
     margin-bottom: 2rem;
@@ -24,7 +29,17 @@
 .card__pic {
   display: flex;
   img {
-    aspect-ratio: 102/150;
+    aspect-ratio: 90/132;
     border-radius: $border-radius;
   }
+}
+
+.input-to-copy {
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  outline: none;
+  width: 17ch;
 }

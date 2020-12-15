@@ -2,10 +2,22 @@
 $font-size--normal: 16px;
 $font-size--small: 0.875rem;
 $font-size--extra-small: 0.75rem;
+$font-size--extra-small: 0.75rem;
 
 // Font weight
 $weight--normal: 400;
 $weight--bold: 500;
+
+// alt $b: #3aa2f8, $b--dark: #5eacec
+$b: hsla(205, 100%, 70%);
+$b--alpha: hsla(205, 100%, 70%, 1);
+$b--dark: hsl(213, 100%, 50%);
+$b--dark--alpha: hsla(213, 100%, 50%, 1);
+//$b-grad: to bottom right, $b, $b--dark;
+
+$y: #ffc000;
+$y--dark: #ff6e00;
+$y--grad: to bottom, $y, $y--dark;
 
 // Light mode
 $bg: hsl(0, 0%, 100%);
@@ -14,7 +26,7 @@ $color: hsla(0, 0%, 0%, 0.9);
 $color--ascent: hsl(0, 0%, 44%);
 $shadow-color: hsla(0, 0%, 0%, 0.1);
 $border-color: hsla(0, 0%, 0%, 0.096);
-$anchor-color: hsl(222, 90%, 46%);
+$anchor-color: $b--dark;
 
 // Dark mode // 131315 // 1d1d20
 $bg--dark: #131315;
@@ -23,7 +35,7 @@ $color--dark: hsla(0, 0%, 100%, 0.86);
 $color--ascent--dark: hsl(0, 0%, 62%);
 $shadow-color--dark: hsla(0, 0%, 0%, 0.18);
 $border-color--dark: hsla(240, 6%, 0%, 0.44);
-$anchor-color--dark: hsl(216, 100%, 72%);
+$anchor-color--dark: $b;
 
 // Animation
 $animation-speed--fast: 100ms;
@@ -37,13 +49,5 @@ $media--max-small: 639px;
 $media--max-micro: 359px;
 
 $border-radius: 4px;
-
-$b: #01acf6;
-$b-dark: #0069f2;
-$b-grad: to bottom right, $b, $b-dark;
-
-$y: hsl(47, 100%, 50%);
-$y-dark: hsl(39, 100%, 51%);
-$y-grad: to bottom, $y, $y-dark;
 
 //$grad: to top right, #d2faff, #80ddff, #3aa2f8, #0055c2, #002790;

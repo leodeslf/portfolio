@@ -1,7 +1,6 @@
 .copy-right {
   @include color(true);
   font-size: $font-size--extra-small;
-  font-style: italic;
   margin: 0 auto;
   padding: 1rem 2px 1rem 0;
   .dark & {

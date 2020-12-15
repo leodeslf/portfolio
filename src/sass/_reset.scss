@@ -32,11 +32,9 @@ aside {
 
 h1,
 h2 {
-  @include border(border-bottom, 1px);
   @include text-body;
   @include title-body;
   margin-top: 0;
-  padding-bottom: 0.25em;
 }
 
 h3,

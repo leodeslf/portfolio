@@ -758,14 +758,14 @@ a.step.step--active::before, a.step--active.cta::before {
 }
 
 a.cta {
-  margin-left: 0.5rem;
-  padding-left: 0.5rem;
+  margin-left: 1rem;
   margin-right: 0.5rem;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
   padding-right: 0.5rem;
-  border: 1pt solid;
-  border-color: #66bfff;
+  border: #66bfff 1pt solid;
   border-radius: 4px;
+  width: fit-content;
 }
 
 .copy-right {

@@ -249,7 +249,7 @@ picture {
 .tools__item {
   color: rgba(0, 0, 0, 0.9);
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.096);
+  border: 1pt solid rgba(0, 0, 0, 0.096);
   border-radius: 4px;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -263,7 +263,7 @@ picture {
   background-color: #1d1d20;
 }
 .dark .tools__item {
-  border: 1px solid rgba(0, 0, 0, 0.44);
+  border: 1pt solid rgba(0, 0, 0, 0.44);
 }
 * > .tools__item:last-child {
   margin-bottom: 0;
@@ -297,7 +297,7 @@ picture {
 .portfolio__project {
   color: rgba(0, 0, 0, 0.9);
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.096);
+  border: 1pt solid rgba(0, 0, 0, 0.096);
   border-radius: 4px;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -313,7 +313,7 @@ picture {
   background-color: #1d1d20;
 }
 .dark .portfolio__project {
-  border: 1px solid rgba(0, 0, 0, 0.44);
+  border: 1pt solid rgba(0, 0, 0, 0.44);
 }
 * > .portfolio__project:last-child {
   margin-bottom: 0;
@@ -355,7 +355,7 @@ picture {
 }
 
 .new-tools {
-  border: solid 1px #66bfff;
+  border: solid 1pt #66bfff;
   border-radius: 4px;
   display: flex;
   font-size: 0.75rem;
@@ -368,7 +368,7 @@ picture {
 }
 
 .new-tools__new {
-  border-right: solid 1px #66bfff;
+  border-right: solid 1pt #66bfff;
   margin-right: 0.5rem;
   padding-top: 1px;
   padding-right: 0.5rem;
@@ -379,26 +379,26 @@ picture {
 }
 
 .project__details {
-  border-top: 1px solid rgba(0, 0, 0, 0.096);
+  border-top: 1pt solid rgba(0, 0, 0, 0.096);
   color: #707070;
   grid-area: details;
   margin-top: calc(1em + 2px);
   padding-top: 1em;
 }
 .dark .project__details {
-  border-top: 1px solid rgba(0, 0, 0, 0.44);
+  border-top: 1pt solid rgba(0, 0, 0, 0.44);
 }
 .dark .project__details {
   color: #9e9e9e;
 }
 .project__details > footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.096);
+  border-top: 1pt solid rgba(0, 0, 0, 0.096);
   padding-top: 1rem;
   display: flex;
   justify-content: space-between;
 }
 .dark .project__details > footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.44);
+  border-top: 1pt solid rgba(0, 0, 0, 0.44);
 }
 
 .project__res .res__list a {
@@ -422,7 +422,7 @@ picture {
 .connect__card {
   color: rgba(0, 0, 0, 0.9);
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.096);
+  border: 1pt solid rgba(0, 0, 0, 0.096);
   border-radius: 4px;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -439,7 +439,7 @@ picture {
   background-color: #1d1d20;
 }
 .dark .connect__card {
-  border: 1px solid rgba(0, 0, 0, 0.44);
+  border: 1pt solid rgba(0, 0, 0, 0.44);
 }
 * > .connect__card:last-child {
   margin-bottom: 0;
@@ -539,7 +539,7 @@ picture {
 
 .sticky__slide {
   background-color: white;
-  border-left: 1px solid rgba(0, 0, 0, 0.096);
+  border-left: 1pt solid rgba(0, 0, 0, 0.096);
   transition-duration: 200ms;
   display: flex;
   flex-direction: column;
@@ -554,7 +554,7 @@ picture {
   background-color: #131315;
 }
 .dark .sticky__slide {
-  border-left: 1px solid rgba(0, 0, 0, 0.44);
+  border-left: 1pt solid rgba(0, 0, 0, 0.44);
 }
 @media (prefers-reduced-motion: reduce) {
   .sticky__slide {
@@ -570,7 +570,7 @@ picture {
 .aside__button {
   color: rgba(0, 0, 0, 0.9);
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.096);
+  border: 1pt solid rgba(0, 0, 0, 0.096);
   border-radius: 4px;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -590,7 +590,7 @@ picture {
   background-color: #1d1d20;
 }
 .dark .aside__button {
-  border: 1px solid rgba(0, 0, 0, 0.44);
+  border: 1pt solid rgba(0, 0, 0, 0.44);
 }
 * > .aside__button:last-child {
   margin-bottom: 0;
@@ -762,7 +762,7 @@ a.cta {
   padding-left: 0.5rem;
   margin-right: 0.5rem;
   padding-right: 0.5rem;
-  border: 1px solid;
+  border: 1pt solid;
   border-color: #66bfff;
   border-radius: 4px;
 }

@@ -51,7 +51,7 @@
 
 .sticky__slide {
   @include bg;
-  @include border(border-left, 1px);
+  @include border(border-left, 1pt);
   @include speed(transition-duration, $animation-speed--medium);
   display: flex;
   flex-direction: column;

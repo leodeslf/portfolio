@@ -73,7 +73,7 @@
 
 @mixin base-card {
   @include ascent-container;
-  @include border(border, 1px);
+  @include border(border, 1pt);
   border-radius: $border-radius;
   margin-bottom: 1rem;
   padding: 1rem;

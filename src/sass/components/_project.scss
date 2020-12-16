@@ -37,7 +37,7 @@
 }
 
 .new-tools {
-  border: solid 1pt $b--alpha;
+  border: solid 1px $b--alpha;
   border-radius: $border-radius;
   display: flex;
   font-size: $font-size--extra-small;
@@ -50,7 +50,7 @@
 }
 
 .new-tools__new {
-  border-right: solid 1pt $b--alpha;
+  border-right: solid 1px $b--alpha;
   margin-right: 0.5rem;
   padding-top: 1px;
   padding-right: 0.5rem;
@@ -61,13 +61,13 @@
 }
 
 .project__details {
-  @include border(border-top, 1pt);
+  @include border(border-top, 1px);
   @include color(true);
   grid-area: details;
   margin-top: calc(1em + 2px);
   padding-top: 1em;
   & > footer {
-    @include border(border-top, 1pt);
+    @include border(border-top, 1px);
     padding-top: 1rem;
     display: flex;
     justify-content: space-between;

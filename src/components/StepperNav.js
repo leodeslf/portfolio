@@ -20,7 +20,7 @@ export default class StepperNav extends Component {
           ))}
           <li className="stepper__item">
             <a className="cta"
-              href='#contact'>
+              href='#connect'>
               Conectemos
             </a>
           </li>

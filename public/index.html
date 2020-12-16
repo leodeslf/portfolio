@@ -53,7 +53,7 @@
 
     // First apply.
     ((init = MEDIA_PREFERS_DARK.matches) => {
-      if (LOCAL_COLOR_SCHEME === null) resetColoScheme(init);
+      if (LOCAL_COLOR_SCHEME() === null) resetColoScheme(init);
     })();
 
     // Listen for future media changes.

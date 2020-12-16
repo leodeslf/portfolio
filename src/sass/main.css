@@ -206,8 +206,8 @@ ul {
 }
 
 a {
-  color: #0073ff;
-  text-decoration-color: #0073ff;
+  color: #006ef5;
+  text-decoration-color: #006ef5;
   text-decoration: none;
 }
 .dark a {
@@ -334,8 +334,8 @@ picture {
 .project__title a:link,
 .project__title a:active,
 .project__title a:visited {
-  font: inherit;
   color: rgba(0, 0, 0, 0.9);
+  font: inherit;
 }
 .dark .project__title a,
 .dark .project__title a:link,
@@ -355,8 +355,7 @@ picture {
 }
 
 .new-tools {
-  border: solid 1px;
-  border-color: #66bfff;
+  border: solid 1px #66bfff;
   border-radius: 4px;
   display: flex;
   font-size: 0.75rem;
@@ -367,19 +366,12 @@ picture {
   padding: 0 0.5rem;
   width: fit-content;
 }
-.dark .new-tools {
-  border-color: #66bfff;
-}
 
 .new-tools__new {
-  border-right: solid 1px;
-  border-color: #66bfff;
+  border-right: solid 1px #66bfff;
+  margin-right: 0.5rem;
   padding-top: 1px;
   padding-right: 0.5rem;
-  margin-right: 0.5rem;
-}
-.dark .new-tools__new {
-  border-color: #66bfff;
 }
 
 .new-tools__tool {
@@ -423,24 +415,11 @@ picture {
   margin-bottom: 0;
 }
 
-/* .stack__new-item {
-  width: max-content;
-  position: relative;
-  span {
-    font-family: monospace;
-    font-size: $font-size--extra-small;
-    height: 1em;
-    left: 100%;
-    line-height: 1em;
-    padding-left: 0.5ex;
-    position: absolute;
-  }
-} */
 .project__objective {
   max-width: 54ch;
 }
 
-.contact__card {
+.connect__card {
   color: rgba(0, 0, 0, 0.9);
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.096);
@@ -453,23 +432,23 @@ picture {
   padding: 1rem;
   max-width: fit-content;
 }
-.dark .contact__card {
+.dark .connect__card {
   color: rgba(255, 255, 255, 0.86);
 }
-.dark .contact__card {
+.dark .connect__card {
   background-color: #1d1d20;
 }
-.dark .contact__card {
+.dark .connect__card {
   border: 1px solid rgba(0, 0, 0, 0.44);
 }
-* > .contact__card:last-child {
+* > .connect__card:last-child {
   margin-bottom: 0;
 }
-.dark .contact__card {
+.dark .connect__card {
   border-color: #66bfff;
 }
 @media screen and (max-width: 359px) {
-  .contact__card {
+  .connect__card {
     flex-direction: column;
     padding: 2rem;
   }

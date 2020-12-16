@@ -24,8 +24,8 @@
   a:link,
   a:active,
   a:visited {
-    font: inherit;
     @include color;
+    font: inherit;
   }
 }
 
@@ -37,8 +37,7 @@
 }
 
 .new-tools {
-  border: solid 1px;
-  border-color: $b--alpha;
+  border: solid 1px $b--alpha;
   border-radius: $border-radius;
   display: flex;
   font-size: $font-size--extra-small;
@@ -48,20 +47,13 @@
   margin-right: 1rem;
   padding: 0 0.5rem;
   width: fit-content;
-  .dark & {
-    border-color: $b--alpha;
-  }
 }
 
 .new-tools__new {
-  border-right: solid 1px;
-  border-color: $b--alpha;
+  border-right: solid 1px $b--alpha;
+  margin-right: 0.5rem;
   padding-top: 1px;
   padding-right: 0.5rem;
-  margin-right: 0.5rem;
-  .dark & {
-    border-color: $b--alpha;
-  }
 }
 
 .new-tools__tool {
@@ -89,20 +81,6 @@
 .ul-container {
   @include text-body;
 }
-
-/* .stack__new-item {
-  width: max-content;
-  position: relative;
-  span {
-    font-family: monospace;
-    font-size: $font-size--extra-small;
-    height: 1em;
-    left: 100%;
-    line-height: 1em;
-    padding-left: 0.5ex;
-    position: absolute;
-  }
-} */
 
 .project__objective {
   max-width: 54ch;

@@ -68,7 +68,7 @@
 
 @mixin ascent-container {
   @include color;
-  @include bg($ascent: true);
+  @include bg(true);
 }
 
 @mixin base-card {

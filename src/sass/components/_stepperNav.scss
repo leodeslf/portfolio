@@ -15,7 +15,7 @@ a.step {
   @include color(ascent);
   display: flex;
   line-height: 2em;
-  padding: 2px 2rem 0 1rem;
+  padding: 1px 1rem 0 1rem;
   text-decoration: none;
   &:hover,
   &:active {
@@ -34,7 +34,7 @@ a.step.step--active {
     left: 0;
     position: absolute;
     top: 0;
-    width: 0.25rem;
+    width: 3pt;
     .dark & {
       background-color: $border-color--dark;
     }
@@ -46,6 +46,7 @@ a.cta {
   margin-left: 0.5rem;
   padding-left: 0.5rem;
   margin-right: 0.5rem;
+  margin-top: 2rem;
   padding-right: 0.5rem;
   border: 1pt solid;
   border-color: $b--alpha;

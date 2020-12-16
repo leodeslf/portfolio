@@ -11,8 +11,7 @@
 }
 
 #root {
-  @include bg;
-  @include color;
+  @include base-container;
   display: flex;
   flex-direction: row;
   justify-content: center;

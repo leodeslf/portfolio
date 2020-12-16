@@ -97,18 +97,18 @@
 }
 
 #root {
-  background-color: white;
   color: rgba(0, 0, 0, 0.9);
+  background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: center;
   position: relative;
 }
 .dark #root {
-  background-color: #131315;
+  color: rgba(255, 255, 255, 0.86);
 }
 .dark #root {
-  color: rgba(255, 255, 255, 0.86);
+  background-color: #131315;
 }
 html {
   scroll-behavior: smooth;
@@ -717,7 +717,7 @@ a.step, a.cta {
   color: #707070;
   display: flex;
   line-height: 2em;
-  padding: 2px 2rem 0 1rem;
+  padding: 1px 1rem 0 1rem;
   text-decoration: none;
 }
 .dark a.step, .dark a.cta {
@@ -746,7 +746,7 @@ a.step.step--active::before, a.step--active.cta::before {
   left: 0;
   position: absolute;
   top: 0;
-  width: 0.25rem;
+  width: 3pt;
 }
 @media (prefers-reduced-motion: reduce) {
   a.step.step--active::before, a.step--active.cta::before {
@@ -761,6 +761,7 @@ a.cta {
   margin-left: 0.5rem;
   padding-left: 0.5rem;
   margin-right: 0.5rem;
+  margin-top: 2rem;
   padding-right: 0.5rem;
   border: 1pt solid;
   border-color: #66bfff;

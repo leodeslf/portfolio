@@ -45,20 +45,20 @@
     const LOCAL_COLOR_SCHEME = () => localStorage.getItem('dark-color-scheme');
 
     // First apply based on previouse user cfg.
-    ((init = LOCAL_COLOR_SCHEME()) => {
-      resetColoScheme(init !== null ? init === 'true' : false);
+    ((val = LOCAL_COLOR_SCHEME()) => {
+      resetColoScheme(val !== null ? val === 'true' : false);
     })();
 
     const MEDIA_PREFERS_DARK = window.matchMedia('(prefers-color-scheme: dark)');
 
     // First apply.
-    ((init = MEDIA_PREFERS_DARK.matches) => {
-      if (LOCAL_COLOR_SCHEME() === null) resetColoScheme(init);
+    ((val = MEDIA_PREFERS_DARK.matches) => {
+      if (LOCAL_COLOR_SCHEME() === null) resetColoScheme(val);
     })();
 
     // Listen for future media changes.
+    // Give priority to manual changes.
     MEDIA_PREFERS_DARK.onchange = e => {
-      // Manually changed cfg has priority.
       if (LOCAL_COLOR_SCHEME() === null) resetColoScheme(e.matches);
     };
   </script>

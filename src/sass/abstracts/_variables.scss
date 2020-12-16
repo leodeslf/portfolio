@@ -8,16 +8,13 @@ $font-size--extra-small: 0.75rem;
 $weight--normal: 400;
 $weight--bold: 500;
 
-// alt $b: #3aa2f8, $b--dark: #5eacec
 $b: hsla(205, 100%, 70%);
 $b--alpha: hsla(205, 100%, 70%, 1);
-$b--dark: hsl(213, 100%, 50%);
-$b--dark--alpha: hsla(213, 100%, 50%, 1);
-//$b-grad: to bottom right, $b, $b--dark;
+$b--dark: hsl(213, 100%, 48%);
+$b--dark--alpha: hsla(213, 100%, 48%, 1);
 
 $y: #ffc000;
 $y--dark: #ff6e00;
-$y--grad: to bottom, $y, $y--dark;
 
 // Light mode
 $bg: hsl(0, 0%, 100%);
@@ -49,5 +46,3 @@ $media--max-small: 639px;
 $media--max-micro: 359px;
 
 $border-radius: 4px;
-
-//$grad: to top right, #d2faff, #80ddff, #3aa2f8, #0055c2, #002790;

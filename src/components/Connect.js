@@ -1,6 +1,5 @@
 import React from 'react';
 
-const ORIGIN = './images/id_pic';
 const email = 'leodeslf@gmail.com';
 
 export default function Connect() {
@@ -13,7 +12,8 @@ export default function Connect() {
           <li>+598 99 705 972</li>
           <li title="Copiar al portapapeles.">
             <label htmlFor="email">
-              <input className="input-to-copy"
+              <input
+                className="input-to-copy"
                 id="email"
                 readOnly
                 aria-disabled
@@ -31,9 +31,14 @@ export default function Connect() {
           </li>
         </ul>
         <picture className="card__pic">
-          <source type="image/webp" srcSet={`${ORIGIN}.webp`} />
+          <source srcSet='./images/id_32c.webp 1x' type="image/webp" />
+          <source srcSet='./images/id_256c.webp 2x' type="image/webp" />
+          <source srcSet='./images/id_256c.webp 3x' type="image/webp" />
+          <source srcSet='./images/id_32c.png 1x' type="image/webp" />
+          <source srcSet='./images/id_256c.png 2x' type="image/webp" />
+          <source srcSet='./images/id_256c.png 3x' type="image/webp" />
           <img
-            src={`${ORIGIN}.png`}
+            src='./images/id_32c.png'
             alt="A human been."
             title="A human been."
             width="90"

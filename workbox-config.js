@@ -1,17 +1,27 @@
 module.exports = {
   globDirectory: 'build/',
-  globPatterns: ['**/*.{css,html,ico,js,json}'],
+  globPatterns: ['**/*.{css,html,ico,js,json,png,svg,webp,pdf,txt,xml}'],
   runtimeCaching: [
     {
       urlPattern: /\.(?:png|svg|webp)$/,
       handler: 'CacheFirst',
-      options: { cacheName: 'images' }
+      options: {
+        expiration: {
+          maxAgeSeconds: 60 * 60 * 24 * 365
+        },
+        cacheName: 'images'
+      }
     },
     {
       urlPattern: /\.(?:pdf|txt|xml)$/,
       handler: 'CacheFirst',
-      options: { cacheName: 'secondary' }
+      options: {
+        expiration: {
+          maxAgeSeconds: 60 * 60 * 24 * 365
+        },
+        cacheName: 'secondary'
+      }
     }
   ],
-  swDest: 'build/sw.js',
+  swDest: 'build/sw.js'
 };

@@ -746,7 +746,7 @@ a.step.step--active::before, a.step--active.cta::before {
   left: 0;
   position: absolute;
   top: 0;
-  width: 3pt;
+  width: 3px;
 }
 @media (prefers-reduced-motion: reduce) {
   a.step.step--active::before, a.step--active.cta::before {

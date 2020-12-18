@@ -6,23 +6,34 @@ export default function Connect() {
   return (
     <section id="connect" className="portfolio__connect portfolio__elem">
       <h2>Conectemos</h2>
-      <div className="connect__card">
+      <div
+        itemScope
+        itemType="https://schema.org/Person"
+        className="connect__card">
         <ul className="card__data">
-          <li>Montevideo, UY</li>
-          <li>+598 99 705 972</li>
+          <li
+            itemProp="address"
+            itemScope
+            itemType="https://schema.org/PostalAddress">
+            <span itemProp="addressLocality">Montevideo
+            </span>, <span itemProp="addressRegion">UY</span>
+          </li>
+          <li>
+            <span itemProp="telephone">+598 99 705 972</span>
+          </li>
           <li title="Copiar al portapapeles.">
             <label htmlFor="email">
               <input
                 className="input-to-copy"
                 id="email"
                 readOnly
-                aria-disabled
                 type="text"
                 value={email}
                 onClick={e => {
                   e.target.select();
                   document.execCommand('copy');
-                }} />
+                }}
+                itemProp="email" />
             </label>
           </li>
           <li>
@@ -42,7 +53,8 @@ export default function Connect() {
             alt="A human been."
             title="A human been."
             width="90"
-            height="132" />
+            height="132"
+            itemProp="image" />
         </picture>
       </div>
     </section>

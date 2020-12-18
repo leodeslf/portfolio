@@ -34,9 +34,9 @@ export default function Connect() {
           <source srcSet='./images/id_32c.webp 1x' type="image/webp" />
           <source srcSet='./images/id_256c.webp 2x' type="image/webp" />
           <source srcSet='./images/id_256c.webp 3x' type="image/webp" />
-          <source srcSet='./images/id_32c.png 1x' type="image/webp" />
-          <source srcSet='./images/id_256c.png 2x' type="image/webp" />
-          <source srcSet='./images/id_256c.png 3x' type="image/webp" />
+          <source srcSet='./images/id_32c.png 1x' type="image/png" />
+          <source srcSet='./images/id_256c.png 2x' type="image/png" />
+          <source srcSet='./images/id_256c.png 3x' type="image/png" />
           <img
             src='./images/id_32c.png'
             alt="A human been."

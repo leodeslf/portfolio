@@ -7,7 +7,8 @@ export default function CopyRight() {
     <footer className="copy-right">
       <p>
         <span className="logo">
-          <img className="logo__icon"
+          <img
+            className="logo__icon"
             src={URL}
             alt="leodeslf logo"
             width="16px"

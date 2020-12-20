@@ -15,12 +15,19 @@ export default class StepperNav extends Component {
         <ul className="stepper__list">
           {ANCHORS.map((item, i) => (
             <li className="stepper__item" key={i}>
-              <a className="step" href={item[0]}>{item[1]}</a>
+              <a
+                className="step"
+                href={item[0]}
+                onClick={() => window.location.replace(item[0])}>
+                {item[1]}
+              </a>
             </li>
           ))}
           <li className="stepper__item">
-            <a className="cta"
-              href='#connect'>
+            <a
+              className="cta"
+              href="#connect"
+              onClick={() => window.location.replace('#connect')}>
               Conectemos
             </a>
           </li>

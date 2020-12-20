@@ -29,7 +29,8 @@ function ProjectItem({
         {about}.
       </p>
       {tools[1].length > 0 &&
-        <p className="new-tools"
+        <p
+          className="new-tools"
           title={
             tools[1].length > 1 ?
               "Nuevas herramientas." :
@@ -108,27 +109,6 @@ ProjectItem.propTypes = {
       PropTypes.string.isRequired
     ).isRequired
   ).isRequired
-}
-
-function TechStack({ tools, i }) {
-  return (
-    <>
-      {[...tools[0], ...tools[1]].map((item, index) => (
-        <li key={`${i}_${index}`}>
-          {item}
-        </li>
-      ))}
-    </>
-  );
-}
-
-TechStack.propTypes = {
-  tools: PropTypes.arrayOf(
-    PropTypes.arrayOf(
-      PropTypes.string
-    ).isRequired
-  ).isRequired,
-  i: PropTypes.number.isRequired
 }
 
 function ResourceList({ res, i }) {

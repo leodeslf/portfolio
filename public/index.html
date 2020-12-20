@@ -69,12 +69,13 @@
     };
   </script>
   <script>
-    if ('serviceWorker' in navigator)
+    if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js');
       });
+    }
   </script>
-  <noscript>Ops! :c</noscript>
+  <noscript>Scripts deshabilitados :c</noscript>
 </body>
 
 </html>

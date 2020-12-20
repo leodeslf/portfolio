@@ -1,3 +1,5 @@
 .menu {
+  @include color(true);
   display: flex;
+  align-items: center;
 }

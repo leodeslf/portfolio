@@ -489,6 +489,43 @@ picture {
   width: 17ch;
 }
 
+.aside__button {
+  color: rgba(0, 0, 0, 0.9);
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.096);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+  bottom: 2rem;
+  display: none;
+  padding: 0.75rem;
+  pointer-events: all;
+  position: fixed;
+  right: 2rem;
+  width: fit-content;
+}
+.dark .aside__button {
+  color: rgba(255, 255, 255, 0.86);
+}
+.dark .aside__button {
+  background-color: #1d1d20;
+}
+.dark .aside__button {
+  border: 1px solid rgba(0, 0, 0, 0.44);
+}
+* > .aside__button:last-child {
+  margin-bottom: 0;
+}
+.dark .aside__button {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18), 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+@media screen and (max-width: 639px) {
+  .aside__button {
+    display: flex;
+  }
+}
+
 @media screen and (max-width: 639px) {
   .aside {
     height: 100vh;
@@ -498,13 +535,9 @@ picture {
     top: 0;
     width: 100vw;
   }
-  .aside[isvisible=true] {
-    /* & + .aside__button {
-    } */
-  }
   .aside[isvisible=true] .aside__bg {
     pointer-events: all;
-    background-color: rgba(0, 0, 0, 0.33);
+    background-color: rgba(0, 0, 0, 0.5);
   }
   .aside[isvisible=true] .sticky__slide {
     transform: translateX(0%);
@@ -520,7 +553,6 @@ picture {
   position: fixed;
   transition-property: background-color;
   width: 100vw;
-  z-index: -1;
 }
 @media (prefers-reduced-motion: reduce) {
   .aside__bg {
@@ -548,7 +580,6 @@ picture {
   pointer-events: all;
   transition-property: transform;
   width: max-content;
-  z-index: 1;
 }
 .dark .sticky__slide {
   background-color: #131315;
@@ -567,45 +598,13 @@ picture {
   }
 }
 
-.aside__button {
-  color: rgba(0, 0, 0, 0.9);
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.096);
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
-  bottom: 2rem;
-  display: none;
-  padding: 12.8px;
-  pointer-events: all;
-  position: fixed;
-  right: 2rem;
-  width: fit-content;
-}
-.dark .aside__button {
-  color: rgba(255, 255, 255, 0.86);
-}
-.dark .aside__button {
-  background-color: #1d1d20;
-}
-.dark .aside__button {
-  border: 1px solid rgba(0, 0, 0, 0.44);
-}
-* > .aside__button:last-child {
-  margin-bottom: 0;
-}
-.dark .aside__button {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18), 0 1px 2px rgba(0, 0, 0, 0.18);
-}
-@media screen and (max-width: 639px) {
-  .aside__button {
-    display: flex;
-  }
-}
-
 .menu {
+  color: #707070;
   display: flex;
+  align-items: center;
+}
+.dark .menu {
+  color: #9e9e9e;
 }
 
 .dark-mode-switch {

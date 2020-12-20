@@ -1,9 +1,15 @@
-@mixin visible {
-  transform: translateX(0%);
-}
-
-@mixin hidden {
-  transform: translateX(100%);
+.aside__button {
+  @include relief-card;
+  bottom: 2rem;
+  display: none;
+  padding: 0.75rem;
+  pointer-events: all;
+  position: fixed;
+  right: 2rem;
+  width: fit-content;
+  @media screen and (max-width: $media--max-small) {
+    display: flex;
+  }
 }
 
 .aside {
@@ -17,27 +23,25 @@
     &[isvisible="true"] {
       & .aside__bg {
         pointer-events: all;
-        background-color: rgba(0, 0, 0, 33%);
+        background-color: rgba(0, 0, 0, 0.5);
       }
       & .sticky__slide {
-        @include visible;
+        transform: translateX(0%);
       }
-      /* & + .aside__button {
-      } */
     }
   }
 }
 
 .aside__bg {
   @include speed(transition-duration, $animation-speed--medium);
-  background-color: rgba(0, 0, 0, 0%);
+  background-color: rgba(0, 0, 0, 0);
   height: 100vh;
   user-select: none;
   pointer-events: none;
   position: fixed;
   transition-property: background-color;
   width: 100vw;
-  z-index: -1;
+  //z-index: -1;
 }
 
 .aside__sticky {
@@ -60,22 +64,8 @@
   pointer-events: all;
   transition-property: transform;
   width: max-content;
-  z-index: 1;
+  //z-index: 0;
   @media screen and (max-width: $media--max-small) {
-    @include hidden;
-  }
-}
-
-.aside__button {
-  @include relief-card;
-  bottom: 2rem;
-  display: none;
-  padding: $font-size--normal * 0.8;
-  pointer-events: all;
-  position: fixed;
-  right: 2rem;
-  width: fit-content;
-  @media screen and (max-width: $media--max-small) {
-    display: flex;
+    transform: translateX(100%);
   }
 }

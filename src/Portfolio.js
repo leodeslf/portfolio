@@ -2,18 +2,29 @@ import React, { lazy, Suspense } from 'react';
 
 const ROOT = './components/';
 
-const About = lazy(() =>
-  import( /* webpackChunkName: "about" */ `${ROOT}About.js`));
-const Tools = lazy(() =>
-  import( /* webpackChunkName: "tools" */ `${ROOT}Tools.js`));
-const Projects = lazy(() =>
-  import( /* webpackChunkName: "projects" */ `${ROOT}Projects.js`));
-const Cv = lazy(() =>
-  import( /* webpackChunkName: "cv" */ `${ROOT}Cv.js`));
-const Connect = lazy(() =>
-  import( /* webpackChunkName: "connect" */ `${ROOT}Connect.js`));
-const Aside = lazy(() =>
-  import( /* webpackChunkName: "aside" */ `${ROOT}Aside.js`));
+const About = lazy(() => import(
+  /* webpackChunkName: "about", webpackPreload: true */
+  ROOT + 'About.js'));
+
+const Tools = lazy(() => import(
+  /* webpackChunkName: "tools", webpackPreload: true */
+  ROOT + 'Tools.js'));
+
+const Projects = lazy(() => import(
+  /* webpackChunkName: "projects", webpackPreload: true */
+  ROOT + 'Projects.js'));
+
+const Cv = lazy(() => import(
+  /* webpackChunkName: "cv", webpackPreload: true */
+  ROOT + 'Cv.js'));
+
+const Connect = lazy(() => import(
+  /* webpackChunkName: "connect", webpackPreload: true */
+  ROOT + 'Connect.js'));
+
+const Aside = lazy(() => import(
+  /* webpackChunkName: "aside", webpackPreload: true */
+  ROOT + 'Aside.js'));
 
 export default function Portfolio() {
   return (

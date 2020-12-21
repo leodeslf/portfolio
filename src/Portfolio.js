@@ -26,13 +26,15 @@ const Aside = lazy(() => import(
   /* webpackChunkName: "aside", webpackPreload: true */
   ROOT + 'Aside.js'));
 
+const displayName = "Leonardo de S. Leal";
+
 export default function Portfolio() {
   return (
     <Suspense fallback="">
       <main className="portfolio">
         <section id="start" className="portfolio__start portfolio__elem">
           <h1 title="Leonardo de Souza Leal Figueira">
-            Leonardo de S. Leal Figueira
+            {displayName}
           </h1>
           <p>
             Aprendiendo <strong>Frontend</strong> como autodidacta,<br />

@@ -3,54 +3,50 @@
 }
 
 .portfolio__project {
-  @include plain-card;
+  @include relief-card;
   display: grid;
   min-width: 100%;
-  grid-template-areas: "title title" "about about" "new-tools see-more" "details details";
+  grid-template-areas: "header header" "about see-more" "details details";
   grid-template-columns: auto 21px;
 }
 
 .see-more__label {
   grid-area: see-more;
-  margin-top: auto;
+}
+
+.project__header {
+  @include text-body;
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .project__title {
-  grid-area: title;
   margin-bottom: 0rem;
-  margin-right: 1rem;
-  margin-top: 0;
-  a,
-  a:link,
-  a:active,
-  a:visited {
+  margin-right: auto;
+  & > a {
     @include color;
     font: inherit;
+    text-decoration: underline;
   }
 }
 
-.project__about {
-  @include color(true);
-  grid-area: about;
-  margin-bottom: 0;
-  margin-right: 1rem;
-}
-
-.new-tools {
-  border: solid 1px $b--alpha;
+.project__new-tools {
+  @include blue-neon;
+  border-style: solid;
   border-radius: $border-radius;
+  border-width: 1px;
   display: flex;
   font-size: $font-size--extra-small;
   grid-area: new-tools;
-  margin-bottom: 0;
-  margin-top: 1rem;
-  margin-right: 1rem;
+  margin: auto 0;
   padding: 0 0.5rem;
   width: fit-content;
 }
 
-.new-tools__new {
-  border-right: solid 1px $b--alpha;
+.new-tools__plus {
+  border-right: solid 1px $b;
   margin-right: 0.5rem;
   padding-top: 1px;
   padding-right: 0.5rem;
@@ -58,6 +54,12 @@
 
 .new-tools__tool {
   padding-top: 1px;
+}
+
+.project__about {
+  @include color(true);
+  grid-area: about;
+  margin-bottom: 0;
 }
 
 .project__details {
@@ -76,6 +78,7 @@
 
 .project__res .res__list a {
   @include color(true);
+  text-decoration: underline;
 }
 
 .ul-container {

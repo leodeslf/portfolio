@@ -43,12 +43,17 @@ a.step.step--active {
 
 a.cta {
   @extend .step;
-  border: $b--alpha 1px solid;
+  @include blue-neon;
+  border-style: solid;
   border-radius: $border-radius;
+  border-width: 1px;
   margin-left: 1rem;
   margin-right: 0.5rem;
   margin-top: 0.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   width: fit-content;
+  .dark & {
+    box-shadow: 0 0 3px $b--dark;
+  }
 }

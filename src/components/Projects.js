@@ -21,27 +21,29 @@ function ProjectItem({
 }) {
   const { input, label } = seeMore(i);
   return (
-    <article className={`portfolio__project text--small`}>
-      <h3 className="project__title">
-        <a href={links[0][1]} title={links[0][0]}>{title}</a>
-      </h3>
+    <article className="portfolio__project text--small">
+      <header className="project__header">
+        <h3 className="project__title">
+          <a href={links[0][1]} title={links[0][0]}>{title}</a>
+        </h3>
+        {tools[1].length > 0 &&
+          <span
+            className="project__new-tools"
+            title={
+              tools[1].length > 1 ?
+                "Nuevas herramientas." :
+                "Nueva herramienta."
+            }>
+            <span className="new-tools__plus">+</span>
+            {tools[1].map((tool, i) =>
+              <span key={i} className="new-tools__tool">
+                {(i > 0) && ", "}{tool}
+              </span>)}
+          </span>}
+      </header>
       <p className="project__about">
         {about}.
       </p>
-      {tools[1].length > 0 &&
-        <p
-          className="new-tools"
-          title={
-            tools[1].length > 1 ?
-              "Nuevas herramientas." :
-              "Nueva herramienta."
-          }>
-          <span className="new-tools__new">+</span>
-          {tools[1].map((tool, i) =>
-            <span key={i} className="new-tools__tool">
-              {(i > 0) && ", "}{tool}
-            </span>)}
-        </p>}
       <input {...input} />
       <label {...label}>
         <span className="icon icon--21">

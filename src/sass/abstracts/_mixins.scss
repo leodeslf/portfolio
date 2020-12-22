@@ -52,9 +52,9 @@
   }
 }
 
-@mixin box-shadow {
-  $a: 0 1px 3px;
-  $b: 0 1px 2px;
+@mixin box-shadow($index: 1) {
+  $a: 0 (1px * $index) (3px * $index);
+  $b: 0 (1px * $index) (2px * $index);
   box-shadow: $a $shadow-color, $b $shadow-color;
   .dark & {
     box-shadow: $a $shadow-color--dark, $b $shadow-color--dark;
@@ -86,13 +86,13 @@
   @include base-card;
 }
 
-@mixin relief-card {
+@mixin relief-card($index: 1) {
   @include base-card;
-  @include box-shadow;
+  @include box-shadow($index);
 }
 
 @mixin text-body {
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
   * > &:last-child {
     margin-bottom: 0;
   }
@@ -100,7 +100,6 @@
 
 @mixin title-body {
   font-weight: $weight--bold;
-  margin-top: 2em;
 }
 
 @mixin no-style-list {
@@ -125,4 +124,13 @@
 @mixin animation($name, $animation-speed) {
   @include speed(animation-duration, $animation-speed);
   animation-name: $name;
+}
+
+@mixin blue-neon {
+  border-color: $b;
+  box-shadow: 0 0 2px $b;
+  .dark & {
+    border-color: $b;
+    box-shadow: 0 0 3px $b--dark;
+  }
 }

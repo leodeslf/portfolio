@@ -5,7 +5,7 @@ const email = 'leodeslf@gmail.com';
 export default function Connect() {
   return (
     <section id="connect" className="portfolio__connect portfolio__elem">
-      <h2>Conectemos</h2>
+      <h2>Contacto</h2>
       <div
         itemScope
         itemType="https://schema.org/Person"

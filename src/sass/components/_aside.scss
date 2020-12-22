@@ -1,5 +1,5 @@
 .aside__button {
-  @include relief-card;
+  @include relief-card($index: 2);
   bottom: 2rem;
   display: none;
   padding: 0.75rem;

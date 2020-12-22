@@ -532,6 +532,7 @@ aside.aside {
   pointer-events: none;
   position: fixed;
   transition-property: background-color;
+  width: 100vw;
 }
 @media (prefers-reduced-motion: reduce) {
   .aside__bg {

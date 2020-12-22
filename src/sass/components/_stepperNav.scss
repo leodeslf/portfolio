@@ -43,10 +43,8 @@ a.step.step--active {
 
 .stepper__list > li:last-child > a.step {
   @extend .step;
-  @include blue-neon;
-  border-style: solid;
+  border: 1px solid $b;
   border-radius: $border-radius;
-  border-width: 1px;
   margin-left: 1rem;
   margin-right: 0.5rem;
   margin-top: 0.5rem;

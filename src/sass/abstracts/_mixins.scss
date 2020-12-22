@@ -125,12 +125,3 @@
   @include speed(animation-duration, $animation-speed);
   animation-name: $name;
 }
-
-@mixin blue-neon {
-  border-color: $y--dark;
-  //box-shadow: 0 0 2px $b;
-  .dark & {
-    border-color: $y;
-    //box-shadow: 0 0 3px $b--dark;
-  }
-}

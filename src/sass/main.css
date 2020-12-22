@@ -427,35 +427,11 @@ main.portfolio {
 }
 
 .connect__card {
-  color: rgba(0, 0, 0, 0.96);
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.096);
+  border: 1px solid #66bfff;
   border-radius: 4px;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
-  border-color: rgba(255, 111, 0, 0.5);
   display: flex;
   padding: 1rem;
   max-width: fit-content;
-}
-.dark .connect__card {
-  color: rgba(255, 255, 255, 0.9);
-}
-.dark .connect__card {
-  background-color: #1d1d20;
-}
-.dark .connect__card {
-  border: 1px solid rgba(0, 0, 0, 0.44);
-}
-* > .connect__card:last-child {
-  margin-bottom: 0;
-}
-.dark .connect__card {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18), 0 1px 2px rgba(0, 0, 0, 0.18);
-}
-.dark .connect__card {
-  border-color: rgba(255, 191, 0, 0.5);
 }
 
 .card__data {
@@ -760,19 +736,14 @@ a.step.step--active::before, .stepper__list > li:last-child > a.step--active.ste
 }
 
 .stepper__list > li:last-child > a.step {
-  border-color: rgba(255, 111, 0, 0.5);
-  border-style: solid;
+  border: 1px solid #66bfff;
   border-radius: 4px;
-  border-width: 1px;
   margin-left: 1rem;
   margin-right: 0.5rem;
   margin-top: 0.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   width: fit-content;
-}
-.dark .stepper__list > li:last-child > a.step {
-  border-color: rgba(255, 191, 0, 0.5);
 }
 .stepper__list > li:last-child > a.step.step--active::before {
   display: none;

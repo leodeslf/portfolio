@@ -4,8 +4,8 @@
 }
 
 .connect__card {
-  @include relief-card;
-  @include blue-neon;
+  border: 1px solid $b;
+  border-radius: $border-radius;
   display: flex;
   padding: 1rem;
   max-width: fit-content;

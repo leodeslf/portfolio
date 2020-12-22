@@ -1,13 +1,12 @@
 .tools__container {
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
   height: min-content;
 }
 
 .tools__item {
   @include plain-card;
-  margin-bottom: 1rem !important;
-  margin-right: 1rem;
   & > ul {
     padding-right: 1rem;
   }

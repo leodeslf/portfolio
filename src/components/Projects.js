@@ -34,10 +34,10 @@ function ProjectItem({
                 "Nuevas herramientas." :
                 "Nueva herramienta."
             }>
-            <span className="new-tools__plus">+</span>
+            <span className="new-tools__new-tag">nuevo</span>
             {tools[1].map((tool, i) =>
               <span key={i} className="new-tools__tool">
-                {(i > 0) && ", "}{tool}
+                {`${tool}`}
               </span>)}
           </span>}
       </header>

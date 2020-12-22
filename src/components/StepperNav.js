@@ -5,7 +5,8 @@ const ANCHORS = [
   ['#about', 'Sobre mí'],
   ['#tools', 'Herramientas'],
   ['#projects', 'Proyectos'],
-  ['#cv', 'Currículum Vitae']
+  ['#cv', 'Currículum Vitae'],
+  ['#connect', 'Conectemos']
 ];
 
 export default class StepperNav extends Component {
@@ -23,14 +24,6 @@ export default class StepperNav extends Component {
               </a>
             </li>
           ))}
-          <li className="stepper__item">
-            <a
-              className="cta"
-              href="#connect"
-              onClick={() => window.location.replace('#connect')}>
-              Conectemos
-            </a>
-          </li>
         </ul>
       </nav>
     );

@@ -1,10 +1,9 @@
-const MARGIN = 64 + 1; // 16rem * 4
 let distToScroll = [];
 let titles = undefined;
 let links = undefined;
 
 window.addEventListener('load', () => {
-  titles = document.querySelectorAll('h1, h2');
+  titles = document.querySelectorAll('.portfolio > section');
   links = document.querySelectorAll('a.step');
 
   window.addEventListener('scroll', findActiveStep);
@@ -18,7 +17,8 @@ const findActiveStep = () => {
 
   // Find dintances relative to the scroll to top.
   titles.forEach((title, i) => {
-    distToScroll[i] = title.offsetTop - MARGIN - SCROLLED;
+    // -1 for a safe margin.
+    distToScroll[i] = title.offsetTop - SCROLLED - 1;
   });
 
   // Find the ones that are on 'range' / 'focus'.

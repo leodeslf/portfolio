@@ -127,10 +127,10 @@
 }
 
 @mixin blue-neon {
-  border-color: $b;
-  box-shadow: 0 0 2px $b;
+  border-color: $y--dark;
+  //box-shadow: 0 0 2px $b;
   .dark & {
-    border-color: $b;
-    box-shadow: 0 0 3px $b--dark;
+    border-color: $y;
+    //box-shadow: 0 0 3px $b--dark;
   }
 }

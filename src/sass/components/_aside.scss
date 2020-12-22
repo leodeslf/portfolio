@@ -12,7 +12,8 @@
   }
 }
 
-.aside {
+aside.aside {
+  @include animation(fade-opacity, $animation-speed--slow);
   @media screen and (max-width: $media--max-small) {
     height: 100vh;
     right: 0;
@@ -40,8 +41,6 @@
   pointer-events: none;
   position: fixed;
   transition-property: background-color;
-  width: 100vw;
-  //z-index: -1;
 }
 
 .aside__sticky {
@@ -64,7 +63,6 @@
   pointer-events: all;
   transition-property: transform;
   width: max-content;
-  //z-index: 0;
   @media screen and (max-width: $media--max-small) {
     transform: translateX(100%);
   }

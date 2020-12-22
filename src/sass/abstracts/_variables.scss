@@ -1,4 +1,28 @@
-// Font sizes (1rem, 0.875rem = 14px, 0.75rem = 11px)
+// Colors.
+$b: hsla(205, 100%, 70%);
+$b--dark: hsl(213, 100%, 47%);
+$y: hsla(45, 100%, 50%, 0.5);
+$y--dark: hsla(26, 100%, 50%, 0.5);
+
+// Light mode.
+$bg: hsl(205, 50%, 100%);
+$bg--ascent: hsl(0, 0%, 100%);
+$color: hsla(0, 0%, 0%, 0.96);
+$color--ascent: hsl(0, 0%, 45%);
+$shadow-color: hsla(0, 0%, 0%, 0.1);
+$border-color: hsla(0, 0%, 0%, 0.096);
+$anchor-color: $b--dark;
+
+// Dark mode.
+$bg--dark: #131315;
+$bg--ascent--dark: #1d1d20;
+$color--dark: hsla(0, 0%, 100%, 0.9);
+$color--ascent--dark: hsl(0, 0%, 65%);
+$shadow-color--dark: hsla(0, 0%, 0%, 0.18);
+$border-color--dark: hsla(240, 6%, 0%, 0.44);
+$anchor-color--dark: $b;
+
+// Font sizes (1rem, 0.875rem = 14px, 0.75rem = 11px).
 $font-size--normal: 16px;
 $font-size--small: 0.875rem;
 $font-size--extra-small: 0.75rem;
@@ -8,39 +32,17 @@ $font-size--extra-small: 0.75rem;
 $weight--normal: 400;
 $weight--bold: 500;
 
-$b: hsla(205, 100%, 70%);
-$b--dark: hsl(213, 100%, 48%);
-
-$y: #ffc000;
-$y--dark: #ff6e00;
-
-// Light mode
-$bg: hsl(0, 0%, 100%);
-$bg--ascent: hsl(0, 0%, 100%);
-$color: hsla(0, 0%, 0%, 0.9);
-$color--ascent: hsl(0, 0%, 44%);
-$shadow-color: hsla(0, 0%, 0%, 0.1);
-$border-color: hsla(0, 0%, 0%, 0.096);
-$anchor-color: $b--dark;
-
-// Dark mode // 131315 // 1d1d20
-$bg--dark: #131315;
-$bg--ascent--dark: #1d1d20;
-$color--dark: hsla(0, 0%, 100%, 0.86);
-$color--ascent--dark: hsl(0, 0%, 62%);
-$shadow-color--dark: hsla(0, 0%, 0%, 0.18);
-$border-color--dark: hsla(240, 6%, 0%, 0.44);
-$anchor-color--dark: $b;
-
-// Animation
-$animation-speed--fast: 100ms;
-$animation-speed--medium: 200ms;
+// Animation.
+$animation-speed--fast: 80ms;
+$animation-speed--medium: 180ms;
+$animation-speed--slow: 420ms;
 $animation-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 
-// Media queries
+// Media queries.
 $media--max-big: 1199px;
 $media--max-medium: 959px;
 $media--max-small: 639px;
 $media--max-micro: 359px;
 
+// Others.
 $border-radius: 4px;

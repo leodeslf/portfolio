@@ -41,7 +41,7 @@ a.step.step--active {
   }
 }
 
-a.cta {
+.stepper__list > li:last-child > a.step {
   @extend .step;
   @include blue-neon;
   border-style: solid;
@@ -53,7 +53,7 @@ a.cta {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   width: fit-content;
-  .dark & {
-    box-shadow: 0 0 3px $b--dark;
+  &.step--active::before {
+    display: none;
   }
 }

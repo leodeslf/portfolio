@@ -1,4 +1,5 @@
-.portfolio {
+main.portfolio {
+  @include animation(fade-opacity, $animation-speed--slow);
   max-width: 960px;
   padding: 8rem 4rem;
   @media screen and (max-width: $media--max-medium) {

@@ -9,6 +9,7 @@
 }
 
 .see-more__label svg {
+  @include transition-to-all;
   transform: rotateZ(-90deg);
 }
 

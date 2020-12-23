@@ -31,7 +31,7 @@
   }
 }
 
-@mixin bg($ascent: false, $self: false) {
+@mixin bg($ascent: false) {
   @if not $ascent {
     background-color: $bg;
     .dark & {
@@ -113,7 +113,7 @@
 }
 
 @mixin transition-to-all {
-  @include speed(transition-duration, $animation-speed--fast);
+  @include speed(transition-duration, $animation-speed--medium);
   transition-property: all;
 }
 

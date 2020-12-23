@@ -10,6 +10,7 @@
 
 .see-more__label svg {
   @include transition-to-all;
+  @include speed(transition-duration, $animation-speed--fast);
   transform: rotateZ(-90deg);
 }
 

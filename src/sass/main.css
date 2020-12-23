@@ -204,7 +204,7 @@ picture {
 }
 
 main.portfolio {
-  animation-duration: 420ms;
+  animation-duration: 480ms;
   animation-name: fade-opacity;
   max-width: 960px;
   padding: 8rem 4rem;
@@ -263,9 +263,15 @@ main.portfolio {
 }
 
 .see-more__label svg {
-  transition-duration: 80ms;
+  transition-duration: 120ms;
   transition-property: all;
+  transition-duration: 70ms;
   transform: rotateZ(-90deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .see-more__label svg {
+    transition-duration: 0ms;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .see-more__label svg {
@@ -487,7 +493,7 @@ main.portfolio {
 }
 
 aside.aside {
-  animation-duration: 420ms;
+  animation-duration: 480ms;
   animation-name: fade-opacity;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -506,27 +512,23 @@ aside.aside {
   }
   aside.aside[isvisible=true] .aside__bg {
     pointer-events: all;
-    background-color: rgba(0, 0, 0, 0.5);
   }
   aside.aside[isvisible=true] .sticky__slide {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1), 0 0 4px rgba(0, 0, 0, 0.1);
     transform: translateX(0%);
+  }
+  .dark aside.aside[isvisible=true] .sticky__slide {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.18), 0 0 4px rgba(0, 0, 0, 0.18);
   }
 }
 
 .aside__bg {
-  transition-duration: 180ms;
   background-color: rgba(0, 0, 0, 0);
   height: 100vh;
   user-select: none;
   pointer-events: none;
   position: fixed;
-  transition-property: background-color;
   width: 100vw;
-}
-@media (prefers-reduced-motion: reduce) {
-  .aside__bg {
-    transition-duration: 0ms;
-  }
 }
 
 .aside__sticky {
@@ -541,7 +543,7 @@ aside.aside {
 .sticky__slide {
   background-color: white;
   border-left: 1pt solid rgba(0, 0, 0, 0.096);
-  transition-duration: 180ms;
+  transition-duration: 120ms;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -563,7 +565,11 @@ aside.aside {
 }
 @media screen and (max-width: 639px) {
   .sticky__slide {
+    background-color: white;
     transform: translateX(100%);
+  }
+  .dark .sticky__slide {
+    background-color: #1d1d20;
   }
 }
 
@@ -604,7 +610,7 @@ aside.aside {
 }
 
 .label__body {
-  transition-duration: 80ms;
+  transition-duration: 120ms;
   transition-property: all;
   background-color: #737373;
   display: grid;
@@ -621,7 +627,7 @@ aside.aside {
 }
 .label__body::after {
   background-color: white;
-  transition-duration: 80ms;
+  transition-duration: 120ms;
   transition-property: all;
   border-radius: 50%;
   content: "";
@@ -643,7 +649,7 @@ aside.aside {
   width: 9.96px;
 }
 .label__body::before {
-  transition-duration: 80ms;
+  transition-duration: 120ms;
   transition-property: all;
   background-color: #737373;
   content: "";
@@ -706,7 +712,7 @@ a.step.step--active, .stepper__list > li:last-child > a.step--active.step {
   color: rgba(255, 255, 255, 0.9);
 }
 a.step.step--active::before, .stepper__list > li:last-child > a.step--active.step::before {
-  animation-duration: 180ms;
+  animation-duration: 120ms;
   animation-name: grow-height;
   background-color: rgba(0, 0, 0, 0.096);
   content: "";

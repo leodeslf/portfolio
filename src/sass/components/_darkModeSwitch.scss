@@ -34,7 +34,7 @@ $half-margin: ($label-w - $body-size) * 0.5;
   place-content: center;
   position: relative;
   width: $body-size;
-  // Cener dot
+  // Center dot
   &::after {
     @include bg($ascent: true);
     @include transition-to-all;

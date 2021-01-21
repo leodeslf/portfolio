@@ -1,5 +1,5 @@
 // Colors.
-$b: hsla(205, 100%, 70%);
+$b: hsla(205, 100%, 70%, 1);
 $b--dark: hsl(213, 100%, 47%);
 $y: hsla(45, 100%, 50%, 0.5);
 $y--dark: hsla(26, 100%, 50%, 0.5);
@@ -9,8 +9,8 @@ $bg: hsl(205, 50%, 100%);
 $bg--ascent: hsl(0, 0%, 100%);
 $color: hsla(0, 0%, 0%, 0.96);
 $color--ascent: hsl(0, 0%, 45%);
-$shadow-color: hsla(0, 0%, 0%, 0.07);
-$border-color: hsla(0, 0%, 0%, 0.096);
+$shadow-color: hsla(0, 0%, 0%, 0.08);
+$border-color: hsla(0, 0%, 0%, 0.09);
 $anchor-color: $b--dark;
 
 // Dark mode.
@@ -27,10 +27,6 @@ $font-size--normal: 16px;
 $font-size--small: 0.875rem;
 $font-size--extra-small: 0.75rem;
 $font-size--extra-small: 0.75rem;
-
-// Font weight
-$weight--normal: 400;
-$weight--bold: 500;
 
 // Animation.
 $animation-speed--fast: 70ms;

@@ -24,15 +24,11 @@ html {
 h1,
 h2 {
   @include text-body;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @include title-body;
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  .dark & {
+    font-weight: 600;
+  }
 }
 
 h1 {
@@ -46,18 +42,7 @@ h2 {
 h3,
 .h3 {
   font-size: 1.25rem; // 1.25em
-}
-
-h4 {
-  font-size: 1rem; // 1em
-}
-
-h5 {
-  font-size: 0.875rem; // 0.875em
-}
-
-h6 {
-  font-size: 0.75rem; // 0.75em
+  font-weight: 500;
 }
 
 em {
@@ -66,7 +51,7 @@ em {
 }
 
 strong {
-  font-weight: $weight--bold;
+  font-weight: 500;
 }
 
 p {
@@ -81,6 +66,7 @@ ul {
 
 a {
   @include anchor-color;
+  cursor: pointer;
   text-decoration: none;
   &:hover {
     text-decoration: underline;

@@ -26,9 +26,9 @@ aside.aside {
         pointer-events: all;
       }
       & .sticky__slide {
-        box-shadow: 0 0 6px $shadow-color, 0 0 4px $shadow-color;
+        box-shadow: 0 0 4px $shadow-color, 0 0 6px 2px $shadow-color;
         .dark & {
-          box-shadow: 0 0 6px $shadow-color--dark, 0 0 4px $shadow-color--dark;
+          box-shadow: 0 0 4px $shadow-color--dark, 0 0 6px 2px $shadow-color--dark;
         }
         transform: translateX(0%);
       }
@@ -37,7 +37,7 @@ aside.aside {
 }
 
 .aside__bg {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   height: 100vh;
   user-select: none;
   pointer-events: none;

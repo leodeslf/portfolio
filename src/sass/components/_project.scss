@@ -27,7 +27,6 @@
   & > a {
     @include color;
     font: inherit;
-    text-decoration: underline;
   }
 }
 
@@ -71,12 +70,13 @@
   grid-area: details;
   margin-top: calc(1em + 2px);
   padding-top: 1em;
-  & > footer {
-    @include border(border-top, 1px);
-    padding-top: 1rem;
-    display: flex;
-    justify-content: space-between;
-  }
+}
+
+.project__details > footer {
+  @include border(border-top, 1px);
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .project__res .res__list a {

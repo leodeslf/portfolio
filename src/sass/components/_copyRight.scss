@@ -1,28 +1,6 @@
-.copy-right {
+footer.copy-right {
   @include color(true);
   font-size: $font-size--extra-small;
-  margin: 0 auto;
-  padding: 1rem 2px 1rem 0;
-  .dark & {
-    font-weight: 400;
-  }
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  & > img {
-    margin-right: 0.75ch;
-    filter: drop-shadow(0 0 1px $shadow-color);
-    .dark > & {
-      filter: drop-shadow(0 0 1px $shadow-color--dark);
-    }
-  }
-}
-
-/* .logo__icon {
-} */
-
-.logo__text {
-  padding-top: 2px;
+  margin: 0 1rem;
+  padding: 1rem 0;
 }

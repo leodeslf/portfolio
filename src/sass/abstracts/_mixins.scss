@@ -1,7 +1,7 @@
 @mixin font {
   font-family: "Roboto", sans-serif;
   font-style: normal;
-  font-weight: $weight--normal;
+  font-weight: 400;
   font-size: $font-size--normal;
   .dark {
     font-weight: 300;
@@ -53,8 +53,8 @@
 }
 
 @mixin box-shadow($index: 1) {
-  $a: 0 (1px * $index) (3px * $index);
-  $b: 0 (1px * $index) (2px * $index);
+  $b: 0 1px 2px;
+  $a: 0 (1px * $index) (3px * $index) (1px * $index);
   box-shadow: $a $shadow-color, $b $shadow-color;
   .dark & {
     box-shadow: $a $shadow-color--dark, $b $shadow-color--dark;
@@ -92,10 +92,6 @@
   * > &:last-child {
     margin-bottom: 0;
   }
-}
-
-@mixin title-body {
-  font-weight: $weight--bold;
 }
 
 @mixin no-style-list {

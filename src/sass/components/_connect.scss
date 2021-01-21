@@ -1,21 +1,22 @@
-#connect h2 {
-  @extend .h3;
+h2.h3 {
   margin-bottom: 0.5em;
 }
 
 .connect__card {
   border: 1px solid $b;
+  box-shadow: 0 0 2px adjust-color($b--dark, $alpha: -0.3);
   border-radius: $border-radius;
   display: flex;
   padding: 1rem;
   max-width: fit-content;
+  .dark & {
+    box-shadow: 0 0 2px $b--dark;
+  }
 }
 .card__data {
   @include no-style-list;
   padding-right: 2rem;
   margin-bottom: 0;
-  @media screen and (max-width: $media--max-micro) {
-  }
 }
 
 .card__pic {

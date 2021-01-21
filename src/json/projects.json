@@ -3,23 +3,23 @@
     "title": "Vec.js",
     "date": "07/12/2018",
     "about": "Clase constructora y funcional de vectores",
-    "argument": "Familiarizarme con JavaScript",
-    "tools": [
-      [],
-      [
+    "argument": "Familiarizarme con JavaScript. Aprender a crear paquetes con NPM",
+    "tools": {
+      "old": [],
+      "new": [
         "JavaScript"
       ]
-    ],
+    },
     "res": null,
     "links": [
-      [
-        "Paquete",
-        "https://www.npmjs.com/package/@leodeslf/vec.js"
-      ],
-      [
-        "repositorio",
-        "https://github.com/leodeslf/vector"
-      ]
+      {
+        "name": "Paquete",
+        "link": "https://www.npmjs.com/package/@leodeslf/vec.js"
+      },
+      {
+        "name": "Repositorio",
+        "link": "https://github.com/leodeslf/vector"
+      }
     ]
   },
   {
@@ -27,15 +27,15 @@
     "date": "26/05/2019",
     "about": "Texturas Fractales y Procedurales - Visualizador de Ruido Perlin y Worley",
     "argument": "Avanzar con JavaScript y el DOM",
-    "tools": [
-      [
+    "tools": {
+      "old": [
         "JavaScript"
       ],
-      [
+      "new": [
         "HTML",
         "CSS"
       ]
-    ],
+    },
     "res": [
       {
         "name": "Improved Noise ref. imp.",
@@ -79,32 +79,32 @@
       }
     ],
     "links": [
-      [
-        "Web",
-        "https://leodeslf.github.io/tfp/"
-      ],
-      [
-        "repositorio",
-        "https://github.com/leodeslf/tfp"
-      ]
+      {
+        "name": "Web",
+        "link": "https://leodeslf.github.io/tfp/"
+      },
+      {
+        "name": "Repositorio",
+        "link": "https://github.com/leodeslf/tfp"
+      }
     ]
   },
   {
     "title": "this.weather",
     "date": "10/06/2019",
     "about": "Un medio de acceso al estado del tiempo",
-    "argument": "Experimentar con APIs y escenas 3D",
-    "tools": [
-      [
+    "argument": "Experimentar con APIs y escenas 3D (Three.js). Empezar a aprender React y SASS",
+    "tools": {
+      "old": [
         "HTML",
         "JavaScript"
       ],
-      [
+      "new": [
         "React",
         "SASS",
         "Three.js"
       ]
-    ],
+    },
     "res": [
       {
         "name": "Geolocalización",
@@ -138,14 +138,14 @@
       }
     ],
     "links": [
-      [
-        "Web",
-        "https://leodeslf.github.io/this.weather/"
-      ],
-      [
-        "repositorio",
-        "https://github.com/leodeslf/this.weather"
-      ]
+      {
+        "name": "Web",
+        "link": "https://leodeslf.github.io/this.weather/"
+      },
+      {
+        "name": "Repositorio",
+        "link": "https://github.com/leodeslf/this.weather"
+      }
     ]
   },
   {
@@ -153,25 +153,25 @@
     "date": "04/07/2020",
     "about": "Segunda versión del proyecto TFP",
     "argument": "Migrar de GitHub Pages a Netlify. Optimizar performance, control de datos, experiencia e interfaz de usuario",
-    "tools": [
-      [
+    "tools": {
+      "old": [
         "HTML",
         "JavaScript",
         "React",
         "SASS"
       ],
-      []
-    ],
+      "new": []
+    },
     "res": null,
     "links": [
-      [
-        "Web",
-        "https://tfp-v2.netlify.app/"
-      ],
-      [
-        "repositorio",
-        "https://github.com/leodeslf/tfp-v2"
-      ]
+      {
+        "name": "Web",
+        "link": "https://tfp-v2.netlify.app/"
+      },
+      {
+        "name": "Repositorio",
+        "link": "https://github.com/leodeslf/tfp-v2"
+      }
     ]
   },
   {
@@ -179,26 +179,26 @@
     "date": "02/12/2020",
     "about": "Calculadora basada en la Casio fx-82MS",
     "argument": "Experimentar con Vue",
-    "tools": [
-      [
+    "tools": {
+      "old": [
         "HTML",
         "JavaScript",
         "SASS"
       ],
-      [
+      "new": [
         "Vue"
       ]
-    ],
+    },
     "res": null,
     "links": [
-      [
-        "Web",
-        "https://casi-fx-leodeslf.netlify.app/"
-      ],
-      [
-        "repositorio",
-        "https://github.com/leodeslf/casi"
-      ]
+      {
+        "name": "Web",
+        "link": "https://casi-fx-leodeslf.netlify.app/"
+      },
+      {
+        "name": "Repositorio",
+        "link": "https://github.com/leodeslf/casi"
+      }
     ]
   },
   {
@@ -206,12 +206,12 @@
     "date": "10/12/2020",
     "about": "Módulo y articulaciones de cinemática inversa",
     "argument": "Experimentar con TypeScript",
-    "tools": [
-      [],
-      [
+    "tools": {
+      "old": [],
+      "new": [
         "TypeScript"
       ]
-    ],
+    },
     "res": [
       {
         "name": "Referencia en P5.js",
@@ -220,14 +220,41 @@
       }
     ],
     "links": [
-      [
-        "Demo",
-        "https://codepen.io/leodeslf/project/full/XYnBQg"
+      {
+        "name": "Demo",
+        "link": "https://codepen.io/leodeslf/project/full/XYnBQg"
+      },
+      {
+        "name": "Repositorio",
+        "link": "https://github.com/leodeslf/ik"
+      }
+    ]
+  },
+  {
+    "title": "this.weather-v2",
+    "date": "20/01/2021",
+    "about": "Segunda versión del proyecto this.weather",
+    "argument": "Empezar a aprender Angular y familiarizarme con Firebase",
+    "tools": {
+      "old": [
+        "HTML",
+        "TypeScript",
+        "SASS"
       ],
-      [
-        "repositorio",
-        "https://github.com/leodeslf/ik"
+      "new": [
+        "Angular"
       ]
+    },
+    "res": null,
+    "links": [
+      {
+        "name": "Web",
+        "link": "https://this-weather-v2.web.app/"
+      },
+      {
+        "name": "Repositorio",
+        "link": "https://github.com/leodeslf/this-weather-v2"
+      }
     ]
   }
 ]

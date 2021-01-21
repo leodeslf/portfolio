@@ -5,14 +5,13 @@ const email = 'leodeslf@gmail.com';
 export default function Connect() {
   return (
     <section id="connect" className="portfolio__connect portfolio__elem">
-
       <div
         itemScope
         itemType="https://schema.org/Person"
         className="connect__card text--small">
         <ul className="card__data">
           <li>
-            <h2>Contacto</h2>
+            <h2 className="h3">Contacto</h2>
           </li>
           <li
             itemProp="address"

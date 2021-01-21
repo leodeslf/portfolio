@@ -26,16 +26,16 @@ function ProjectItem({
         <h3 className="project__title">
           <a href={links[0][1]} title={links[0][0]}>{title}</a>
         </h3>
-        {tools[1].length > 0 &&
+        {tools.new.length > 0 &&
           <span
             className="project__new-tools"
             title={
-              tools[1].length > 1 ?
+              tools.new.length > 1 ?
                 "Nuevas herramientas." :
                 "Nueva herramienta."
             }>
-            <span className="new-tools__new-tag">nuevo</span>
-            {tools[1].map((tool, i) =>
+            <span className="new-tools__new-tag">+</span>
+            {tools.new.map((tool, i) =>
               <span key={i} className="new-tools__tool">
                 {`${tool}`}
               </span>)}
@@ -60,7 +60,7 @@ function ProjectItem({
         <div className="project__tools ul-container">
           <strong>Herramientas</strong>
           <ul>
-            {[...tools[0], ...tools[1]].map((item, index) => (
+            {[...tools.old, ...tools.new].map((item, index) => (
               <li key={`${i}_${index}`}>
                 {item}
               </li>
@@ -74,12 +74,14 @@ function ProjectItem({
           </div>}
         <footer>
           <span>
-            {links.map((link, i) =>
+            {links.map(({ name, link }, i) =>
               <Fragment key={i}>
-                <a href={link[1]}>{link[0]}</a>
-                {i < links.length - 1 ? ', ' : ''}
+                <a href={link}>
+                  {name}
+                </a>
+                {i < links.length - 1 ? ' - ' : ''}
               </Fragment>
-            )}.
+            )}
           </span>
           <span>
             {date}
@@ -96,20 +98,22 @@ ProjectItem.propTypes = {
   date: PropTypes.string.isRequired,
   about: PropTypes.string.isRequired,
   argument: PropTypes.string.isRequired,
-  tools: PropTypes.arrayOf(
-    PropTypes.arrayOf(
-      PropTypes.string
-    ).isRequired
-  ).isRequired,
-  res: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
-    linkName: PropTypes.string.isRequired,
-  })),
+  tools:
+    PropTypes.shape({
+      old: PropTypes.arrayOf(PropTypes.string),
+      new: PropTypes.arrayOf(PropTypes.string)
+    }).isRequired,
+  res: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+      linkName: PropTypes.string.isRequired,
+    })),
   links: PropTypes.arrayOf(
-    PropTypes.arrayOf(
-      PropTypes.string.isRequired
-    ).isRequired
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired
+    }).isRequired
   ).isRequired
 }
 

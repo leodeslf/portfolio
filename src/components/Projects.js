@@ -24,7 +24,7 @@ function ProjectItem({
     <article className="portfolio__project text--small">
       <header className="project__header">
         <h3 className="project__title">
-          <a href={links[0][1]} title={links[0][0]}>{title}</a>
+          <a href={links[0].link} title={links[0].name}>{title}</a>
         </h3>
         {tools.new.length > 0 &&
           <span

@@ -12,7 +12,7 @@ export default function About() {
       <p>
         Desde entonces aprendí conceptos y tecnologías que
         logran <strong>agilizar</strong> el desarrollo del
-        projecto, <strong>potenciar</strong> el trabajo en equipo
+        proyecto, <strong>potenciar</strong> el trabajo en equipo
         y <strong>enriquecer</strong> la experiencia del usuario final.
       </p>
     </section>

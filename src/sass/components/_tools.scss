@@ -5,8 +5,12 @@
   height: min-content;
 }
 
+.tools__item:nth-of-type(1) {
+  @include relief-card;
+}
+
 .tools__item {
-  @include plain-card;
+  @include base-card;
   & > ul {
     padding-right: 1rem;
   }

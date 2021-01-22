@@ -79,9 +79,10 @@ function ProjectItem({
                 <a href={link}>
                   {name}
                 </a>
-                {i < links.length - 1 ? ' - ' : ''}
+                <hl />
+                {i < links.length - 1 ? ', ' : ''}
               </Fragment>
-            )}
+            )}.
           </span>
           <span>
             {date}

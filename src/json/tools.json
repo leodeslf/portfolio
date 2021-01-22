@@ -1,6 +1,6 @@
 [
   {
-    "title": "Stack",
+    "title": "Principales",
     "tool_list": [
       "HTML",
       "CSS",
@@ -12,11 +12,11 @@
   {
     "title": "Otras",
     "tool_list": [
-      "Git",
-      "Three.js",
+      "Vue",
+      "Angular",
       "TypeScript",
       "Markdown",
-      "Vue"
+      "Git"
     ]
   }
 ]

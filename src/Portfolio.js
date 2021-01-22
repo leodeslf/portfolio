@@ -37,9 +37,9 @@ export default function Portfolio() {
             {displayName}
           </h1>
           <p>
-            Aprendiendo <strong>Frontend</strong> como autodidacta,<br />
-            con <strong>React</strong> y <strong>SASS</strong> en mi caja de
-            herramientas,<br /> donde aún hay mucho lugar disponible.
+            Aprendiendo y especializándome en <strong>Desarrollo Frontend</strong>,<br />
+            con <strong>React</strong> y <strong>SASS</strong> como principales herramientas,<br />
+            acompañadas de <strong>Angular</strong>, <strong>Vue</strong> y <strong>TypeScript</strong>.
           </p>
         </section>
         <About />

@@ -10,7 +10,7 @@ export default function About() {
         -casi por accidente- encontré el rol de desarrollo perfecto, un tal Frontend.
       </p>
       <p>
-        Desde entonces aprendí conceptos y tecnologías que
+        Desde entonces, aprendí conceptos y tecnologías que
         logran <strong>agilizar</strong> el desarrollo del
         proyecto, <strong>potenciar</strong> el trabajo en equipo
         y <strong>enriquecer</strong> la experiencia del usuario final.

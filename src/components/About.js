@@ -5,9 +5,9 @@ export default function About() {
     <section id="about" className="portfolio__about portfolio__elem">
       <h2>Sobre mí</h2>
       <p>
-        Con gusto por el Diseño y el Desarrollo, sin saber a cuál de esas
-        áreas dedicarme, mientras curioseaba sobre algunos lenguajes de programación,
-        -casi por accidente- encontré el rol de desarrollo perfecto, un tal Frontend.
+        Con gusto por el Diseño y el Desarrollo, sin saber a cuál de esas áreas
+        dedicarme, mientras curioseaba sobre algunos lenguajes de programación,
+        -casi por accidente- encontré el rol perfecto, un tal Frontend.
       </p>
       <p>
         Desde entonces, aprendí conceptos y tecnologías que

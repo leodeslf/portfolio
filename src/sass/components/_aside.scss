@@ -55,9 +55,8 @@ aside.aside {
 }
 
 .sticky__slide {
-  @include bg;
-  @include border(border-left, 1pt);
   @include speed(transition-duration, $animation-speed--medium);
+  background: linear-gradient($white, $white, $white--med);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -65,8 +64,10 @@ aside.aside {
   pointer-events: all;
   transition-property: transform;
   width: max-content;
+  .dark & {
+    background: linear-gradient($green--med, $green--med, $green--dark);
+  }
   @media screen and (max-width: $media--max-small) {
-    @include bg(true);
     transform: translateX(100%);
   }
 }

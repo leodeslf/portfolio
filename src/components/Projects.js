@@ -79,7 +79,6 @@ function ProjectItem({
                 <a href={link}>
                   {name}
                 </a>
-                <hl />
                 {i < links.length - 1 ? ', ' : ''}
               </Fragment>
             )}.

@@ -10,11 +10,11 @@ export default function About() {
         -casi por accidente- encontré el rol perfecto, un tal Frontend.
       </p>
       <p>
-        Desde entonces, aprendí conceptos y tecnologías que
-        logran <strong>agilizar</strong> el desarrollo
-        , <strong>potenciar</strong> el trabajo en equipo
-        y <strong>enriquecer</strong> la experiencia del
-        usuario final.
+        Desde entonces, aprendí conceptos y tecnologías
+        que logran <strong>agilizar</strong> el
+        desarrollo, <strong>potenciar</strong> el trabajo en
+        equipo y <strong>enriquecer</strong> la experiencia
+        del usuario final.
       </p>
     </section>
   );

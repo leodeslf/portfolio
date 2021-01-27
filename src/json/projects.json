@@ -2,7 +2,7 @@
   {
     "title": "Vec.js",
     "date": "07/12/2018",
-    "about": "Clase constructora y funcional de vectores",
+    "about": "Vectors y su funcionalidad en JavaScript",
     "argument": "Familiarizarme con JavaScript. Aprender a crear paquetes con NPM",
     "tools": {
       "old": [],
@@ -202,7 +202,7 @@
     ]
   },
   {
-    "title": "IK",
+    "title": "Inverse Kinematics",
     "date": "10/12/2020",
     "about": "Módulo y articulaciones de cinemática inversa",
     "argument": "Experimentar con TypeScript",
@@ -226,7 +226,7 @@
       },
       {
         "name": "repositorio",
-        "link": "https://github.com/leodeslf/ik"
+        "link": "https://github.com/leodeslf/inverse-kinematics"
       }
     ]
   },

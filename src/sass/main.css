@@ -103,7 +103,7 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12pt;
 }
 :root .dark {
   font-weight: 300;
@@ -619,12 +619,12 @@ aside.aside {
 .dark-mode-switch__label {
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.05);
   background-color: white;
-  border-radius: 12px;
+  border-radius: 9pt;
   cursor: pointer;
   display: grid;
-  height: 24px;
-  padding: 6px;
-  width: 40px;
+  height: 18pt;
+  padding: 4.5pt;
+  width: 30pt;
 }
 .dark .dark-mode-switch__label {
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.14), 0 1px 2px rgba(0, 0, 0, 0.14);
@@ -638,11 +638,11 @@ aside.aside {
   transition-property: all;
   background-color: #576064;
   display: grid;
-  height: 12px;
-  margin: 0 0 0 14px;
+  height: 9pt;
+  margin: 0 0 0 10.5pt;
   place-content: center;
   position: relative;
-  width: 12px;
+  width: 9pt;
 }
 @media (prefers-reduced-motion: reduce) {
   .label__body {
@@ -655,8 +655,8 @@ aside.aside {
   transition-property: all;
   border-radius: 50%;
   content: "";
-  height: 8px;
-  width: 8px;
+  height: 6pt;
+  width: 6pt;
   z-index: 1;
 }
 .dark .label__body::after {
@@ -668,9 +668,9 @@ aside.aside {
   }
 }
 .dark .label__body::after {
-  height: 9.96px;
-  transform: translateX(3.52px);
-  width: 9.96px;
+  height: 7.47pt;
+  transform: translateX(2.64pt);
+  width: 7.47pt;
 }
 .label__body::before {
   transition-duration: 120ms;
@@ -694,7 +694,7 @@ aside.aside {
 .dark .label__body {
   background-color: #d8ecf5;
   transform: rotateZ(-22.5deg);
-  margin: 0 14px 0 0;
+  margin: 0 10.5pt 0 0;
   border-radius: 50%;
 }
 

@@ -17,29 +17,37 @@ export default function Projects() {
 }
 
 function ProjectItem({
-  i, title, date, about, argument, tools, res, links
+  i, title, date, about, argument, tools, res, links, preview
 }) {
   const { input, label } = seeMore(i);
+  const Preview = require(`../previews/${preview}/${preview}.js`).default;
   return (
     <article className="portfolio__project text--small">
+      <div className="project__table">
+        <div className="table__preview">
+          <Preview />
+        </div>
+        <footer className="table__footer">
+          {tools.new.length > 0 &&
+            <span className="table__new-tools">
+              <span className="new-tools__new-tag">
+                {tools.new.length > 1 ?
+                  "Nuevas herramientas:" :
+                  "Nueva herramienta:"}</span>
+              {tools.new.map((tool, i) =>
+                <span key={i} className="new-tools__tool">
+                  {(i > 0 ? ', ' : '') + tool}
+                </span>)}
+            </span>}
+          <span className="table__date">
+            {date}
+          </span>
+        </footer>
+      </div>
       <header className="project__header">
         <h3 className="project__title">
           <a href={links[0].link} title={links[0].name}>{title}</a>
         </h3>
-        {tools.new.length > 0 &&
-          <span
-            className="project__new-tools"
-            title={
-              tools.new.length > 1 ?
-                "Nuevas herramientas." :
-                "Nueva herramienta."
-            }>
-            <span className="new-tools__new-tag">+</span>
-            {tools.new.map((tool, i) =>
-              <span key={i} className="new-tools__tool">
-                {`${tool}`}
-              </span>)}
-          </span>}
       </header>
       <p className="project__about">
         {about}.
@@ -83,9 +91,6 @@ function ProjectItem({
               </Fragment>
             )}.
           </span>
-          <span>
-            {date}
-          </span>
         </footer>
       </div>
     </article>
@@ -114,7 +119,8 @@ ProjectItem.propTypes = {
       name: PropTypes.string.isRequired,
       link: PropTypes.string.isRequired
     }).isRequired
-  ).isRequired
+  ).isRequired,
+  preview: PropTypes.string.isRequired
 }
 
 function ResourceList({ res, i }) {

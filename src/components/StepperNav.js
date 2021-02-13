@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 const ANCHORS = [
   ['#start', 'Inicio'],
   ['#about', 'Sobre mí'],
-  ['#tools', 'Herramientas'],
   ['#projects', 'Proyectos'],
+  ['#tools', 'Herramientas'],
   ['#cv', 'Currículum Vitae'],
-  ['#connect', 'Conectemos']
+  ['#connect', 'Conectar']
 ];
 
 export default class StepperNav extends Component {

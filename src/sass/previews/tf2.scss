@@ -1,0 +1,13 @@
+#canvas--tfp2 {
+  user-select: none;
+  &:hover {
+    cursor: grab;
+  }
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+#skin-canvas--tfp2 {
+  display: none;
+}

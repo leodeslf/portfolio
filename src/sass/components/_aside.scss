@@ -56,7 +56,7 @@ aside.aside {
 
 .sticky__slide {
   @include speed(transition-duration, $animation-speed--medium);
-  background: linear-gradient($white, $white, $white--med);
+  background: linear-gradient($white, $white, $blue--light);
   display: flex;
   flex-direction: column;
   height: 100vh;

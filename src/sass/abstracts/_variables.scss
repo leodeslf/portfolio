@@ -1,21 +1,23 @@
 // Colors.
-$white: rgb(255, 255, 255);
-$white--med: rgb(216, 236, 245);
-$white--dark: rgb(87, 96, 100);
-$blue: rgb(0, 89, 223);
-$lime: rgb(183, 254, 52);
-$green--med: rgb(0, 80, 58);
-$green--dark: rgb(0, 34, 32);
+$black: #000000;
+$white: #ffffff;
+$white--med: hsl(180, 14%, 84%);
+$white--dark: rgb(88, 98, 101);
+$blue: hsl(212, 100%, 42%);
+$blue--light: hsl(202, 100%, 92%);
+$lime: hsl(82, 100%, 60%);
+$green--med: hsl(142, 90%, 16%);
+$green--dark: hsl(150, 90%, 7%);
 
 //$lime: rgb(249, 255, 64);
 //$green: rgb(56, 196, 61);
 
 // Light mode.
-$bg: $white--med;
+$bg: $blue--light;
 $bg--ascent: $white;
-$color: black;
+$color: $black;
 $color--ascent: $white--dark;
-$shadow-color: hsla(0, 0%, 0%, 0.05);
+$shadow-color: hsla(0, 0%, 0%, 0.06);
 $border-color: hsla(0, 0%, 0%, 0.08);
 $anchor-color: $blue;
 
@@ -24,12 +26,12 @@ $bg--dark: $green--dark;
 $bg--ascent--dark: $green--med;
 $color--dark: $white;
 $color--ascent--dark: $white--med;
-$shadow-color--dark: hsla(0, 0%, 0%, 0.14);
-$border-color--dark: hsla(0, 0%, 0%, 0.18);
+$shadow-color--dark: hsla(0, 0%, 0%, 0.08);
+$border-color--dark: hsla(0, 0%, 0%, 0.14);
 $anchor-color--dark: $lime;
 
 // Font sizes
-$font-size--normal: 12pt;
+$font-size--normal: 16px;
 $font-size--small: 0.875rem;
 $font-size--extra-small: 0.75rem;
 

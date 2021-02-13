@@ -53,7 +53,7 @@
 }
 
 @mixin box-shadow($index: 1) {
-  $b: 0 1px 2px;
+  $b: 0 2px 2px;
   $a: 0 (1px * $index) (3px * $index) 1px;
   box-shadow: $a $shadow-color, $b $shadow-color;
   .dark & {
@@ -73,7 +73,6 @@
 
 @mixin base-card {
   @include ascent-container;
-  @include border(border, 1px);
   border-radius: $border-radius;
   padding: 1rem;
 }

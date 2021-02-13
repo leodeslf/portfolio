@@ -9,8 +9,86 @@
   @include color(true);
   display: grid;
   min-width: 100%;
-  grid-template-areas: "header header" "about see-more" "details details";
+  grid-template-areas: "prev prev" "header header" "about see-more" "details details";
   grid-template-columns: auto 21px;
+}
+
+$table-blue: #056ee6;
+$table-blue--light: #82b7f3;
+$table-green: #108510;
+$table-green--light: #88c288;
+
+@mixin table-colors {
+  background-color: $table-blue;
+  outline: 1px solid $table-blue--light;
+  .dark & {
+    background-color: $table-green;
+    outline-color: $table-green--light;
+  }
+}
+
+.project__table {
+  @include box-shadow;
+  @include table-colors;
+  background-image: url("/images/blue.gif");
+  border: 0.5rem solid $table-blue;
+  border-radius: $border-radius;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  grid-area: prev;
+  outline-offset: -0.5rem;
+  margin-bottom: 1rem;
+  .dark & {
+    background-color: $table-green;
+    background-image: url("/images/green.gif");
+    border-color: $table-green;
+    outline-color: $table-green--light;
+  }
+}
+
+.table__preview {
+  align-self: center;
+  place-content: center;
+  display: grid;
+  margin: 2rem;
+  width: fit-content;
+  width: 200px;
+  height: 100px;
+}
+
+.preview-content {
+  @include box-shadow;
+  display: flex;
+  border-radius: $border-radius;
+  overflow: hidden;
+}
+
+.table__footer {
+  display: flex;
+  font-size: $font-size--extra-small;
+}
+
+.table__new-tools {
+  @include table-colors;
+  padding: 0.25ch 0.75ch;
+}
+
+.new-tools__new-tag {
+  padding-right: 0.25rem;
+  margin-right: 0.5ch;
+}
+
+.new-tools__tool {
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.table__date {
+  @include table-colors;
+  margin-left: auto;
+  padding: 0.25ch 0.75ch;
 }
 
 .project__header {
@@ -27,30 +105,6 @@
   & > a {
     @include color;
     font: inherit;
-  }
-}
-
-.project__new-tools {
-  @include border(border, 1px);
-  border-radius: $border-radius;
-  display: flex;
-  font-size: $font-size--extra-small;
-  grid-area: new-tools;
-  margin: auto 0;
-  padding: 0 0.25rem;
-  width: fit-content;
-}
-
-.new-tools__new-tag {
-  @include border(border-right, 1px);
-  padding-right: 0.25rem;
-  margin-right: 0.25rem;
-}
-
-.new-tools__tool {
-  margin-right: 0.25rem;
-  &:last-child {
-    margin-right: 0;
   }
 }
 

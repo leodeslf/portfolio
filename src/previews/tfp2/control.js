@@ -14,7 +14,6 @@ let iMPPD = 1;
 
 // Canvas contexts and data holders.
 let noiseCtx = undefined;
-let skinCtx = undefined;
 let noiseData = [];
 const NOISE_IMG = new ImageData(NOISE_CAN_W, NOISE_CAN_H);
 

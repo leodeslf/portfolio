@@ -20,7 +20,8 @@
         "name": "repositorio",
         "link": "https://github.com/leodeslf/vector"
       }
-    ]
+    ],
+    "preview": "vec"
   },
   {
     "title": "TFP",
@@ -87,7 +88,8 @@
         "name": "repositorio",
         "link": "https://github.com/leodeslf/tfp"
       }
-    ]
+    ],
+    "preview": "tfp"
   },
   {
     "title": "this.weather",
@@ -146,7 +148,8 @@
         "name": "repositorio",
         "link": "https://github.com/leodeslf/this.weather"
       }
-    ]
+    ],
+    "preview": "tw"
   },
   {
     "title": "TFP v2",
@@ -172,7 +175,8 @@
         "name": "repositorio",
         "link": "https://github.com/leodeslf/tfp-v2"
       }
-    ]
+    ],
+    "preview": "tfp2"
   },
   {
     "title": "CASI",
@@ -199,7 +203,8 @@
         "name": "repositorio",
         "link": "https://github.com/leodeslf/casi"
       }
-    ]
+    ],
+    "preview": "casi"
   },
   {
     "title": "Inverse Kinematics",
@@ -228,7 +233,8 @@
         "name": "repositorio",
         "link": "https://github.com/leodeslf/inverse-kinematics"
       }
-    ]
+    ],
+    "preview": "ik"
   },
   {
     "title": "this.weather-v2",
@@ -255,6 +261,7 @@
         "name": "repositorio",
         "link": "https://github.com/leodeslf/this-weather-v2"
       }
-    ]
+    ],
+    "preview": "tw2"
   }
 ]

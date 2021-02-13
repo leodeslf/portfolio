@@ -45,12 +45,6 @@ export function delegateNoiseCtxTo(ctx) {
   resetLoop();
 }
 
-// Init skin canvas context.
-export function delegateSkinCtxTo(ctx) {
-  skinCtx = ctx;
-  CFG.setSkinName = CFG.skinName;
-}
-
 function resetLoop() {
   _3D();
 }

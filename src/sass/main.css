@@ -224,7 +224,7 @@ picture {
 }
 
 main.portfolio {
-  animation-duration: 480ms;
+  animation-duration: 380ms;
   animation-name: fade-opacity;
   max-width: 960px;
   padding: 6rem 3rem;
@@ -496,7 +496,7 @@ h2.h3 {
 }
 
 aside.aside {
-  animation-duration: 480ms;
+  animation-duration: 380ms;
   animation-name: fade-opacity;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -877,7 +877,7 @@ html:active #ik__canvas:active {
   margin-right: 1rem;
 }
 #tw__card .card__name em {
-  color: #8c8c8c;
+  color: #707070;
 }
 #tw__card .card__flag {
   display: grid;

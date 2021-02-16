@@ -1,0 +1,75 @@
+$table-blue: #056ee6;
+$table-blue--light: #82b7f3;
+$table-green: #108510;
+$table-green--light: #88c288;
+
+@mixin table-colors {
+  background-color: $table-blue;
+  outline: 1px solid $table-blue--light;
+  .dark & {
+    background-color: $table-green;
+    outline-color: $table-green--light;
+  }
+}
+
+.preview {
+  @include box-shadow;
+  @include table-colors;
+  background-image: url("/images/blue.gif");
+  border: 0.5rem solid $table-blue;
+  border-radius: $border-radius;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  grid-area: prev;
+  outline-offset: -0.5rem;
+  margin-bottom: 1rem;
+  .dark & {
+    background-color: $table-green;
+    background-image: url("/images/green.gif");
+    border-color: $table-green;
+    outline-color: $table-green--light;
+  }
+}
+
+.preview__main {
+  align-self: center;
+  place-content: center;
+  display: flex;
+  margin: 2rem;
+}
+
+.preview__content {
+  display: grid;
+  gap: 1rem;
+}
+
+.content__caption {
+  justify-self: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0 0.5ch;
+}
+
+.content__canvas {
+  @include box-shadow;
+  border-radius: $border-radius;
+}
+
+.preview__footer {
+  display: flex;
+  font-size: $font-size--extra-small;
+}
+
+.preview__new-tools {
+  @include table-colors;
+  padding: 0.25ch 0.75ch;
+}
+
+.new-tools__tag {
+  margin-right: 0.5ch;
+}
+
+.preview__date {
+  @extend .preview__new-tools;
+  margin-left: auto;
+}

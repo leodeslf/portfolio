@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import PROJECTS from '../json/projects.json';
 import seeMore from '../js/seeMore';
@@ -20,12 +20,16 @@ function ProjectItem({
   i, title, date, about, argument, tools, res, links, preview
 }) {
   const { input, label } = seeMore(i);
-  const Preview = require(`../previews/${preview}/${preview}.js`).default;
+  const Preview = lazy(() => import(
+    /* webpackChunkName: "preview" */
+    `../previews/${preview}/${preview}.js`));
   return (
     <article className="portfolio__project text--small">
       <div className="project__preview preview">
         <div className="preview__main">
-          <Preview />
+          <Suspense fallback="">
+            <Preview />
+          </Suspense>
         </div>
         <footer className="preview__footer">
           {tools.new.length > 0 &&

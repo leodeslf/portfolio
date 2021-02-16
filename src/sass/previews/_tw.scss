@@ -1,0 +1,64 @@
+#tw__card {
+  border-radius: 2px;
+  background-color: #f7f7f7;
+  color: #262626;
+  padding: 1px;
+  font-weight: 400;
+  hr {
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #00000012;
+    margin-top: 1px;
+  }
+  .card__header {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    padding: 0 9px;
+  }
+  .card__name {
+    margin: 8px 0 7px;
+    margin-right: 1rem;
+    em {
+      color: #8c8c8c;
+    }
+  }
+  .card__flag {
+    display: grid;
+    height: fit-content;
+  }
+  .card__temp {
+    padding: 0 9px;
+    margin: 0 0 7px;
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-areas:
+      "temp tempMax"
+      "temp tempMin";
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .temp__current {
+    font-weight: 100;
+    grid-area: temp;
+    font-size: 49px;
+    line-height: 1em;
+    margin-top: 4px;
+    margin-right: 1rem;
+  }
+  .temp__max {
+    grid-area: tempMax;
+    margin-top: 7px;
+  }
+  .temp__min {
+    grid-area: tempMin;
+  }
+  .temp__min,
+  .temp__max {
+    span {
+      margin-right: 9px;
+    }
+  }
+}

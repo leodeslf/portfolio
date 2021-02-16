@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchData } from './control';
+import { getDataForTW2 } from './control';
 
 export default class tw2 extends Component {
   constructor() {
@@ -11,7 +11,7 @@ export default class tw2 extends Component {
   }
 
   componentDidMount() {
-    fetchData().then(res => {
+    getDataForTW2().then(res => {
       this.setState({
         data: res,
         loading: false

@@ -1,40 +1,48 @@
 import React, { Component } from 'react';
-import { delegateNoiseCtxTo, CFG } from './control';
+import { delegateNoiseCtxTo, delegateSkinCtxTo, CFG } from './control';
 
 export default class tfp2 extends Component {
   componentDidMount() {
-    initPreview();
+    delegateNoiseCtxTo(
+      document.getElementById('tfp2__canvas')
+        .getContext('2d', {
+          willReadFrequently: true
+        })
+    );
+    delegateSkinCtxTo(
+      document.getElementById('tfp2__skin-canvas').getContext('2d')
+    );
   }
 
   onMouseDownHandler = () => {
-    window.onmousemove = (m) => {
-      // Take movement deltas.
-      const DRAG_x = -m.movementX;
-      const DRAG_Y = -m.movementY;
-      // Update settings.
-      CFG.traslationX += DRAG_x;
-      CFG.traslationY += DRAG_Y;
-      // Stop listener.
-      window.onmouseup = () => {
-        window.onmousemove = null;
-      }
-    }
+    window.addEventListener('mousemove', drag);
   }
 
   render() {
     return (
-      <div className="preview--tfp2 preview-content">
-        <canvas id="canvas--tfp2" height="100" width="200" onMouseDown={this.onMouseDownHandler} />
+      <div className="preview__content preview--tfp2">
+        <canvas
+          className="content__canvas"
+          id="tfp2__canvas"
+          height="100"
+          width="200"
+          onMouseDown={this.onMouseDownHandler} />
+        <canvas id="tfp2__skin-canvas" />
+        <p className="content__caption">Click para arrastrar.</p>
       </div>
     );
   }
 }
 
-function initPreview() {
-  delegateNoiseCtxTo(
-    document.getElementById('canvas--tfp2')
-      .getContext('2d', {
-        willReadFrequently: true
-      })
-  );
+function drag(m) {
+  // Take movement deltas.
+  const DRAG_x = -m.movementX;
+  const DRAG_Y = -m.movementY;
+  // Update settings.
+  CFG.traslationX += DRAG_x;
+  CFG.traslationY += DRAG_Y;
+  // Stop listener.
+  window.addEventListener('mouseup', () => {
+    window.removeEventListener('mousemove', drag);
+  });
 }

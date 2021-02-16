@@ -1,91 +1,103 @@
-import { PERLIN_3D } from '../../js/perlin.min.js';
+import PERLIN_3D from './perlin.min';
 
-// Utils.
-const INDEX = (x, y) => y * iMPPD * NOISE_CAN_W * iMPPD + x * iMPPD;
-const TRUNC = Math.trunc;
-const NOISE_CAN_W = 200;
-const NOISE_CAN_H = 100;
-const COLOR_RANGE = 255;
-const HALF_COLOR_RANGE = 127;
-const INIT_ZOOM = 4;
-const PIXEL = [0, 0, 0, 0];
+// Pixels per data.
+const PPD = 2;
 // Inverse mult. of pixels per data.
-let iMPPD = 1;
+const invMultPPD = 1 / PPD;
+const index = (x, y) => y * invMultPPD * noiseW * invMultPPD + x * invMultPPD;
+const trunc = Math.trunc;
+const colorRange = 255;
+const halfColorRange = 127;
 
-// Canvas contexts and data holders.
+const zoom = 2;
+const pixel = [0, 0, 0, 0];
+
 let noiseCtx = undefined;
 let noiseData = [];
-const NOISE_IMG = new ImageData(NOISE_CAN_W, NOISE_CAN_H);
+const noiseW = 200;
+const noiseH = 100;
+const noiseImg = new ImageData(noiseW, noiseH);
 
-// General configuration.
+let skinCtx = undefined;
+let skinData = [];
+const skinW = 256;
+const skinH = 1;
+const skinImg = new Image(skinW, skinH);
+skinImg.onload = () => {
+  skinCtx.clearRect(0, 0, skinW, skinH);
+  skinCtx.drawImage(skinImg, 0, 0);
+  skinData = skinCtx.getImageData(0, 0, skinW, 1).data;
+}
+
 export const CFG = {
   /* Animation */
-  step: 0.015,
+  step: 0.01,
   seed: 0.0,
   /* Noise */
   frequency: 1.0,
-  amplitude: 1.25,
+  amplitude: 2.0,
   octaves: 1,
   lacunarity: 2.0,
   persistence: 0.5,
   /* View */
   traslationX: 0,
   traslationY: 0,
-  scaleW: 1 / 200 * INIT_ZOOM,
-  scaleH: 1 / 200 * INIT_ZOOM,
+  scaleW: 1 / 200 * zoom,
+  scaleH: 1 / 200 * zoom,
   /* Pixels per data */
-  ppd: 2,
+  ppd: PPD,
   u(x) { return (x + this.traslationX) * this.scaleW; },
-  v(y) { return (y + this.traslationY) * this.scaleH; }
+  v(y) { return (y + this.traslationY) * this.scaleH; },
 };
 
 // Init noise canvas context.
 export function delegateNoiseCtxTo(ctx) {
   noiseCtx = ctx;
-  resetLoop();
+  noise3D();
 }
 
-function resetLoop() {
-  _3D();
+// Init skin canvas context.
+export function delegateSkinCtxTo(ctx) {
+  skinCtx = ctx;
+  skinImg.src = './images/skin-tfp2.png';
 }
 
-// Print used for 2 or 3D.
 function printFrame() {
-  for (let y = 0; y < NOISE_CAN_H; y += CFG.ppd) {
-    for (let x = 0; x < NOISE_CAN_W; x += CFG.ppd) {
-      // Make it integer and clamp between 0 and 255
-      let value = noiseData[INDEX(x, y)];
-      if (value > COLOR_RANGE) value = COLOR_RANGE;
+  for (let y = 0; y < noiseH; y += CFG.ppd) {
+    for (let x = 0; x < noiseW; x += CFG.ppd) {
+      let value = noiseData[index(x, y)];
+      if (value > colorRange) value = colorRange;
       if (value < 0) value = 0;
-      PIXEL[0] = value;
-      PIXEL[1] = value;
-      PIXEL[2] = value;
-      PIXEL[3] = 64 + value;
-      // Loop through sub square (all the same color).
+      pixel[0] = skinData[value * 4 + 0];
+      pixel[1] = skinData[value * 4 + 1];
+      pixel[2] = skinData[value * 4 + 2];
+      pixel[3] = skinData[value * 4 + 3];
+      // Loop through sub-square and fill it.
       for (let subY = 0; subY < CFG.ppd; subY++) {
-        // Boudary control Y.
-        if (y + subY >= NOISE_CAN_H) break;
+        if (y + subY >= noiseH) break;
         for (let subX = 0; subX < CFG.ppd; subX++) {
-          // Boudary control X.
-          if (x + subX >= NOISE_CAN_W) break;
-          const PIXEL_INDEX = (y + subY) * (NOISE_CAN_W) + (x + subX);
-          NOISE_IMG.data[PIXEL_INDEX * 4 + 0] = PIXEL[0];
-          NOISE_IMG.data[PIXEL_INDEX * 4 + 1] = PIXEL[1];
-          NOISE_IMG.data[PIXEL_INDEX * 4 + 2] = PIXEL[2];
-          NOISE_IMG.data[PIXEL_INDEX * 4 + 3] = PIXEL[3];
+          if (x + subX >= noiseW) break;
+          const pixelIndex = (y + subY) * (noiseW) + (x + subX);
+          noiseImg.data[pixelIndex * 4 + 0] = pixel[0];
+          noiseImg.data[pixelIndex * 4 + 1] = pixel[1];
+          noiseImg.data[pixelIndex * 4 + 2] = pixel[2];
+          noiseImg.data[pixelIndex * 4 + 3] = pixel[3];
         }
       }
     }
   }
-  noiseCtx.clearRect(0, 0, NOISE_CAN_W, NOISE_CAN_H);
-  noiseCtx.putImageData(NOISE_IMG, 0, 0);
+  noiseCtx.clearRect(0, 0, noiseW, noiseH);
+  noiseCtx.putImageData(noiseImg, 0, 0);
 }
 
-function _3D() {
-  for (let y = 0; y < NOISE_CAN_H; y += CFG.ppd) {
-    for (let x = 0; x < NOISE_CAN_W; x += CFG.ppd) {
-      const U = CFG.u(x), V = CFG.v(y);
-      let n = 0, freK = CFG.frequency, ampK = CFG.amplitude;
+function noise3D() {
+  for (let y = 0; y < noiseH; y += CFG.ppd) {
+    for (let x = 0; x < noiseW; x += CFG.ppd) {
+      const U = CFG.u(x);
+      const V = CFG.v(y);
+      let n = 0;
+      let freK = CFG.frequency;
+      let ampK = CFG.amplitude;
       for (let k = 0; k < CFG.octaves; k++) {
         n += PERLIN_3D(
           (U + k) * freK,
@@ -94,10 +106,11 @@ function _3D() {
         freK *= CFG.lacunarity;
         ampK *= CFG.persistence;
       }
-      noiseData[INDEX(x, y)] = TRUNC(n * HALF_COLOR_RANGE + HALF_COLOR_RANGE);
+      // Take the integer and center the noise at 128.
+      noiseData[index(x, y)] = trunc(n * halfColorRange + halfColorRange);
     }
   }
   printFrame();
   CFG.seed += CFG.step;
-  requestAnimationFrame(_3D);
+  requestAnimationFrame(noise3D);
 }

@@ -14,7 +14,7 @@ export default function About() {
         que logran <strong>agilizar</strong> el
         desarrollo, <strong>potenciar</strong> el trabajo en
         equipo y <strong>enriquecer</strong> la experiencia
-        del usuario final.
+        del usuario.
       </p>
     </section>
   );

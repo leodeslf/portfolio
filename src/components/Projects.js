@@ -23,24 +23,21 @@ function ProjectItem({
   const Preview = require(`../previews/${preview}/${preview}.js`).default;
   return (
     <article className="portfolio__project text--small">
-      <div className="project__table">
-        <div className="table__preview">
+      <div className="project__preview preview">
+        <div className="preview__main">
           <Preview />
         </div>
-        <footer className="table__footer">
+        <footer className="preview__footer">
           {tools.new.length > 0 &&
-            <span className="table__new-tools">
-              <span className="new-tools__new-tag">
-                {tools.new.length > 1 ?
-                  "Nuevas herramientas:" :
-                  "Nueva herramienta:"}</span>
+            <span className="preview__new-tools">
+              <span className="new-tools__tag">Nuevo:</span>
               {tools.new.map((tool, i) =>
                 <span key={i} className="new-tools__tool">
                   {(i > 0 ? ', ' : '') + tool}
-                </span>)}
+                </span>)}.
             </span>}
-          <span className="table__date">
-            {date}
+          <span className="preview__date">
+            {date.slice(3)}
           </span>
         </footer>
       </div>

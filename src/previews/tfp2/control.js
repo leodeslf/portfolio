@@ -1,7 +1,7 @@
 import PERLIN_3D from './perlin.min';
 
 // Pixels per data.
-const PPD = 2;
+const PPD = 5;
 // Inverse mult. of pixels per data.
 const invMultPPD = 1 / PPD;
 const index = (x, y) => y * invMultPPD * noiseW * invMultPPD + x * invMultPPD;
@@ -26,7 +26,7 @@ const skinImg = new Image(skinW, skinH);
 skinImg.onload = () => {
   skinCtx.clearRect(0, 0, skinW, skinH);
   skinCtx.drawImage(skinImg, 0, 0);
-  skinData = skinCtx.getImageData(0, 0, skinW, 1).data;
+  skinData = skinCtx.getImageData(0, 0, skinW, skinH).data;
 }
 
 export const CFG = {

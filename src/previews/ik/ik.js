@@ -12,7 +12,7 @@ export default class ik extends Component {
         <canvas
           className="content__canvas"
           id="ik__canvas"
-          height="100"
+          height="200"
           width="200" />
         <p className="content__caption">Click para desanclar y arrastar.</p>
       </div>

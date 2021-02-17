@@ -3,8 +3,8 @@ import { Vec2 } from "../../js/vec.min";
 
 const PI2 = 6.2832;
 const canvasW = 200;
-const canvasH = 100;
-const joints = 30;
+const canvasH = 200;
+const joints = 45;
 const jointsLength = 2;
 let boundary = new Vec2(0, 0);
 let target = new Vec2(0, 0);
@@ -15,6 +15,7 @@ const IKM = new IKModule(joints, jointsLength, target, anchor);
 export function initControl(IKCanvas) {
   canvas = IKCanvas;
   ctx = canvas.getContext('2d');
+  ctx.lineWidth = .75;
   draw();
 
   canvas.onmousedown = () => IKM.anchor = false;
@@ -40,20 +41,19 @@ function draw() {
   if (a) {
     ctx.beginPath();
     ctx.arc(a.x, a.y, 3, 0, PI2);
-    ctx.fillStyle = 'white';
     ctx.fill();
+    ctx.closePath();
   }
   for (let i = 0; i < joints; i++) {
     ctx.beginPath();
-    ctx.strokeStyle = `white`;
     ctx.moveTo(
       IKM.body[i].base.x,
       IKM.body[i].base.y);
     ctx.lineTo(
       IKM.body[i].end.x,
       IKM.body[i].end.y);
-    ctx.closePath();
     ctx.stroke();
+    ctx.closePath();
   }
   IKM.update();
   requestAnimationFrame(draw);

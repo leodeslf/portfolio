@@ -47,7 +47,19 @@ function ProjectItem({
       </div>
       <header className="project__header">
         <h3 className="project__title">
-          <a href={links[0].link} title={links[0].name}>{title}</a>
+          <a
+            href={links[0].link}
+            title={links[0].name}
+            target="_blank"
+            rel="noopener noreferrer">
+            {title}
+            <span className="icon icon--21">
+              <svg viewBox="0 0 21 21">
+                <path d="M16.3,16.3H4.7V4.7h5.8V3H4.7C3.7,3,3,3.8,3,4.7v11.7C3,17.2,3.7,18,4.7,18h11.7c0.9,0,1.7-0.8,1.7-1.7v-5.8h-1.7V16.3z
+	 M12.2,3v1.7h3L7,12.9L8.1,14l8.2-8.2v3H18V3H12.2z"/>
+              </svg>
+            </span>
+          </a>
         </h3>
       </header>
       <p className="project__about">

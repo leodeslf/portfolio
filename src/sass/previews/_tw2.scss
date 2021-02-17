@@ -8,10 +8,9 @@
   .card__content {
     display: grid;
     grid-template-areas:
-      "temp name icon"
-      "temp text icon"
-      "temp . icon";
-    grid-template-columns: min-content auto min-content;
+      "temp name"
+      "temp text";
+    grid-template-rows: max-content min-content;
   }
   .card__temp {
     grid-area: temp;

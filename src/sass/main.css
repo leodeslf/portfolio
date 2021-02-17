@@ -792,8 +792,6 @@ footer.copy-right {
 
 .preview__main {
   align-self: center;
-  place-content: center;
-  display: flex;
   margin: 2rem;
 }
 
@@ -935,8 +933,8 @@ footer.copy-right {
 }
 #tw2__card .card__content {
   display: grid;
-  grid-template-areas: "temp name icon" "temp text icon" "temp . icon";
-  grid-template-columns: min-content auto min-content;
+  grid-template-areas: "temp name" "temp text";
+  grid-template-rows: max-content min-content;
 }
 #tw2__card .card__temp {
   grid-area: temp;

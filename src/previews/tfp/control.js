@@ -7,11 +7,11 @@ const colorRange = 255;
 
 let noiseCtx = undefined;
 const noiseData = [];
-const noiseW = 200;
-const noiseH = 100;
+const noiseW = 175;
+const noiseH = 85;
 const noiseImg = new ImageData(noiseW, noiseH);
 
-const factor = 3;
+const factor = 2.75;
 let spotsSystem = [];
 
 // Init noise canvas context.
@@ -22,7 +22,7 @@ export function delegateNoiseCtxTo(ctx) {
 }
 
 function initSpots() {
-  spotsSystem = new WorleySpotSystem(noiseW, noiseH, 6);
+  spotsSystem = new WorleySpotSystem(noiseW, noiseH, 4);
 }
 
 function ndMinusSt() {

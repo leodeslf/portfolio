@@ -9,13 +9,13 @@ const trunc = Math.trunc;
 const colorRange = 255;
 const halfColorRange = 127;
 
-const zoom = 2;
+const zoomRatio = 1.5;
 const pixel = [0, 0, 0, 0];
 
 let noiseCtx = undefined;
 let noiseData = [];
-const noiseW = 200;
-const noiseH = 100;
+const noiseW = 175;
+const noiseH = 85;
 const noiseImg = new ImageData(noiseW, noiseH);
 
 let skinCtx = undefined;
@@ -36,18 +36,17 @@ export const CFG = {
   /* Noise */
   frequency: 1.0,
   amplitude: 2.0,
-  octaves: 1,
+  octaves: 2,
   lacunarity: 2.0,
   persistence: 0.5,
   /* View */
   traslationX: 0,
   traslationY: 0,
-  scaleW: 1 / 200 * zoom,
-  scaleH: 1 / 200 * zoom,
+  scale: 1 / noiseW * zoomRatio,
   /* Pixels per data */
   ppd: PPD,
-  u(x) { return (x + this.traslationX) * this.scaleW; },
-  v(y) { return (y + this.traslationY) * this.scaleH; },
+  u(x) { return (x + this.traslationX) * this.scale; },
+  v(y) { return (y + this.traslationY) * this.scale; },
 };
 
 // Init noise canvas context.

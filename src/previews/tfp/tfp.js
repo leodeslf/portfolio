@@ -14,8 +14,8 @@ export default class tfp extends Component {
         <canvas
           className="content__canvas"
           id="tfp__canvas"
-          height="100"
-          width="200" />
+          height="85"
+          width="175" />
       </div>
     );
   }

@@ -24,8 +24,8 @@ export default class tfp2 extends Component {
         <canvas
           className="content__canvas"
           id="tfp2__canvas"
-          height="100"
-          width="200"
+          height="85"
+          width="175"
           onMouseDown={this.onMouseDownHandler} />
         <canvas id="tfp2__skin-canvas" />
         <p className="content__caption">Click para arrastrar.</p>

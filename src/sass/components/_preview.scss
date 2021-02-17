@@ -42,6 +42,7 @@ $table-green--light: #88c288;
 .preview__content {
   display: grid;
   gap: 1rem;
+  justify-items: center;
 }
 
 .content__caption {

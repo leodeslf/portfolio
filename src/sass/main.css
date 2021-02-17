@@ -296,7 +296,7 @@ main.portfolio {
 }
 
 .see-more__label svg {
-  transition-duration: 120ms;
+  transition-duration: 140ms;
   transition-property: all;
   transition-duration: 70ms;
   transform: rotateZ(-90deg);
@@ -365,9 +365,20 @@ main.portfolio {
 .project__title > a {
   color: #000000;
   font: inherit;
+  display: flex;
+  align-items: center;
 }
 .dark .project__title > a {
   color: #ffffff;
+}
+.project__title > a:hover {
+  text-decoration: none;
+}
+.project__title > a .icon {
+  margin-left: 0.5ch;
+}
+.project__title > a .icon svg {
+  fill: currentColor;
 }
 
 .project__about {
@@ -544,7 +555,7 @@ aside.aside {
 }
 
 .sticky__slide {
-  transition-duration: 120ms;
+  transition-duration: 140ms;
   background: linear-gradient(#ffffff, #ffffff, #cceeff);
   display: flex;
   flex-direction: column;
@@ -605,7 +616,7 @@ aside.aside {
 }
 
 .label__body {
-  transition-duration: 120ms;
+  transition-duration: 140ms;
   transition-property: all;
   background-color: #586265;
   display: grid;
@@ -622,7 +633,7 @@ aside.aside {
 }
 .label__body::after {
   background-color: #ffffff;
-  transition-duration: 120ms;
+  transition-duration: 140ms;
   transition-property: all;
   border-radius: 50%;
   content: "";
@@ -644,7 +655,7 @@ aside.aside {
   width: 9.96px;
 }
 .label__body::before {
-  transition-duration: 120ms;
+  transition-duration: 140ms;
   transition-property: all;
   background-color: #586265;
   content: "";
@@ -708,7 +719,7 @@ a.step.step--active {
   color: #ffffff;
 }
 a.step.step--active::before {
-  animation-duration: 120ms;
+  animation-duration: 140ms;
   animation-name: grow-height;
   background-color: rgba(0, 0, 0, 0.08);
   content: "";
@@ -789,6 +800,7 @@ footer.copy-right {
 .preview__content {
   display: grid;
   gap: 1rem;
+  justify-items: center;
 }
 
 .content__caption {
@@ -829,12 +841,9 @@ footer.copy-right {
 }
 
 #ik__canvas {
-  border: 1px solid white;
+  background-color: white;
 }
 #ik__canvas:hover {
-  cursor: pointer;
-}
-html:active #ik__canvas:active {
   cursor: pointer;
 }
 
@@ -950,6 +959,36 @@ html:active #ik__canvas:active {
   margin-bottom: 0.5rem;
   max-width: 18ch;
   text-transform: capitalize;
+}
+
+.preview--vec {
+  position: relative;
+}
+
+#vec__canvas {
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+}
+#vec__canvas:hover + #vec__debug-canvas {
+  opacity: 1;
+}
+
+#vec__debug-canvas {
+  transition-duration: 140ms;
+  transition-property: all;
+  background-color: #ffffff9e;
+  border-radius: 50%;
+  box-shadow: none;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+@media (prefers-reduced-motion: reduce) {
+  #vec__debug-canvas {
+    transition-duration: 0ms;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

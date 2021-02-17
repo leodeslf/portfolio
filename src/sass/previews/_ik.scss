@@ -1,9 +1,6 @@
 #ik__canvas {
-  border: 1px solid white;
+  background-color: white;
   &:hover {
-    cursor: pointer;
-  }
-  html:active &:active {
     cursor: pointer;
   }
 }

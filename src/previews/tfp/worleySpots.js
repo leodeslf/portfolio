@@ -1,6 +1,6 @@
 import { Vec2 } from "../../js/vec.min";
 
-const speedLim = .8;
+const speedLim = 1;
 
 export default class WorleySpotSystem {
 	constructor(frameW, frameH, spotAmount) {

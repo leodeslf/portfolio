@@ -14,7 +14,7 @@ const IKM = new IKModule(joints, jointsLength, target, anchor);
 export function initControl(IKCanvas) {
   canvas = IKCanvas;
   ctx = canvas.getContext('2d');
-  ctx.lineWidth = .75;
+  ctx.lineWidth = .8;
   draw();
 
   canvas.onmousedown = () => IKM.anchor = false;

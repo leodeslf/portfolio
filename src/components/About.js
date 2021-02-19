@@ -6,15 +6,15 @@ export default function About() {
       <h2>Sobre mí</h2>
       <p>
         Con gusto por el Diseño y el Desarrollo, sin saber a cuál de esas áreas
-        dedicarme, mientras curioseaba sobre algunos lenguajes de programación,
-        -casi por accidente- encontré el rol perfecto, un tal Frontend.
+        dedicarme, mientras curioseaba sobre algunas tecnologías, -casi por
+        accidente- encontré el rol perfecto, un tal Frontend.
       </p>
       <p>
-        Desde entonces, aprendí conceptos y tecnologías
-        que logran <strong>agilizar</strong> el
+        Desde entonces, aprendí herramientas
+        que permiten <strong>agilizar</strong> el
         desarrollo, <strong>potenciar</strong> el trabajo en
         equipo y <strong>enriquecer</strong> la experiencia
-        del usuario.
+        del usuario final.
       </p>
     </section>
   );

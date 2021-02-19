@@ -5,7 +5,7 @@ export default function Cv() {
     <section id="cv" className="portfolio__cv portfolio__elem">
       <h2>Currículum Vitae</h2>
       <p>
-        Puede ver información personal, formación complementaria,
+        Puede encontrar información personal, formación complementaria,
         orientación educativa, y poco más, en <a
           href="./res/Leonardo de Souza Leal Figueira - Desarrollador Frontend - CV 2021.pdf"
           title="CV en PDF">mi currículum</a>.

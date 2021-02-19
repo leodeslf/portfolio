@@ -4,7 +4,6 @@ import worleyNdMinusSt from "./worley";
 const index = (x, y) => y * noiseW + x;
 const trunc = Math.trunc;
 const colorRange = 255;
-//const fps = 1000 / 24;
 
 let noiseCtx = undefined;
 const noiseData = [];
@@ -20,7 +19,6 @@ export function delegateNoiseCtxTo(ctx) {
   noiseCtx = ctx;
   initSpots();
   ndMinusSt();
-  //setInterval(ndMinusSt, fps);
 }
 
 function initSpots() {

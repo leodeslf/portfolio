@@ -1,0 +1,95 @@
+$color: #ffffff;
+$color--display: #272415;
+
+$bg: #383b47;
+$bg--button: #787887;
+$bg--display: #b2ac7a;
+
+$shadow-color: #00000033;
+$light-color: rgba(255, 255, 255, 0.3);
+
+@font-face {
+  font-family: "DSEG7 Classic Italic";
+  src: url("../fonts/DSEG7Classic-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Print Char 21";
+  src: url("../fonts/PrintChar21.ttf");
+}
+
+@keyframes turn-on {
+  from {
+    color: transparent;
+  }
+}
+
+#casi {
+  background-color: $bg;
+  box-shadow: 0 12px 24px $shadow-color, 0 3px 6px $shadow-color, 0 2px 1px -1px $light-color inset,
+    0 -2px 1px -1px $shadow-color inset;
+  padding: 1rem;
+  border-radius: 9px;
+  width: fit-content;
+}
+
+.casi__title {
+  color: hsl(240, 6%, 62%);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.casi__display {
+  animation: turn-on 1s 1 ease-out;
+  background-color: $bg--display;
+  border-radius: 3px;
+  box-shadow: 0 2px 2px 1px $shadow-color inset, 0 0 2px 1px $shadow-color inset, 0 -1px 1px $shadow-color,
+    0 -1px 2px $shadow-color, 0 1px 1px $light-color, 0 1px 2px $light-color;
+  color: $color--display;
+  display: grid;
+  justify-items: right;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.5rem 0.25rem;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  & > p {
+    margin-bottom: 0;
+  }
+}
+
+.casi__feedback {
+  font-family: "Print Char 21", monospace;
+  font-size: 16px;
+  text-align: right;
+}
+
+.casi__output {
+  font-family: "DSEG7 Classic Italic", monospace;
+  font-size: 26px;
+  text-align: right;
+}
+
+.casi__buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  user-select: none;
+}
+
+.casi__btn {
+  background-color: $bg--button;
+  box-shadow: 0 2px 3px $shadow-color, 0 2px 2px $shadow-color;
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border-radius: 3px;
+  cursor: pointer;
+  display: grid;
+  font-size: 1.23rem;
+  font-weight: 500;
+  height: 1.5em;
+  place-content: center;
+  width: 4.25ch;
+}
+
+.casi__btn:active {
+  box-shadow: 0 1px 3px $shadow-color, 0 1px 2px $shadow-color;
+}

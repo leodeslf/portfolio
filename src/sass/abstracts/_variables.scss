@@ -1,9 +1,10 @@
 // Colors.
-$black: #000000;
+$black: hsl(180, 5%, 5%);
 $white: #ffffff;
-$white--med: hsl(180, 14%, 84%);
-$white--dark: rgb(88, 98, 101);
-$blue: hsl(212, 100%, 42%);
+$grey--light: hsl(160, 02%, 94%);
+$grey--med: hsl(194, 7%, 76%);
+$grey--dark: hsl(194, 7%, 40%);
+$blue: hsl(220, 100%, 50%);
 $blue--light: hsl(200, 100%, 90%);
 $lime: hsl(82, 100%, 60%);
 $green--med: hsl(142, 90%, 16%);
@@ -16,7 +17,7 @@ $green--dark: hsl(150, 90%, 7%);
 $bg: $blue--light;
 $bg--ascent: $white;
 $color: $black;
-$color--ascent: $white--dark;
+$color--ascent: $grey--dark;
 $shadow-color: hsla(0, 0%, 0%, 0.06);
 $border-color: hsla(0, 0%, 0%, 0.08);
 $anchor-color: $blue;
@@ -24,8 +25,8 @@ $anchor-color: $blue;
 // Dark mode.
 $bg--dark: $green--dark;
 $bg--ascent--dark: $green--med;
-$color--dark: $white;
-$color--ascent--dark: $white--med;
+$color--dark: $grey--light;
+$color--ascent--dark: $grey--med;
 $shadow-color--dark: hsla(0, 0%, 0%, 0.08);
 $border-color--dark: hsla(0, 0%, 0%, 0.14);
 $anchor-color--dark: $lime;
@@ -38,7 +39,7 @@ $font-size--extra-small: 0.75rem;
 // Animation.
 $animation-speed--fast: 70ms;
 $animation-speed--medium: 140ms;
-$animation-speed--slow: 380ms;
+$animation-speed--slow: 400ms;
 $animation-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 
 // Media queries.

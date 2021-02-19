@@ -2,14 +2,6 @@
   font-size: $font-size--small;
 }
 
-.portfolio__elem {
-  margin-bottom: 2rem;
-  padding-top: 2rem;
-  @media screen and (max-width: $media--max-medium) {
-    margin-bottom: 1rem;
-  }
-}
-
 .icon-label {
   cursor: pointer;
   &:hover > .icon > svg,

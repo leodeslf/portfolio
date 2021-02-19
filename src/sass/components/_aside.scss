@@ -1,18 +1,4 @@
-.aside__button {
-  @include relief-card($index: 2);
-  bottom: 2rem;
-  display: none;
-  padding: 0.75rem;
-  pointer-events: all;
-  position: fixed;
-  right: 2rem;
-  width: fit-content;
-  @media screen and (max-width: $media--max-small) {
-    display: flex;
-  }
-}
-
-aside.aside {
+.aside {
   @include animation(fade-opacity, $animation-speed--slow);
   @media screen and (max-width: $media--max-small) {
     height: 100vh;
@@ -36,6 +22,20 @@ aside.aside {
   }
 }
 
+.aside__button {
+  @include relief-card($index: 2);
+  bottom: 2rem;
+  display: none;
+  padding: 0.75rem;
+  pointer-events: all;
+  position: fixed;
+  right: 2rem;
+  width: fit-content;
+  @media screen and (max-width: $media--max-small) {
+    display: flex;
+  }
+}
+
 .aside__bg {
   background-color: transparent;
   height: 100vh;
@@ -55,8 +55,9 @@ aside.aside {
 }
 
 .sticky__slide {
+  @include bg(true);
+  @include color(ascent);
   @include speed(transition-duration, $animation-speed--medium);
-  background: linear-gradient($white, $white, $blue--light);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -64,9 +65,6 @@ aside.aside {
   pointer-events: all;
   transition-property: transform;
   width: max-content;
-  .dark & {
-    background: linear-gradient($green--med, $green--med, $green--dark);
-  }
   @media screen and (max-width: $media--max-small) {
     transform: translateX(100%);
   }

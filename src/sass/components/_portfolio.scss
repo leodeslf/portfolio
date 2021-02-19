@@ -1,11 +1,22 @@
-main.portfolio {
+.portfolio {
   @include animation(fade-opacity, $animation-speed--slow);
   max-width: 960px;
-  padding: 6rem 3rem;
+  padding: 0 3rem;
   @media screen and (max-width: $media--max-medium) {
-    padding: 4rem 2rem;
+    padding: 0 2rem;
   }
   @media screen and (max-width: $media--max-small) {
-    padding: 2rem 1rem;
+    padding: 0 1rem;
+  }
+}
+
+.portfolio__elem {
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media screen and (max-width: $media--max-medium) {
+    margin-bottom: 1rem;
   }
 }

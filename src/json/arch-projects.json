@@ -4,52 +4,53 @@
     "date": "08/08/2019",
     "about": "Estampas postales '3D'",
     "argument": "Comparar PixiJS vs Three.js",
-    "tools": [
-      [
+    "tools": {
+      "old": [
         "HTML",
         "React",
         "SASS"
       ],
-      [
+      "new": [
         "PixieJS"
       ]
-    ],
+    },
     "src": null,
     "links": [
-      [
-        "Web",
-        "https://leodeslf.github.io/postage-stamps/"
-      ],
-      [
-        "repositorio",
-        "https://github.com/leodeslf/postage-stamps"
-      ]
-    ]
+      {
+        "name": "Web",
+        "link": "https://leodeslf.github.io/postage-stamps/"
+      },
+      {
+        "name": "repositorio",
+        "link": "https://github.com/leodeslf/postage-stamps"
+      }
+    ],
+    "preview": "stamps"
   },
   {
     "title": "Le cuenta un pajarito",
     "date": "04/09/2019",
     "about": "Un pajarito realmente (in)útil",
     "argument": "Conocer informaciones expuestas a la web",
-    "tools": [
-      [
+    "tools": {
+      "old": [
         "HTML",
         "JavaScript",
         "React",
         "SASS"
       ],
-      []
-    ],
+      "new": []
+    },
     "res": null,
     "links": [
-      [
-        "Web",
-        "https://leodeslf.github.io/le-cuenta-un-pajarito/"
-      ],
-      [
-        "repositorio",
-        "https://github.com/leodeslf/le-cuenta-un-pajarito"
-      ]
+      {
+        "name": "Web",
+        "link": "https://leodeslf.github.io/le-cuenta-un-pajarito/"
+      },
+      {
+        "name": "repositorio",
+        "link": "https://github.com/leodeslf/le-cuenta-un-pajarito"
+      }
     ]
   }
 ]

@@ -46,14 +46,6 @@
   src: url(https://fonts.gstatic.com/s/roboto/v20/KFOkCnqEu92Fr1MmgVxIIzI.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-@font-face {
-  font-family: "Fira Mono";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/firamono/v9/N0bX2SlFPv1weGeLZDtgJv7S.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
 @keyframes fade-opacity {
   from {
     opacity: 0;
@@ -838,6 +830,87 @@ footer.copy-right {
   margin-left: auto;
 }
 
+@font-face {
+  font-family: "DSEG7 Classic Italic";
+  src: url("../fonts/DSEG7Classic-Italic.ttf");
+}
+@font-face {
+  font-family: "Print Char 21";
+  src: url("../fonts/PrintChar21.ttf");
+}
+@keyframes turn-on {
+  from {
+    color: transparent;
+  }
+}
+#casi {
+  background-color: #383b47;
+  box-shadow: 0 12px 24px #00000033, 0 3px 6px #00000033, 0 2px 1px -1px rgba(255, 255, 255, 0.3) inset, 0 -2px 1px -1px #00000033 inset;
+  padding: 1rem;
+  border-radius: 9px;
+  width: fit-content;
+}
+
+.casi__title {
+  color: #9898a4;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.casi__display {
+  animation: turn-on 1s 1 ease-out;
+  background-color: #b2ac7a;
+  border-radius: 3px;
+  box-shadow: 0 2px 2px 1px #00000033 inset, 0 0 2px 1px #00000033 inset, 0 -1px 1px #00000033, 0 -1px 2px #00000033, 0 1px 1px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(255, 255, 255, 0.3);
+  color: #272415;
+  display: grid;
+  justify-items: right;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.5rem 0.25rem;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+.casi__display > p {
+  margin-bottom: 0;
+}
+
+.casi__feedback {
+  font-family: "Print Char 21", monospace;
+  font-size: 16px;
+  text-align: right;
+}
+
+.casi__output {
+  font-family: "DSEG7 Classic Italic", monospace;
+  font-size: 26px;
+  text-align: right;
+}
+
+.casi__buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  user-select: none;
+}
+
+.casi__btn {
+  background-color: #787887;
+  box-shadow: 0 2px 3px #00000033, 0 2px 2px #00000033;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  cursor: pointer;
+  display: grid;
+  font-size: 1.23rem;
+  font-weight: 500;
+  height: 1.5em;
+  place-content: center;
+  width: 4.25ch;
+}
+
+.casi__btn:active {
+  box-shadow: 0 1px 3px #00000033, 0 1px 2px #00000033;
+}
+
 #ik__canvas {
   background-color: white;
 }
@@ -921,7 +994,7 @@ footer.copy-right {
 }
 
 #tw2__card {
-  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.06), 0 2px 2px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px 1px #00000033, 0 2px 2px #00000033;
   background-color: white;
   border-radius: 3px;
   color: black;

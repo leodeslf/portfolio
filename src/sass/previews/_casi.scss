@@ -6,7 +6,7 @@ $bg--button: #787887;
 $bg--display: #b2ac7a;
 
 $shadow-color: #00000033;
-$light-color: rgba(255, 255, 255, 0.3);
+$light-color: #ffffff4d;
 
 @font-face {
   font-family: "DSEG7 Classic Italic";
@@ -34,7 +34,7 @@ $light-color: rgba(255, 255, 255, 0.3);
 }
 
 .casi__title {
-  color: hsl(240, 6%, 62%);
+  color: #bbbbc3;
   font-weight: 500;
   margin-bottom: 0.75rem;
 }
@@ -51,7 +51,7 @@ $light-color: rgba(255, 255, 255, 0.3);
   gap: 0.2rem;
   margin-bottom: 1rem;
   padding: 0.5rem 0.5rem 0.25rem;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 1px #0000004d;
   & > p {
     margin-bottom: 0;
   }
@@ -79,7 +79,7 @@ $light-color: rgba(255, 255, 255, 0.3);
 .casi__btn {
   background-color: $bg--button;
   box-shadow: 0 2px 3px $shadow-color, 0 2px 2px $shadow-color;
-  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border: 1px solid #ffffff14;
   border-radius: 3px;
   cursor: pointer;
   display: grid;

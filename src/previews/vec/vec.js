@@ -23,7 +23,7 @@ export default class vec extends Component {
           id="vec__debug-canvas"
           height="200"
           width="200" />
-        <p className="content__caption">Click para iniciar un nuevo patrón.</p>
+        <p className="content__caption">Click para iniciar nuevo patrón.</p>
       </div>
     )
   }

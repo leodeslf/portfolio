@@ -95,7 +95,7 @@
     "title": "this.weather",
     "date": "10/06/2019",
     "about": "Un medio de acceso al estado del tiempo",
-    "argument": "Experimentar con APIs y escenas 3D (Three.js). Empezar a aprender React y SASS",
+    "argument": "Experimentar con APIs y escenas 3D (Three.js). Empezar con React y SASS",
     "tools": {
       "old": [
         "HTML",
@@ -240,7 +240,7 @@
     "title": "this.weather-v2",
     "date": "20/01/2021",
     "about": "Segunda versión del proyecto this.weather",
-    "argument": "Empezar a aprender Angular y familiarizarme con Firebase",
+    "argument": "Empezar con Angular y familiarizarme con Firebase",
     "tools": {
       "old": [
         "HTML",

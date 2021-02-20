@@ -1,9 +1,31 @@
 import React, { Component } from 'react'
-import { initControl } from './control'
+import { Vec2 } from '../../js/vec.min';
+import { chain, initControl, joints } from './control'
+
+// Canvas offset on page.
+let canvasOffset = new Vec2(0, 0);
 
 export default class ik extends Component {
   componentDidMount() {
-    initControl(document.getElementById('ik__canvas'));
+    let canvas = document.getElementById('ik__canvas')
+    initControl(canvas.getContext('2d'));
+
+    canvas.addEventListener('mousedown', () => chain.anchor = false);
+
+    canvas.addEventListener('mousemove', m => {
+      // Position on canvas.
+      chain.target = Vec2.fromCopy({ x: m.offsetX, y: m.offsetY });
+
+      window.addEventListener('mouseup', () => {
+        chain.anchor = Vec2.fromCopy(chain.body[joints - 1].base);
+      });
+    });
+
+    canvas.addEventListener('touchstart', () => {
+      // Canvas offset on page.
+      canvasOffset.copy(new Vec2(canvas.offsetLeft, canvas.offsetTop));
+      window.addEventListener('touchmove', drag, { passive: false });
+    }, { passive: false });
   }
 
   render() {
@@ -18,4 +40,19 @@ export default class ik extends Component {
       </div>
     )
   }
+}
+
+function drag(e) {
+  e.preventDefault();
+
+  // Take difference as canvas position for target,
+  // as "offset" doesn't exist on touch events.
+  chain.target = Vec2.subtract(
+    { x: e.touches[0].pageX, y: e.touches[0].pageY },
+    canvasOffset
+  );
+
+  window.addEventListener('touchend', () => {
+    window.removeEventListener('touchmove', drag);
+  });
 }

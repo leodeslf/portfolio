@@ -54,7 +54,7 @@ export function initControl(tfpCanvas) {
   spotsSystem = new WorleySpotSystem(side, side, spots);
   runNextMode();
 
-  tfpCanvas.addEventListener('click', () => runNextMode());
+  tfpCanvas.addEventListener('mousedown', runNextMode);
 }
 
 function runNextMode() {
@@ -85,9 +85,6 @@ function runNextMode() {
       toFade = true; factor = 4.65; shift = 0;
       generateImageData(WOLREY.minkowski);
       break;
-    default:
-      toFade = true; factor = 4.4; shift = 0;
-      generateImageData(WOLREY.st);
-      break;
+    default: return;
   }
 }

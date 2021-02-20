@@ -1,3 +1,4 @@
+import { Vec2 } from '../../js/vec.min';
 import PERLIN_3D from './perlin.min';
 
 // Pixels per data.
@@ -40,13 +41,12 @@ export const CFG = {
   lacunarity: 2.0,
   persistence: 0.5,
   /* View */
-  traslationX: 0,
-  traslationY: 0,
+  traslation: new Vec2(0, 0),
   scale: 1 / noiseW * zoomRatio,
   /* Pixels per data */
   ppd: PPD,
-  u(x) { return (x + this.traslationX) * this.scale; },
-  v(y) { return (y + this.traslationY) * this.scale; },
+  u(x) { return (x + this.traslation.x) * this.scale; },
+  v(y) { return (y + this.traslation.y) * this.scale; },
 };
 
 // Init noise canvas context.

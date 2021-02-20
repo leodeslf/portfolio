@@ -1,14 +1,14 @@
 // Colors.
-$black: hsl(180, 5%, 5%);
+$black: #0c0d0d;
 $white: #ffffff;
-$grey--light: hsl(160, 02%, 94%);
-$grey--med: hsl(194, 7%, 76%);
-$grey--dark: hsl(194, 7%, 40%);
-$blue: hsl(220, 100%, 50%);
-$blue--light: hsl(200, 100%, 90%);
-$lime: hsl(82, 100%, 60%);
-$green--med: hsl(142, 90%, 16%);
-$green--dark: hsl(150, 90%, 7%);
+$grey--light: #f5f5f5;
+$grey--med: #bec4c6;
+$grey--dark: #5f6a6d;
+$blue: #0055ff;
+$blue--light: #cceeff;
+$lime: #b4ff33;
+$green--med: #044e1f;
+$green--dark: #022212;
 
 //$lime: rgb(249, 255, 64);
 //$green: rgb(56, 196, 61);
@@ -18,8 +18,8 @@ $bg: $blue--light;
 $bg--ascent: $white;
 $color: $black;
 $color--ascent: $grey--dark;
-$shadow-color: hsla(0, 0%, 0%, 0.06);
-$border-color: hsla(0, 0%, 0%, 0.08);
+$shadow-color: #0000000f;
+$border-color: #00000014;
 $anchor-color: $blue;
 
 // Dark mode.
@@ -27,8 +27,8 @@ $bg--dark: $green--dark;
 $bg--ascent--dark: $green--med;
 $color--dark: $grey--light;
 $color--ascent--dark: $grey--med;
-$shadow-color--dark: hsla(0, 0%, 0%, 0.08);
-$border-color--dark: hsla(0, 0%, 0%, 0.14);
+$shadow-color--dark: #00000014;
+$border-color--dark: #00000024;
 $anchor-color--dark: $lime;
 
 // Font sizes

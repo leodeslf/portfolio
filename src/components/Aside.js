@@ -4,8 +4,6 @@ const Menu = lazy(() =>
   import( /* webpackChunkName: "menu" */ './Menu.js'));
 const StepperNav = lazy(() =>
   import( /* webpackChunkName: "steppernav" */ './StepperNav.js'));
-const CopyRight = lazy(() =>
-  import( /* webpackChunkName: "copyright" */ './CopyRight.js'));
 
 const bigMedia = window.matchMedia('screen and (min-width: 640px)');
 
@@ -28,13 +26,19 @@ export default function Aside() {
           </svg>
         </span>
       </button>
-      <aside className="aside" isvisible={visible.toString()}>
-        <div className="aside__bg" onClick={() => setVisible(false)} />
+      <aside
+        className="aside"
+        isvisible={visible + ""}>
+        <div
+          className="aside__bg"
+          onClick={() => setVisible(false)} />
         <div className="aside__sticky">
           <div className="sticky__slide">
             <Menu />
             <StepperNav />
-            <CopyRight />
+            <footer className="copy-right">
+              <p>© 2021 leodeslf</p>
+            </footer>
           </div>
         </div>
       </aside>

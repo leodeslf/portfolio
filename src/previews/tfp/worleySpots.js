@@ -1,17 +1,15 @@
 import { Vec2 } from "../../js/vec.min";
 
-const speedLim = 1;
+const speedLim = .5;
 
 export default class WorleySpotSystem {
-	constructor(frameW, frameH, spotAmount) {
+	constructor(frameW, frameH, coords) {
 		this.w = frameW;
 		this.h = frameH;
 		this.spots = [];
-		for (let i = 0; i < spotAmount; i++) {
-			this.spots[i] = new WorleySpot(
-				Math.random() * frameW,
-				Math.random() * frameH
-			);
+		const n = coords.length;
+		for (let i = 0; i < n; i++) {
+			this.spots[i] = new WorleySpot(coords[i][0], coords[i][1]);
 		}
 	}
 

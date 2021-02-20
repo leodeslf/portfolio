@@ -929,6 +929,11 @@ footer.copy-right {
   cursor: pointer;
 }
 
+#tfp__canvas {
+  user-select: none;
+  cursor: pointer;
+}
+
 #tfp2__canvas {
   user-select: none;
 }

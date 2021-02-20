@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { delegateNoiseCtxTo } from './control';
+import { initControl } from './control';
 
 export default class tfp extends Component {
   componentDidMount() {
-    delegateNoiseCtxTo(
-      document.getElementById('tfp__canvas').getContext('2d')
-    );
+    initControl(document.getElementById('tfp__canvas'));
   }
 
   render() {
@@ -14,8 +12,9 @@ export default class tfp extends Component {
         <canvas
           className="content__canvas"
           id="tfp__canvas"
-          height="85"
-          width="175" />
+          height="200"
+          width="200" />
+        <p className="content__caption">Click para cambiar de modo.</p>
       </div>
     );
   }

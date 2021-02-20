@@ -1,56 +1,93 @@
 import WorleySpotSystem from "./worleySpots";
-import worleyNdMinusSt from "./worley";
-
-const index = (x, y) => y * noiseW + x;
-const trunc = Math.trunc;
-const colorRange = 255;
+import WOLREY from "./worley";
 
 let noiseCtx = undefined;
+const colorRange = 255;
+const side = 200;
 const noiseData = [];
-const noiseW = 175;
-const noiseH = 85;
-const noiseImg = new ImageData(noiseW, noiseH);
+const noiseImg = new ImageData(side, side);
 
-const factor = 2.75;
 let spotsSystem = [];
+const spots = [[156, 198], [191, 56], [147, 14], [199, 158], [55, 178],
+[4, 50], [86, 15], [0, 144], [175, 95], [8, 198], [68, 128], [32, 7],
+[77, 63], [101, 196], [33, 91], [117, 82], [127, 132]];
 
-// Init noise canvas context.
-export function delegateNoiseCtxTo(ctx) {
-  noiseCtx = ctx;
-  initSpots();
-  ndMinusSt();
-}
+const fade = t => t * t * t * (t * (t * 6 - 15) + 10);
+const index = (x, y) => y * side + x;
 
-function initSpots() {
-  spotsSystem = new WorleySpotSystem(noiseW, noiseH, 5);
-}
+let modeIndex = -1;
+let toFade, factor, shift;
 
-function ndMinusSt() {
-  for (let y = 0; y < noiseH; y++) {
-    for (let x = 0; x < noiseW; x++) {
-      noiseData[index(x, y)] = trunc(worleyNdMinusSt(
-        spotsSystem.spots, { x, y }
-      ));
+function generateImageData(mode) {
+  for (let y = 0; y < side; y++) {
+    for (let x = 0; x < side; x++) {
+      noiseData[index(x, y)] = mode(spotsSystem.spots, { x, y });
     }
   }
-  printFrame();
-  spotsSystem.update();
-  requestAnimationFrame(ndMinusSt);
+  printImage();
 }
 
-function printFrame() {
-  for (let y = 0; y < noiseH; y++) {
-    for (let x = 0; x < noiseW; x++) {
+function printImage() {
+  noiseCtx.clearRect(0, 0, side, side);
+
+  // Convert distances into pixel color values.
+  for (let y = 0; y < side; y++) {
+    for (let x = 0; x < side; x++) {
       const i = index(x, y);
-      let value = noiseData[i] * factor;
+      let value = (noiseData[i] + shift) * factor;
+      if (toFade) value = fade(value / colorRange) * colorRange;
       if (value > colorRange) value = colorRange;
-      if (value < 0) value = 0;
+      else if (value < 0) value = 0;
       noiseImg.data[i * 4 + 0] = value;
       noiseImg.data[i * 4 + 1] = value;
       noiseImg.data[i * 4 + 2] = value;
       noiseImg.data[i * 4 + 3] = 255;
     }
   }
-  noiseCtx.clearRect(0, 0, noiseW, noiseH);
+
   noiseCtx.putImageData(noiseImg, 0, 0);
+}
+
+export function initControl(tfpCanvas) {
+  noiseCtx = tfpCanvas.getContext('2d');
+
+  spotsSystem = new WorleySpotSystem(side, side, spots);
+  runNextMode();
+
+  tfpCanvas.addEventListener('click', () => runNextMode());
+}
+
+function runNextMode() {
+  modeIndex++;
+  if (modeIndex > 5) modeIndex = 0;
+  switch (modeIndex) {
+    case 0:
+      toFade = true; factor = 4.4; shift = 0;
+      generateImageData(WOLREY.st);
+      break;
+    case 1:
+      toFade = false; factor = 6.6; shift = -22;
+      generateImageData(WOLREY.nd);
+      break;
+    case 2:
+      toFade = false; factor = 4.5; shift = 0;
+      generateImageData(WOLREY.ndMinusSt);
+      break;
+    case 3:
+      toFade = false; factor = 7.2; shift = -2;
+      generateImageData(WOLREY.chebyshev);
+      break;
+    case 4:
+      toFade = false; factor = 48; shift = -2;
+      generateImageData(WOLREY.manhattan);
+      break;
+    case 5:
+      toFade = true; factor = 4.65; shift = 0;
+      generateImageData(WOLREY.minkowski);
+      break;
+    default:
+      toFade = true; factor = 4.4; shift = 0;
+      generateImageData(WOLREY.st);
+      break;
+  }
 }

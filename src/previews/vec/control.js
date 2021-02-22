@@ -8,10 +8,10 @@ const center = side * .5;
 
 // Cfg.
 let start = true;
-const ratios = [[9, 7], [17, 10], [52, 43], [64, 41], [85, 48], [100, 73]];
-const rotationSpeed = 2 * PI / 72;
-const innerRadius = center * .31;
-let ratio = 52 / 43;
+const ratios = [[9, 7], [17, 10], [45, 38], [64, 41], [85, 48], [100, 73]];
+const rotationSpeed = 2 * PI / 74;
+const innerRadius = center * .33;
+let ratio = 45 / 38;
 
 // Pen and it´s axis path.
 let penRadius = innerRadius / ratio;
@@ -36,8 +36,8 @@ function draw() {
   // Save current position.
   const { x, y } = Vec2.add(path, pen);
   // Update to next position.
-  path.copy(Vec2.fromPolarCoords(pathRadius, path.angleX - pathRotation));
-  pen.copy(Vec2.fromPolarCoords(penRadius, pen.angleX - penRotation));
+  path.rotateAxisZ(-pathRotation);
+  pen.rotateAxisZ(-penRotation);
 
   drawPattern(x, y);
   drawDebug();
@@ -50,6 +50,8 @@ function drawPattern(prevX, prevY) {
   ctx.beginPath();
   ctx.moveTo(prevX, prevY);
   ctx.lineTo(x, y);
+  ctx.strokeStyle = `hsl(${Vec2.add(path, pen).angleX / PI * 180 + 180
+    }, 100%, 100%)`;
   ctx.stroke();
   ctx.closePath();
 }
@@ -69,12 +71,12 @@ function drawDebug() {
   // Circles.
   debugCtx.beginPath();
   debugCtx.arc(0, 0, innerRadius, 0, PI * 2);
-  debugCtx.strokeStyle = 'blue';
+  debugCtx.strokeStyle = 'cyan';
   debugCtx.stroke();
   debugCtx.closePath();
   debugCtx.beginPath();
   debugCtx.arc(path.x, path.y, penRadius, 0, PI * 2);
-  debugCtx.strokeStyle = 'red';
+  debugCtx.strokeStyle = 'yellow';
   debugCtx.stroke();
   debugCtx.closePath();
 
@@ -108,12 +110,11 @@ export function initControl(vecCanvas, vecDebugCanvas) {
   canvas = vecCanvas;
   ctx = canvas.getContext('2d');
   ctx.translate(center, center);
-  ctx.lineWidth = .5;
+  ctx.lineWidth = .8;
 
   debugCanvas = vecDebugCanvas;
   debugCtx = debugCanvas.getContext('2d');
   debugCtx.translate(center, center);
-  debugCtx.lineWidth = .5;
 
   draw();
 }

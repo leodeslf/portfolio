@@ -2,9 +2,9 @@ import { Vec2 } from "../../js/vec.min";
 
 export default class IKJoint {
   constructor(length, target) {
-    this.base = new Vec2(0, 0);
-    this.end = new Vec2(0, 0);
-    this.anchor = new Vec2(0, 0);
+    this.base = new Vec2();
+    this.end = new Vec2();
+    this.anchor = new Vec2();
     this.target = target;
     this.length = length;
     this.angle = 0;

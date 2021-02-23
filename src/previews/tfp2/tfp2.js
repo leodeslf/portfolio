@@ -20,7 +20,7 @@ export default class tfp2 extends Component {
 
     canvas.addEventListener('touchstart', t => {
       // Set movement "start" position.
-      touchAt.copy({ x: t.touches[0].pageX, y: t.touches[0].pageY });
+      touchAt.xy = [t.touches[0].pageX, t.touches[0].pageY];
       window.addEventListener('touchmove', drag, { passive: false });
     }, { passive: false });
   }
@@ -42,11 +42,11 @@ export default class tfp2 extends Component {
 
 function drag(e) {
   // Take movement deltas.
-  const gap = new Vec2(0, 0);
+  const gap = new Vec2();
 
   switch (e.type) {
     case 'mousemove':
-      gap.copy({ x: e.movementX, y: e.movementY });
+      gap.xy = [e.movementX, e.movementY];
       // Stop listener.
       window.addEventListener('mouseup', () => {
         window.removeEventListener('mousemove', drag);
@@ -55,7 +55,7 @@ function drag(e) {
     case 'touchmove':
       e.preventDefault();
       // Set movement "end" position.
-      touchTo.copy({ x: e.touches[0].pageX, y: e.touches[0].pageY });
+      touchTo.xy = [e.touches[0].pageX, e.touches[0].pageY];
       gap.copy(Vec2.subtract(touchTo, touchAt));
       // Update "start" position to next iteration at same event.
       touchAt.copy(touchTo);

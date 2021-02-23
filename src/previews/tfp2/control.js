@@ -41,7 +41,7 @@ export const CFG = {
   lacunarity: 2.0,
   persistence: 0.5,
   /* View */
-  traslation: new Vec2(0, 0),
+  traslation: new Vec2(),
   scale: 1 / noiseW * zoomRatio,
   /* Pixels per data */
   ppd: PPD,

@@ -10,21 +10,27 @@ export default class ik extends Component {
     let canvas = document.getElementById('ik__canvas')
     initControl(canvas.getContext('2d'));
 
-    canvas.addEventListener('mousedown', () => chain.anchor = false);
-
-    canvas.addEventListener('mousemove', m => {
-      // Position on canvas.
-      chain.target = Vec2.fromCopy({ x: m.offsetX, y: m.offsetY });
+    canvas.addEventListener('mousedown', () => {
+      chain.anchor = false;
+      canvasOffset.xy = [canvas.offsetLeft, canvas.offsetTop];
 
       window.addEventListener('mouseup', () => {
-        chain.anchor = Vec2.fromCopy(chain.body[joints - 1].base);
+        chain.anchor = Vec2.clone(chain.body[joints - 1].base);
       });
+    });
+
+    window.addEventListener('mousemove', e => {
+      canvasOffset.xy = [canvas.offsetLeft, canvas.offsetTop];
+      chain.target = new Vec2(
+        e.pageX,
+        e.pageY
+      ).subtract(canvasOffset);
     });
 
     canvas.addEventListener('touchstart', () => {
       // Canvas offset on page.
-      canvasOffset.copy(new Vec2(canvas.offsetLeft, canvas.offsetTop));
-      window.addEventListener('touchmove', drag, { passive: false });
+      canvasOffset.xy = [canvas.offsetLeft, canvas.offsetTop];
+      window.addEventListener('touchmove', followTouch, { passive: false });
     }, { passive: false });
   }
 
@@ -38,21 +44,21 @@ export default class ik extends Component {
           width="200" />
         <p className="content__caption">Click para desanclar y arrastar.</p>
       </div>
-    )
+    );
   }
 }
 
-function drag(e) {
+function followTouch(e) {
   e.preventDefault();
 
   // Take difference as canvas position for target,
   // as "offset" doesn't exist on touch events.
-  chain.target = Vec2.subtract(
-    { x: e.touches[0].pageX, y: e.touches[0].pageY },
-    canvasOffset
-  );
+  chain.target = new Vec2(
+    e.touches[0].pageX,
+    e.touches[0].pageY
+  ).subtract(canvasOffset);
 
   window.addEventListener('touchend', () => {
-    window.removeEventListener('touchmove', drag);
+    window.removeEventListener('touchmove', followTouch);
   });
 }

@@ -919,6 +919,7 @@ footer.copy-right {
 
 #ik__canvas {
   background-color: white;
+  user-select: none;
 }
 #ik__canvas:hover {
   cursor: pointer;

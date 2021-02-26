@@ -1049,12 +1049,12 @@ footer.copy-right {
 }
 
 #vec__canvas {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: white;
   border-radius: 50%;
   box-shadow: none;
   cursor: pointer;
   user-select: none;
-  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.33));
 }
 #vec__canvas:hover + #vec__debug-canvas {
   opacity: 1;
@@ -1063,10 +1063,9 @@ footer.copy-right {
 #vec__debug-canvas {
   transition-duration: 140ms;
   transition-property: all;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.66);
   border-radius: 50%;
   box-shadow: none;
-  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.75));
   opacity: 0;
   pointer-events: none;
   position: absolute;

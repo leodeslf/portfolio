@@ -33,6 +33,10 @@ export default class IKModule {
     return this.body[this.joints - 1].anchor;
   }
 
+  get target() {
+    return this.body[0].target;
+  }
+
   set anchor(anchor) {
     this.body[this.joints - 1].anchor = anchor;
   }

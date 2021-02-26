@@ -13,7 +13,7 @@ const rotationSpeed = 2 * PI / 74;
 const innerRadius = center * .33;
 let ratio = 45 / 38;
 
-// Pen and it´s axis path.
+// Pen and it´s (rotation axis) path.
 let penRadius = innerRadius / ratio;
 let penRotation = rotationSpeed * (1 + ratio);
 const pen = Vec2.fromPolarCoords(penRadius, -PI);
@@ -50,8 +50,9 @@ function drawPattern(prevX, prevY) {
   ctx.beginPath();
   ctx.moveTo(prevX, prevY);
   ctx.lineTo(x, y);
-  ctx.strokeStyle = `hsl(${Vec2.add(path, pen).angleX / PI * 180 + 180
-    }, 100%, 100%)`;
+  ctx.strokeStyle = `hsl(
+    ${Vec2.add(path, pen).angleX / PI * 180 + 180},
+    0%, 0%)`;
   ctx.stroke();
   ctx.closePath();
 }
@@ -68,21 +69,31 @@ function drawDebug() {
   debugCtx.stroke();
   debugCtx.closePath();
 
+  // Dots.
+  debugCtx.beginPath();
+  debugCtx.arc(0, 0, 2, 0, 2 * PI);
+  debugCtx.fillStyle = 'black';
+  debugCtx.fill();
+  debugCtx.closePath();
+  debugCtx.beginPath();
+  debugCtx.arc(path.x, path.y, 2, 0, 2 * PI);
+  debugCtx.fill();
+  debugCtx.closePath();
+
   // Circles.
   debugCtx.beginPath();
   debugCtx.arc(0, 0, innerRadius, 0, PI * 2);
-  debugCtx.strokeStyle = 'cyan';
   debugCtx.stroke();
   debugCtx.closePath();
   debugCtx.beginPath();
   debugCtx.arc(path.x, path.y, penRadius, 0, PI * 2);
-  debugCtx.strokeStyle = 'yellow';
   debugCtx.stroke();
   debugCtx.closePath();
 
   // Pen tip.
   debugCtx.beginPath();
   debugCtx.arc(path.x + pen.x, path.y + pen.y, 3, 0, PI * 2);
+  debugCtx.fillStyle = 'red';
   debugCtx.fill();
   debugCtx.closePath();
 }
@@ -110,11 +121,12 @@ export function initControl(vecCanvas, vecDebugCanvas) {
   canvas = vecCanvas;
   ctx = canvas.getContext('2d');
   ctx.translate(center, center);
-  ctx.lineWidth = .8;
+  ctx.lineWidth = .6;
 
   debugCanvas = vecDebugCanvas;
   debugCtx = debugCanvas.getContext('2d');
   debugCtx.translate(center, center);
+  debugCtx.lineWidth = 1;
 
   draw();
 }

@@ -38,22 +38,3 @@ a.step.step--active {
     }
   }
 }
-
-/* .stepper__list > li:last-child > a.step {
-  @extend .step;
-  border: 1px solid $b;
-  box-shadow: 0 0 2px adjust-color($b--dark, $alpha: -0.3);
-  border-radius: $border-radius;
-  margin-left: 1rem;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  width: fit-content;
-  .dark & {
-    box-shadow: 0 0 2px $b--dark;
-  }
-  &.step--active::before {
-    display: none;
-  }
-} */

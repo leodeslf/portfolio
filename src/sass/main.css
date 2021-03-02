@@ -229,10 +229,41 @@ picture {
 
 .portfolio__elem {
   padding: 2rem 0;
-  min-height: 100vh;
+  margin: 4rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.portfolio__elem:first-of-type {
+  margin-bottom: 8rem;
+  margin-top: 16rem;
+}
+.portfolio__elem:last-of-type {
+  margin-bottom: 8rem;
+}
+@media screen and (max-width: 959px) {
+  .portfolio__elem {
+    margin: 2rem 0;
+  }
+  .portfolio__elem:first-of-type {
+    margin-bottom: 6rem;
+    margin-top: 12rem;
+  }
+  .portfolio__elem:last-of-type {
+    margin-bottom: 6rem;
+  }
+}
+@media screen and (max-width: 639px) {
+  .portfolio__elem {
+    margin: 0;
+  }
+  .portfolio__elem:first-of-type {
+    margin-bottom: 4rem;
+    margin-top: 8rem;
+  }
+  .portfolio__elem:last-of-type {
+    margin-bottom: 4rem;
+  }
 }
 
 .tools__container {
@@ -736,24 +767,6 @@ a.step.step--active::before {
   background-color: #00000024;
 }
 
-/* .stepper__list > li:last-child > a.step {
-  @extend .step;
-  border: 1px solid $b;
-  box-shadow: 0 0 2px adjust-color($b--dark, $alpha: -0.3);
-  border-radius: $border-radius;
-  margin-left: 1rem;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  width: fit-content;
-  .dark & {
-    box-shadow: 0 0 2px $b--dark;
-  }
-  &.step--active::before {
-    display: none;
-  }
-} */
 footer.copy-right {
   font-size: 0.75rem;
   margin: 0 1rem;

@@ -12,8 +12,39 @@
 
 .portfolio__elem {
   padding: 2rem 0;
-  min-height: 100vh;
+  margin: 4rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  &:first-of-type {
+    margin-bottom: 8rem;
+    margin-top: 16rem;
+  }
+  &:last-of-type {
+    margin-bottom: 8rem;
+  }
+  @media screen and (max-width: $media--max-medium) {
+    & {
+      margin: 2rem 0;
+    }
+    &:first-of-type {
+      margin-bottom: 6rem;
+      margin-top: 12rem;
+    }
+    &:last-of-type {
+      margin-bottom: 6rem;
+    }
+  }
+  @media screen and (max-width: $media--max-small) {
+    & {
+      margin: 0;
+    }
+    &:first-of-type {
+      margin-bottom: 4rem;
+      margin-top: 8rem;
+    }
+    &:last-of-type {
+      margin-bottom: 4rem;
+    }
+  }
 }

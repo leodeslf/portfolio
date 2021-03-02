@@ -13,7 +13,7 @@
     "res": null,
     "links": [
       {
-        "name": "Paquete",
+        "name": "Paquete (NPM)",
         "link": "https://www.npmjs.com/package/@leodeslf/vec.js"
       },
       {
@@ -81,7 +81,7 @@
     ],
     "links": [
       {
-        "name": "Web",
+        "name": "Web (GitHub Pages)",
         "link": "https://leodeslf.github.io/tfp/"
       },
       {
@@ -141,7 +141,7 @@
     ],
     "links": [
       {
-        "name": "Web",
+        "name": "Web (GitHub Pages)",
         "link": "https://leodeslf.github.io/this.weather/"
       },
       {
@@ -168,7 +168,7 @@
     "res": null,
     "links": [
       {
-        "name": "Web",
+        "name": "Web (Netlify)",
         "link": "https://tfp-v2.netlify.app/"
       },
       {
@@ -196,7 +196,7 @@
     "res": null,
     "links": [
       {
-        "name": "Web",
+        "name": "Web (Netlify)",
         "link": "https://casi-fx-leodeslf.netlify.app/"
       },
       {
@@ -226,7 +226,7 @@
     ],
     "links": [
       {
-        "name": "Demo",
+        "name": "Demo (CodePen)",
         "link": "https://codepen.io/leodeslf/project/full/XYnBQg"
       },
       {
@@ -254,7 +254,7 @@
     "res": null,
     "links": [
       {
-        "name": "Web",
+        "name": "Web (Firebase)",
         "link": "https://this-weather-v2.web.app/"
       },
       {

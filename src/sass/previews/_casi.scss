@@ -25,9 +25,8 @@ $light-color: #ffffff4d;
 }
 
 #casi {
+  @include box-shadow(2);
   background-color: $bg;
-  box-shadow: 0 12px 24px $shadow-color, 0 3px 6px $shadow-color, 0 2px 1px -1px $light-color inset,
-    0 -2px 1px -1px $shadow-color inset;
   padding: 1rem;
   border-radius: 9px;
   width: fit-content;

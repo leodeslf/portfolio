@@ -3,7 +3,7 @@ h2.h3 {
 }
 
 .connect__card {
-  @include base-card;
+  @include relief-card;
   display: flex;
   width: fit-content;
 }

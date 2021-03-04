@@ -59,7 +59,7 @@ export function initControl(tfpCanvas) {
 
 function runNextMode() {
   modeIndex++;
-  if (modeIndex > 5) modeIndex = 0;
+  if (modeIndex > 4) modeIndex = 0;
   switch (modeIndex) {
     case 0:
       toFade = true; factor = 4.4; shift = 0;

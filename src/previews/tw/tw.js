@@ -12,27 +12,33 @@ export default class tw extends Component {
 
   componentDidMount() {
     getDataForTW().then(res => {
-      this.setState({
-        data: res,
-        loading: false
-      })
-    })
+      if (res) {
+        this.setState({
+          data: res,
+          loading: false
+        });
+      }
+    });
   }
 
   render() {
     const { name, countryCode, temp, tempMin, tempMax } = this.state.data;
     return (
-      <div className="preview--tw preview-content">
+      <div className="preview__main preview--tw">
         {this.state.loading && <p>Cargando...</p>}
         {!this.state.loading &&
-          <div id="tw__card">
+          <div
+            id="tw__card"
+            className="preview__body">
             <div className="card__header">
               <span className="card__name"><em>{`${name}, ${countryCode}`}</em></span>
               <div className="card__flag">
                 <img
                   src={'https://www.countryflags.io/' + countryCode + '/shiny/16.png'}
                   alt="Bandera nacional"
-                  title="Bandera nacional" />
+                  title="Bandera nacional"
+                  width="16"
+                  height="16" />
               </div>
             </div>
             <hr />

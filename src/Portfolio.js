@@ -7,9 +7,6 @@ const Projects = lazy(() => import(
 const Tools = lazy(() => import(
   /* webpackChunkName: "tools", webpackPreload: true */
   ROOT + 'Tools.js'));
-const Cv = lazy(() => import(
-  /* webpackChunkName: "cv", webpackPreload: true */
-  ROOT + 'Cv.js'));
 const Connect = lazy(() => import(
   /* webpackChunkName: "connect", webpackPreload: true */
   ROOT + 'Connect.js'));
@@ -23,21 +20,20 @@ export default function Portfolio() {
       <main className="portfolio">
         <section id="start" className="portfolio__start portfolio__elem">
           <h1 title="Leonardo de Souza Leal Figueira">
-            Leonardo de S. Leal
+            <a href="./">Leonardo de S. Leal</a>
           </h1>
           <p>
             Especializándome en <strong>Desarrollo Frontend</strong>,
-            con <strong>React</strong> y <strong>SASS</strong> como
-            principales herramientas, acompañadas de <strong>Angular</strong>
-            , <strong>Vue</strong> y <strong>TypeScript</strong>.
+            con <strong>React</strong> y <strong>SASS</strong> como principales
+            herramientas, acompañadas de Angular, Vue y TypeScript.
           </p>
         </section>
         <section id="about" className="portfolio__about portfolio__elem">
           <h2>Sobre mí</h2>
           <p>
-            Con gusto por el Diseño y el Desarrollo, sin saber a cuál de esas áreas
-            dedicarme, mientras curioseaba sobre algunas tecnologías, -casi por
-            accidente- encontré el rol perfecto, un tal Frontend.
+            Con gusto por el Diseño y el Desarrollo, sin saber a cuál de esas
+            áreas dedicarme, mientras curioseaba sobre algunas tecnologías,
+            -casi por accidente- encontré el rol perfecto, un tal Frontend.
           </p>
           <p>
             Desde entonces, aprendí herramientas
@@ -49,7 +45,15 @@ export default function Portfolio() {
         </section>
         <Projects />
         <Tools />
-        <Cv />
+        <section id="cv" className="portfolio__cv portfolio__elem">
+          <h2>Currículum Vitae</h2>
+          <p>
+            Puede encontrar información personal, formación complementaria,
+            orientación educativa, y poco más, en <a
+              href="./res/Leonardo de Souza Leal Figueira - Desarrollador Frontend - CV 2021.pdf"
+              title="CV en PDF">mi currículum</a>.
+          </p>
+        </section>
         <Connect />
       </main>
       <Aside />

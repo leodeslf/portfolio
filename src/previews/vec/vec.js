@@ -11,19 +11,18 @@ export default class vec extends Component {
 
   render() {
     return (
-      <div className="preview__content preview--vec">
+      <div className="preview__main preview--vec">
         <canvas
-          className="content__canvas"
+          className="preview__body"
           id="vec__canvas"
           height="200"
           width="200"
           onClick={reset} />
         <canvas
-          className="content__canvas"
           id="vec__debug-canvas"
           height="200"
           width="200" />
-        <p className="content__caption">Click para iniciar nuevo patrón.</p>
+        <p className="preview__caption">Click para iniciar nuevo patrón.</p>
       </div>
     )
   }

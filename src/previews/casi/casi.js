@@ -55,9 +55,10 @@ export default function Casi() {
   }
 
   return (
-    <div className="preview__content preview--casi">
-      <div id="casi">
-        <p className="casi__title"><span>CASI</span></p>
+    <div className="preview__main preview--casi">
+      <div
+        id="casi"
+        className="preview__body">
         <div className="casi__display">
           <p className="casi__feedback">
             {feedback}

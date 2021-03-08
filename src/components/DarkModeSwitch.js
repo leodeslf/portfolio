@@ -49,7 +49,7 @@ const META_THEME_COLOR = document.querySelector('meta[name="theme-color"]');
 function resetColoScheme(checked) {
   if (checked) {
     document.body.classList.add('dark');
-    META_THEME_COLOR.setAttribute('content', '#1d1d20');
+    META_THEME_COLOR.setAttribute('content', '#044e1f');
     localStorage.setItem('dark-color-scheme', 'true');
   } else {
     document.body.classList.remove('dark');

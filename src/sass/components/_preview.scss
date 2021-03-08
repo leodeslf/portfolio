@@ -34,23 +34,23 @@ $table-green--light: #88c288;
 
 .preview__main {
   align-self: center;
-  margin: 2rem;
-}
-
-.preview__content {
   display: grid;
   gap: 1rem;
   justify-items: center;
+  margin: 2rem;
 }
 
-.content__caption {
+.preview__body {
+  @include box-shadow;
+}
+
+.preview__caption {
   justify-self: center;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 0 1ch;
 }
 
-.content__canvas {
-  @include box-shadow;
+.preview__canvas {
   border-radius: $border-radius;
 }
 

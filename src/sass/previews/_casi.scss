@@ -25,17 +25,11 @@ $light-color: #ffffff4d;
 }
 
 #casi {
-  @include box-shadow(2);
+  @include box-shadow;
   background-color: $bg;
-  padding: 1rem;
+  padding: 1.15rem 1rem 1rem;
   border-radius: 9px;
   width: fit-content;
-}
-
-.casi__title {
-  color: #bbbbc3;
-  font-weight: 500;
-  margin-bottom: 0.75rem;
 }
 
 .casi__display {

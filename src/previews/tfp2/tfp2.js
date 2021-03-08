@@ -27,14 +27,14 @@ export default class tfp2 extends Component {
 
   render() {
     return (
-      <div className="preview__content preview--tfp2">
+      <div className="preview__main preview--tfp2">
         <canvas
-          className="content__canvas"
+          className="preview__canvas preview__body"
           id="tfp2__canvas"
           height="85"
           width="175" />
         <canvas id="tfp2__skin-canvas" />
-        <p className="content__caption">Click para arrastrar.</p>
+        <p className="preview__caption">Click para arrastrar.</p>
       </div>
     );
   }

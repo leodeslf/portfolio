@@ -26,11 +26,9 @@ function ProjectItem({
   return (
     <article className="portfolio__project text--small">
       <div className="project__preview preview">
-        <div className="preview__main">
-          <Suspense fallback="">
-            <Preview />
-          </Suspense>
-        </div>
+        <Suspense fallback="">
+          <Preview />
+        </Suspense>
         <footer className="preview__footer">
           {tools.new.length > 0 &&
             <span className="preview__new-tools">

@@ -8,13 +8,13 @@ export default class tfp extends Component {
 
   render() {
     return (
-      <div className="preview__content preview--tfp">
+      <div className="preview__main preview--tfp">
         <canvas
-          className="content__canvas"
+          className="preview__canvas preview__body"
           id="tfp__canvas"
           height="200"
           width="200" />
-        <p className="content__caption">Click para cambiar de modo.</p>
+        <p className="preview__caption">Click para cambiar de modo.</p>
       </div>
     );
   }

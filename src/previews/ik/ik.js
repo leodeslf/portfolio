@@ -35,13 +35,13 @@ export default class ik extends Component {
 
   render() {
     return (
-      <div className="preview__content preview--ik">
+      <div className="preview__main preview--ik">
         <canvas
-          className="content__canvas"
+          className="preview__canvas preview__body"
           id="ik__canvas"
           height="200"
           width="200" />
-        <p className="content__caption">Click para definir objetivo.</p>
+        <p className="preview__caption">Click para definir objetivo.</p>
       </div>
     );
   }

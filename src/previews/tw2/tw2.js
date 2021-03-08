@@ -12,20 +12,24 @@ export default class tw2 extends Component {
 
   componentDidMount() {
     getDataForTW2().then(res => {
-      this.setState({
-        data: res,
-        loading: false
-      });
+      if (res) {
+        this.setState({
+          data: res,
+          loading: false
+        });
+      }
     });
   }
 
   render() {
     const { temp, name, text } = this.state.data;
     return (
-      <div className="preview--tw2 preview__content">
+      <div className="preview__main preview--tw2">
         {this.state.loading && <p>Cargando...</p>}
         {!this.state.loading &&
-          <div id="tw2__card">
+          <div
+            id="tw2__card"
+            className="preview__body">
             <div className="card__content">
               <span className="card__temp">{temp}°</span>
               <span className="card__name">{name}</span>

@@ -5,7 +5,6 @@
 #vec__canvas {
   background-color: hsla(0, 0%, 100%, 1);
   border-radius: 50%;
-  box-shadow: none;
   cursor: pointer;
   user-select: none;
   &:hover + #vec__debug-canvas {

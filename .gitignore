@@ -24,7 +24,7 @@ yarn-error.log*
 
 # Custom
 /logo_src
-/public/images/grid.psd
+/src/images/grid.psd
 
 # Local Netlify folder
 .netlify

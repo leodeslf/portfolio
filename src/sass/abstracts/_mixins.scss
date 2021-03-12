@@ -29,6 +29,12 @@
     color: $anchor-color--dark;
     text-decoration-color: $anchor-color--dark;
   }
+  &:hover {
+    color: $skyblue;
+  }
+  .dark &:hover {
+    color: $yellow;
+  }
 }
 
 @mixin bg($ascent: false) {

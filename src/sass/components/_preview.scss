@@ -15,7 +15,7 @@ $table-green--light: #88c291;
 .preview {
   @include box-shadow;
   @include table-colors;
-  background-image: url("/images/blue.gif");
+  background-image: url("../images/blue.gif");
   border: 0.5rem solid $table-blue;
   border-radius: $border-radius;
   color: $white;
@@ -26,7 +26,7 @@ $table-green--light: #88c291;
   margin-bottom: 1rem;
   .dark & {
     background-color: $table-green;
-    background-image: url("/images/green.gif");
+    background-image: url("../images/green.gif");
     border-color: $table-green;
     outline-color: $table-green--light;
   }

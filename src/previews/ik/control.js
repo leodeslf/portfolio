@@ -6,7 +6,7 @@ const PI = 3.1416;
 const side = 200;
 const sizeA = side * .618;
 const sizeAPlusHalfSizeB = sizeA + (side - sizeA) * .5;
-const joints = 5;
+const joints = 4;
 const jointsLength = sizeA / joints;
 const chain = new IKModule(
   joints,

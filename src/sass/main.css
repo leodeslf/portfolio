@@ -873,11 +873,6 @@ footer.copy-right {
   font-family: "Print Char 21";
   src: url("../fonts/PrintChar21.ttf");
 }
-@keyframes turn-on {
-  from {
-    color: transparent;
-  }
-}
 #casi {
   box-shadow: 0 1px 3px 1px #00000033, 0 2px 2px #00000033;
   background-color: #383b47;
@@ -890,7 +885,6 @@ footer.copy-right {
 }
 
 .casi__display {
-  animation: turn-on 1s 1 ease-out;
   background-color: #b2ac7a;
   border-radius: 3px;
   box-shadow: 0 2px 2px 1px #00000033 inset, 0 0 2px 1px #00000033 inset, 0 -1px 1px #00000033, 0 -1px 2px #00000033, 0 1px 1px #ffffff4d, 0 1px 2px #ffffff4d;

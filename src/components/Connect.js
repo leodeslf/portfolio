@@ -24,7 +24,7 @@ export default function Connect() {
             <span itemProp="telephone">+598 99 705 972</span>
           </li>
           <li>
-            <label htmlFor="email">
+            <label htmlFor="email" title="Click para copiar al portapapeles.">
               <input
                 className="input-to-copy"
                 id="email"
@@ -39,8 +39,15 @@ export default function Connect() {
             </label>
           </li>
           <li>
-            <a href="https://github.com/leodeslf">GitHub</a> / <a
-              href="https://linkedin.com/in/leodeslf">LinkedIn</a>
+            <a
+              href="https://github.com/leodeslf"
+              title="Perfil de GitHub.">
+              GitHub
+              </a> / <a
+              href="https://linkedin.com/in/leodeslf"
+              title="Perfil de LinkedIn">
+              LinkedIn
+              </a>
           </li>
         </ul>
         <picture className="card__pic">

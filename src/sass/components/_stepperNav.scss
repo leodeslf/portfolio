@@ -1,3 +1,10 @@
+@keyframes grow-height {
+  from {
+    border-left-width: 0px;
+    transform: scaleY(0) translateY(50%);
+  }
+}
+
 .stepper {
   display: grid;
   margin: auto 0;
@@ -13,7 +20,7 @@ a.step {
   color: inherit;
   display: flex;
   line-height: 2em;
-  padding: 1px 1.5rem 0 1rem;
+  padding: 1px 1.75rem 0 1.25rem;
   text-decoration: none;
   &:hover,
   &:active {
@@ -26,15 +33,19 @@ a.step.step--active {
   position: relative;
   &::before {
     @include animation(grow-height, $animation-speed--medium);
-    background-color: $border-color;
+    border-top: $font-size--small solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: $font-size--small solid transparent;
+    border-left: 1ch solid $bg;
     content: "";
-    height: 100%;
-    left: 0;
+    height: 0px;
+    left: 0;    
     position: absolute;
     top: 0;
-    width: 4px;
+    transform: scaleY(0.5) translateY(0%);
+    width: 0px;
     .dark & {
-      background-color: $border-color--dark;
+      border-left-color: $bg--dark;
     }
   }
 }

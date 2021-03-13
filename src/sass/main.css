@@ -51,12 +51,6 @@
     opacity: 0;
   }
 }
-@keyframes grow-height {
-  from {
-    height: 0%;
-    top: 50%;
-  }
-}
 .text--small {
   font-size: 0.875rem;
 }
@@ -112,22 +106,32 @@
   font-weight: 300;
 }
 
-#root {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   color: #0c0d0d;
-  background-color: #cceeff;
+  background-color: #c2e9ff;
+}
+.dark body {
+  color: #f5f5f5;
+}
+.dark body {
+  background-color: #101819;
+}
+
+#root {
+  animation-duration: 400ms;
+  animation-name: fade-opacity;
   display: flex;
   justify-content: center;
   position: relative;
 }
-.dark #root {
-  color: #f5f5f5;
-}
-.dark #root {
-  background-color: #141f1b;
-}
-
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: reduce) {
+  #root {
+    animation-duration: 0ms;
+  }
 }
 
 h1,
@@ -192,20 +196,14 @@ ul {
 }
 
 a {
-  color: #002fff;
-  text-decoration-color: #002fff;
+  color: #224aff;
+  text-decoration-color: #224aff;
   cursor: pointer;
   text-decoration: none;
 }
 .dark a {
-  color: #b4ff33;
-  text-decoration-color: #b4ff33;
-}
-a:hover {
-  color: #00a2ff;
-}
-.dark a:hover {
-  color: #ffff00;
+  color: #ffff10;
+  text-decoration-color: #ffff10;
 }
 a:hover {
   text-decoration: underline;
@@ -216,15 +214,8 @@ picture {
 }
 
 .portfolio {
-  animation-duration: 400ms;
-  animation-name: fade-opacity;
   max-width: 960px;
   padding: 0 3rem;
-}
-@media (prefers-reduced-motion: reduce) {
-  .portfolio {
-    animation-duration: 0ms;
-  }
 }
 @media screen and (max-width: 959px) {
   .portfolio {
@@ -302,7 +293,7 @@ picture {
   color: #f5f5f5;
 }
 .dark .tools__item:nth-of-type(1) {
-  background-color: #05472b;
+  background-color: #104134;
 }
 .dark .tools__item:nth-of-type(1) {
   box-shadow: 0 1px 3px 1px #00000014, 0 2px 2px #00000014;
@@ -325,7 +316,7 @@ picture {
   color: #f5f5f5;
 }
 .dark .tools__item {
-  background-color: #05472b;
+  background-color: #104134;
 }
 .tools__item > ul {
   padding-right: 1rem;
@@ -384,7 +375,7 @@ picture {
   color: #f5f5f5;
 }
 .dark .portfolio__project {
-  background-color: #05472b;
+  background-color: #104134;
 }
 .dark .portfolio__project {
   box-shadow: 0 1px 3px 1px #00000014, 0 2px 2px #00000014;
@@ -494,7 +485,7 @@ h2.h3 {
   color: #f5f5f5;
 }
 .dark .connect__card {
-  background-color: #05472b;
+  background-color: #104134;
 }
 .dark .connect__card {
   box-shadow: 0 1px 3px 1px #00000014, 0 2px 2px #00000014;
@@ -527,13 +518,9 @@ h2.h3 {
   width: 17ch;
 }
 
-.aside {
-  animation-duration: 400ms;
-  animation-name: fade-opacity;
-}
-@media (prefers-reduced-motion: reduce) {
+@media screen and (min-width: 960px) {
   .aside {
-    animation-duration: 0ms;
+    padding-right: 3rem;
   }
 }
 @media screen and (max-width: 639px) {
@@ -575,7 +562,7 @@ h2.h3 {
   color: #f5f5f5;
 }
 .dark .aside__button {
-  background-color: #05472b;
+  background-color: #104134;
 }
 .dark .aside__button {
   box-shadow: 0 2px 6px 1px #00000014, 0 2px 2px #00000014;
@@ -617,7 +604,7 @@ h2.h3 {
   width: max-content;
 }
 .dark .sticky__slide {
-  background-color: #05472b;
+  background-color: #104134;
 }
 .dark .sticky__slide {
   color: #bec4c6;
@@ -666,7 +653,7 @@ h2.h3 {
   box-shadow: 0 1px 3px 1px #00000014, 0 2px 2px #00000014;
 }
 .dark .dark-mode-switch__label {
-  background-color: #05472b;
+  background-color: #104134;
 }
 
 .label__body {
@@ -696,7 +683,7 @@ h2.h3 {
   z-index: 1;
 }
 .dark .label__body::after {
-  background-color: #05472b;
+  background-color: #104134;
 }
 @media (prefers-reduced-motion: reduce) {
   .label__body::after {
@@ -734,6 +721,12 @@ h2.h3 {
   border-radius: 50%;
 }
 
+@keyframes grow-height {
+  from {
+    border-left-width: 0px;
+    transform: scaleY(0) translateY(50%);
+  }
+}
 .stepper {
   display: grid;
   margin: auto 0;
@@ -752,7 +745,7 @@ a.step {
   color: inherit;
   display: flex;
   line-height: 2em;
-  padding: 1px 1.5rem 0 1rem;
+  padding: 1px 1.75rem 0 1.25rem;
   text-decoration: none;
 }
 a.step:hover, a.step:active {
@@ -772,13 +765,17 @@ a.step.step--active {
 a.step.step--active::before {
   animation-duration: 140ms;
   animation-name: grow-height;
-  background-color: #00000014;
+  border-top: 0.875rem solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 0.875rem solid transparent;
+  border-left: 1ch solid #c2e9ff;
   content: "";
-  height: 100%;
+  height: 0px;
   left: 0;
   position: absolute;
   top: 0;
-  width: 4px;
+  transform: scaleY(0.5) translateY(0%);
+  width: 0px;
 }
 @media (prefers-reduced-motion: reduce) {
   a.step.step--active::before {
@@ -786,7 +783,7 @@ a.step.step--active::before {
   }
 }
 .dark a.step.step--active::before {
-  background-color: #00000034;
+  border-left-color: #101819;
 }
 
 footer.copy-right {
@@ -797,10 +794,10 @@ footer.copy-right {
 
 .preview {
   box-shadow: 0 1px 3px 1px #00000010, 0 2px 2px #00000010;
-  background-color: #056ee6;
-  outline: 1px solid #82b7f3;
+  background-color: #2372dc;
+  outline: 1px solid #8fb7ef;
   background-image: url("../images/blue.gif");
-  border: 0.5rem solid #056ee6;
+  border: 0.5rem solid #2372dc;
   border-radius: 4px;
   color: #ffffff;
   display: flex;
@@ -813,14 +810,14 @@ footer.copy-right {
   box-shadow: 0 1px 3px 1px #00000014, 0 2px 2px #00000014;
 }
 .dark .preview {
-  background-color: #108523;
-  outline-color: #88c291;
+  background-color: #07703b;
+  outline-color: #7eb499;
 }
 .dark .preview {
-  background-color: #108523;
+  background-color: #07703b;
   background-image: url("../images/green.gif");
-  border-color: #108523;
-  outline-color: #88c291;
+  border-color: #07703b;
+  outline-color: #7eb499;
 }
 
 .preview__main {
@@ -854,13 +851,13 @@ footer.copy-right {
 }
 
 .preview__new-tools, .preview__date {
-  background-color: #056ee6;
-  outline: 1px solid #82b7f3;
+  background-color: #2372dc;
+  outline: 1px solid #8fb7ef;
   padding: 0.25ch 0.75ch;
 }
 .dark .preview__new-tools, .dark .preview__date {
-  background-color: #108523;
-  outline-color: #88c291;
+  background-color: #07703b;
+  outline-color: #7eb499;
 }
 
 .new-tools__tag {
@@ -873,21 +870,20 @@ footer.copy-right {
 
 @font-face {
   font-family: "DSEG7 Classic Italic";
+  font-display: swap;
+  font-style: italic;
   src: url("../fonts/DSEG7Classic-Italic.ttf");
 }
 @font-face {
   font-family: "Print Char 21";
+  font-display: swap;
   src: url("../fonts/PrintChar21.ttf");
 }
 #casi {
-  box-shadow: 0 1px 3px 1px #00000033, 0 2px 2px #00000033;
   background-color: #383b47;
   padding: 1.15rem 1rem 1rem;
   border-radius: 9px;
   width: fit-content;
-}
-.dark #casi {
-  box-shadow: 0 1px 3px 1px #00000014, 0 2px 2px #00000014;
 }
 
 .casi__display {

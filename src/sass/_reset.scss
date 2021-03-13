@@ -10,15 +10,19 @@
   @include font;
 }
 
-#root {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   @include base-container;
+}
+
+#root {
+  @include animation(fade-opacity, $animation-speed--slow);
   display: flex;
   justify-content: center;
   position: relative;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 h1,

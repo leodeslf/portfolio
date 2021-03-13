@@ -3,6 +3,7 @@ import WOLREY from "./worley";
 
 let noiseCtx = undefined;
 const colorRange = 255;
+const colorRangeInverse = 1 / colorRange;
 const side = 200;
 const noiseData = [];
 const noiseImg = new ImageData(side, side);
@@ -35,7 +36,7 @@ function printImage() {
     for (let x = 0; x < side; x++) {
       const i = index(x, y);
       let value = (noiseData[i] + shift) * factor;
-      if (toFade) value = fade(value / colorRange) * colorRange;
+      if (toFade) value = fade(value * colorRangeInverse) * colorRange;
       if (value > colorRange) value = colorRange;
       else if (value < 0) value = 0;
       noiseImg.data[i * 4 + 0] = value;
@@ -62,7 +63,7 @@ function runNextMode() {
   if (modeIndex > 4) modeIndex = 0;
   switch (modeIndex) {
     case 0:
-      toFade = true; factor = 4.4; shift = 0;
+      toFade = true; factor = 3.4; shift = 0;
       generateImageData(WOLREY.st);
       break;
     case 1:
@@ -80,10 +81,6 @@ function runNextMode() {
     case 4:
       toFade = false; factor = 48; shift = -2;
       generateImageData(WOLREY.manhattan);
-      break;
-    case 5:
-      toFade = true; factor = 4.65; shift = 0;
-      generateImageData(WOLREY.minkowski);
       break;
     default: return;
   }

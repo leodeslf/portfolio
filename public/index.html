@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="">
 
 <head>
   <!-- Initial -->
@@ -32,7 +32,7 @@
   <meta name="google-site-verification" content="VHkXfJGJmtuPbiHotYrHQa4HdPD-yfHmmRum2MRYTJI" />
 </head>
 
-<body class="">
+<body>
   <div id="root"></div>
   <script>
     const META_THEME_COLOR = document.querySelector('meta[name="theme-color"]');
@@ -40,10 +40,10 @@
     // Automatic change.
     function resetColoScheme(darkModeOn) {
       if (darkModeOn) {
-        document.body.classList.add('dark');
+        document.documentElement.classList.add('dark');
         META_THEME_COLOR.setAttribute('content', '#044e1f');
       } else {
-        document.body.classList.remove('dark');
+        document.documentElement.classList.remove('dark');
         META_THEME_COLOR.setAttribute('content', '#ffffff');
       }
     }

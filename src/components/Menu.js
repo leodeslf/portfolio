@@ -5,7 +5,7 @@ const DarkModeSwitch = lazy(() =>
 
 export default function Menu() {
   return (
-    <div className="menu text--small">
+    <div className="menu">
       <DarkModeSwitch />
     </div>
   );

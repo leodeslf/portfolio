@@ -10,16 +10,18 @@ $light-color: #ffffff4d;
 
 @font-face {
   font-family: "DSEG7 Classic Italic";
+  font-display: swap;
+  font-style: italic;
   src: url("../fonts/DSEG7Classic-Italic.ttf");
 }
 
 @font-face {
   font-family: "Print Char 21";
+  font-display: swap;
   src: url("../fonts/PrintChar21.ttf");
 }
 
 #casi {
-  @include box-shadow;
   background-color: $bg;
   padding: 1.15rem 1rem 1rem;
   border-radius: 9px;

@@ -1,4 +1,5 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
+import { startListeningScroll } from './js/scroll';
 
 const ROOT = './components/';
 const Projects = lazy(() => import(
@@ -15,6 +16,10 @@ const Aside = lazy(() => import(
   ROOT + 'Aside.js'));
 
 export default function Portfolio() {
+  useEffect(() => {
+    startListeningScroll();
+  })
+
   return (
     <Suspense fallback="">
       <main className="portfolio">
@@ -50,7 +55,7 @@ export default function Portfolio() {
           <p>
             Puede encontrar información personal, formación complementaria,
             orientación educativa, y poco más, en <a
-              href="./res/Leonardo de Souza Leal Figueira - Desarrollador Frontend - CV 2021.pdf"
+              href="./res/Leonardo de S. Leal - Desarrollo Frontend - CV 2021.pdf"
               title="CV en PDF">mi currículum</a>.
           </p>
         </section>

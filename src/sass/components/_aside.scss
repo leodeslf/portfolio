@@ -1,5 +1,7 @@
 .aside {
-  @include animation(fade-opacity, $animation-speed--slow);
+  @media screen and (min-width: $media--max-medium + 1) {
+    padding-right: 3rem;  
+  }
   @media screen and (max-width: $media--max-small) {
     height: 100vh;
     right: 0;

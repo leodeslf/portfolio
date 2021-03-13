@@ -2,14 +2,16 @@ let distToScroll = [];
 let titles = undefined;
 let links = undefined;
 
-window.addEventListener('load', () => {
-  titles = document.querySelectorAll('.portfolio > section');
-  links = document.querySelectorAll('a.step');
-
-  window.addEventListener('scroll', findActiveStep);
-
-  findActiveStep();
-});
+export function startListeningScroll() {
+  window.addEventListener('load', () => {
+    titles = document.querySelectorAll('.portfolio > .portfolio__elem');
+    links = document.querySelectorAll('.step');
+  
+    window.addEventListener('scroll', findActiveStep);
+  
+    findActiveStep();
+  });
+}
 
 const findActiveStep = () => {
   const SCROLLED = document.documentElement.scrollTop;

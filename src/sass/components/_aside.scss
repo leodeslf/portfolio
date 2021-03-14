@@ -1,6 +1,6 @@
 .aside {
   @media screen and (min-width: $media--max-medium + 1) {
-    padding-right: 3rem;  
+    padding-right: 3rem;
   }
   @media screen and (max-width: $media--max-small) {
     height: 100vh;
@@ -14,11 +14,11 @@
         pointer-events: all;
       }
       & .sticky__slide {
-        box-shadow: 0 0 4px $shadow-color, 0 0 6px 2px $shadow-color;
-        .dark & {
-          box-shadow: 0 0 4px $shadow-color--dark, 0 0 6px 2px $shadow-color--dark;
-        }
+        box-shadow: -2px 0 2px $shadow-color, -2px 0 6px 1px $shadow-color;
         transform: translateX(0%);
+        .dark & {
+          box-shadow: -2px 0 2px $shadow-color--dark, -2px 0 6px 1px $shadow-color--dark;
+        }
       }
     }
   }
@@ -26,6 +26,7 @@
 
 .aside__button {
   @include relief-card($index: 2);
+  border: none;
   bottom: 2rem;
   display: none;
   padding: 0.75rem;

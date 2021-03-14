@@ -3,7 +3,7 @@
 }
 
 #vec__canvas {
-  background-color: hsla(0, 0%, 100%, 1);
+  background-color: #fff;
   border-radius: 50%;
   cursor: pointer;
   user-select: none;
@@ -14,7 +14,7 @@
 
 #vec__debug-canvas {
   @include transition-to-all;
-  background-color: hsla(0, 0%, 100%, .66);
+  background-color: #fffa;
   border-radius: 50%;
   box-shadow: none;
   opacity: 0;

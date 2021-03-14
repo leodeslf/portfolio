@@ -262,17 +262,12 @@ picture {
 
 /* .portfolio__start {
   position: relative;
-  display: grid;
   &::after {
-    border-radius: 100%;
-    background: radial-gradient(closest-side, $white 75%, transparent);
     position: absolute;
     content: "";
-    width: 200vw;
-    height: 240%;
-    top: -100%;
     z-index: -1;
-    justify-self: center;    
+    .dark & {
+    }
   }
 } */
 .tools__container {
@@ -536,11 +531,11 @@ h2.h3 {
     pointer-events: all;
   }
   .aside[isvisible=true] .sticky__slide {
-    box-shadow: 0 0 4px #00000010, 0 0 6px 2px #00000010;
+    box-shadow: -2px 0 2px #00000010, -2px 0 6px 1px #00000010;
     transform: translateX(0%);
   }
   .dark .aside[isvisible=true] .sticky__slide {
-    box-shadow: 0 0 4px #00000014, 0 0 6px 2px #00000014;
+    box-shadow: -2px 0 2px #00000014, -2px 0 6px 1px #00000014;
   }
 }
 
@@ -550,6 +545,7 @@ h2.h3 {
   border-radius: 4px;
   padding: 1rem;
   box-shadow: 0 2px 6px 1px #00000010, 0 2px 2px #00000010;
+  border: none;
   bottom: 2rem;
   display: none;
   padding: 0.75rem;
@@ -721,14 +717,14 @@ h2.h3 {
   border-radius: 50%;
 }
 
-@keyframes grow-height {
+/* @keyframes appear {
   from {
-    border-left-width: 0px;
-    transform: scaleY(0) translateY(50%);
+    opacity: 0;
   }
-}
+} */
 .stepper {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   margin: auto 0;
   min-width: max-content;
   place-content: center;
@@ -745,7 +741,7 @@ a.step {
   color: inherit;
   display: flex;
   line-height: 2em;
-  padding: 1px 1.75rem 0 1.25rem;
+  padding: 1px 2rem 0 1rem;
   text-decoration: none;
 }
 a.step:hover, a.step:active {
@@ -757,33 +753,22 @@ a.step:hover, a.step:active {
 
 a.step.step--active {
   color: #0c0d0d;
-  position: relative;
+  /* position: relative;
+  &::before {
+    @include animation(appear, $animation-speed--medium);
+    content: "";
+    height: 1ex;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    width: 1ex;
+    .dark & {
+    }
+  } */
 }
 .dark a.step.step--active {
   color: #f5f5f5;
-}
-a.step.step--active::before {
-  animation-duration: 140ms;
-  animation-name: grow-height;
-  border-top: 0.875rem solid transparent;
-  border-right: 0px solid transparent;
-  border-bottom: 0.875rem solid transparent;
-  border-left: 1ch solid #c2e9ff;
-  content: "";
-  height: 0px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transform: scaleY(0.5) translateY(0%);
-  width: 0px;
-}
-@media (prefers-reduced-motion: reduce) {
-  a.step.step--active::before {
-    animation-duration: 0ms;
-  }
-}
-.dark a.step.step--active::before {
-  border-left-color: #101819;
 }
 
 footer.copy-right {
@@ -1067,7 +1052,7 @@ footer.copy-right {
 }
 
 #vec__canvas {
-  background-color: white;
+  background-color: #fff;
   border-radius: 50%;
   cursor: pointer;
   user-select: none;
@@ -1079,7 +1064,7 @@ footer.copy-right {
 #vec__debug-canvas {
   transition-duration: 140ms;
   transition-property: all;
-  background-color: rgba(255, 255, 255, 0.66);
+  background-color: #fffa;
   border-radius: 50%;
   box-shadow: none;
   opacity: 0;

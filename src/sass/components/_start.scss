@@ -1,15 +1,10 @@
 /* .portfolio__start {
   position: relative;
-  display: grid;
   &::after {
-    border-radius: 100%;
-    background: radial-gradient(closest-side, $white 75%, transparent);
     position: absolute;
     content: "";
-    width: 200vw;
-    height: 240%;
-    top: -100%;
     z-index: -1;
-    justify-self: center;    
+    .dark & {
+    }
   }
 } */

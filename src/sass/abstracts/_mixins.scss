@@ -77,10 +77,6 @@
   padding: 1rem;
 }
 
-@mixin plain-card {
-  @include base-card;
-}
-
 @mixin relief-card($index: 1) {
   @include base-card;
   @include box-shadow($index);

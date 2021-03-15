@@ -1,9 +1,3 @@
-/* @keyframes appear {
-  from {
-    opacity: 0;
-  }
-} */
-
 .stepper {
   display: flex;
   flex-direction: column;
@@ -23,24 +17,8 @@ a.step {
   padding: 1px 2rem 0 1rem;
   text-decoration: none;
   &:hover,
-  &:active {
+  &:active,
+  &.step--active {
     @include color;
   }
-}
-
-a.step.step--active {
-  @include color;
-  /* position: relative;
-  &::before {
-    @include animation(appear, $animation-speed--medium);
-    content: "";
-    height: 1ex;
-    left: 0;
-    opacity: 1;
-    position: absolute;
-    top: 0;
-    width: 1ex;
-    .dark & {
-    }
-  } */
 }

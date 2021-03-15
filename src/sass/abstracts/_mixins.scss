@@ -53,8 +53,8 @@
 }
 
 @mixin box-shadow($index: 1) {
-  $b: 0 2px 2px;
   $a: 0 (1px * $index) (3px * $index) 1px;
+  $b: 0 2px 2px;
   box-shadow: $a $shadow-color, $b $shadow-color;
   .dark & {
     box-shadow: $a $shadow-color--dark, $b $shadow-color--dark;
@@ -106,9 +106,11 @@
 @mixin transition-to-all {
   @include speed(transition-duration, $animation-speed--medium);
   transition-property: all;
+  transition-timing-function: $animation-function;
 }
 
 @mixin animation($name, $animation-speed) {
   @include speed(animation-duration, $animation-speed);
   animation-name: $name;
+  animation-timing-function: $animation-function;
 }

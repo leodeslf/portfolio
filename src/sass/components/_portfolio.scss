@@ -10,33 +10,32 @@
 }
 
 .portfolio__elem {
+  $unit: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 1rem;
-  padding-top: 2rem;
+  margin-bottom: $unit;
+  padding-top: $unit;
   &:first-of-type {
-    margin-bottom: 2rem;
-    padding-top: min(8rem, 20vh);
+    padding-top: $unit * 4;
   }
   &:last-of-type {
-    margin-bottom: min(8rem, 20vh);
+    margin-bottom: $unit * 6;
   }
   @media screen and (max-width: $media--max-medium) {
     &:first-of-type {
-      margin-bottom: 1rem;
-      padding-top: min(6rem, 10vh);
+      padding-top: $unit * 3;
     }
     &:last-of-type {
-      margin-bottom: min(6rem, 10vh);
+      margin-bottom: $unit * 5;
     }
   }
   @media screen and (max-width: $media--max-small) {
     &:first-of-type {
-      padding-top: min(4rem, 20vh);
+      padding-top: $unit * 2;
     }
     &:last-of-type {
-      margin-bottom: min(4rem, 20vh);
+      margin-bottom: $unit * 4;
     }
   }
 }

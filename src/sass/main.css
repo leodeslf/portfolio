@@ -93,7 +93,6 @@
   padding: 0;
   line-height: 1.5em;
   box-sizing: border-box;
-  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 :root {
@@ -124,6 +123,7 @@ body {
 #root {
   animation-duration: 400ms;
   animation-name: fade-opacity;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   display: flex;
   justify-content: center;
   position: relative;
@@ -232,31 +232,29 @@ picture {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   padding-top: 2rem;
 }
 .portfolio__elem:first-of-type {
-  margin-bottom: 2rem;
-  padding-top: min(8rem, 20vh);
+  padding-top: 8rem;
 }
 .portfolio__elem:last-of-type {
-  margin-bottom: min(8rem, 20vh);
+  margin-bottom: 12rem;
 }
 @media screen and (max-width: 959px) {
   .portfolio__elem:first-of-type {
-    margin-bottom: 1rem;
-    padding-top: min(6rem, 10vh);
+    padding-top: 6rem;
   }
   .portfolio__elem:last-of-type {
-    margin-bottom: min(6rem, 10vh);
+    margin-bottom: 10rem;
   }
 }
 @media screen and (max-width: 639px) {
   .portfolio__elem:first-of-type {
-    padding-top: min(4rem, 20vh);
+    padding-top: 4rem;
   }
   .portfolio__elem:last-of-type {
-    margin-bottom: min(4rem, 20vh);
+    margin-bottom: 8rem;
   }
 }
 
@@ -330,6 +328,7 @@ picture {
 .see-more__label svg {
   transition-duration: 140ms;
   transition-property: all;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   transition-duration: 70ms;
   transform: rotateZ(-90deg);
 }
@@ -655,6 +654,7 @@ h2.h3 {
 .label__body {
   transition-duration: 140ms;
   transition-property: all;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   background-color: #697579;
   display: grid;
   height: 12px;
@@ -672,6 +672,7 @@ h2.h3 {
   background-color: #ffffff;
   transition-duration: 140ms;
   transition-property: all;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   border-radius: 50%;
   content: "";
   height: 8px;
@@ -694,6 +695,7 @@ h2.h3 {
 .label__body::before {
   transition-duration: 140ms;
   transition-property: all;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   background-color: #697579;
   content: "";
   height: inherit;
@@ -717,11 +719,6 @@ h2.h3 {
   border-radius: 50%;
 }
 
-/* @keyframes appear {
-  from {
-    opacity: 0;
-  }
-} */
 .stepper {
   display: flex;
   flex-direction: column;
@@ -744,30 +741,10 @@ a.step {
   padding: 1px 2rem 0 1rem;
   text-decoration: none;
 }
-a.step:hover, a.step:active {
+a.step:hover, a.step:active, a.step.step--active {
   color: #0c0d0d;
 }
-.dark a.step:hover, .dark a.step:active {
-  color: #f5f5f5;
-}
-
-a.step.step--active {
-  color: #0c0d0d;
-  /* position: relative;
-  &::before {
-    @include animation(appear, $animation-speed--medium);
-    content: "";
-    height: 1ex;
-    left: 0;
-    opacity: 1;
-    position: absolute;
-    top: 0;
-    width: 1ex;
-    .dark & {
-    }
-  } */
-}
-.dark a.step.step--active {
+.dark a.step:hover, .dark a.step:active, .dark a.step.step--active {
   color: #f5f5f5;
 }
 
@@ -1064,6 +1041,7 @@ footer.copy-right {
 #vec__debug-canvas {
   transition-duration: 140ms;
   transition-property: all;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   background-color: #fffa;
   border-radius: 50%;
   box-shadow: none;

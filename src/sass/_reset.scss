@@ -1,15 +1,12 @@
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   line-height: 1.5em;
   box-sizing: border-box;
 }
 
-:root {
-  @include font;
-}
-
 html {
+  @include font;
   scroll-behavior: smooth;
 }
 
@@ -78,8 +75,4 @@ a {
   &:hover {
     text-decoration: underline;
   }
-}
-
-picture {
-  filter: opacity(0.95) contrast(1.05);
 }

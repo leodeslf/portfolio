@@ -16,6 +16,7 @@ h2.h3 {
 
 .card__pic {
   display: flex;
+  filter: opacity(0.95) contrast(1.05);
   img {
     aspect-ratio: 90/132;
     border-radius: $border-radius;

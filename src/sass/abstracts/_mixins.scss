@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: $font-size--normal;
-  .dark {
+  &.dark {
     font-weight: 300;
   }
 }

@@ -820,16 +820,18 @@ footer.copy-right {
 }
 
 @font-face {
-  font-display: swap;
-  font-family: "Print Char 21";
-  font-style: normal;
-  src: url("../fonts/PrintChar21.woff2") format("woff2");
-}
-@font-face {
-  font-display: swap;
   font-family: "DSEG7 Classic Italic";
   font-style: italic;
-  src: url("../fonts/DSEG7Classic-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/DSEG7Classic-Italic.woff2") format("woff2"), url("../fonts/DSEG7Classic-Italic.woff") format("woff");
+}
+@font-face {
+  font-family: "Print Char 21";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/PrintChar21.woff2") format("woff2"), url("../fonts/PrintChar21.woff") format("woff");
 }
 #casi {
   background-color: #383b47;

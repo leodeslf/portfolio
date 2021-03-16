@@ -9,17 +9,19 @@ $shadow-color: #00000033;
 $light-color: #ffffff4d;
 
 @font-face {
+  font-family: "DSEG7 Classic Italic";
+  font-style: italic;
+  font-weight: 400;
   font-display: swap;
-  font-family: "Print Char 21";
-  font-style: normal;
-  src: url("../fonts/PrintChar21.woff2") format("woff2");
+  src: url("../fonts/DSEG7Classic-Italic.woff2") format("woff2"), url("../fonts/DSEG7Classic-Italic.woff") format("woff");
 }
 
 @font-face {
+  font-family: "Print Char 21";
+  font-style: normal;
+  font-weight: 500;
   font-display: swap;
-  font-family: "DSEG7 Classic Italic";
-  font-style: italic;
-  src: url("../fonts/DSEG7Classic-Italic.woff2") format("woff2");
+  src: url("../fonts/PrintChar21.woff2") format("woff2"), url("../fonts/PrintChar21.woff") format("woff");
 }
 
 #casi {

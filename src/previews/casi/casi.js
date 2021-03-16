@@ -33,7 +33,6 @@ export default function Casi() {
     if (queue === false) {
       setMemory(getInput().text);
       setAnswer(getInput().number);
-      console.log(answer, getInput().number)
     }
 
     setInput('0');

@@ -48,8 +48,8 @@ export default function Portfolio() {
             del usuario final.
           </p>
         </section>
-        <Projects />
         <Tools />
+        <Projects />
         <section id="cv" className="portfolio__cv portfolio__elem">
           <h2>Currículum Vitae</h2>
           <p>

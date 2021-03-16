@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 const ANCHORS = [
   ['#start', 'Inicio'],
   ['#about', 'Sobre mí'],
-  ['#projects', 'Proyectos'],
   ['#tools', 'Herramientas'],
+  ['#projects', 'Proyectos'],
   ['#cv', 'Currículum Vitae'],
   ['#connect', 'Conectar']
 ];

@@ -4,11 +4,22 @@ let links = undefined;
 
 export function startListeningScroll() {
   window.addEventListener('load', () => {
+    const fragment = window.location.hash;    
+    // Auto scroll to fragment if it's the first load of this session.
+    if (fragment && !window.sessionStorage.getItem('fragment')) {
+      const offsetTop = document.querySelector(fragment).offsetTop;
+      window.scrollTo(0, offsetTop);
+      window.sessionStorage.setItem('fragment', fragment);
+    } else window.sessionStorage.setItem('fragment', 0);
+
+    // Save fragments and their respective links.
     titles = document.querySelectorAll('.portfolio > .portfolio__elem');
     links = document.querySelectorAll('.step');
-  
+
+    // Listen to scroll to update the active 'step' of the stepper nav.
     window.addEventListener('scroll', findActiveStep);
-  
+
+    // Find current active step.
     findActiveStep();
   });
 }

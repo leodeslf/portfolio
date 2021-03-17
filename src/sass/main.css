@@ -747,7 +747,7 @@ footer.copy-right {
   box-shadow: 0 1px 3px 1px #00000010, 0 2px 2px #00000010;
   background-color: #2372dc;
   outline: 1px solid #8fb7ef;
-  background-image: url("../images/blue.gif");
+  background-image: url("../images/blue.png");
   border: 0.5rem solid #2372dc;
   border-radius: 4px;
   color: #ffffff;
@@ -766,7 +766,7 @@ footer.copy-right {
 }
 .dark .preview {
   background-color: #07703b;
-  background-image: url("../images/green.gif");
+  background-image: url("../images/green.png");
   border-color: #07703b;
   outline-color: #7eb499;
 }

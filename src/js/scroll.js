@@ -4,19 +4,17 @@ let links = undefined;
 
 export function startListeningScroll() {
   window.addEventListener('load', () => {
-    const fragment = window.location.hash;    
-    // Auto scroll to fragment if it's the first load of this session.
-    if (fragment && !window.sessionStorage.getItem('fragment')) {
-      const offsetTop = document.querySelector(fragment).offsetTop;
+    const hash = window.location.hash;
+    // Auto scroll to hash if it's the first load of this session.
+    if (hash && !window.sessionStorage.getItem('hash')) {
+      const offsetTop = document.querySelector(hash).offsetTop;
       window.scrollTo(0, offsetTop);
-      window.sessionStorage.setItem('fragment', fragment);
-    } else window.sessionStorage.setItem('fragment', 0);
+      window.sessionStorage.setItem('hash', hash);
+    } else window.sessionStorage.setItem('hash', 0);
 
-    // Save fragments and their respective links.
-    titles = document.querySelectorAll('.portfolio > .portfolio__elem');
+    // Identify titles, links and listen to scroll to update active step.
+    titles = document.querySelectorAll('.portfolio__elem');
     links = document.querySelectorAll('.step');
-
-    // Listen to scroll to update the active 'step' of the stepper nav.
     window.addEventListener('scroll', findActiveStep);
 
     // Find current active step.

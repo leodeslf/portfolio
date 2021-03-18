@@ -462,6 +462,7 @@ a:hover {
   padding: 1rem;
   box-shadow: 0 1px 3px 1px #00000010, 0 2px 2px #00000010;
   display: flex;
+  gap: 2rem;
   width: fit-content;
 }
 .dark .connect__card {
@@ -476,7 +477,6 @@ a:hover {
 
 .card__data {
   padding-left: 0;
-  padding-right: 2rem;
   margin-bottom: 0;
 }
 .card__data > li {
@@ -491,11 +491,16 @@ a:hover {
   border-radius: 4px;
 }
 
+label[for=email] {
+  display: flex;
+  cursor: pointer;
+}
+
 #email.input-to-copy {
   background-color: inherit;
   color: inherit;
+  cursor: inherit;
   border: none;
-  cursor: pointer;
   font: inherit;
   outline: none;
   width: 17ch;

@@ -1,12 +1,12 @@
 .connect__card {
   @include relief-card;
   display: flex;
+  gap: 2rem;
   width: fit-content;
 }
 
 .card__data {
   @include no-style-list;
-  padding-right: 2rem;
   margin-bottom: 0;
 }
 
@@ -18,11 +18,16 @@
   }
 }
 
+label[for="email"] {
+  display: flex;
+  cursor: pointer;
+}
+
 #email.input-to-copy {
   background-color: inherit;
   color: inherit;
+  cursor: inherit;
   border: none;
-  cursor: pointer;
   font: inherit;
   outline: none;
   width: 17ch;

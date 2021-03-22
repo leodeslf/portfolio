@@ -1,14 +1,16 @@
 import React, { lazy, Suspense, useEffect } from 'react';
-import Cv from './components/Cv';
 import { startListeningScroll } from './js/scroll';
 
 const ROOT = './components/';
-const Projects = lazy(() => import(
-  /* webpackChunkName: "projects", webpackPreload: true */
-  ROOT + 'Projects.js'));
 const Tools = lazy(() => import(
   /* webpackChunkName: "tools", webpackPreload: true */
   ROOT + 'Tools.js'));
+const Projects = lazy(() => import(
+  /* webpackChunkName: "projects", webpackPreload: true */
+  ROOT + 'Projects.js'));
+const Cv = lazy(() => import(
+  /* webpackChunkName: "cv", webpackPreload: true */
+  ROOT + 'Cv.js'));
 const Connect = lazy(() => import(
   /* webpackChunkName: "connect", webpackPreload: true */
   ROOT + 'Connect.js'));

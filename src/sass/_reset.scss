@@ -26,9 +26,6 @@ h2 {
   @include text-body;
   font-family: "Roboto Slab", serif;
   font-weight: 700;
-  .dark & {
-    font-weight: 600;
-  }
 }
 
 h1 {

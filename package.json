@@ -13,9 +13,7 @@
     "start": "set PORT=8002 && react-scripts start",
     "serve": "serve -s build -p 5002",
     "bs": "browser-sync start -s build -f --port 6002 --no-open",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"

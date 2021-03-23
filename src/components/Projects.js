@@ -69,7 +69,7 @@ function ProjectItem({
         </span>
       </label>
       <div className="project__details see-more__hidden-block">
-        <p className="project__objective">
+        <p>
           <strong>Objetivo</strong><br />
           {argument}.
         </p>

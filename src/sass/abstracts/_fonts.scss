@@ -3,8 +3,16 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/l/font?kit=BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjoa4OWbXZZPpjvmZnzJg1fnvhuprORPSJ-RbRZRIDJolxdTdBd0VzRaWDKFH8DfD7DE67i4eZXKPTPEwGlGL-eKDmEpH2M&skey=a9ad6a4717e923f0&v=v13)
+  src: url(https://fonts.gstatic.com/l/font?kit=BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjoa4OWbXYkXf7lnZrsJQhonflpp7-UPCF_WLdfQo1_VlxdTdBd0VzRaWDKFH8DfD7DE67i4eZXKPTPEwGlGL-eKDmEpH2MflcD&skey=a9ad6a4717e923f0&v=v13)
     format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=KFOlCnqEu92Fr1MmEU9vBgUaCuzcp8kNPz38SBJQM2aLDrBtTCr3zWi2_zZKsgFZowoFnrO1M4eQ&skey=ee881451c540fdec&v=v20) format("woff2");
 }
 
 @font-face {
@@ -12,19 +20,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxK.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-display: fallback;
-  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(https://fonts.gstatic.com/l/font?kit=KFOmCnqEu92Fr1Me4H6DAhcbAujeuKZhS0qGMm0qVQPgY9xMbwvQ7EqY0RRvlSR6njU4vZaSFqS_FXdjaZHltfR592bhZBr4xRJ9jWppcxaY6-qawqQjUDiZq6EbglJBNsJ-OVRUH3fb-S94ALu4dotW0oJzipJSXYuGabd2TG433lZFM2pr6f3QlBCFsaCYu61dgUYqBg5BVMHH3kA6yg8Vr-nvR0_OCPFqcE_Y2hEa8ezBihA1oGH9MV9mPvBmHJ-BYCtlbn80QC03w3rMSdKY23CSNnNb_-UMCw&skey=a0a0114a1dcab3ac&v=v20) format('woff2');
 }
 
 @font-face {
@@ -32,25 +28,19 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(https://fonts.gstatic.com/l/font?kit=KFOlCnqEu92Fr1MmSU5vBgXxK-HUvaFiVlWbMWgtUADtbNE0F3PT6U2d0hlgmCd_mTA7oImPFaG4EHRuZpzcjs188GPiaRX1xhd6iGl0bAub7u2fwaksXYJJEuJxwhALdow0axoETSGLoHkmWdnmFuk8suwZ-PwiL_32EMEIMitOnRQpcAcHlJCu6Ff68ObJ-v0M3hZ0WWMfOKy7sj9Eu3Jn16-WCC-6O_FqcU_Y1REa8OzAuRA1oWH9KF9mP_BmMZ-BYStla380QS00_HrMSNKY5HCSN3Na-uUMCqhniA&skey=11ce8ad5f54705ca&v=v20) format("woff2");
 }
 
 @font-face {
   font-family: "Courier Prime";
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/courierprime/v2/u-450q2lgwslOqpF_6gQ8kELawFpWg.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(https://fonts.gstatic.com/l/font?kit=u-450q2lgwslOqpF_6gQ8kELWwN71ubfjdSofjnDRd443diJQOHXkTK_XZvOY4nbzjDOi06EZBd-ZgozozdRoz4H978qjrCaTptb37MUR0OxOtPkHq67VgNwapDwxFW9AWayyaSl-ftRwkfG0baR3Q7F3A_-S71p5gWZ3uGB6JH8gPcyx-vWCSlidbQfpQW2H7jDUsEBmxNxviCBLGXeHQ&skey=e017e80d5b8c8838&v=v2) format("woff2");
 }
 
 @font-face {
   font-family: "Courier Prime";
   font-style: italic;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/courierprime/v2/u-4n0q2lgwslOqpF_6gQ8kELawRZWMf6.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(https://fonts.gstatic.com/l/font?kit=u-4n0q2lgwslOqpF_6gQ8kELawRpWtW1jtjEB0G4Qto019yKXOfkoQKPbZ3Ea4HTxinQlVSeYKeL0PQzrzdzox4H178IjpmdXZxG2KgSYEWNPOTiNKq9WTdSaOqXuG2YEDc&skey=bd88f0a6edeea7b7&v=v2) format("woff2");
 }

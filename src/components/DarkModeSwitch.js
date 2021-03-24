@@ -1,46 +1,40 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const LOCAL_COLOR_SCHEME = () => localStorage.getItem('dark-color-scheme');
 const MEDIA_PREFERS_DARK = window.matchMedia('(prefers-color-scheme: dark)');
 
-export default class DarkModeSwitch extends Component {
-  constructor() {
-    super();
-    this.state = {
-      checked: document.documentElement.classList.value === 'dark'
-    }
-  }
+export default function DarkModeSwitch() {
+  const [checked, setChecked] = useState(
+    document.documentElement.classList.value === 'dark'
+  );
 
-  componentDidMount() {
+  useEffect(() => {
     // Automatic change.
     MEDIA_PREFERS_DARK.onchange = e => {
-      if (LOCAL_COLOR_SCHEME() === null) this.setState({ checked: e.matches });
+      if (LOCAL_COLOR_SCHEME() === null)
+        setChecked(e.matches);
     }
-  }
+  }, []);
 
-  handleOnChange = e => {
-    this.setState({ checked: e.target.checked });
-    resetColoScheme(e.target.checked);
-  }
-
-  render() {
-    return (
-      <span className="dark-mode-switch">
-        <input
-          id="dark-mode-switch__input"
-          className="dark-mode-switch__input"
-          type="checkbox"
-          checked={this.state.checked}
-          onChange={this.handleOnChange} />
-        <label
-          className="dark-mode-switch__label"
-          htmlFor="dark-mode-switch__input"
-          title="Cambiar modo de color">
-          <span className="label__body" />
-        </label>
-      </span>
-    );
-  }
+  return (
+    <span className="dark-mode-switch">
+      <input
+        id="dark-mode-switch__input"
+        className="dark-mode-switch__input"
+        type="checkbox"
+        checked={checked}
+        onChange={e => {
+          setChecked(e.target.checked);
+          resetColoScheme(e.target.checked);
+        }} />
+      <label
+        className="dark-mode-switch__label"
+        htmlFor="dark-mode-switch__input"
+        title="Cambiar modo de color">
+        <span className="label__body" />
+      </label>
+    </span>
+  );
 }
 
 const META_THEME_COLOR = document.querySelector('meta[name="theme-color"]');

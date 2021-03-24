@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import { Vec2 } from '../../js/vec.min';
 import { initControl, setTarget } from './control'
 
@@ -6,8 +6,8 @@ import { initControl, setTarget } from './control'
 let canvas;
 let canvasOffset = new Vec2();
 
-export default class ik extends Component {
-  componentDidMount() {
+export default function IK() {
+  useEffect(() => {
     canvas = document.getElementById('ik__canvas');
     initControl(canvas.getContext('2d'));
 
@@ -31,20 +31,18 @@ export default class ik extends Component {
       });
       canvas.addEventListener('touchmove', touchMove, { passive: false });
     }, { passive: false });
-  }
+  }, []);
 
-  render() {
-    return (
-      <div className="preview__main preview--ik">
-        <canvas
-          className="preview__canvas preview__body"
-          id="ik__canvas"
-          height="200"
-          width="200" />
-        <p className="preview__caption">Click para definir objetivo.</p>
-      </div>
-    );
-  }
+  return (
+    <div className="preview__main preview--ik">
+      <canvas
+        className="preview__canvas preview__body"
+        id="ik__canvas"
+        height="200"
+        width="200" />
+      <p className="preview__caption">Click para definir objetivo.</p>
+    </div>
+  );
 }
 
 function mouseMove(e) {

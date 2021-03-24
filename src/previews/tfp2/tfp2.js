@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { Vec2 } from '../../js/vec.min';
 import { delegateNoiseCtxTo, delegateSkinCtxTo, CFG } from './control';
 
-const touchAt = new Vec2(0, 0);
-const touchTo = new Vec2(0, 0);
+const touchAt = new Vec2();
+const touchTo = new Vec2();
 
-export default class tfp2 extends Component {
-  componentDidMount() {
+export default function TFP2() {
+  useEffect(() => {
     let canvas = document.getElementById('tfp2__canvas');
 
     delegateNoiseCtxTo(canvas.getContext('2d'));
@@ -23,21 +23,19 @@ export default class tfp2 extends Component {
       touchAt.xy = [t.touches[0].pageX, t.touches[0].pageY];
       window.addEventListener('touchmove', drag, { passive: false });
     }, { passive: false });
-  }
+  }, []);
 
-  render() {
-    return (
-      <div className="preview__main preview--tfp2">
-        <canvas
-          className="preview__canvas preview__body"
-          id="tfp2__canvas"
-          height="85"
-          width="175" />
-        <canvas id="tfp2__skin-canvas" />
-        <p className="preview__caption">Click para arrastrar.</p>
-      </div>
-    );
-  }
+  return (
+    <div className="preview__main preview--tfp2">
+      <canvas
+        className="preview__canvas preview__body"
+        id="tfp2__canvas"
+        height="85"
+        width="175" />
+      <canvas id="tfp2__skin-canvas" />
+      <p className="preview__caption">Click para arrastrar.</p>
+    </div>
+  );
 }
 
 function drag(e) {

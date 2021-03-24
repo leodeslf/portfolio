@@ -1,42 +1,34 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getDataForTW2 } from './control';
 
-export default class tw2 extends Component {
-  constructor() {
-    super();
-    this.state = {
-      loading: true,
-      data: { name: '', text: '', temp: '', icon: '' }
-    }
-  }
+export default function TW2() {
+  const [data, setData] = useState({});
+  const { temp, name, text } = data;
 
-  componentDidMount() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
     getDataForTW2().then(res => {
       if (res) {
-        this.setState({
-          data: res,
-          loading: false
-        });
+        setData(res);
+        setLoading(false);
       }
     });
-  }
+  }, []);
 
-  render() {
-    const { temp, name, text } = this.state.data;
-    return (
-      <div className="preview__main preview--tw2">
-        {this.state.loading && <p>Cargando...</p>}
-        {!this.state.loading &&
-          <div
-            id="tw2__card"
-            className="preview__body">
-            <div className="card__content">
-              <span className="card__temp">{temp}°</span>
-              <span className="card__name">{name}</span>
-              <span className="card__text">{text}</span>
-            </div>
-          </div>}
-      </div>
-    );
-  }
+  return (
+    <div className="preview__main preview--tw2">
+      {loading && <p>Cargando...</p>}
+      {!loading &&
+        <div
+          id="tw2__card"
+          className="preview__body">
+          <div className="card__content">
+            <span className="card__temp">{temp}°</span>
+            <span className="card__name">{name}</span>
+            <span className="card__text">{text}</span>
+          </div>
+        </div>}
+    </div>
+  );
 }

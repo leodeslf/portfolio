@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 export default function Casi() {
   const limit = 5;
-
   const [answer, setAnswer] = useState(0);
   const [input, setInput] = useState('0');
   const [memory, setMemory] = useState(false);
@@ -19,7 +18,6 @@ export default function Casi() {
 
   const digit = (value) => {
     setWaitingForInput(false);
-
     if (input === '0') setInput((Number(input) + value) + '');
     else if (input.length < 1) setInput(input + value + '');
   }

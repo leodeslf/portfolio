@@ -6,7 +6,7 @@ const PI = 3.1416;
 const side = 200;
 const sizeA = side * .618;
 const sizeAPlusHalfSizeB = sizeA + (side - sizeA) * .5;
-const joints = 4;
+const joints = 5;
 const jointsLength = sizeA / joints;
 const chain = new IKModule(
   joints,
@@ -33,8 +33,8 @@ function run() {
 }
 
 function update() {
-  const diff = Vec2.subtract(nextTarget, chain.target).normalize().scale(5);
-  if (Vec2.distance(nextTarget, Vec2.add(chain.target, diff)) > 5) {
+  const diff = Vec2.subtract(nextTarget, chain.target).normalize().scale(8);
+  if (Vec2.distance(nextTarget, Vec2.add(chain.target, diff)) > 8) {
     chain.target.add(diff);
   } else {
     chain.target.copy(nextTarget);

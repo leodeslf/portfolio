@@ -930,6 +930,7 @@ footer.copy-right {
   font-family: "Print Char 21", monospace;
   font-size: 16px;
   text-align: right;
+  min-width: 5ch;
 }
 
 .casi__output {
@@ -941,7 +942,7 @@ footer.copy-right {
 .casi__buttons {
   display: flex;
   gap: 0.5rem;
-  justify-content: center;
+  justify-content: space-between;
   user-select: none;
 }
 

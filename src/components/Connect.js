@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 export default function Connect() {
-  const [loaded, setLoaded] = useState(false);
-  window.addEventListener('load', () => setLoaded(true));
+  const [windowLoaded, setWindowLoaded] = useState(false);
+  window.addEventListener('load', () => setWindowLoaded(true));
 
   return (
     <section id="connect" className="portfolio__connect portfolio__elem">
@@ -59,7 +59,7 @@ export default function Connect() {
               </a>
           </li>
         </ul>
-        {loaded && <picture className="card__pic">
+        {windowLoaded && <picture className="card__pic">
           <source srcSet='./images/id_32c.webp 1x' type="image/webp" />
           <source srcSet='./images/id_256c.webp 2x' type="image/webp" />
           <source srcSet='./images/id_256c.webp 3x' type="image/webp" />

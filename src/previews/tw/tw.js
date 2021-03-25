@@ -1,51 +1,48 @@
-import React, { useEffect, useState } from 'react';
-import { getDataForTW } from './control';
+import React, { useState } from 'react';
+import weatherDataProvider from '../../js/weather';
 
 export default function TW() {
-  const [data, setData] = useState({});
-  const { name, countryCode, temp, tempMin, tempMax } = data;
+  const [data, setData] = useState(false);
 
-  const [loading, setLoading] = useState(true);
-  const [windowLoaded, setWindowLoaded] = useState(false);
-  window.addEventListener('load', () => setWindowLoaded(true));
-
-  useEffect(() => {
-    getDataForTW().then(res => {
-      if (res) {
-        setData(res);
-        setLoading(false);
+  window.addEventListener('load', () => {
+    let askForData = setInterval(() => {
+      const weatherData = weatherDataProvider();
+      if (weatherData) {
+        setData(weatherData);
+        clearInterval(askForData)
       }
-    });
-  }, [windowLoaded]);
+    }, 100);
+  })
+
+  const { name, countryCode, temp, tempMax, tempMin } = data;
 
   return (
     <div className="preview__main preview--tw">
-      {loading && <p>Cargando...</p>}
-      {!loading &&
-        <div
-          id="tw__card"
-          className="preview__body">
-          <div className="card__header">
-            <span className="card__name">
-              <em>{`${name}, ${countryCode}`}</em>
-            </span>
-            <div className="card__flag">
-              {windowLoaded && <img
-                src={'https://www.countryflags.io/' + countryCode +
-                  '/shiny/16.png'}
-                alt="Bandera nacional"
-                title="Bandera nacional"
-                width="16"
-                height="16" />}
-            </div>
+      {!data && <p className="preview__caption">Cargando...</p>}
+      {data && <div
+        id="tw__card"
+        className="preview__body">
+        <div className="card__header">
+          <span className="card__name">
+            <em>{`${name}, ${countryCode}`}</em>
+          </span>
+          <div className="card__flag">
+            <img
+              src={'https://www.countryflags.io/' + countryCode +
+                '/shiny/16.png'}
+              alt="Bandera nacional"
+              title="Bandera nacional"
+              width="16"
+              height="16" />
           </div>
-          <hr />
-          <div className="card__temp">
-            <p className="temp__current">{temp}°</p>
-            <p className="temp__max"><span>Máx</span>{tempMax}°</p>
-            <p className="temp__min"><span>Mín</span>{tempMin}°</p>
-          </div>
-        </div>}
+        </div>
+        <hr />
+        <div className="card__temp">
+          <p className="temp__current">{temp}°</p>
+          <p className="temp__max"><span>Máx</span>{tempMax}°</p>
+          <p className="temp__min"><span>Mín</span>{tempMin}°</p>
+        </div>
+      </div>}
     </div>
   );
 }

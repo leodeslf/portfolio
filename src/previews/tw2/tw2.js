@@ -1,36 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import { getDataForTW2 } from './control';
+import React, { useState } from 'react';
+import weatherDataProvider from '../../js/weather';
 
 export default function TW2() {
-  const [data, setData] = useState({});
-  const { temp, name, text } = data;
+  const [data, setData] = useState(false);
 
-  const [loading, setLoading] = useState(true);
-  const [windowLoaded, setWindowLoaded] = useState(false);
-  window.addEventListener('load', () => setWindowLoaded(true));
-
-  useEffect(() => {
-    getDataForTW2().then(res => {
-      if (res) {
-        setData(res);
-        setLoading(false);
+  window.addEventListener('load', () => {
+    let askForData = setInterval(() => {
+      const weatherData = weatherDataProvider();
+      if (weatherData) {
+        setData(weatherData);
+        clearInterval(askForData)
       }
-    });
-  }, [windowLoaded]);
+    }, 100);
+  })
+
+  const { temp, name, text } = data;
 
   return (
     <div className="preview__main preview--tw2">
-      {loading && <p>Cargando...</p>}
-      {!loading &&
-        <div
-          id="tw2__card"
-          className="preview__body">
-          <div className="card__content">
-            <span className="card__temp">{temp}°</span>
-            <span className="card__name">{name}</span>
-            <span className="card__text">{text}</span>
-          </div>
-        </div>}
+      {!data && <p className="preview__caption">Cargando...</p>}
+      {data && <div
+        id="tw2__card"
+        className="preview__body">
+        <div className="card__content">
+          <span className="card__temp">{temp}°</span>
+          <span className="card__name">{name}</span>
+          <span className="card__text">{text}</span>
+        </div>
+      </div>}
     </div>
   );
 }

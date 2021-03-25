@@ -23,6 +23,7 @@ function ProjectItem({
   const Preview = lazy(() => import(
     /* webpackChunkName: "preview" */
     `../previews/${preview}/${preview}.js`));
+
   return (
     <article className="portfolio__project text--small">
       <div className="project__preview preview">

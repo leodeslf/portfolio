@@ -6,6 +6,8 @@ export default function TW2() {
   const { temp, name, text } = data;
 
   const [loading, setLoading] = useState(true);
+  const [windowLoaded, setWindowLoaded] = useState(false);
+  window.addEventListener('load', () => setWindowLoaded(true));
 
   useEffect(() => {
     getDataForTW2().then(res => {
@@ -14,7 +16,7 @@ export default function TW2() {
         setLoading(false);
       }
     });
-  }, []);
+  }, [windowLoaded]);
 
   return (
     <div className="preview__main preview--tw2">

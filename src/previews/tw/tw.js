@@ -6,6 +6,8 @@ export default function TW() {
   const { name, countryCode, temp, tempMin, tempMax } = data;
 
   const [loading, setLoading] = useState(true);
+  const [windowLoaded, setWindowLoaded] = useState(false);
+  window.addEventListener('load', () => setWindowLoaded(true));
 
   useEffect(() => {
     getDataForTW().then(res => {
@@ -14,10 +16,7 @@ export default function TW() {
         setLoading(false);
       }
     });
-  }, []);
-
-  const [windowLoaded, setWindowLoaded] = useState(false);
-  window.addEventListener('load', () => setWindowLoaded(true));
+  }, [windowLoaded]);
 
   return (
     <div className="preview__main preview--tw">

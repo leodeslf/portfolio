@@ -3,12 +3,11 @@ import { Vec2 } from '../../js/vec.min';
 import { initControl, setTarget } from './control'
 
 // Canvas offset on page.
-let canvas;
 let canvasOffset = new Vec2();
 
 export default function IK() {
   useEffect(() => {
-    canvas = document.getElementById('ik__canvas');
+    let canvas = document.getElementById('ik__canvas');
     initControl(canvas.getContext('2d'));
 
     canvas.addEventListener('mousedown', m => {

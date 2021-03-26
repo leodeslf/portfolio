@@ -3,8 +3,9 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("Roboto Slab Bold") url(https://fonts.gstatic.com/l/font?kit=BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjoa4OWbXYkXf7lnZrsJQhonflpp7-UPCF_WLdfQo1_VlxdTdBd0VzRaWDKFH8DfD7DE67i4eZXKPTPEwGlGL-eKDmEpH2MflcD&skey=a9ad6a4717e923f0&v=v13)
-    format("woff2");
+  src: local("Roboto Slab Bold"),
+    url(https://fonts.gstatic.com/l/font?kit=BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjoa4OWbXYkXf7lnZrsJQhonflpp7-UPCF_WLdfQo1_VlxdTdBd0VzRaWDKFH8DfD7DE67i4eZXKPTPEwGlGL-eKDmEpH2MflcD&skey=a9ad6a4717e923f0&v=v13)
+      format("woff2");
 }
 
 @font-face {
@@ -12,7 +13,9 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("Roboto Medium") url(https://fonts.gstatic.com/l/font?kit=KFOlCnqEu92Fr1MmEU9vBgUVCurfu7oPOD_ySRBULGSKCbJaTyvwzGq5_jVMswJYvAsGn7S0MIadOQ&skey=ee881451c540fdec&v=v20) format("woff2");
+  src: local("Roboto Medium"),
+    url(https://fonts.gstatic.com/l/font?kit=KFOlCnqEu92Fr1MmEU9vBgUVCurfu7oPOD_ySRBULGSKCbJaTyvwzGq5_jVMswJYvAsGn7S0MIadOQ&skey=ee881451c540fdec&v=v20)
+      format("woff2");
 }
 
 @font-face {
@@ -20,7 +23,9 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Roboto") url(https://fonts.gstatic.com/l/font?kit=KFOmCnqEu92Fr1Me4H6CAhcbAujZuaVgVEuFM2orVgLvYt82bgjR60ub0BtuliV9nzY5opeRF6O-FnZsaJLetvV-9mXgaxv7xBV8jmt2chWZ7OuZw6siU4DyweNZwhILfIwwawYETyGNoHYmXtnaFus8uOwd-OAiLf3wEM4INSx1nRUpXwcGlICu61bD8OHJ6v0N3hl0WGMsOK27oj9HuXxn1qSiCC2XAKAzeR-B3E5D9rKZv31tlA2lHCo-EoQ-HcbZYHM9ayJsRHFs-xmXcLDD3S3JMS8B_LxWCfA&skey=a0a0114a1dcab3ac&v=v20) format('woff2');
+  src: local("Roboto"),
+    url(https://fonts.gstatic.com/l/font?kit=KFOmCnqEu92Fr1Me4H6CAhcbAujZuaVgVEuFM2orVgLvYt82bgjR60ub0BtuliV9nzY5opeRF6O-FnZsaJLetvV-9mXgaxv7xBV8jmt2chWZ7OuZw6siU4DyweNZwhILfIwwawYETyGNoHYmXtnaFus8uOwd-OAiLf3wEM4INSx1nRUpXwcGlICu61bD8OHJ6v0N3hl0WGMsOK27oj9HuXxn1qSiCC2XAKAzeR-B3E5D9rKZv31tlA2lHCo-EoQ-HcbZYHM9ayJsRHFs-xmXcLDD3S3JMS8B_LxWCfA&skey=a0a0114a1dcab3ac&v=v20)
+      format("woff2");
 }
 
 @font-face {
@@ -28,7 +33,9 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src:  local("Roboto Light") url(https://fonts.gstatic.com/l/font?kit=KFOlCnqEu92Fr1MmSU5vBgXwK-HUvaFlV1aaLmkuUQfsb9A7FnCp6E6c1RhjmSh-mjE8oYqOCqC7EXNvZZ3Tj85H82LlaBb0yRZ5iW51bwqE7-6exqgvXI1IEVoaqFJJNsx-IVRKH3Pb8C9wAIC4SIte0oxzkpJMXY-GYLd-S1Iw5FZrM0Rr-P3DlSqEj6CPu7xdj0YkBjxBZsHW3lM4xw0apNzkcWL3dJMzeR6B3EFD9rOZvk5tlAylHDM-EoU-HevZYHI9aydsRHBs-CaXcLHD3RLJMS4B_blWCfE9ihs&skey=11ce8ad5f54705ca&v=v20) format("woff2");
+  src: local("Roboto Light"),
+    url(https://fonts.gstatic.com/l/font?kit=KFOlCnqEu92Fr1MmSU5vBgXwK-HUvaFlV1aaLmkuUQfsb9A7FnCp6E6c1RhjmSh-mjE8oYqOCqC7EXNvZZ3Tj85H82LlaBb0yRZ5iW51bwqE7-6exqgvXI1IEVoaqFJJNsx-IVRKH3Pb8C9wAIC4SIte0oxzkpJMXY-GYLd-S1Iw5FZrM0Rr-P3DlSqEj6CPu7xdj0YkBjxBZsHW3lM4xw0apNzkcWL3dJMzeR6B3EFD9rOZvk5tlAylHDM-EoU-HevZYHI9aydsRHBs-CaXcLHD3RLJMS4B_blWCfE9ihs&skey=11ce8ad5f54705ca&v=v20)
+      format("woff2");
 }
 
 @font-face {
@@ -36,7 +43,9 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Courrier Prime") url(https://fonts.gstatic.com/l/font?kit=u-450q2lgwslOqpF_6gQ8kELWwN71ubfjdSofjnDRd443diJQOHXkTK_XZvOY4nbzjDOi06EZBd-ZgozozdRoz4H978qjrCaTptb37MUR0OxOtPkHq67VgNwapDwxFW9AWayyaSl-ftRwkfG0baR3Q7F3A_-S71p5gWZ3uGB6JH8gPcyx-vWCSlidbQfpQW2H7jDUsEBmxNxviCBLGXeHQ&skey=e017e80d5b8c8838&v=v2) format("woff2");
+  src: local("Courrier Prime"),
+    url(https://fonts.gstatic.com/l/font?kit=u-450q2lgwslOqpF_6gQ8kELWwN71ubfjdSofjnDRd443diJQOHXkTK_XZvOY4nbzjDOi06EZBd-ZgozozdRoz4H978qjrCaTptb37MUR0OxOtPkHq67VgNwapDwxFW9AWayyaSl-ftRwkfG0baR3Q7F3A_-S71p5gWZ3uGB6JH8gPcyx-vWCSlidbQfpQW2H7jDUsEBmxNxviCBLGXeHQ&skey=e017e80d5b8c8838&v=v2)
+      format("woff2");
 }
 
 @font-face {
@@ -44,5 +53,7 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: local("Courrier Prime Italic") url(https://fonts.gstatic.com/l/font?kit=u-4n0q2lgwslOqpF_6gQ8kELawRpWtW1jtjEB0G4Qto019yKXOfkoQKPbZ3Ea4HTxinQlVSeYKeL0PQzrzdzox4H178IjpmdXZxG2KgSYEWNPOTiNKq9WTdSaOqXuG2YEDc&skey=bd88f0a6edeea7b7&v=v2) format("woff2");
+  src: local("Courrier Prime Italic"),
+    url(https://fonts.gstatic.com/l/font?kit=u-4n0q2lgwslOqpF_6gQ8kELawRpWtW1jtjEB0G4Qto019yKXOfkoQKPbZ3Ea4HTxinQlVSeYKeL0PQzrzdzox4H178IjpmdXZxG2KgSYEWNPOTiNKq9WTdSaOqXuG2YEDc&skey=bd88f0a6edeea7b7&v=v2)
+      format("woff2");
 }

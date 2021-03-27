@@ -18,7 +18,7 @@ export default function Aside() {
       <button
         className="icon-label aside__button"
         onClick={() => setVisible(true)}
-        aria-label="Mostrar menú">
+        aria-label="Mostrar menú.">
         <span className="icon icon--24">
           <svg viewBox="0 0 24 24">
             <path d="M0 0h24v24H0z" fill="none" />
@@ -30,7 +30,7 @@ export default function Aside() {
         className="aside"
         isvisible={visible + ""}>
         <div
-          className="aside__bg"
+          className="aside__close"
           onClick={() => setVisible(false)} />
         <div className="aside__sticky">
           <div className="sticky__slide">

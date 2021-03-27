@@ -19,7 +19,7 @@ export default function Projects() {
 function ProjectItem({
   i, title, date, about, argument, tools, res, links, preview
 }) {
-  const { input, label } = seeMore(i);
+  const { seeMoreInputProps, seeMoreLabelProps } = seeMore(i);
   const Preview = lazy(() => import(
     /* webpackChunkName: "preview" */
     `../previews/${preview}/${preview}.js`));
@@ -61,8 +61,8 @@ function ProjectItem({
       <p className="project__about">
         {about}.
       </p>
-      <input {...input} />
-      <label {...label}>
+      <input {...seeMoreInputProps} />
+      <label {...seeMoreLabelProps} title="Expandir / Colapsar.">
         <span className="icon icon--21">
           <svg viewBox="0 0 21 21">
             <path d="M10.5,6.5l-6,6l1.4,1.4l4.6-4.6l4.6,4.6l1.4-1.4L10.5,6.5z" />

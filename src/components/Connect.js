@@ -25,18 +25,20 @@ export default function Connect() {
             <span itemProp="telephone">+598 99 705 972</span>
           </li>
           <li>
-            <label htmlFor="email" title="Copiar al portapapeles.">
+            <label
+              htmlFor="email"
+              title="Copiar al portapapeles.">
               <input
                 className="input-to-copy"
                 id="email"
                 readOnly
                 type="text"
                 value="leodeslf@gmail.com"
+                itemProp="email"
                 onClick={e => {
                   e.target.select();
                   document.execCommand('copy');
-                }}
-                itemProp="email" />
+                }} />
               <span className="icon icon--21">
                 <svg viewBox="0 0 21 21">
                   <path d="M13.14,3H4.93A1.38,1.38,0,0,0,3.56,4.34v9.58H4.93

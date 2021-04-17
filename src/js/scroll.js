@@ -2,7 +2,7 @@ let distToScroll = [];
 let titles = undefined;
 let links = undefined;
 
-export function startListeningScroll() {
+export function startListeningToScroll() {
   window.addEventListener('load', () => {
     const hash = window.location.hash;
     // Auto scroll to hash if it's the first load of this session.

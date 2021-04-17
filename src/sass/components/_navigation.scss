@@ -1,11 +1,11 @@
-.stepper {
+.stepper-nav {
   display: flex;
   flex-direction: column;
   min-width: max-content;
   place-content: center;
 }
 
-.stepper__list {
+.stepper-nav__list {
   @include no-style-list;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function StepperNav() {
+export default function Navigation() {
   const ANCHORS = [
     ['#start', 'Inicio'],
     ['#about', 'Sobre mí'],
@@ -11,10 +11,10 @@ export default function StepperNav() {
   ];
 
   return (
-    <nav className="stepper text--small">
-      <ul className="stepper__list">
+    <nav className="stepper-nav text--small">
+      <ul className="stepper-nav__list">
         {ANCHORS.map((item, i) => (
-          <li className="stepper__item" key={i}>
+          <li key={i}>
             <a
               className="step"
               href={item[0]}

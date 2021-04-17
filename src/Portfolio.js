@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useEffect } from 'react';
-import { startListeningScroll } from './js/scroll';
+import { startListeningToScroll } from './js/scroll';
 
 const ROOT = './components/';
 const Tools = lazy(() => import(
@@ -20,8 +20,8 @@ const Aside = lazy(() => import(
 
 export default function Portfolio() {
   useEffect(() => {
-    startListeningScroll();
-  })
+    startListeningToScroll();
+  }, []);
 
   return (
     <Suspense fallback="">
@@ -41,7 +41,7 @@ export default function Portfolio() {
           <p>
             Con gusto por el Diseño y el Desarrollo, sin saber a cuál de esas
             áreas dedicarme, mientras curioseaba sobre algunas tecnologías,
-            -casi por accidente- encontré el rol perfecto, un tal Frontend.
+            encontré -casi por accidente- el rol perfecto, un tal Frontend.
           </p>
           <p>
             Desde entonces, aprendí herramientas

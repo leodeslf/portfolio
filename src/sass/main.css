@@ -244,16 +244,6 @@ a:hover {
   }
 }
 
-/* .portfolio__start {
-  position: relative;
-  &::after {
-    position: absolute;
-    content: "";
-    z-index: -1;
-    .dark & {
-    }
-  }
-} */
 .tools__container {
   display: flex;
   flex-wrap: wrap;
@@ -675,12 +665,12 @@ label[for=email] {
   }
 }
 
-.menu {
+.settings {
   color: #697579;
   display: flex;
   align-items: center;
 }
-.dark .menu {
+.dark .settings {
   color: #bec4c6;
 }
 
@@ -779,17 +769,17 @@ label[for=email] {
   border-radius: 50%;
 }
 
-.stepper {
+.stepper-nav {
   display: flex;
   flex-direction: column;
   min-width: max-content;
   place-content: center;
 }
 
-.stepper__list {
+.stepper-nav__list {
   padding-left: 0;
 }
-.stepper__list > li {
+.stepper-nav__list > li {
   list-style: none;
 }
 

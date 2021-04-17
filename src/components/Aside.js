@@ -1,9 +1,9 @@
 import React, { lazy, useState } from 'react';
 
-const Menu = lazy(() =>
-  import( /* webpackChunkName: "menu" */ './Menu.js'));
-const StepperNav = lazy(() =>
-  import( /* webpackChunkName: "steppernav" */ './StepperNav.js'));
+const Settings = lazy(() =>
+  import( /* webpackChunkName: "settings" */ './Settings.js'));
+const Navigation = lazy(() =>
+  import( /* webpackChunkName: "navigation" */ './Navigation.js'));
 
 const bigMedia = window.matchMedia('screen and (min-width: 640px)');
 
@@ -18,7 +18,9 @@ export default function Aside() {
       <button
         className="icon-label aside__button"
         onClick={() => setVisible(true)}
-        aria-label="Mostrar menú.">
+        aria-label="Mostrar menú."
+        aria-controls="Menú"
+        aria-expanded={visible + ""}>
         <span className="icon icon--24">
           <svg viewBox="0 0 24 24">
             <path d="M0 0h24v24H0z" fill="none" />
@@ -31,11 +33,15 @@ export default function Aside() {
         isvisible={visible + ""}>
         <div
           className="aside__close"
-          onClick={() => setVisible(false)} />
+          onClick={() => setVisible(false)}
+          role="button"
+          aria-label="Ocultar menú."
+          aria-controls="Menú"
+          aria-expanded={visible + ""} />
         <div className="aside__sticky">
           <div className="sticky__slide">
-            <Menu />
-            <StepperNav />
+            <Settings />
+            <Navigation />
             <footer className="copy-right">
               <p>© 2021 leodeslf</p>
             </footer>

@@ -1,10 +1,10 @@
-export default function seeMore(module) {
+export default function seeMore(module, checked = false) {
   return {
     seeMoreInputProps: {
       id: `see-more__input--${module}`,
       type: 'checkbox',
       className: 'see-more__input',
-      defaultChecked: false
+      defaultChecked: checked
     },
     seeMoreLabelProps: {
       htmlFor: `see-more__input--${module}`,

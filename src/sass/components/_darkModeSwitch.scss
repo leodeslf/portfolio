@@ -4,7 +4,6 @@ $body-size: $font-size--normal * 0.75;
 $half-margin: ($label-w - $body-size) * 0.5;
 
 .dark-mode-switch {
-  margin: 1rem;
   user-select: none;
   width: fit-content;
 }
@@ -15,7 +14,6 @@ $half-margin: ($label-w - $body-size) * 0.5;
 
 .dark-mode-switch__label {
   @include box-shadow;
-  @include bg($ascent: true);
   border-radius: $font-size--normal * 0.75;
   cursor: pointer;
   display: grid;

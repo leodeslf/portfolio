@@ -666,16 +666,10 @@ label[for=email] {
 }
 
 .settings {
-  color: #697579;
-  display: flex;
-  align-items: center;
-}
-.dark .settings {
-  color: #bec4c6;
+  padding: 1rem;
 }
 
 .dark-mode-switch {
-  margin: 1rem;
   user-select: none;
   width: fit-content;
 }
@@ -686,7 +680,6 @@ label[for=email] {
 
 .dark-mode-switch__label {
   box-shadow: 0 1px 3px 1px #00000010, 0 2px 2px #00000010;
-  background-color: #ffffff;
   border-radius: 12px;
   cursor: pointer;
   display: grid;
@@ -696,9 +689,6 @@ label[for=email] {
 }
 .dark .dark-mode-switch__label {
   box-shadow: 0 1px 3px 1px #00000014, 0 2px 2px #00000014;
-}
-.dark .dark-mode-switch__label {
-  background-color: #104134;
 }
 
 .label__body {

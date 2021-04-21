@@ -19,7 +19,10 @@ export default function Projects() {
 function ProjectItem({
   i, title, date, about, argument, tools, res, links, preview
 }) {
-  const { seeMoreInputProps, seeMoreLabelProps } = seeMore(i);
+  const {
+    seeMoreInputProps,
+    seeMoreLabelProps
+  } = seeMore('project--' + i);
   const Preview = lazy(() => import(
     /* webpackChunkName: "preview" */
     `../previews/${preview}/${preview}.js`));

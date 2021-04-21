@@ -5,22 +5,22 @@ My frontend learning documentation.
 ## Content
 
 ```JavaScript
-content = {
-  body: {
-    header, /* Nope */
-    main: {
-      Start,
-      About,
-      Tools,
-      Projects,
-      Cv,
-      Contact
+let content = {
+  header, /* Nope */
+  main: {
+    Start,
+    About,
+    Tools,
+    Projects,
+    Cv,
+    Connect
+  },
+  aside: {
+    Settings: {
+      DarkModeSwitch
     },
-    aside: {
-      DarkModeSwitch,
-      StepperNav
-      footer /* Maybe */
-    }
+    Navigation
+    footer /* Maybe */
   }
 }
 ```

@@ -14,11 +14,8 @@
         pointer-events: all;
       }
       & .sticky__slide {
-        box-shadow: -2px 0 2px $shadow-color, -2px 0 6px 1px $shadow-color;
+        box-shadow: -2px 0 2px var(--color--shadow), -2px 0 6px 1px var(--color--shadow);
         transform: translateX(0%);
-        .dark & {
-          box-shadow: -2px 0 2px $shadow-color--dark, -2px 0 6px 1px $shadow-color--dark;
-        }
       }
     }
   }
@@ -35,21 +32,20 @@
 
 .aside__sticky {
   display: flex;
-  flex-direction: column-reverse;
   overflow-x: hidden;
   position: sticky;
-  top: 0;
+  height: 100vh;
   right: 0;
+  top: 0;
 }
 
 .sticky__slide {
-  @include bg(true);
-  @include color(ascent);
   @include speed(transition-duration, $animation-speed--medium);
+  background-color: var(--bg--em);
+  color: var(--color--em);
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  height: 100vh;
   margin-left: auto;
   pointer-events: all;
   transition-property: transform;

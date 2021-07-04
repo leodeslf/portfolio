@@ -1,0 +1,36 @@
+#tw2__card {
+  background-color: white;
+  border-radius: 3px;
+  color: black;
+  padding: 0.25rem 1.25rem 0 1rem;
+  width: fit-content;
+  .card__content {
+    display: grid;
+    grid-template-areas:
+      "temp name"
+      "temp text";
+    grid-template-rows: max-content min-content;
+  }
+  .card__temp {
+    grid-area: temp;
+    font-size: 50px;
+    font-weight: 300;
+    margin-right: 1rem;
+  }
+  .card__name {
+    grid-area: name;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 0.8rem;
+    max-width: 18ch;
+  }
+  .card__text {
+    color: $grey--dark;
+    font-size: 0.8rem;
+    grid-area: text;
+    justify-self: left;
+    margin-bottom: 0.5rem;
+    max-width: 18ch;
+    text-transform: capitalize;
+  }
+}

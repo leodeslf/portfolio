@@ -1,30 +1,16 @@
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  49.99% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .portfolio__cv {
   max-width: 60ch;
 }
 
 .cv__preview {
-  @include color(true);
-  background-color: $bg--ascent;
+  @include color($em: true);
+  background-color: var(--bg--em);
   border-radius: $border-radius;
   font-family: "Courier Prime", monospace;
+  letter-spacing: -0.15px;
   font-size: 13px;
   margin-top: 0.5rem;
-  padding: 1rem;
+  padding: 0.5rem 1rem 1rem;
   & > h3 {
     font-size: inherit;
     margin-bottom: 1em;
@@ -40,7 +26,6 @@
   & > p {
     max-width: 100%;
     & > strong {
-      //color: #ee0000;
       color: black;
     }
     & > em {
@@ -48,14 +33,13 @@
     }
   }
   .dark & {
-    background-color: mix($bg--dark, black);
+    background-color: mix($green--dark, black);
     & > h3,
     & > h4 {
       color: #8f8fff;
     }
     & > p {
       & > strong {
-        //color: #ff5959;
         color: white;
       }
       & > em {
@@ -65,17 +49,71 @@
   }
 }
 
-.cv__preview-end {
+.cv__header {
+  position: relative;
+  display: flex;
+  margin-bottom: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.cv__buttons {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+  width: fit-content;
+  padding-bottom: 2px;
+  span,
+  &::before,
+  &::after {
+    border-radius: 0.3rem;
+    content: "";
+    flex-shrink: 0;
+    height: 9px;
+    width: 9px;
+  }
+  span {
+    background-color: hsl(56, 100%, 65%);
+  }
   &::before {
-    animation: blink 1.6s infinite;
+    background-color: hsl(120, 100%, 65%);
+  }
+  &::after {
+    background-color: hsl(0, 100%, 65%);
+  }
+  .dark span {
+    background-color: hsl(56, 70%, 50%);
+  }
+  .dark &::before {
+    background-color: hsl(120, 70%, 50%);
+  }
+  .dark &::after {
+    background-color: hsl(0, 70%, 50%);
+  }
+}
+
+.cv__blinking-cursor {
+  &::before {
+    animation: cursor-blink 1.25s infinite linear;
     opacity: 1;
     content: "";
     width: 1px;
     height: 17px;
     display: flex;
-    background-color: $color--ascent;
-    .dark & {
-      background-color: $color--ascent--dark;
-    }
+    background-color: var(--color--em);
+  }
+}
+
+@keyframes cursor-blink {
+  from {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
 }

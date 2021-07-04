@@ -8,57 +8,37 @@
   }
 }
 
-@mixin color($ascent: false) {
-  @if not $ascent {
-    color: $color;
-    .dark & {
-      color: $color--dark;
-    }
+// Dep.
+@mixin color($em: false) {
+  @if not $em {
+    color: var(--color);
   } @else {
-    color: $color--ascent;
-    .dark & {
-      color: $color--ascent--dark;
-    }
+    color: var(--color--em);
   }
 }
 
 @mixin anchor-color {
-  color: $anchor-color;
-  text-decoration-color: $anchor-color;
-  .dark & {
-    color: $anchor-color--dark;
-    text-decoration-color: $anchor-color--dark;
-  }
+  color: var(--color--anchor);
+  text-decoration-color: var(--color--anchor);
 }
 
-@mixin bg($ascent: false) {
-  @if not $ascent {
-    background-color: $bg;
-    .dark & {
-      background-color: $bg--dark;
-    }
+// Dep.
+@mixin bg($em: false) {
+  @if not $em {
+    background-color: var(--bg);
   } @else {
-    background-color: $bg--ascent;
-    .dark & {
-      background-color: $bg--ascent--dark;
-    }
+    background-color: var(--bg--em);
   }
 }
 
 @mixin border($prop, $line-width) {
-  #{$prop}: $line-width solid $border-color;
-  .dark & {
-    #{$prop}: $line-width solid $border-color--dark;
-  }
+  #{$prop}: $line-width solid var(--color--border);
 }
 
 @mixin box-shadow($index: 1) {
   $a: 0 (1px * $index) (3px * $index) 1px;
   $b: 0 2px 2px;
-  box-shadow: $a $shadow-color, $b $shadow-color;
-  .dark & {
-    box-shadow: $a $shadow-color--dark, $b $shadow-color--dark;
-  }
+  box-shadow: $a var(--color--shadow), $b var(--color--shadow);
 }
 
 @mixin base-container {
@@ -68,7 +48,7 @@
 
 @mixin ascent-container {
   @include color;
-  @include bg(true);
+  @include bg($em: true);
 }
 
 @mixin base-card {

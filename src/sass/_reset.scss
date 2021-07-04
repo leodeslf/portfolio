@@ -1,17 +1,8 @@
 * {
   margin: 0px;
   padding: 0px;
-  line-height: 1.5em;
+  line-height: 1.5;
   box-sizing: border-box;
-}
-
-html {
-  @include font;
-  scroll-behavior: smooth;
-}
-
-body {
-  @include base-container;
 }
 
 #root {
@@ -21,53 +12,6 @@ body {
   position: relative;
 }
 
-h1,
-h2 {
-  @include text-body;
-  font-family: "Roboto Slab", serif;
-  font-weight: 700;
-}
-
-h1 {
-  font-size: 2em;
-  a {
-    color: inherit !important;
-    text-decoration: none !important;
-  }
-}
-
-h2 {
-  font-size: 1.5rem;
-  &.h3 {
-    margin-bottom: 0.5em;
-  }
-}
-
-h3,
-.h3 {
-  font-size: 1.25rem;
-  font-weight: 500;
-}
-
-em {
-  @include color($ascent: true);
-  font-style: italic;
-}
-
-strong {
-  font-weight: 500;
-}
-
-p {
-  @include text-body;
-  max-width: 60ch;
-}
-
-ul {
-  @include text-body;
-  padding-left: 3ch;
-}
-
 a {
   @include anchor-color;
   cursor: pointer;
@@ -75,4 +19,62 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+body {
+  @include base-container;
+}
+
+em {
+  font-style: italic;
+}
+
+h1,
+h2 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: $font-size--title;
+  display: flex;
+  & > a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}
+
+h2 {
+  font-size: $font-size--extra-big;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: $font-size--big;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-size: inherit;
+  font-weight: 500;
+}
+
+html {
+  @include font;
+  scroll-behavior: smooth;
+}
+
+p {
+  @include text-body;
+  max-width: 60ch;
+}
+
+strong {
+  font-weight: 500;
+}
+
+ul {
+  @include text-body;
+  padding-left: 3ch;
 }

@@ -1,22 +1,37 @@
 [
   {
     "title": "Principales",
-    "tool_list": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "SASS"
+    "core": true,
+    "subGroups": [
+      [
+        "HTML & CSS",
+        "JavaScript",
+        "React",
+        "SASS/SCSS"
+      ]
     ]
   },
   {
-    "title": "Otras",
-    "tool_list": [
-      "Vue",
-      "Angular",
-      "TypeScript",
-      "Markdown",
-      "Git"
+    "title": "Familiarizado",
+    "subGroups": [
+      [
+        "Markdown",
+        "TypeScript",
+        "Angular",
+        "Vue"
+      ],
+      [
+        "OOP",
+        "RWD",
+        "SEO",
+        "WPO"
+      ],
+      [
+        "BEM",
+        "SMACSS",
+        "GitFlow",
+        "Scrum"
+      ]
     ]
   }
 ]

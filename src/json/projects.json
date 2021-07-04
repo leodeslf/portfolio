@@ -26,7 +26,7 @@
   {
     "title": "TFP",
     "date": "26/05/2019",
-    "about": "Texturas Fractales y Procedurales - Visualizador de Ruido Perlin y Worley",
+    "about": "Texturas Fractales y Procedurales",
     "argument": "Avanzar con JavaScript y el DOM",
     "tools": {
       "old": [
@@ -163,9 +163,7 @@
         "React",
         "SASS"
       ],
-      "new": [
-        "UX"
-      ]
+      "new": []
     },
     "res": null,
     "links": [
@@ -228,11 +226,7 @@
     ],
     "links": [
       {
-        "name": "Demo (CodePen)",
-        "link": "https://codepen.io/leodeslf/project/full/XYnBQg"
-      },
-      {
-        "name": "repositorio",
+        "name": "Repositorio",
         "link": "https://github.com/leodeslf/inverse-kinematics"
       }
     ],
@@ -265,5 +259,43 @@
       }
     ],
     "preview": "tw2"
+  },
+  {
+    "title": "ABChoose",
+    "date": "27/04/2021",
+    "about": "Una manera de ahorrar en consultas a Google Fonts",
+    "argument": "Investigar acerca de tipografías, el Standart Unicode, y cómo funcionan en la web",
+    "tools": {
+      "old": [
+        "HTML",
+        "JavaScript",
+        "React",
+        "SASS"
+      ],
+      "new": []
+    },
+    "res": [
+      {
+        "name": "Google Fonts Docs",
+        "link": "https://developers.google.com/fonts/docs/getting_started#optimizing_your_font_requests",
+        "linkName": "Optimizing your font requests"
+      },
+      {
+        "name": "Unicode",
+        "link": "https://www.unicode.org/charts/",
+        "linkName": "Unicode 13.0 Character Code Charts"
+      }
+    ],
+    "links": [
+      {
+        "name": "Web (Netlify)",
+        "link": "https://abchoose.netlify.app/"
+      },
+      {
+        "name": "repositorio",
+        "link": "https://github.com/leodeslf/abchoose"
+      }
+    ],
+    "preview": "abchoose"
   }
 ]

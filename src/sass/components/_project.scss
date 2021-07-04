@@ -6,26 +6,31 @@
 
 .portfolio__project {
   @include relief-card;
-  @include color(true);
+  color: var(--color--em);
   display: grid;
   min-width: 100%;
-  grid-template-areas: "prev prev" "header header" "about see-more" "details details";
-  grid-template-columns: auto 21px;
+  grid-template-areas: "prev prev" "header show-hide" "about show-hide" "details details";
+  grid-template-columns: auto min-content;
+  > .show-hide__label {
+    align-self: flex-end;
+    justify-self: right;
+    grid-area: show-hide;
+  }
+  > .show-hide__content {
+    grid-area: details;
+  }
 }
 
 .project__header {
-  @include text-body;
   grid-area: header;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  width: fit-content;
 }
 
 .project__title {
   margin-bottom: 0rem;
   margin-right: auto;
   & > a {
-    @include color;
+    color: var(--color);
     font: inherit;
     display: flex;
     align-items: center;
@@ -44,19 +49,16 @@
 .project__about {
   grid-area: about;
   margin-bottom: 0;
-  margin-right: 1rem;
-}
-
-.see-more__label {
-  margin-top: auto;
-  grid-area: see-more;
 }
 
 .project__details {
   @include border(border-top, 1px);
   grid-area: details;
-  margin-top: calc(1em + 2px);
-  padding-top: 1em;
+  margin-top: calc(1rem + 2px);
+  padding-top: 1rem;
+  > h4 {
+    color: var(--color);
+  }
 }
 
 .project__details > footer {
@@ -66,11 +68,11 @@
   justify-content: space-between;
 }
 
-.project__res .res__list a {
-  @include color(true);
-  text-decoration: underline;
-}
-
-.ul-container {
-  @include text-body;
+.project__link-container {
+  &::after {
+    content: ", ";
+  }
+  &:last-of-type::after {
+    content: "";
+  }
 }

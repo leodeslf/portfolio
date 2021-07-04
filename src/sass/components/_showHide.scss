@@ -1,0 +1,28 @@
+.show-hide__input {
+  &:checked + .show-hide__label .icon {
+    transform: rotateZ(-180deg) translateY(-1px);
+  }
+  &:checked ~ .show-hide__content {
+    display: block;
+  }
+}
+
+.show-hide__label {
+  padding: 0.25rem;
+  width: fit-content;
+  border-radius: 50%;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--bg--active);
+  }
+}
+
+.show-hide__label .icon {
+  @include speed(transition-duration, $animation-speed--fast);
+  transition-property: transform;
+  transform: rotateZ(-90deg) translateY(-1px);
+}
+
+.show-hide__content {
+  display: none;
+}

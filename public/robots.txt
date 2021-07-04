@@ -1,3 +1,3 @@
 user-agent: *
 allow: /
-disallow: /res/
+disallow: /res/Leonardo_de_S_Leal-Desarrollo_Frontend-CV_2021.pdf

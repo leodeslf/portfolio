@@ -1,59 +1,48 @@
 @font-face {
+  font-family: "Courier Prime";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=u-4n0q2lgwslOqpF_6gQ8kELawRpWtVqrNnIHluuKrJdvLvoP4C38VLfPc2VPtaBl2bip2KoUiFMVDW5aL-eLfmLKi3pHncMjQ-ZRUi2huN8nBhAxwRi_trevjsGcaAK3ddtemUYOfxzxWrB-rCF2xfDwwnfTZ9t3wGj0fGO-LPR_YBJ4snzRlUYWZYF8kDMDprRKI17iDF6_nL4JUfSY5dCBzX8y2gctus480SbVa2NhuOdyBPeYZNwyxxAqww_64_ogRT_7U8Uoo1jH8rSaD4CBSzFxQDjxCNAtdHOUajJKLg8VNoMGZckVilOOzgg5OjxYekUkYHohhALpDl7nHPNnk6b0-8KNq6q9ddr6FQp_n-mFPxi4bv4pBpPvKlBjeMeZmGMhl2L02Uw0Wc&skey=bd88f0a6edeea7b7&v=v2)
+    format("woff2");
+}
+@font-face {
+  font-family: "Courier Prime";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=u-450q2lgwslOqpF_6gQ8kELWwN7yuXfj9rPFVStL7RfvqX2PYKx91DdM8OXO9KC6RjgpWSuUCNCWje7brmcL-eVKC_vGHUOgwGbfXC0gOV-nhZOxQZk-NjcoCUEc6YM39VjdGej4vx7xXzAxLCH2xDDzgndTZlt3QG90fOO_rPS_YxJ5MnyRmkYW5YC8k3MDJrXKI97ljF4_nT4JkfeY5FCBjX-zFEct-sX80WbRa2Oh9qdzxPOYZJwxBxBqz8_6o_5gRX_7k05ooJjM8rTYwoCByzO6DCknT0G7M6BCL6Hca9tDdJcQJ57Dy8QYj5NvN2dOd17ybaG3iZ-_BQPxF-Uxk_Di-9Xbqv2rdAIs2xLpUbDT8IGuoSV_ywj55431s5DPWfQ3VvSiWZo&skey=e017e80d5b8c8838&v=v2)
+    format("woff2");
+}
+@font-face {
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("Roboto Slab Bold"),
-    url(https://fonts.gstatic.com/l/font?kit=BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjoa4OWbXYkXf7lnZrsJQhonflpp7-UPCF_WLdfQo1_VlxdTdBd0VzRaWDKFH8DfD7DE67i4eZXKPTPEwGlGL-eKDmEpH2MflcD&skey=a9ad6a4717e923f0&v=v13)
-      format("woff2");
+  src: url(https://fonts.gstatic.com/l/font?kit=BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjoa4OWbXbzf_CH9vCLXHAS0bUl8-vPY3gkAfAVCMM2EaCOzzPdPNo67ZtA5Pfy9fZIxDsJdgjH-mYCj8EB4RB7rOdcLa1y9IL7Cqy03xNcbK7HgU-5suBY7nNOklHW-SeroBb8da8bC6kUw9DbfGzW-pvGjyXbObsP_7geDkjzTLJ0Hq0cC29eXol8TqHNwbdn_3JRZ6DGsAr_eewDD_g8VrFdSkAQNjvuHT-F6n9rj13f10gyXXnFCm71D_vCAk6BkTtXs0ssGnWJqGKHn3rB7tZ5Mzq2fYZSod0wUn72wq28LFgKKt3OS3mIpWktkzx5s4R-OQmCdEAg_ORWSpVhMHnvS89K6wwPKzFvqANd_uEjLokJtP2MQivrg7g&skey=a9ad6a4717e923f0&v=v13)
+    format("woff2");
 }
-
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: local("Roboto Medium"),
-    url(https://fonts.gstatic.com/l/font?kit=KFOlCnqEu92Fr1MmEU9vBgVjCurfu7oPOTjwRB9YK36TFqtCYRnC-lyKwwpxhzZsshkUiaKmIpiDKUtXXaXrp-Zv4XTzegTq1wTTYMaIwfEoPFxddmmegz-YrYkUgnBxSa4EFXZ9YAOi3g1ee_vAbA&skey=ee881451c540fdec&v=v20)
-      format("woff2");
-}
-
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Roboto"),
-    url(https://fonts.gstatic.com/l/font?kit=KFOmCnqEu92Fr1Me4H6AAhcbAujZuaVgVEuFM2orVgLvYt82bgjR60ub0BtuliV9nzY5opeRF6O-FnZsaJLetvV-9mXgaxv7xBV8jmt2chWZ7OuZw6siU4DyweJowhALdow0axoETSGLoHkmWdnmFuk8suwZ-PwiL_32EMEIMitOnRQpcAcHlJCu6Ff68ObJ-v0M3hZ0WWMfOKy7sj9Eu3Jn16-WCC-6O_FqcU_Y1REa8OzAuRA1oWH9KF9mP_BmMZ-BYStla380QS00_HrMSNKY5HCSN3Na-uUMCqhniA&skey=a0a0114a1dcab3ac&v=v20)
-      format("woff2");
-}
-
 @font-face {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local("Roboto Light"),
-    url(https://fonts.gstatic.com/l/font?kit=KFOlCnqEu92Fr1MmSU5vBgXyK-HUvaFlV1aaLmkuUQfsb9A7FnCp6E6c1RhjmSh-mjE8oYqOCqC7EXNvZZ3Tj85H82LlaBb0yRZ5iW51bwqE7-6exqgvXI1IEVoaqFN4Ns5-K1ROH2_b8i92AI-4T4ti0o5zmJJIXZOGYrd4S10w41FQM0Vr1_3ClTqEjKG2u7tdn0YlBjNBZ8Hl3lI41w0ZptLkcGnDdJEeQk_Y1BEa_-zAuBA0kmH9KV9mJvBmMJ-BTCtlan80RC00_XrPd9KY5XCSCHNa--UND6hniUOrzg&skey=11ce8ad5f54705ca&v=v20)
-      format("woff2");
+  src: url(https://fonts.gstatic.com/l/font?kit=KFOlCnqEu92Fr1MmSU5vBgWoKOHTtq5mUlCYLHcwUwXqadI5GH6rkTXiqGNmni11lz4xqo-JD7umDm50YJrWhMNIxFfeVSnzzB10hmN-ag2B9POB27MqW4hDHFWudumxj40caj4FYyGZoG8mR9nyFsM8nOw_-MAiDf3QEOIIEitvmg8uVgAMk52p-FDr9sjP0fsp2DBydmUyPr69pzlAvXdk5aykAAayEdRrBRSl5zUmi5m9kzQW6BuBDXt2bqkaHbuCHl0bSlk5OnlBwFf1BrvD3zfJMzUB_6pWCuY9iRLxzzuNgAYsDR5N3THqH-OBa6NTzSUzQa-MQs_2vXdWOy6sZmqa9MAIciCaqz9CK9KSzxYlCHDVAtnQe0TDl_JtLa1aVdy2OFg&skey=11ce8ad5f54705ca&v=v27)
+    format("woff2");
 }
-
 @font-face {
-  font-family: "Courier Prime";
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Courrier Prime"),
-    url(https://fonts.gstatic.com/l/font?kit=u-450q2lgwslOqpF_6gQ8kELWwN71ubfjdSofjnDRd443diJQOHXkTK_XZvOY4nbzjDOi06EZBd-ZgozozdRoz4H978qjrCaTptb37MUR0OxOtPkHq67VgNwapDwxFW9AWayyaSl-ftRwkfG0baR3Q7F3A_-S71p5gWZ3uGB6JH8gPcyx-vWCSlidbQfpQW2H7jDUsEBmxNxviCBLGXeHQ&skey=e017e80d5b8c8838&v=v2)
-      format("woff2");
+  src: url(https://fonts.gstatic.com/l/font?kit=KFOmCnqEu92Fr1Me4H7aARccCefavKNiVlWbMWgtUADtbNE0F3OvljCe1x5lmypwlDM-p4yMCL6lE3FpY5_RgcBFy1rnbhD2yxh3i2xzaQiG8fCcxK4pXo9GH1ihe1NpN-Z_F1RGH2Hb5y9sAJG4WItw0r5zqJJ0XaiGSbdXS3Uw-FFONGds-frBkj6Dmqa9vYtbrkAHABxHQcfD2EU5-Awnp8DnbWrPfKoXQmvkoWRn28jiw2pJhUXtYAYaEtRlY-n_QQ1oFStBfAAOjROXcpXD3zbJMzwB_6tWCvk9iRPxzzSNgAcsDC1N3TDqH-CBa6JTzT4zQa6MQuL2vXZWOyusZmua9_8IciGaqzhCK9OSzx8lCHHVAsPQe2_Dl_NtLKhaVd0&skey=a0a0114a1dcab3ac&v=v27)
+    format("woff2");
 }
-
 @font-face {
-  font-family: "Courier Prime";
-  font-style: italic;
-  font-weight: 400;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
   font-display: swap;
-  src: local("Courrier Prime Italic"),
-    url(https://fonts.gstatic.com/l/font?kit=u-4n0q2lgwslOqpF_6gQ8kELawRpWtW1jtjEB0G4Qto019yKXOfkoQKPbZ3Ea4HTxinQlVSeYKeL0PQzrzdzox4H178IjpmdXZxG2KgSYEWNPOTiNKq9WTdSaOqXuG2YEDc&skey=bd88f0a6edeea7b7&v=v2)
-      format("woff2");
+  src: url(https://fonts.gstatic.com/l/font?kit=KFOlCnqEu92Fr1MmEU9vBgWoKOHTtq5mUlCYLHcwUwXqadI5GH6rkTXiqGNmni11lz4xqo-JD7umDm50YJrWhMNIxFfeVSnzzB10hmN-ag2B9POB27MqW4hDHFWudumxj40caj4FYyGZoG8mR9nyFsM8nOw_-MAiDf3QEOIIEitvmg8uVgAMk52p-FDr9sjP0fsp2DBydmUyPr69pzlAvXdk5aykAAayEdRrBRSl5zUmi5m9kzQW6BuBDXt2bqkaHbuCHl0bSlk5OnlBwFf1BrvD3zfJMzUB_6pWCuY9iRLxzzuNgAYsDR5N3THqH-OBa6NTzSUzQa-MQs_2vXdWOy6sZmqa9MAIciCaqz9CK9KSzxYlCHDVAtnQe0TDl_JtLa1aVdy2OFg&skey=ee881451c540fdec&v=v27)
+    format("woff2");
 }

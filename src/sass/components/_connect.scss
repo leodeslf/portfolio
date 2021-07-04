@@ -1,34 +1,50 @@
 .connect__card {
   @include relief-card;
+  padding-left: 0.5rem;
   display: flex;
   gap: 2rem;
   width: fit-content;
 }
 
-.card__data {
+.connect__data {
   @include no-style-list;
   margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  h2 {
+    @extend h3;
+  }
+  li {
+    margin-left: 0.5rem;
+    &.data__email {
+      margin-left: 0;
+    }
+  }
 }
 
-.card__pic {
+.email-button {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  border-radius: $border-radius;
+  border: none;
+  background-color: inherit;
+  display: flex;
+  cursor: copy;
+  padding: 0 0.25rem 0 0.5rem;
+  gap: 0.5ch;
+  &:hover {
+    background-color: var(--color--shadow);
+  }
+  .icon {
+    padding-left: 2px;
+  }
+}
+
+.connect__pic {
   display: flex;
   img {
     aspect-ratio: 90/132;
     border-radius: $border-radius;
   }
-}
-
-label[for="email"] {
-  display: flex;
-  cursor: pointer;
-}
-
-#email.input-to-copy {
-  background-color: inherit;
-  color: inherit;
-  cursor: inherit;
-  border: none;
-  font: inherit;
-  outline: none;
-  width: 17ch;
 }

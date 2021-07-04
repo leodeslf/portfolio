@@ -1,34 +1,45 @@
-$table-blue: #2372dc;
-$table-blue--light: #8fb7ef;
-$table-green: #07703b;
-$table-green--light: #7eb499;
+// Preview colors.
+$preview-color: white;
+$preview-color--blue: #2372dc;
+$preview-color--green: #07703b;
+$preview-color--light-blue: #8fb7ef;
+$preview-color--light-green: #7eb499;
 
-@mixin table-colors {
-  background-color: $table-blue;
-  outline: 1px solid $table-blue--light;
-  .dark & {
-    background-color: $table-green;
-    outline-color: $table-green--light;
-  }
+// Default color scheme (light).
+:root {
+  --preview-bg: #{$preview-color--blue};
+  --preview-color: #{$preview-color};
+  --preview-outline: #{$preview-color--light-blue};
+}
+
+// Dark color scheme.
+.dark {
+  --preview-bg: #{$preview-color--green};
+  --preview-color: #{$preview-color};
+  --preview-outline: #{$preview-color--light-green};
 }
 
 .preview {
   @include box-shadow;
-  @include table-colors;
+  background-color: var(--preview-bg);
   background-image: url("../images/blue.png");
-  border: 0.5rem solid $table-blue;
+  border: 0.5rem solid var(--preview-bg);
   border-radius: $border-radius;
-  color: $white;
+  color: var(--preview-color);
   display: flex;
   flex-direction: column;
   grid-area: prev;
-  outline-offset: -0.5rem;
   margin-bottom: 1rem;
+  min-height: 200px;
+  outline: 1px solid var(--preview-outline);
+  outline-offset: -0.5rem;
+  place-content: center;
+  & ::selection {
+    background-color: black;
+    color: white;
+  }
   .dark & {
-    background-color: $table-green;
     background-image: url("../images/green.png");
-    border-color: $table-green;
-    outline-color: $table-green--light;
   }
 }
 
@@ -36,18 +47,19 @@ $table-green--light: #7eb499;
   align-self: center;
   display: grid;
   gap: 1rem;
-  justify-items: center;
+  height: 100%;
+  place-items: center;
   margin: 2rem;
 }
 
 .preview__body {
   @include box-shadow;
+  place-self: center;
 }
 
 .preview__caption {
-  justify-self: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 0 1ch;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1px 0.5rem 0;
 }
 
 .preview__canvas {
@@ -59,16 +71,18 @@ $table-green--light: #7eb499;
   font-size: $font-size--extra-small;
 }
 
-.preview__new-tools {
-  @include table-colors;
-  padding: 0.25ch 0.75ch;
-}
-
-.new-tools__tag {
-  margin-right: 0.5ch;
+.preview__new-tools,
+.preview__date {
+  background-color: var(--preview-bg);
+  color: var(--preview-color);
+  outline: 1px solid var(--preview-outline);
+  padding: 1px 0.5rem 0;
 }
 
 .preview__date {
-  @extend .preview__new-tools;
   margin-left: auto;
+}
+
+.new-tools__tag::after {
+  content: " ";
 }

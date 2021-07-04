@@ -1,28 +1,28 @@
-import React from 'react';
-
 export default function Navigation() {
-  const ANCHORS = [
+  // Fragments (sections) format: [fragment-value, fragment-ui-name].
+  const fragments = [
     ['start', 'Inicio'],
     ['about', 'Sobre mí'],
-    ['tools', 'Herramientas'],
     ['projects', 'Proyectos'],
+    ['tools', 'Herramientas'],
     ['cv', 'Currículum Vitae'],
-    ['connect', 'Conectar']
+    ['connect', 'Contacto']
   ];
 
   return (
     <nav className="stepper-nav text--small">
       <ul className="stepper-nav__list">
-        {ANCHORS.map((anchor, i) => (
+        {fragments.map((fragment, i) =>
           <li key={i}>
             <a
               className="step"
-              href={'#' + anchor[0]}
-              onClick={() => window.location.replace('#' + anchor[0])}>
-              {anchor[1]}
+              href={'#' + fragment[0]}
+              onClick={() => window.location.replace('#' + fragment[0])}
+            >
+              {fragment[1]}
             </a>
           </li>
-        ))}
+        )}
       </ul>
     </nav>
   );

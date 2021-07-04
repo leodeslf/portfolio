@@ -1,0 +1,42 @@
+.preview--vec {
+  position: relative;
+}
+
+#vec__canvas {
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  &:hover + #vec__debug-canvas {
+    opacity: 1;
+  }
+  &.finish {
+    animation: rotateHue infinite 2s linear;
+  }
+  &.finish + #vec__debug-canvas {
+    animation: blink 1 1s ease-out;
+  }
+}
+
+#vec__debug-canvas {
+  @include transition-to-all;
+  background-color: #fffa;
+  border-radius: 50%;
+  box-shadow: none;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+}
+
+@keyframes rotateHue {
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+}

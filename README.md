@@ -10,14 +10,15 @@ let content = {
   main: {
     Start,
     About,
-    Tools,
     Projects,
+    Tools,
     Cv,
     Connect
   },
   aside: {
     Settings: {
-      DarkModeSwitch
+      Langs, /* Maybe */
+      ColorSchemeSwitch
     },
     Navigation
     footer /* Maybe */

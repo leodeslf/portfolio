@@ -1,6 +1,6 @@
 .portfolio {
   max-width: 960px;
-  padding: 0 3rem;
+  padding: 0 4rem;
   @media screen and (max-width: $media--max-medium) {
     padding: 0 2rem;
   }
@@ -10,32 +10,23 @@
 }
 
 .portfolio__elem {
-  $unit: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: $unit;
-  padding-top: $unit;
+  margin-bottom: 4rem;
+  padding-top: 4rem;
   &:first-of-type {
-    padding-top: $unit * 4;
+    margin-top: 8rem;
   }
   &:last-of-type {
-    margin-bottom: $unit * 6;
+    margin-bottom: 12rem;
   }
   @media screen and (max-width: $media--max-medium) {
-    &:first-of-type {
-      padding-top: $unit * 3;
-    }
-    &:last-of-type {
-      margin-bottom: $unit * 5;
-    }
+    margin-bottom: 3rem;
+    padding-top: 3rem;
   }
   @media screen and (max-width: $media--max-small) {
-    &:first-of-type {
-      padding-top: $unit * 2;
-    }
-    &:last-of-type {
-      margin-bottom: $unit * 4;
-    }
+    margin-bottom: 2rem;
+    padding-top: 2rem;
   }
 }

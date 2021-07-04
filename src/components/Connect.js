@@ -1,8 +1,19 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Connect() {
-  const [windowLoaded, setWindowLoaded] = useState(false);
-  window.addEventListener('load', () => setWindowLoaded(true));
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const section = document.getElementById('connect');
+    const firstTimeLoad = (entries, observer) => {
+      if (entries[0].isIntersecting) {
+        setVisible(true);
+        observer.unobserve(section);
+      }
+    }
+    const observer = new IntersectionObserver(firstTimeLoad);
+    observer.observe(section);
+  }, []);
 
   return (
     <section id="connect" className="portfolio__connect portfolio__elem">
@@ -10,9 +21,9 @@ export default function Connect() {
         itemScope
         itemType="https://schema.org/Person"
         className="connect__card text--small">
-        <ul className="card__data">
+        <ul className="connect__data">
           <li>
-            <h2 className="h3">Contacto</h2>
+            <h2>Contacto</h2>
           </li>
           <li
             itemProp="address"
@@ -24,53 +35,47 @@ export default function Connect() {
           <li>
             <span itemProp="telephone">+598 99 705 972</span>
           </li>
-          <li>
-            <label
-              htmlFor="email"
-              title="Copiar al portapapeles.">
-              <input
-                className="input-to-copy"
-                id="email"
-                readOnly
-                type="text"
-                value="leodeslf@gmail.com"
-                itemProp="email"
-                onClick={e => {
-                  e.target.select();
-                  document.execCommand('copy');
-                }} />
+          <li className="data__email">
+            <button
+              className="email-button"
+              title="Copiar al portapapeles."
+              onClick={() => {
+                navigator.clipboard.writeText('leodeslf@gmail.com')
+              }}
+            >
+              leodeslf@gmail.com
               <span className="icon icon--21">
                 <svg viewBox="0 0 21 21">
                   <path d="M13.14,3H4.93A1.38,1.38,0,0,0,3.56,4.34v9.58H4.93
-                  V4.34h8.21Zm2,2.74H7.67A1.38,1.38,0,0,0,6.3,7.08v9.58A1.38,
-                  1.38,0,0,0,7.67,18h7.52a1.37,1.37,0,0,0,1.37-1.37V7.08A1.37,
-                  1.37,0,0,0,15.19,5.71Zm0,11H7.67V7.08h7.52Z" />
+                    V4.34h8.21Zm2,2.74H7.67A1.38,1.38,0,0,0,6.3,7.08v9.58A1.38,
+                    1.38,0,0,0,7.67,18h7.52a1.37,1.37,0,0,0,1.37-1.37V7.08A1.37,
+                    1.37,0,0,0,15.19,5.71Zm0,11H7.67V7.08h7.52Z" />
                 </svg>
               </span>
-            </label>
+            </button>
           </li>
           <li>
             <a
               href="https://github.com/leodeslf"
               title="Perfil de GitHub.">
               GitHub
-              </a> / <a
+            </a> / <a
               href="https://linkedin.com/in/leodeslf"
               title="Perfil de LinkedIn">
               LinkedIn
-              </a>
+            </a>
           </li>
         </ul>
-        {windowLoaded && <picture className="card__pic">
-          <source srcSet='./images/id_32c.webp 1x' type="image/webp" />
-          <source srcSet='./images/id_256c.webp 2x' type="image/webp" />
-          <source srcSet='./images/id_256c.webp 3x' type="image/webp" />
-          <source srcSet='./images/id_32c.png 1x' type="image/png" />
-          <source srcSet='./images/id_256c.png 2x' type="image/png" />
-          <source srcSet='./images/id_256c.png 3x' type="image/png" />
+        {visible && <picture className="connect__pic">
+          <source srcSet='./images/x132_32c.webp 1x' type="image/webp" />
+          <source srcSet='./images/x132_64c.webp 2x' type="image/webp" />
+          <source srcSet='./images/x132_256c.webp 3x' type="image/webp" />
+          <source srcSet='./images/x132_32c.png 1x' type="image/png" />
+          <source srcSet='./images/x132_64c.png 2x' type="image/png" />
+          <source srcSet='./images/x132_256c.png 3x' type="image/png" />
           <img
-            src='./images/id_32c.png'
-            alt="A human been."
+            src='./images/id_256c.png'
+            alt="leodeslf"
             title="A human been."
             width="90"
             height="132"

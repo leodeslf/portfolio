@@ -1,12 +1,9 @@
-import React, { lazy } from 'react';
-
-const DarkModeSwitch = lazy(() =>
-  import( /* webpackChunkName: "darkmodeswitch" */ './DarkModeSwitch.js'));
+import ColorSchemeSwitch from './ColorSchemeSwitch';
 
 export default function Settings() {
   return (
     <div className="settings">
-      <DarkModeSwitch />
+      <ColorSchemeSwitch />
     </div>
   );
 }

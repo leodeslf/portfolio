@@ -1,34 +1,48 @@
 // Colors.
-$black: #0c0d0d;
+$black: #0d0d0d;
 $white: #ffffff;
 $grey--light: #f5f5f5;
-$grey--med: #bec4c6;
+$grey: #90a9a3;
 $grey--dark: #697579;
 $blue: #224aff;
 $blue--light: #c2e9ff;
 $yellow: #ffff10;
-$green--med: #104134;
+$green: #104134;
 $green--dark: #101819;
+$black--alpha-heavy: #0003;
+$black--alpha-medium: #0002;
+$black--alpha-light: #0001;
 
-// Light mode.
-$bg: $blue--light;
-$bg--ascent: $white;
-$color: $black;
-$color--ascent: $grey--dark;
-$shadow-color: #00000010;
-$border-color: #00000014;
-$anchor-color: $blue;
+// Default color scheme (light).
+:root {
+  color-scheme: light;
+  --bg: #{$blue--light};
+  --bg--em: #{$white};
+  --bg--active: #{darken($white, 6%)};
+  --color: #{$black};
+  --color--em: #{$grey--dark};
+  --color--anchor: #{$blue};
+  --color--border: #{$black--alpha-medium};
+  --color--shadow: #{$black--alpha-light};
+}
 
-// Dark mode.
-$bg--dark: $green--dark;
-$bg--ascent--dark: $green--med;
-$color--dark: $grey--light;
-$color--ascent--dark: $grey--med;
-$shadow-color--dark: #00000014;
-$border-color--dark: #00000034;
-$anchor-color--dark: $yellow;
+// Dark color scheme.
+.dark {
+  color-scheme: dark;
+  --bg: #{$green--dark};
+  --bg--em: #{$green};
+  --bg--active: #{darken($green, 2%)};
+  --color: #{$grey--light};
+  --color--em: #{$grey};
+  --color--anchor: #{$yellow};
+  --color--border: #{$black--alpha-heavy};
+  --color--shadow: #{$black--alpha-medium};
+}
 
 // Font sizes.
+$font-size--title: 2.5rem;
+$font-size--extra-big: 1.75rem;
+$font-size--big: 1.25rem;
 $font-size--normal: 16px;
 $font-size--small: 0.875rem;
 $font-size--extra-small: 0.75rem;

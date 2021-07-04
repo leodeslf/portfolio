@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Oleo Script";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=rax5HieDvtMOe0iICsUccBhfqU2Zs335QNCd&skey=d18666d540079220&v=v9)
+    format("woff2");
+}
+
+#abchoose {
+  > a {
+    background-color: #f3ff52;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    color: black;
+    display: flex;
+    font-family: "Oleo Script";
+    font-size: 18px;
+    padding: calc(0.5em + 2px) 1em 0.5em;
+    text-decoration: none;
+  }
+  > p {
+    background-color: white;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    box-shadow: 0 1px 3px 1px $black--alpha-light inset, 0 2px 2px $black--alpha-light inset;
+    color: $grey--dark;
+    cursor: default;
+    font-family: monospace;
+    font-style: italic;
+    padding: 1rem;
+  }
+}

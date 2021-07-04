@@ -2,36 +2,32 @@
   font-size: $font-size--small;
 }
 
-.icon-label {
+.text--extra-small {
+  font-size: $font-size--extra-small;
+}
+
+.icon__label {
   cursor: pointer;
   &:hover > .icon > svg,
   &:active > .icon > svg {
-    fill: $color;
-    .dark & {
-      fill: $color--dark;
-    }
+    fill: var(--color);
   }
 }
 
 .icon {
   display: flex;
   user-select: none;
-  & > svg {
-    fill: $color--ascent;
+  &--21 {
+    height: 21px;
+    width: 21px;
+  }
+  &--24 {
+    height: 24px;
+    width: 24px;
+  }
+  > svg {
+    fill: var(--color--em);
     height: 100%;
     width: 100%;
-    .dark & {
-      fill: $color--ascent--dark;
-    }
   }
-}
-
-.icon--21 {
-  height: 21px;
-  width: 21px;
-}
-
-.icon--24 {
-  height: 24px;
-  width: 24px;
 }

@@ -1,0 +1,78 @@
+$label-h: 28px;
+$label-w: 46px;
+$moon-sun-side: 12px;
+$half-margin: ($label-w - $moon-sun-side) * 0.5;
+
+.color-scheme-switch__input {
+  display: none;
+}
+
+.color-scheme-switch__label {
+  @include relief-card;
+  border-radius: $label-h * 0.5;
+  cursor: pointer;
+  display: flex;
+  height: $label-h;
+  padding: ($label-h - $moon-sun-side) * 0.5;
+  width: $label-w;
+  &:hover {
+    /* .dark & {
+    } */
+    > .color-scheme-switch__moon-sun {
+      background-color: var(--color);
+      /* &::after {
+        background-color: var(--bg--active);
+      } */
+      &::before {
+        background-color: var(--color);
+      }
+    }
+  }
+  /* .dark & {
+  } */
+}
+
+.color-scheme-switch__moon-sun {
+  @include transition-to-all;
+  background-color: var(--color--em);
+  display: flex;
+  flex-shrink: 0;
+  height: $moon-sun-side;
+  margin: 0 0 0 $half-margin;
+  place-content: center;
+  position: relative;
+  width: $moon-sun-side;
+  .dark & {
+    transform: rotateZ(-25deg);
+    margin: 0 $half-margin 0 0;
+    border-radius: 50%;
+  }
+  // Center dot.
+  &::after {
+    background-color: var(--bg--em);
+    border-radius: 50%;
+    content: "";
+    height: 8px;
+    width: 8px;
+    z-index: 1;
+    margin: auto;
+    .dark & {
+      height: 10px;
+      transform: translateX(4px);
+      width: 10px;
+    }
+  }
+  // Sun extra shines
+  &::before {
+    @include transition-to-all;
+    background-color: var(--color--em);
+    content: "";
+    height: inherit;
+    position: absolute;
+    transform: rotateZ(45deg);
+    width: inherit;
+    .dark & {
+      transform: scale(0.1);
+    }
+  }
+}

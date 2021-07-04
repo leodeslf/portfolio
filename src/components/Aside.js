@@ -1,9 +1,7 @@
-import React, { lazy, useState } from 'react';
-
-const Settings = lazy(() =>
-  import( /* webpackChunkName: "settings" */ './Settings.js'));
-const Navigation = lazy(() =>
-  import( /* webpackChunkName: "navigation" */ './Navigation.js'));
+import { useState } from 'react';
+import Settings from './Settings';
+import Navigation from './Navigation';
+import Footer from './Footer';
 
 const bigMedia = window.matchMedia('screen and (min-width: 640px)');
 
@@ -16,7 +14,7 @@ export default function Aside() {
   return (
     <>
       <button
-        className="icon-label aside__button"
+        className="icon__label aside__button"
         onClick={() => setVisible(true)}
         aria-label="Mostrar menú."
         aria-controls="Menú"
@@ -42,9 +40,7 @@ export default function Aside() {
           <div className="sticky__slide">
             <Settings />
             <Navigation />
-            <footer className="copy-right">
-              <p>© 2021 leodeslf</p>
-            </footer>
+            <Footer />
           </div>
         </div>
       </aside>

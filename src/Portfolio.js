@@ -1,5 +1,5 @@
-import { lazy, Suspense, useEffect } from 'react';
-import { startListeningToScroll } from './js/scroll';
+import { lazy, Suspense/* , useEffect */ } from 'react';
+/* import { startListeningToScroll } from './js/scroll'; */
 
 const ROOT = './components/';
 
@@ -15,9 +15,9 @@ const Aside = lazy(() => import(/* webpackChunkName: "aside" */
   ROOT + 'Aside.js'));
 
 export default function Portfolio() {
-  useEffect(() => {
+  /* useEffect(() => {
     startListeningToScroll();
-  }, []);
+  }, []); */
 
   return (
     <Suspense fallback="">

@@ -1,25 +1,24 @@
+import { useEffect } from 'react';
+import sections from '../json/sections.json';
+import initNavigationIO from '../js/navigationIO';
+
 export default function Navigation() {
-  // Fragments (sections) format: [fragment-value, fragment-ui-name].
-  const fragments = [
-    ['start', 'Inicio'],
-    ['about', 'Sobre mí'],
-    ['projects', 'Proyectos'],
-    ['tools', 'Herramientas'],
-    ['cv', 'Currículum Vitae'],
-    ['connect', 'Contacto']
-  ];
+  useEffect(() => {
+    initNavigationIO();
+  }, [])
 
   return (
     <nav className="stepper-nav text--small">
       <ul className="stepper-nav__list">
-        {fragments.map((fragment, i) =>
+        {sections.map(({ fragment, label }, i) =>
           <li key={i}>
             <a
+              id={`step-for--${fragment}`}
               className="step"
-              href={'#' + fragment[0]}
-              onClick={() => window.location.replace('#' + fragment[0])}
+              href={'#' + fragment}
+              onClick={() => window.location.replace('#' + fragment)}
             >
-              {fragment[1]}
+              {label}
             </a>
           </li>
         )}

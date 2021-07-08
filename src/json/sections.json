@@ -1,0 +1,26 @@
+[
+  {
+    "fragment": "start",
+    "label": "Inicio"
+  },
+  {
+    "fragment": "about",
+    "label": "Sobre mí"
+  },
+  {
+    "fragment": "projects",
+    "label": "Proyectos"
+  },
+  {
+    "fragment": "tools",
+    "label": "Herramientas"
+  },
+  {
+    "fragment": "cv",
+    "label": "Currículum Vitae"
+  },
+  {
+    "fragment": "connect",
+    "label": "Contacto"
+  }
+]

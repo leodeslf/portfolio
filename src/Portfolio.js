@@ -34,7 +34,7 @@ export default function Portfolio() {
         <section id="about" className="portfolio__about portfolio__elem">
           <h2>Sobre mí</h2>
           <p>
-            Siempre atraído por el Diseño y la Prgramación, encontré casi por
+            Siempre atraído por el Diseño y la Programación, encontré casi por
             accidente el rol perfecto para mi, uno que me permite desempeñar en
             todo lo que disfruto al mismo tiempo, el Desarrollo Frontend.
           </p>

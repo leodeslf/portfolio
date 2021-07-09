@@ -35,7 +35,7 @@ export default function Portfolio() {
           <h2>Sobre mí</h2>
           <p>
             Siempre atraído por el Diseño y la Programación, encontré casi por
-            accidente el rol perfecto para mi, uno que me permite desempeñar en
+            accidente el rol perfecto para mi, en el que puedo desempeñarme en
             todo lo que disfruto al mismo tiempo, el Desarrollo Frontend.
           </p>
           <p>

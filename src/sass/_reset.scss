@@ -27,6 +27,7 @@ body {
 
 em {
   font-style: italic;
+  color: var(--color--em);
 }
 
 h1,
@@ -67,7 +68,7 @@ html {
 
 p {
   @include text-body;
-  max-width: 60ch;
+  max-width: 58ch;
 }
 
 strong {

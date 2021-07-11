@@ -140,6 +140,7 @@ body {
 
 em {
   font-style: italic;
+  color: var(--color--em);
 }
 
 h1,
@@ -186,7 +187,7 @@ html.dark {
 
 p {
   margin-bottom: 1em;
-  max-width: 60ch;
+  max-width: 58ch;
 }
 * > p:last-child {
   margin-bottom: 0;
@@ -1123,6 +1124,27 @@ a.step:hover, a.step:active, a.step.step--active {
   font-display: swap;
   src: url(https://fonts.gstatic.com/l/font?kit=rax5HieDvtMOe0iICsUccBhfqU2Zs335QNCd&skey=d18666d540079220&v=v9) format("woff2");
 }
+@font-face {
+  font-family: "Faustina";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=XLY4IZPxYpJfTbZAFXWzNT2SO8wpWHlsgoEvHE2TMg&skey=e32c128add4269f7&v=v8) format("woff2");
+}
+@font-face {
+  font-family: "Zen Tokyo Zoo";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=NGSyv5ffC0J_BK6aFNtr6sRv8ah2QC4&skey=7c958eadb8bf05e7&v=v1) format("woff2");
+}
+@font-face {
+  font-family: "Allura";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=9oRPNYsQpS4zjuAPiRoSdw&skey=79209908b474aec&v=v9) format("woff2");
+}
 #abchoose > a {
   background-color: #f3ff52;
   border-top-left-radius: 4px;
@@ -1134,16 +1156,41 @@ a.step:hover, a.step:active, a.step.step--active {
   padding: calc(0.5em + 2px) 1em 0.5em;
   text-decoration: none;
 }
-#abchoose > p {
-  background-color: white;
+
+.abchoose__gallery {
+  background-color: #f4f4f4;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   box-shadow: 0 1px 3px 1px #0001 inset, 0 2px 2px #0001 inset;
-  color: #697579;
-  cursor: default;
-  font-family: monospace;
-  font-style: italic;
   padding: 1rem;
+  display: flex;
+  gap: 8px;
+}
+
+.gallery__item {
+  border-radius: 3px;
+  border: 1px solid #0001;
+  display: flex;
+  place-content: center;
+  background-color: white;
+  width: 1.6em;
+  line-height: 1.6;
+  color: black;
+  font-size: 32px;
+  height: 1.6em;
+  font-weight: 400;
+}
+.gallery__item:nth-of-type(1) {
+  font-family: "Allura";
+  padding-top: 2px;
+  padding-right: 4px;
+}
+.gallery__item:nth-of-type(2) {
+  font-family: "Faustina";
+  line-height: 1.4;
+}
+.gallery__item:nth-of-type(3) {
+  font-family: "Zen Tokyo Zoo";
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export default function Connect() {
+  const email = 'leodeslf@gmail.com'
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -40,10 +41,10 @@ export default function Connect() {
               className="email-button"
               title="Copiar al portapapeles."
               onClick={() => {
-                navigator.clipboard.writeText('leodeslf@gmail.com')
+                navigator.clipboard.writeText(email)
               }}
             >
-              leodeslf@gmail.com
+              {email}
               <span className="icon icon--21">
                 <svg viewBox="0 0 21 21">
                   <path d="M13.14,3H4.93A1.38,1.38,0,0,0,3.56,4.34v9.58H4.93

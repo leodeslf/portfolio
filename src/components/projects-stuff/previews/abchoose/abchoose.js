@@ -5,9 +5,11 @@ export default function abchoose() {
         <a href="https://abchoose.netlify.app/">
           ABChoose
         </a>
-        <p>
-          @font-face
-        </p>
+        <div className="abchoose__gallery">
+          <span className="gallery__item">A</span>
+          <span className="gallery__item">A</span>
+          <span className="gallery__item">A</span>
+        </div>
       </div>
     </div>
   );

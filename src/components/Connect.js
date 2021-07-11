@@ -8,7 +8,7 @@ export default function Connect() {
     const firstTimeLoad = (entries, observer) => {
       if (entries[0].isIntersecting) {
         setVisible(true);
-        observer.unobserve(section);
+        observer.disconnect();
       }
     }
     const observer = new IntersectionObserver(firstTimeLoad);

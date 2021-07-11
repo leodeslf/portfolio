@@ -1,5 +1,4 @@
-import { lazy, Suspense/* , useEffect */ } from 'react';
-/* import { startListeningToScroll } from './js/scroll'; */
+import { lazy, Suspense } from 'react';
 
 const ROOT = './components/';
 
@@ -15,10 +14,6 @@ const Aside = lazy(() => import(/* webpackChunkName: "aside" */
   ROOT + 'Aside.js'));
 
 export default function Portfolio() {
-  /* useEffect(() => {
-    startListeningToScroll();
-  }, []); */
-
   return (
     <Suspense fallback="">
       <main className="portfolio">
@@ -34,15 +29,10 @@ export default function Portfolio() {
         <section id="about" className="portfolio__about portfolio__elem">
           <h2>Sobre mí</h2>
           <p>
-            Siempre atraído por el Diseño y la Programación, encontré casi por
-            accidente el rol perfecto para mi, en el que puedo desempeñarme en
-            todo lo que disfruto al mismo tiempo, el Desarrollo Frontend.
-          </p>
-          <p>
-            Desde entonces, me he dedicado a <em>aprender haciendo</em> con
-            herramientas que nos permiten: <strong>agilizar</strong> el
-            desarrollo; <strong>potenciar</strong> el trabajo en equipo;
-            y <strong>enriquecer</strong> la experiencia del usuario.
+            Siempre atraído tanto por el <em>Diseño</em> como por la <em>Programación</em>,
+            encontré casi por accidente el balance perfecto entre ámbas áreas:
+            el Desarrollo Frontend. Desde entonces, me he dedicado a <em>
+            aprender haciendo</em> con las herramientas más demandadas, y seguiré por mucho tiempo más.
           </p>
         </section>
         <Projects />

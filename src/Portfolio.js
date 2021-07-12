@@ -29,10 +29,11 @@ export default function Portfolio() {
         <section id="about" className="portfolio__about portfolio__elem">
           <h2>Sobre mí</h2>
           <p>
-            Siempre atraído tanto por el <em>Diseño</em> como por la <em>Programación</em>,
-            encontré casi por accidente el balance perfecto entre ámbas áreas:
-            el Desarrollo Frontend. Desde entonces, me he dedicado a <em>
-            aprender haciendo</em> con las herramientas más demandadas, y seguiré por mucho tiempo más.
+            Siempre atraído tanto por el <em>Diseño</em> como por la <em>
+            Programación</em>, encontré casi por accidente el balance perfecto
+            entre ambas áreas: el Desarrollo Frontend. Desde entonces, me he
+            dedicado a <em> aprender haciendo</em> con las herramientas más
+            demandadas, y seguiré por mucho tiempo más.
           </p>
         </section>
         <Projects />

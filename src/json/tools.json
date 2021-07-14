@@ -5,9 +5,9 @@
     "subGroups": [
       [
         "HTML & CSS",
+        "SASS/SCSS",
         "JavaScript",
-        "React",
-        "SASS/SCSS"
+        "React"
       ]
     ]
   },
@@ -15,22 +15,22 @@
     "title": "Familiarizado",
     "subGroups": [
       [
+        "GitFlow",
+        "Scrum",
+        "SOLID",
+        "OOP"
+      ],
+      [
+        "BEM",
+        "RWD",
+        "WPO",
+        "SEO"
+      ],
+      [
         "Markdown",
         "TypeScript",
         "Angular",
         "Vue"
-      ],
-      [
-        "OOP",
-        "RWD",
-        "SEO",
-        "WPO"
-      ],
-      [
-        "BEM",
-        "SMACSS",
-        "GitFlow",
-        "Scrum"
       ]
     ]
   }

@@ -31,7 +31,7 @@ export default function Cv() {
         <p>---</p>
         <p>
           [<a
-            href="./res/Leonardo_de_S_Leal-Desarrollo_Frontend-CV_2021.pdf"
+            href="./res/Leonardo_de_SLF-Desarrollo_Frontend-CV_2021.pdf"
             title="Archivo PDF."
           >
             Ver PDF

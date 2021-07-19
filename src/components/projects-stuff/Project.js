@@ -4,7 +4,7 @@ import ShowHide from '../ShowHide';
 import ProjectDetails from './ProjectDetails';
 
 export default function Project(props) {
-  const { title, date, about, tools, links, preview } = props;
+  const { title,/*  date, */ about, tools, links, preview } = props;
   const Preview = lazy(() => import(/* webpackChunkName: "preview" */
     `./previews/${preview}/${preview}.js`));
 
@@ -23,9 +23,9 @@ export default function Project(props) {
                   {(i > 0 ? ', ' : '') + tool}
                 </span>)}.
             </span>}
-          <span className="preview__date">
+          {/* <span className="preview__date">
             {date.slice(3)}
-          </span>
+          </span> */}
         </footer>
       </div>
       <header className="project__header">

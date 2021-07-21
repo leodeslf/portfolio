@@ -140,7 +140,6 @@ body {
 
 em {
   font-style: italic;
-  color: var(--color--em);
 }
 
 h1,
@@ -150,7 +149,7 @@ h2 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   display: flex;
 }
 h1 > a {
@@ -159,12 +158,12 @@ h1 > a {
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.8rem;
   margin-bottom: 0.5em;
 }
 
 h3, .connect__data h2 {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 500;
   margin-bottom: 0.5em;
 }
@@ -178,7 +177,7 @@ html {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   scroll-behavior: smooth;
 }
 html.dark {
@@ -187,7 +186,7 @@ html.dark {
 
 p {
   margin-bottom: 1em;
-  max-width: 58ch;
+  max-width: 54ch;
 }
 * > p:last-child {
   margin-bottom: 0;
@@ -214,7 +213,7 @@ ul {
     padding: 0 2rem;
   }
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   .portfolio {
     padding: 0 1rem;
   }
@@ -239,7 +238,7 @@ ul {
     padding-top: 3rem;
   }
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   .portfolio__elem {
     margin-bottom: 2rem;
     padding-top: 2rem;
@@ -584,7 +583,7 @@ ul {
     padding-right: 3rem;
   }
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   .aside {
     height: 100vh;
     pointer-events: none;
@@ -637,7 +636,7 @@ ul {
     transition-duration: 0ms;
   }
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   .sticky__slide {
     transform: translateX(100%);
   }
@@ -658,7 +657,7 @@ ul {
   right: 2rem;
   width: fit-content;
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   .aside__button {
     display: flex;
   }

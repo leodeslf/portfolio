@@ -25,9 +25,7 @@ export default function Connect() {
             <button
               className="email-button icon__label"
               title="Copiar al portapapeles."
-              onClick={() => {
-                document.navigator.clipboard.writeText(email)
-              }}
+              onClick={() => navigator.clipboard.writeText(email)}
             >
               {email}
               <span className="icon icon--21">

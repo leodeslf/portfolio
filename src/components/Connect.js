@@ -1,20 +1,5 @@
-import { useEffect, useState } from 'react';
-
 export default function Connect() {
   const email = 'leodeslf@gmail.com'
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const section = document.getElementById('connect');
-    const firstTimeLoad = (entries, observer) => {
-      if (entries[0].isIntersecting) {
-        setVisible(true);
-        observer.disconnect();
-      }
-    }
-    const observer = new IntersectionObserver(firstTimeLoad);
-    observer.observe(section);
-  }, []);
 
   return (
     <section id="connect" className="portfolio__connect portfolio__elem">
@@ -38,10 +23,10 @@ export default function Connect() {
           </li>
           <li className="data__email">
             <button
-              className="email-button"
+              className="email-button icon__label"
               title="Copiar al portapapeles."
               onClick={() => {
-                navigator.clipboard.writeText(email)
+                document.navigator.clipboard.writeText(email)
               }}
             >
               {email}
@@ -67,7 +52,7 @@ export default function Connect() {
             </a>
           </li>
         </ul>
-        {visible && <picture className="connect__pic">
+        <picture className="connect__pic">
           <source srcSet='./images/x132_32c.webp 1x' type="image/webp" />
           <source srcSet='./images/x132_64c.webp 2x' type="image/webp" />
           <source srcSet='./images/x132_256c.webp 3x' type="image/webp" />
@@ -80,8 +65,10 @@ export default function Connect() {
             title="A human been."
             width="90"
             height="132"
-            itemProp="image" />
-        </picture>}
+            itemProp="image"
+            loading="lazy"
+          />
+        </picture>
       </div>
     </section>
   );

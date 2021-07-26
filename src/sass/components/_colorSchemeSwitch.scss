@@ -8,7 +8,7 @@ $half-margin: ($label-w - $moon-sun-side) * 0.5;
 }
 
 .color-scheme-switch__label {
-  @include relief-card;
+  background-color: var(--bg--active);
   border-radius: $label-h * 0.5;
   cursor: pointer;
   display: flex;
@@ -16,20 +16,13 @@ $half-margin: ($label-w - $moon-sun-side) * 0.5;
   padding: ($label-h - $moon-sun-side) * 0.5;
   width: $label-w;
   &:hover {
-    /* .dark & {
-    } */
     > .color-scheme-switch__moon-sun {
       background-color: var(--color);
-      /* &::after {
-        background-color: var(--bg--active);
-      } */
       &::before {
         background-color: var(--color);
       }
     }
   }
-  /* .dark & {
-  } */
 }
 
 .color-scheme-switch__moon-sun {
@@ -49,7 +42,7 @@ $half-margin: ($label-w - $moon-sun-side) * 0.5;
   }
   // Center dot.
   &::after {
-    background-color: var(--bg--em);
+    background-color: var(--bg--active);
     border-radius: 50%;
     content: "";
     height: 8px;

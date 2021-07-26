@@ -3,46 +3,45 @@
 }
 
 .cv__preview {
-  @include color($em: true);
+  color: var(--color--em);
   background-color: var(--bg--em);
   border-radius: $border-radius;
   font-family: "Courier Prime", monospace;
-  letter-spacing: -0.15px;
   font-size: 13px;
   margin-top: 0.5rem;
   padding: 0.5rem 1rem 1rem;
-  & > h3 {
+  > h3 {
     font-size: inherit;
     margin-bottom: 1em;
   }
-  & > h3,
-  & > h4 {
+  > h3,
+  > h4 {
     font-weight: 400;
     color: #6161ff;
-    & > span {
-      @include color(true);
+    > span {
+      color: var(--color--em);
     }
   }
-  & > p {
+  > p {
     max-width: 100%;
-    & > strong {
+    > strong {
       color: black;
     }
-    & > em {
+    > em {
       color: #008a00;
     }
   }
   .dark & {
     background-color: mix($green--dark, black);
-    & > h3,
-    & > h4 {
+    > h3,
+    > h4 {
       color: #8f8fff;
     }
-    & > p {
-      & > strong {
+    > p {
+      > strong {
         color: white;
       }
-      & > em {
+      > em {
         color: #40d240;
       }
     }

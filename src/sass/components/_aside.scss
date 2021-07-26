@@ -14,7 +14,11 @@
         pointer-events: all;
       }
       & .sticky__slide {
-        box-shadow: -2px 0 2px var(--color--shadow), -2px 0 6px 1px var(--color--shadow);
+        /* Like `@include box-shadow; but to the left. */
+        $a: -1px 0 2px 1px;
+        $b: -8px 0 8px 0px;
+        $c: -12px 0 12px 0px;
+        box-shadow: $a var(--color--shadow), $b var(--color--shadow), $c var(--color--shadow);
         transform: translateX(0%);
       }
     }
@@ -56,7 +60,7 @@
 }
 
 .aside__button {
-  @include relief-card($index: 2);
+  @include relief-card(2);
   border: none;
   bottom: 2rem;
   display: none;

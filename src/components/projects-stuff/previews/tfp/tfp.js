@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { canvasH, canvasW } from '../preview-util/util';
+import PreviewCaption from '../PreviewCaption';
 import { initControl } from './control';
 
 export default function TFP() {
@@ -14,7 +15,7 @@ export default function TFP() {
         id="tfp__canvas"
         height={canvasH}
         width={canvasW} />
-      <p className="preview__caption">Click para cambiar de modo.</p>
+      <PreviewCaption text="Click para cambiar de modo" />
     </div>
   );
 }

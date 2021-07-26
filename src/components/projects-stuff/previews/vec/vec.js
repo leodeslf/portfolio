@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import PreviewCaption from '../PreviewCaption';
 import { initControl, reset } from './control';
 
 export default function Vec() {
@@ -21,7 +22,7 @@ export default function Vec() {
         id="vec__debug-canvas"
         height="200"
         width="200" />
-      <p className="preview__caption">Click para iniciar nuevo patrón.</p>
+      <PreviewCaption text="Click para iniciar nuevo patrón" />
     </div>
   );
 }

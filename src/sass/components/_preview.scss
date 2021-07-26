@@ -1,28 +1,30 @@
 // Preview colors.
-$preview-color: white;
-$preview-color--blue: #2372dc;
-$preview-color--green: #07703b;
-$preview-color--light-blue: #8fb7ef;
-$preview-color--light-green: #7eb499;
+$color: white;
+$color--blue: #4785ff;
+$color--green: #09672f;
 
 // Default color scheme (light).
 :root {
-  --preview-bg: #{$preview-color--blue};
-  --preview-color: #{$preview-color};
-  --preview-outline: #{$preview-color--light-blue};
+  --preview-bg: #{$color--blue};
+  --preview-color: #{$color};
+  --color--line: #ffffff1a;
+  --color--outline: #ffffff33;
 }
 
 // Dark color scheme.
 .dark {
-  --preview-bg: #{$preview-color--green};
-  --preview-color: #{$preview-color};
-  --preview-outline: #{$preview-color--light-green};
+  --preview-bg: #{$color--green};
+  --preview-color: #{$color};
+  --color--line: #ffffff14;
+  --color--outline: #ffffff29;
 }
 
 .preview {
-  @include box-shadow;
   background-color: var(--preview-bg);
-  background-image: url("../images/blue.png");
+  $line--short: transparent, transparent 5px, var(--color--line) 5px, var(--color--line) 6px;
+  $line--large: transparent, transparent 29px, var(--color--line) 29px, var(--color--line) 30px;
+  background-image: repeating-linear-gradient(to right, $line--short), repeating-linear-gradient(to right, $line--large),
+    repeating-linear-gradient($line--short), repeating-linear-gradient($line--large);
   border: 0.5rem solid var(--preview-bg);
   border-radius: $border-radius;
   color: var(--preview-color);
@@ -31,58 +33,34 @@ $preview-color--light-green: #7eb499;
   grid-area: prev;
   margin-bottom: 1rem;
   min-height: 200px;
-  outline: 1px solid var(--preview-outline);
+  outline: 1px solid var(--color--outline);
   outline-offset: -0.5rem;
   place-content: center;
   & ::selection {
     background-color: black;
     color: white;
   }
-  .dark & {
-    background-image: url("../images/green.png");
-  }
 }
 
 .preview__main {
   align-self: center;
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   height: 100%;
   place-items: center;
-  margin: 2rem;
+  margin: 2rem 1rem;
 }
 
 .preview__body {
-  @include box-shadow;
+  @include box-shadow(2, $on-dark: true);
   place-self: center;
 }
 
-.preview__caption {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 1px 0.5rem 0;
+p.preview__caption {
+  background-color: #0009;
+  padding: 2px 1ch 0;
 }
 
 .preview__canvas {
   border-radius: $border-radius;
-}
-
-.preview__footer {
-  display: flex;
-  font-size: $font-size--extra-small;
-}
-
-.preview__new-tools,
-.preview__date {
-  background-color: var(--preview-bg);
-  color: var(--preview-color);
-  outline: 1px solid var(--preview-outline);
-  padding: 1px 0.5rem 0;
-}
-
-.preview__date {
-  margin-left: auto;
-}
-
-.new-tools__tag::after {
-  content: " ";
 }

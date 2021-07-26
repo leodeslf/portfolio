@@ -2,7 +2,7 @@
   @include relief-card;
   padding-left: 0.5rem;
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   width: fit-content;
 }
 
@@ -34,15 +34,16 @@
   padding: 0 0.25rem 0 0.5rem;
   gap: 0.5ch;
   &:hover {
-    background-color: var(--color--shadow);
+    background-color: var(--bg--active);
   }
   .icon {
-    padding-left: 2px;
+    transform: translateY(1px);
   }
 }
 
 .connect__pic {
   display: flex;
+  align-self: center;
   img {
     aspect-ratio: 90/132;
     border-radius: $border-radius;

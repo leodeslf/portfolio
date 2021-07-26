@@ -38,8 +38,8 @@ function run() {
 
 // Reduce the distance to the target by 8px at a time.
 function update() {
-  const diff = Vec2.subtract(nextTarget, iKModule.target).normalize().scale(8);
-  if (Vec2.distance(nextTarget, Vec2.add(iKModule.target, diff)) > 8) {
+  const diff = Vec2.subtract(nextTarget, iKModule.target).normalize().scale(5);
+  if (Vec2.distance(nextTarget, Vec2.add(iKModule.target, diff)) > 5) {
     iKModule.target.add(diff);
   } else {
     iKModule.target.copy(nextTarget);

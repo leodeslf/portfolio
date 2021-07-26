@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Vec2 } from '../preview-util/vec.min';
 import { canvasH, canvasW } from '../preview-util/util';
 import { initControl, setTarget } from './control'
+import PreviewCaption from '../PreviewCaption';
 
 // Canvas offset on page.
 let canvasOffset = new Vec2();
@@ -40,7 +41,7 @@ export default function IK() {
         id="ik__canvas"
         height={canvasH}
         width={canvasW} />
-      <p className="preview__caption">Click para arrastrar/definir el objetivo.</p>
+      <PreviewCaption text="Click para mover el objetivo" />
     </div>
   );
 }

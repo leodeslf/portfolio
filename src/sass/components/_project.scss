@@ -26,10 +26,33 @@
   width: fit-content;
 }
 
+.project__new-tools {
+  display: flex;
+  gap: 0.5ch;
+  &::before {
+    align-self: center;
+    content: "Nuevo";
+    font-weight: 500;
+  }
+  .dark & {
+    font-weight: 400;
+  }
+}
+
+.new-tools__tool {
+  background-color: var(--color--em);
+  border-radius: $border-radius;
+  color: var(--bg--em);
+  cursor: default;
+  line-height: 1;
+  padding: 0.5ch 1ch;
+  text-transform: uppercase;
+}
+
 .project__title {
   margin-bottom: 0rem;
   margin-right: auto;
-  & > a {
+  > a {
     color: var(--color);
     font: inherit;
     display: flex;

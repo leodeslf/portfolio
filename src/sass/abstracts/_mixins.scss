@@ -8,47 +8,34 @@
   }
 }
 
-// Dep.
-@mixin color($em: false) {
-  @if not $em {
-    color: var(--color);
-  } @else {
-    color: var(--color--em);
-  }
-}
-
 @mixin anchor-color {
   color: var(--color--anchor);
   text-decoration-color: var(--color--anchor);
-}
-
-// Dep.
-@mixin bg($em: false) {
-  @if not $em {
-    background-color: var(--bg);
-  } @else {
-    background-color: var(--bg--em);
-  }
 }
 
 @mixin border($prop, $line-width) {
   #{$prop}: $line-width solid var(--color--border);
 }
 
-@mixin box-shadow($index: 1) {
-  $a: 0 (1px * $index) (3px * $index) 1px;
-  $b: 0 2px 2px;
-  box-shadow: $a var(--color--shadow), $b var(--color--shadow);
+@mixin box-shadow($index: 1, $on-dark: false) {
+  $a: 0 1px 2px 1px;
+  $b: 0 (4px * $index) (4px * $index) 0px;
+  $c: 0 (6px * $index) (6px * $index) 0px;
+  @if $on-dark {
+    box-shadow: $a var(--color--shadow-on-dark), $b var(--color--shadow-on-dark), $c var(--color--shadow-on-dark);
+  } @else {
+    box-shadow: $a var(--color--shadow), $b var(--color--shadow), $c var(--color--shadow);
+  }
 }
 
 @mixin base-container {
-  @include color;
-  @include bg;
+  color: var(--color);
+  background-color: var(--bg);
 }
 
 @mixin ascent-container {
-  @include color;
-  @include bg($em: true);
+  color: var(--color);
+  background-color: var(--bg--em);
 }
 
 @mixin base-card {

@@ -1,17 +1,6 @@
-/* .tools__plant {
-  @include relief-card;
-  align-self: center;
-  border-radius: 50%;
-  margin-bottom: 0;
-  margin-top: 1rem;
-  cursor: default;
-  font-size: $font-size--big;
-  height: 3em;
-  width: 3em;
-} */
-
 .tools__groups {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 0.5rem;
 }

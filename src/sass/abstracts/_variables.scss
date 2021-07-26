@@ -6,24 +6,22 @@ $grey: #90a9a3;
 $grey--dark: #697579;
 $blue: #224aff;
 $blue--light: #c2e9ff;
-$yellow: #ffff10;
-$green: #104134;
-$green--dark: #101819;
-$black--alpha-heavy: #0003;
-$black--alpha-medium: #0002;
-$black--alpha-light: #0001;
+$yellow: #ff2;
+$green: #0e392b;
+$green--dark: #0c1617;
 
 // Default color scheme (light).
 :root {
   color-scheme: light;
   --bg: #{$blue--light};
   --bg--em: #{$white};
-  --bg--active: #{darken($white, 6%)};
+  --bg--active: #{darken($white, 8%)};
   --color: #{$black};
   --color--em: #{$grey--dark};
   --color--anchor: #{$blue};
-  --color--border: #{$black--alpha-medium};
-  --color--shadow: #{$black--alpha-light};
+  --color--border: #{#00000014};
+  --color--shadow: #{#0000000d};
+  --color--shadow-on-dark: #{#0000001f};
 }
 
 // Dark color scheme.
@@ -31,26 +29,27 @@ $black--alpha-light: #0001;
   color-scheme: dark;
   --bg: #{$green--dark};
   --bg--em: #{$green};
-  --bg--active: #{darken($green, 2%)};
+  --bg--active: #{darken($green, 4%)};
   --color: #{$grey--light};
   --color--em: #{$grey};
   --color--anchor: #{$yellow};
-  --color--border: #{$black--alpha-heavy};
-  --color--shadow: #{$black--alpha-medium};
+  --color--border: #{#0000002a};
+  --color--shadow: #{#00000016};
+  --color--shadow-on-dark: #{#00000026};
 }
 
 // Font sizes.
-$font-size--title: 2.8rem;
-$font-size--extra-big: 1.8rem;
-$font-size--big: 1.4rem;
+$font-size--title: 47px;
+$font-size--extra-big: 35px;
+$font-size--big: 25px;
 $font-size--normal: 18px;
-$font-size--small: 0.875rem;
-$font-size--extra-small: 0.75rem;
+$font-size--small: 15px;
+$font-size--extra-small: 13px;
 
 // Animation.
-$animation-speed--fast: 70ms;
-$animation-speed--medium: 140ms;
-$animation-speed--slow: 400ms;
+$animation-speed--fast: 80ms;
+$animation-speed--medium: 150ms;
+$animation-speed--slow: 420ms;
 $animation-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 
 // Media queries.

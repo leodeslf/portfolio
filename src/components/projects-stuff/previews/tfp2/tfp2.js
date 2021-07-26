@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Vec2 } from '../preview-util/vec.min';
 import { canvasH, canvasW } from '../preview-util/util';
 import { delegateNoiseCtxTo, delegateSkinCtxTo, CFG } from './control';
+import PreviewCaption from '../PreviewCaption';
 
 const touchAt = new Vec2();
 const touchTo = new Vec2();
@@ -34,7 +35,7 @@ export default function TFP2() {
         height={canvasH}
         width={canvasW} />
       <canvas id="tfp2__skin-canvas" />
-      <p className="preview__caption">Click para arrastrar.</p>
+      <PreviewCaption text="Click para arrastrar" />
     </div>
   );
 }

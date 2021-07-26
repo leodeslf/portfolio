@@ -14,21 +14,15 @@ export default function Project(props) {
         <Suspense fallback={<PreviewFallback message="Cargando..." />}>
           <Preview />
         </Suspense>
-        <footer className="preview__footer">
-          {tools.new.length > 0 &&
-            <span className="preview__new-tools">
-              <span className="new-tools__tag">Nuevo:</span>
-              {tools.new.map((tool, i) =>
-                <span key={i} className="new-tools__tool">
-                  {(i > 0 ? ', ' : '') + tool}
-                </span>)}.
-            </span>}
-          {/* <span className="preview__date">
-            {date.slice(3)}
-          </span> */}
-        </footer>
       </div>
       <header className="project__header">
+        {tools.new.length > 0 &&
+          <span className="project__new-tools text--extra-small">
+            {tools.new.map((tool, i) =>
+              <span key={i} className="new-tools__tool">
+                {tool}
+              </span>)}
+          </span>}
         <h3 className="project__title">
           <a href={links[0].link} title={links[0].name}>
             {title}

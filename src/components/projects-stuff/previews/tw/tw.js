@@ -10,7 +10,8 @@ export default function TW() {
       <div className="preview__main preview--tw">
         <div
           id="tw__card"
-          className="preview__body">
+          className="preview__body"
+        >
           <div className="card__header">
             <span className="card__name">
               <em>{`${weatherData.name}, ${weatherData.countryCode}`}</em>
@@ -25,7 +26,9 @@ export default function TW() {
                 alt="Bandera nacional"
                 title="Bandera nacional"
                 width="16"
-                height="16" />
+                height="16"
+                loading="lazy"
+              />
             </div>
           </div>
           <hr />
@@ -36,8 +39,12 @@ export default function TW() {
           </div>
         </div>
       </div>) ||
-    (!weatherData && <PreviewFallback message={
-      weatherData === null ? 'Cargando...' : 'Error al consultar OpenWeather.'
-    } />)
+    (!weatherData && <PreviewFallback
+      message={
+        weatherData === null ?
+          'Cargando...' :
+          'Error al consultar OpenWeather.'
+      }
+    />)
   );
 }

@@ -11,6 +11,7 @@ export default function Cv() {
           <span className="cv__buttons"><span></span></span>
         </p>
         <p><em>&lt;!-- Vista previa: --&gt;</em></p>
+        <p>---</p>
         <h3><span>#</span> Currículum Vitae</h3>
         <h4><span>##</span> ORIENTACIÓN EDUCATIVA</h4>
         <p>

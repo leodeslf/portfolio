@@ -359,6 +359,7 @@ ul {
   display: flex;
   gap: 0.5ch;
   line-height: 1;
+  margin-bottom: 0.25em;
 }
 .project__new-tools::before {
   align-self: center;
@@ -385,19 +386,13 @@ ul {
   margin-right: auto;
 }
 .project__title > a {
-  color: var(--color);
-  font: inherit;
-  display: flex;
   align-items: center;
+  color: var(--color);
+  display: flex;
+  font: inherit;
 }
 .project__title > a:hover {
   text-decoration: none;
-}
-.project__title > a .icon {
-  margin-left: 0.5ch;
-}
-.project__title > a .icon svg {
-  fill: currentColor;
 }
 
 .project__about {

@@ -30,6 +30,7 @@
   display: flex;
   gap: 0.5ch;
   line-height: 1;
+  margin-bottom: 0.25em;
   &::before {
     align-self: center;
     content: "Nuevo";
@@ -61,12 +62,6 @@
     font: inherit;
     &:hover {
       text-decoration: none;
-    }
-    .icon {
-      margin-left: 0.5ch;
-      svg {
-        fill: currentColor;
-      }
     }
   }
 }

@@ -250,7 +250,7 @@ ul {
 .tools__groups {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-top: 0.5rem;
 }
 
@@ -326,7 +326,7 @@ ul {
 .projects__container {
   display: flex;
   flex-flow: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .portfolio__project {
@@ -358,10 +358,12 @@ ul {
 .project__new-tools {
   display: flex;
   gap: 0.5ch;
+  line-height: 1;
 }
 .project__new-tools::before {
   align-self: center;
   content: "Nuevo";
+  line-height: inherit;
   font-weight: 500;
 }
 .dark .project__new-tools {
@@ -373,8 +375,8 @@ ul {
   border-radius: 4px;
   color: var(--bg--em);
   cursor: default;
-  line-height: 1;
-  padding: 0.5ch 1ch;
+  line-height: inherit;
+  padding: 0.3ch 0.6ch;
   text-transform: uppercase;
 }
 
@@ -417,7 +419,6 @@ ul {
   border-top: 1px solid var(--color--border);
   padding-top: 1rem;
   display: flex;
-  justify-content: space-between;
 }
 
 .project__link-container::after {

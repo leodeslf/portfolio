@@ -264,7 +264,7 @@
     "title": "ABChoose",
     "date": "27/04/2021",
     "about": "Una manera de ahorrar en consultas a Google Fonts",
-    "argument": "Investigar acerca de tipografías, el Standart Unicode, y cómo funcionan en la web",
+    "argument": "Investigar acerca de tipografías, el Standart Unicode, y cómo funcionan en la web. Experimentar con Axios",
     "tools": {
       "old": [
         "HTML",
@@ -272,7 +272,9 @@
         "React",
         "SASS"
       ],
-      "new": []
+      "new": [
+        "Axios"
+      ]
     },
     "res": [
       {

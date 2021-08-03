@@ -22,9 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Custom
-/logo_src
-/src/images/grid.psd
-
 # Local Netlify folder
 .netlify

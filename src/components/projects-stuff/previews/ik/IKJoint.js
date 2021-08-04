@@ -1,4 +1,4 @@
-import { Vec2 } from "../preview-util/vec.min";
+import { Vec2 } from '../../../../js/vec.min';
 
 export default class IKJoint {
   constructor(length, target) {

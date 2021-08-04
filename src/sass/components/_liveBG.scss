@@ -1,0 +1,16 @@
+.live-bg__canvas {
+  @include animation(fade-opacity, $animation-speed--slow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  .dark &.live-bg__canvas--birds {
+    display: none;
+  }
+  &.live-bg__canvas--fireflies {
+    display: none;
+    .dark & {
+      display: block;
+    }
+  }
+}

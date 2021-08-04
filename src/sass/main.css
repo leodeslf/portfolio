@@ -678,6 +678,30 @@ ul {
   }
 }
 
+.live-bg__canvas {
+  animation-duration: 420ms;
+  animation-name: fade-opacity;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .live-bg__canvas {
+    animation-duration: 0ms;
+  }
+}
+.dark .live-bg__canvas.live-bg__canvas--birds {
+  display: none;
+}
+.live-bg__canvas.live-bg__canvas--fireflies {
+  display: none;
+}
+.dark .live-bg__canvas.live-bg__canvas--fireflies {
+  display: block;
+}
+
 .settings {
   padding: 1rem;
   display: flex;

@@ -1,6 +1,6 @@
 import WOLREY from "./worley";
 import { canvasH, canvasW } from "../preview-util/util";
-import { Vec2 } from "../preview-util/vec.min";
+import { Vec2 } from '../../../../js/vec.min';
 
 let initialized = false;
 

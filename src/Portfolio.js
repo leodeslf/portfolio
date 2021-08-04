@@ -12,6 +12,8 @@ const Connect = lazy(() => import(/* webpackChunkName: "connect" */
   ROOT + 'Connect.js'));
 const Aside = lazy(() => import(/* webpackChunkName: "aside" */
   ROOT + 'Aside.js'));
+const LiveBG = lazy(() => import(/* webpackChunkName: "live-bg" */
+  ROOT + 'LiveBG.js'));
 
 export default function Portfolio() {
   return (
@@ -42,6 +44,7 @@ export default function Portfolio() {
         <Connect />
       </main>
       <Aside />
+      <LiveBG />
     </Suspense>
   );
 }

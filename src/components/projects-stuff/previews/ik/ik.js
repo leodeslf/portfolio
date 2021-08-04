@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Vec2 } from '../preview-util/vec.min';
+import { Vec2 } from '../../../../js/vec.min';
 import { canvasH, canvasW } from '../preview-util/util';
 import { initControl, setTarget } from './control'
 import PreviewCaption from '../PreviewCaption';

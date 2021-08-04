@@ -1,5 +1,5 @@
 import IKModule from './IKModule';
-import { Vec2 } from "../preview-util/vec.min";
+import { Vec2 } from '../../../../js/vec.min';
 import { canvasH, canvasW } from '../preview-util/util';
 
 let initialized = false;

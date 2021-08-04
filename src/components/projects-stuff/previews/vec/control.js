@@ -1,4 +1,4 @@
-import { Vec2 } from "../preview-util/vec.min";
+import { Vec2 } from '../../../../js/vec.min';
 
 // First time.
 let justStarted = true;

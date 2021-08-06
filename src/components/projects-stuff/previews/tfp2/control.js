@@ -17,14 +17,14 @@ skinImg.onload = () => {
   skinData = skinCtx.getImageData(0, 0, 256, 1).data;
   tryToInit();
 }
-const RGBA = 255;
 const RGBACenter = 127;
-const PixelSize = 5; // Pixels per data.
+const PixelSize = 10; // Pixels per data.
 const inversePixelSize = 1 / PixelSize;
-const index = (x, y) =>
-  Math.trunc(inversePixelSize * y *
-    inversePixelSize * canvasW +
-    inversePixelSize * x);
+const index = (x, y) => Math.trunc(
+  inversePixelSize * y *
+  inversePixelSize * canvasW +
+  inversePixelSize * x
+);
 const pixel = [0, 0, 0, 0];
 
 export const CFG = {
@@ -39,7 +39,7 @@ export const CFG = {
   persistence: 0.5,
   // View.
   traslation: new Vec2(),
-  scale: 1 / canvasW * 1.5,
+  scale: 1 / canvasW,
   pixelSize: PixelSize,
   u(x) { return (x + this.traslation.x) * this.scale; },
   v(y) { return (y + this.traslation.y) * this.scale; },
@@ -68,13 +68,15 @@ function tryToInit() {
 function noise3D() {
   for (let y = 0; y < canvasH; y += CFG.pixelSize) {
     for (let x = 0; x < canvasW; x += CFG.pixelSize) {
-      const U = CFG.u(x);
-      const V = CFG.v(y);
       let n = 0;
       let freK = CFG.frequency;
       let ampK = CFG.amplitude;
       for (let k = 0; k < CFG.octaves; k++) {
-        n += PERLIN_3D((U + k) * freK, (V + k) * freK, CFG.seed) * ampK;
+        n += PERLIN_3D(
+          (CFG.u(x) + k) * freK,
+          (CFG.v(y) + k) * freK,
+          CFG.seed
+        ) * ampK;
         freK *= CFG.lacunarity;
         ampK *= CFG.persistence;
       }
@@ -82,8 +84,8 @@ function noise3D() {
       noiseData[index(x, y)] = Math.trunc(n * RGBACenter + RGBACenter);
     }
   }
-  printFrame();
   CFG.seed += CFG.step;
+  printFrame();
   requestAnimationFrame(noise3D);
 }
 
@@ -91,8 +93,6 @@ function printFrame() {
   for (let y = 0; y < canvasH; y += CFG.pixelSize) {
     for (let x = 0; x < canvasW; x += CFG.pixelSize) {
       let value = noiseData[index(x, y)];
-      if (value > RGBA) value = RGBA;
-      if (value < 0) value = 0;
       // Read skin data a single time (RGBA).
       pixel[0] = skinData[value * 4 + 0];
       pixel[1] = skinData[value * 4 + 1];
@@ -100,10 +100,10 @@ function printFrame() {
       pixel[3] = skinData[value * 4 + 3];
       // Use skin data multiple times to fill the pixel size.
       for (let subY = 0; subY < CFG.pixelSize; subY++) {
-        if (y + subY >= canvasH) break;
+        //if (y + subY >= canvasH) break;
         for (let subX = 0; subX < CFG.pixelSize; subX++) {
-          if (x + subX >= canvasW) break;
-          const pixelIndex = (y + subY) * (canvasW) + (x + subX);
+          //if (x + subX >= canvasW) break;
+          const pixelIndex = (y + subY) * canvasW + x + subX;
           noiseImg.data[pixelIndex * 4 + 0] = pixel[0];
           noiseImg.data[pixelIndex * 4 + 1] = pixel[1];
           noiseImg.data[pixelIndex * 4 + 2] = pixel[2];

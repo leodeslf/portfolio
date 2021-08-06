@@ -272,9 +272,7 @@
         "React",
         "SASS"
       ],
-      "new": [
-        "Axios"
-      ]
+      "new": []
     },
     "res": [
       {

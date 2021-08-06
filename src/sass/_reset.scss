@@ -13,16 +13,17 @@
 }
 
 a {
-  @include anchor-color;
   cursor: pointer;
   text-decoration: none;
+  color: var(--color--anchor);
+  text-decoration-color: var(--color--anchor);
   &:hover {
     text-decoration: underline;
   }
 }
 
 body {
-  @include base-container;
+  @extend .container--base;
 }
 
 em {
@@ -38,6 +39,7 @@ h2 {
 h1 {
   font-size: $font-size--title;
   display: flex;
+  margin-bottom: 0.25em;
   & > a {
     color: inherit !important;
     text-decoration: none !important;
@@ -61,12 +63,12 @@ h4 {
 }
 
 html {
-  @include font;
+  @extend .font;
   scroll-behavior: smooth;
 }
 
 p {
-  @include text-body;
+  @extend .text-body;
   max-width: 54ch;
 }
 
@@ -75,6 +77,6 @@ strong {
 }
 
 ul {
-  @include text-body;
+  @extend .text-body;
   padding-left: 3ch;
 }

@@ -19,7 +19,7 @@
 }
 
 #vec__debug-canvas {
-  @include transition-to-all;
+  @extend .transition-to-all;
   background-color: #fffa;
   border-radius: 50%;
   box-shadow: none;
@@ -27,16 +27,4 @@
   pointer-events: none;
   position: absolute;
   top: 0;
-}
-
-@keyframes rotateHue {
-  to {
-    filter: hue-rotate(360deg);
-  }
-}
-
-@keyframes blink {
-  from {
-    opacity: 1;
-  }
 }

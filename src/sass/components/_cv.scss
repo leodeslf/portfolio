@@ -7,7 +7,7 @@
   background-color: var(--bg--em);
   border-radius: $border-radius;
   font-family: "Courier Prime", monospace;
-  font-size: 13px;
+  font-size: 14px;
   margin-top: 0.5rem;
   padding: 0.5rem 1rem 1rem;
   > h3 {
@@ -32,7 +32,7 @@
     }
   }
   .dark & {
-    background-color: mix($green--dark, black);
+    background-color:  black;
     > h3,
     > h4 {
       color: #8f8fff;
@@ -102,17 +102,5 @@
     height: 17px;
     display: flex;
     background-color: var(--color--em);
-  }
-}
-
-@keyframes cursor-blink {
-  from {
-    opacity: 0;
-  }
-  49% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
   }
 }

@@ -5,7 +5,7 @@
 }
 
 .portfolio__project {
-  @include relief-card;
+  @extend .card--base;
   color: var(--color--em);
   display: grid;
   min-width: 100%;
@@ -30,7 +30,7 @@
   display: flex;
   gap: 0.5ch;
   line-height: 1;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.25rem;
   &::before {
     align-self: center;
     content: "Nuevo";
@@ -50,6 +50,9 @@
   line-height: inherit;
   padding: 0.3ch 0.6ch;
   text-transform: uppercase;
+  .dark & {
+    color: var(--bg);
+  }
 }
 
 .project__title {

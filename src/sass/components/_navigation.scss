@@ -6,7 +6,7 @@
 }
 
 .stepper-nav__list {
-  @include no-style-list;
+  @extend .not-bulleted;
 }
 
 a.step {

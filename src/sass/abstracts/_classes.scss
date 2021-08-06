@@ -1,9 +1,17 @@
-.text--small {
-  font-size: $font-size--small;
+.container--base {
+  color: var(--color);
+  background-color: var(--bg);
 }
 
-.text--extra-small {
-  font-size: $font-size--extra-small;
+.container--em {
+  color: var(--color);
+  background-color: var(--bg--em);
+}
+
+.card--base {
+  @extend .container--em;
+  border-radius: $border-radius;
+  padding: 1rem;
 }
 
 .icon__label {
@@ -30,4 +38,42 @@
     height: 100%;
     width: 100%;
   }
+}
+
+.not-bulleted {
+  padding-left: 0;
+  li {
+    list-style: none;
+  }
+}
+
+.font {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $font-size--normal;
+  &.dark {
+    font-weight: 300;
+  }
+}
+
+.text--small {
+  font-size: $font-size--small;
+}
+
+.text--extra-small {
+  font-size: $font-size--extra-small;
+}
+
+.text-body {
+  margin-bottom: 1em;
+  * > &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.transition-to-all {
+  @include speed(transition-duration, $animation-speed--medium);
+  transition-property: all;
+  transition-timing-function: $animation-function;
 }

@@ -26,7 +26,7 @@ $half-margin: ($label-w - $moon-sun-side) * 0.5;
 }
 
 .color-scheme-switch__moon-sun {
-  @include transition-to-all;
+  @extend .transition-to-all;
   background-color: var(--color--em);
   display: flex;
   flex-shrink: 0;
@@ -57,7 +57,7 @@ $half-margin: ($label-w - $moon-sun-side) * 0.5;
   }
   // Sun extra shines
   &::before {
-    @include transition-to-all;
+    @extend .transition-to-all;
     background-color: var(--color--em);
     content: "";
     height: inherit;

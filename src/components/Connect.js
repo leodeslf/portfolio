@@ -23,19 +23,11 @@ export default function Connect() {
           </li>
           <li className="data__email">
             <button
-              className="email-button icon__label"
+              className="email-button"
               title="Copiar al portapapeles."
               onClick={() => navigator.clipboard.writeText(email)}
             >
               {email}
-              <span className="icon icon--21">
-                <svg viewBox="0 0 21 21">
-                  <path d="M13.14,3H4.93A1.38,1.38,0,0,0,3.56,4.34v9.58H4.93
-                    V4.34h8.21Zm2,2.74H7.67A1.38,1.38,0,0,0,6.3,7.08v9.58A1.38,
-                    1.38,0,0,0,7.67,18h7.52a1.37,1.37,0,0,0,1.37-1.37V7.08A1.37,
-                    1.37,0,0,0,15.19,5.71Zm0,11H7.67V7.08h7.52Z" />
-                </svg>
-              </span>
             </button>
           </li>
           <li>

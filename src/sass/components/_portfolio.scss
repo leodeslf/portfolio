@@ -1,5 +1,5 @@
 .portfolio {
-  max-width: 960px;
+  max-width: $media--max-medium + 1;
   padding: 0 4rem;
   @media screen and (max-width: $media--max-medium) {
     padding: 0 2rem;
@@ -10,6 +10,9 @@
 }
 
 .portfolio__elem {
+  &:not(:first-of-type) {
+    @extend .from-zero-opacity;
+  }
   display: flex;
   flex-direction: column;
   justify-content: center;

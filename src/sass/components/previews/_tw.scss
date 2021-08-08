@@ -2,8 +2,9 @@
   border-radius: 2px;
   background-color: #f7f7f7;
   color: #262626;
-  padding: 1px;
+  display: block;
   font-weight: 400;
+  padding: 1px;
   hr {
     border: none;
     border-bottom: 1px solid #ffffff;
@@ -29,18 +30,18 @@
     height: fit-content;
   }
   .card__temp {
-    padding: 0 9px;
-    margin: 0 0 7px;
     display: grid;
-    grid-template-rows: min-content;
     grid-template-areas:
       "temp tempMax"
       "temp tempMin";
+    grid-template-rows: min-content;
+    margin: 0 0 7px;
+    padding: 0 9px;
     p {
       margin-bottom: 0;
     }
   }
-  .temp__current {    
+  .temp__current {
     grid-area: temp;
     font-size: 49px;
     font-weight: 300;

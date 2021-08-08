@@ -1,6 +1,6 @@
 .show-hide__input {
-  &:checked + .show-hide__label .icon {
-    transform: rotateZ(-180deg) translateY(-1px);
+  &:checked + .show-hide__label {
+    transform: rotateZ(-90deg);
   }
   &:checked ~ .show-hide__content {
     display: block;
@@ -8,20 +8,49 @@
 }
 
 .show-hide__label {
-  padding: 0.25rem;
-  width: fit-content;
+  @include transition($animation-speed--fast, transform);
   border-radius: 50%;
   cursor: pointer;
-  &:hover {
-    background-color: var(--bg--active);
+  display: grid;
+  height: 30px;
+  place-content: center;
+  position: relative;
+  transform: rotateZ(0deg);
+  user-select: none;
+  width: 30px;
+  &:hover,
+  &:active {
+    background-color: var(--bg--em-active);
+    &::before {
+      border-right-color: var(--color);
+    }
+    &::after {
+      border-right-color: var(--bg--em-active);
+    }
+  }
+  &::before {
+    border-bottom: 8px solid transparent;
+    border-radius: 50%;
+    border-right: 8px solid var(--color--em);
+    border-top: 8px solid transparent;
+    content: "";
+    transform: translateX(-1.25px);
+  }
+  &::after {
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid var(--bg--em);
+    border-top: 8px solid transparent;
+    content: "";
+    place-self: center;
+    position: absolute;
+    transform: translateX(1.25px);
   }
 }
 
-.show-hide__label .icon {
-  @include speed(transition-duration, $animation-speed--fast);
-  transition-property: transform;
+/* .show-hide__label .icon {
+  @include transition($animation-speed--fast, transform);
   transform: rotateZ(-90deg) translateY(-1px);
-}
+} */
 
 .show-hide__content {
   display: none;

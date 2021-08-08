@@ -6,7 +6,6 @@
 }
 
 #root {
-  @include animation(fade-opacity, $animation-speed--slow);
   display: flex;
   justify-content: center;
   position: relative;
@@ -38,12 +37,7 @@ h2 {
 
 h1 {
   font-size: $font-size--title;
-  display: flex;
-  margin-bottom: 0.25em;
-  & > a {
-    color: inherit !important;
-    text-decoration: none !important;
-  }
+  margin-bottom: 0.25em;  
 }
 
 h2 {

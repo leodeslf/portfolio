@@ -5,7 +5,7 @@ const step = 0.25;
 
 export default class Particle {
   constructor(minX, minY, maxX, maxY) {
-    this.rev = Math.random() * PI;
+    this.rev = Math.random() * PI * 2;
     this.pos = new Vec2(
       minX + (Math.random() * (maxX - minX)),
       minY + (Math.random() * (maxY - minY))

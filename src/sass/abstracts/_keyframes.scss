@@ -1,6 +1,33 @@
-@keyframes fade-opacity {
+@keyframes from-zero-opacity {
   from {
     opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+}
+
+@keyframes appear-from-left {
+  from {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes appear-from-bottom {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes appear-from-top {
+  from {
+    transform: translateY(-100%);
+  }
+  33% {
+    transform: translateY(-100%);
   }
 }
 
@@ -16,9 +43,9 @@
   }
 }
 
-@keyframes rotateHue {
+@keyframes rotate {
   to {
-    filter: hue-rotate(360deg);
+    transform: rotateZ(360deg);
   }
 }
 

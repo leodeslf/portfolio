@@ -5,7 +5,7 @@ import initNavigationIO from '../js/navigationIO';
 export default function Navigation() {
   useEffect(() => {
     initNavigationIO();
-  }, [])
+  }, []);
 
   return (
     <nav className="stepper-nav text--small">

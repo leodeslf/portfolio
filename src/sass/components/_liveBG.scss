@@ -1,5 +1,4 @@
 .live-bg__canvas {
-  @include animation(fade-opacity, $animation-speed--slow);
   position: fixed;
   top: 0;
   left: 0;

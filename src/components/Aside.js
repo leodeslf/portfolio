@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import Settings from './Settings';
+import Settings from './features/Settings';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
-const bigMedia = window.matchMedia('screen and (min-width: 640px)');
+const bigMedia = window.matchMedia('screen and (min-width: 680px)');
 
 export default function Aside() {
   const [visible, setVisible] = useState(false);

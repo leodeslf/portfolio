@@ -1,6 +1,6 @@
 .aside {
   @media screen and (min-width: $media--max-medium + 1) {
-    padding-right: 3rem;
+    padding-right: 4rem;
   }
   @media screen and (max-width: $media--max-small) {
     height: 100vh;
@@ -35,6 +35,7 @@
 }
 
 .aside__sticky {
+  @include animation(appear-from-top, $animation-speed--slow * 1.5);
   display: flex;
   overflow-x: hidden;
   position: sticky;
@@ -44,7 +45,7 @@
 }
 
 .sticky__slide {
-  @include speed(transition-duration, $animation-speed--medium);
+  @include transition($animation-speed--medium, transform);
   background-color: var(--bg--em);
   color: var(--color--em);
   display: flex;
@@ -52,8 +53,10 @@
   flex-direction: column;
   margin-left: auto;
   pointer-events: all;
-  transition-property: transform;
   width: max-content;
+  & > * {
+    @extend .from-zero-opacity;
+  }
   @media screen and (max-width: $media--max-small) {
     transform: translateX(100%);
   }

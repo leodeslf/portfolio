@@ -27,8 +27,9 @@ $light-color: #ffffff4d;
 
 #casi {
   background-color: $bg;
-  padding: 1.15rem 1rem 1rem;
   border-radius: 9px;
+  display: block;
+  padding: 1.15rem 1rem 1rem;
   width: fit-content;
 }
 
@@ -52,8 +53,8 @@ $light-color: #ffffff4d;
 .casi__feedback {
   font-family: "Print Char 21", monospace;
   font-size: 16px;
-  text-align: right;
   min-width: 5ch;
+  text-align: right;
 }
 
 .casi__output {
@@ -71,9 +72,9 @@ $light-color: #ffffff4d;
 
 .casi__btn {
   background-color: $bg--button;
-  box-shadow: 0 2px 3px $shadow-color, 0 2px 2px $shadow-color;
   border: 1px solid #ffffff14;
   border-radius: 3px;
+  box-shadow: 0 2px 3px $shadow-color, 0 2px 2px $shadow-color;
   cursor: pointer;
   display: grid;
   font-size: 1.23rem;

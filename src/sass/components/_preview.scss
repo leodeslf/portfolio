@@ -1,40 +1,35 @@
 // Preview colors.
-$color: white;
-$color--blue: #4785ff;
-$color--green: #09672f;
+$line--mm: transparent, transparent 5px, var(--color--line) 5px, var(--color--line) 6px;
+$line-cm: transparent, transparent 29px, var(--color--line) 29px, var(--color--line) 30px;
 
 // Default color scheme (light).
 :root {
-  --preview-bg: #{$color--blue};
-  --preview-color: #{$color};
+  --preview-bg: #4785ff;
   --color--line: #ffffff1a;
   --color--outline: #ffffff33;
 }
 
 // Dark color scheme.
 .dark {
-  --preview-bg: #{$color--green};
-  --preview-color: #{$color};
+  --preview-bg: #09672f;
   --color--line: #ffffff14;
   --color--outline: #ffffff29;
 }
 
 .preview {
   background-color: var(--preview-bg);
-  $line--short: transparent, transparent 5px, var(--color--line) 5px, var(--color--line) 6px;
-  $line--large: transparent, transparent 29px, var(--color--line) 29px, var(--color--line) 30px;
-  background-image: repeating-linear-gradient(to right, $line--short), repeating-linear-gradient(to right, $line--large),
-    repeating-linear-gradient($line--short), repeating-linear-gradient($line--large);
+  background-image: repeating-linear-gradient(to right, $line--mm), repeating-linear-gradient(to right, $line-cm),
+    repeating-linear-gradient($line--mm), repeating-linear-gradient($line-cm);
   border: 0.5rem solid var(--preview-bg);
   border-radius: $border-radius;
-  color: var(--preview-color);
-  display: flex;
-  flex-direction: column;
+  color: white;
+  display: grid;
   grid-area: prev;
   margin-bottom: 1rem;
-  min-height: 200px;
+  min-height: 282px;
   outline: 1px solid var(--color--outline);
   outline-offset: -0.5rem;
+  padding: 2rem;
   place-content: center;
   & ::selection {
     background-color: black;
@@ -42,23 +37,14 @@ $color--green: #09672f;
   }
 }
 
-.preview__main {
-  align-self: center;
-  display: grid;
-  gap: 2rem;
-  height: 100%;
-  place-items: center;
-  margin: 2rem 1rem;
-}
-
 .preview__body {
+  display: flex;
   @include box-shadow(2, $on-dark: true);
-  place-self: center;
 }
 
-p.preview__caption {
+.preview__caption {
   background-color: #0009;
-  padding: 2px 1ch 0;
+  padding: 0 1ch;
 }
 
 .preview__canvas {

@@ -8,15 +8,17 @@ $half-margin: ($label-w - $moon-sun-side) * 0.5;
 }
 
 .color-scheme-switch__label {
-  background-color: var(--bg--active);
+  background-color: var(--bg--em-active);
   border-radius: $label-h * 0.5;
   cursor: pointer;
   display: flex;
   height: $label-h;
   padding: ($label-h - $moon-sun-side) * 0.5;
+  user-select: none;
   width: $label-w;
+  &:active,
   &:hover {
-    > .color-scheme-switch__moon-sun {
+    .color-scheme-switch__moon-sun {
       background-color: var(--color);
       &::before {
         background-color: var(--color);
@@ -26,7 +28,8 @@ $half-margin: ($label-w - $moon-sun-side) * 0.5;
 }
 
 .color-scheme-switch__moon-sun {
-  @extend .transition-to-all;
+  $transition-props: transform, margin, border-radius;
+  @include transition($animation-speed--medium, $transition-props);
   background-color: var(--color--em);
   display: flex;
   flex-shrink: 0;
@@ -42,7 +45,9 @@ $half-margin: ($label-w - $moon-sun-side) * 0.5;
   }
   // Center dot.
   &::after {
-    background-color: var(--bg--active);
+    $trsnsition-props: transform;
+    @include transition($animation-speed--medium, $transition-props);
+    background-color: var(--bg--em-active);
     border-radius: 50%;
     content: "";
     height: 8px;
@@ -57,7 +62,8 @@ $half-margin: ($label-w - $moon-sun-side) * 0.5;
   }
   // Sun extra shines
   &::before {
-    @extend .transition-to-all;
+    $trsnsition-props: transform;
+    @include transition($animation-speed--medium, $transition-props);
     background-color: var(--color--em);
     content: "";
     height: inherit;
@@ -65,6 +71,7 @@ $half-margin: ($label-w - $moon-sun-side) * 0.5;
     transform: rotateZ(45deg);
     width: inherit;
     .dark & {
+      @include transition(0, $transition-props);
       transform: scale(0.1);
     }
   }

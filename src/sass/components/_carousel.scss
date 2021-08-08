@@ -1,0 +1,93 @@
+.projects__carousel {
+  margin-top: 0.5rem;
+  max-width: 54ch;
+}
+
+.carousel__controls {
+  align-items: center;
+  background-color: var(--bg--active);
+  border-radius: 2.5rem;
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto 0 auto;
+  user-select: none;
+  width: fit-content;
+}
+
+.control__prev,
+.control__next {
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  height: 2.5rem;
+  place-content: center;
+  width: 2.5rem;
+  &::before {
+    border-bottom: 8px solid transparent;
+    border-radius: 3px;
+    border-top: 8px solid transparent;
+    content: "";
+  }
+}
+
+.control__next {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  &:hover,
+  &:active {
+    &::before {
+      border-left-color: var(--color);
+    }
+  }
+  &::before {
+    @include transition($animation-speed--fast, border-left-color);
+    border-left: 8px solid var(--color--em);
+  }
+}
+
+.control__prev {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  &:hover,
+  &:active {
+    &::before {
+      border-right-color: var(--color);
+    }
+  }
+  &::before {
+    @include transition($animation-speed--fast, border-right-color);
+    border-right: 8px solid var(--color--em);
+  }
+}
+
+.control__dots {
+  display: flex;
+}
+
+.dot {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 2.5rem;
+  cursor: pointer;
+  width: 22px;
+  &:hover,
+  &:active {
+    &::before {
+      @extend .dot--active;
+    }
+  }
+  &::before {
+    @include transition($animation-speed--fast, background-color);
+    background-color: var(--color--em);
+    border-radius: 50%;
+    content: "";
+    height: 4px;
+    width: 4px;
+  }
+  &.dot--active {
+    &::before {
+      background-color: var(--color);
+    }
+  }
+}

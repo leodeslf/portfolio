@@ -1,3 +1,9 @@
+@mixin animation($name, $animation-speed) {
+  @include speed(animation-duration, $animation-speed);
+  animation-name: $name;
+  animation-timing-function: $animation-function;
+}
+
 @mixin border($prop, $line-width) {
   #{$prop}: $line-width solid var(--color--border);
 }
@@ -25,8 +31,8 @@
   }
 }
 
-@mixin animation($name, $animation-speed) {
-  @include speed(animation-duration, $animation-speed);
-  animation-name: $name;
-  animation-timing-function: $animation-function;
+@mixin transition($speed, $props) {
+  @include speed(transition-duration, $speed);
+  transition-property: $props;
+  transition-timing-function: $animation-function;
 }

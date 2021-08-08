@@ -1,3 +1,9 @@
+.card--base {
+  @extend .container--em;
+  border-radius: $border-radius;
+  padding: 1rem;
+}
+
 .container--base {
   color: var(--color);
   background-color: var(--bg);
@@ -8,13 +14,22 @@
   background-color: var(--bg--em);
 }
 
-.card--base {
-  @extend .container--em;
-  border-radius: $border-radius;
-  padding: 1rem;
+.font {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $font-size--normal;
+  &.dark {
+    font-weight: 300;
+  }
+}
+
+.from-zero-opacity {
+  @include animation(from-zero-opacity, $animation-speed--slow * 2.5);
 }
 
 .icon__label {
+  @include transition($animation-speed--fast, fill);
   cursor: pointer;
   &:hover > .icon > svg,
   &:active > .icon > svg {
@@ -25,10 +40,6 @@
 .icon {
   display: flex;
   user-select: none;
-  &--21 {
-    height: 21px;
-    width: 21px;
-  }
   &--24 {
     height: 24px;
     width: 24px;
@@ -47,13 +58,10 @@
   }
 }
 
-.font {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: $font-size--normal;
-  &.dark {
-    font-weight: 300;
+.text-body {
+  margin-bottom: 1em;
+  * > &:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -63,17 +71,4 @@
 
 .text--extra-small {
   font-size: $font-size--extra-small;
-}
-
-.text-body {
-  margin-bottom: 1em;
-  * > &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.transition-to-all {
-  @include speed(transition-duration, $animation-speed--medium);
-  transition-property: all;
-  transition-timing-function: $animation-function;
 }

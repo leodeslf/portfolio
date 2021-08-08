@@ -1,5 +1,12 @@
 .preview--vec {
   position: relative;
+  border-radius: 50%;
+  &:hover #vec__debug-canvas {
+    opacity: 1;
+  }
+  &.finish #vec__debug-canvas {
+    animation: blink 1 $animation-speed--slow $animation-function;
+  }
 }
 
 #vec__canvas {
@@ -7,24 +14,17 @@
   border-radius: 50%;
   cursor: pointer;
   user-select: none;
-  &:hover + #vec__debug-canvas {
-    opacity: 1;
-  }
-  &.finish {
-    animation: rotateHue infinite 2s linear;
-  }
-  &.finish + #vec__debug-canvas {
-    animation: blink 1 1s ease-out;
-  }
 }
 
 #vec__debug-canvas {
-  @extend .transition-to-all;
+  @include transition($animation-speed--fast, opacity);
   background-color: #fffa;
   border-radius: 50%;
   box-shadow: none;
+  left: 0;
   opacity: 0;
   pointer-events: none;
   position: absolute;
   top: 0;
+  z-index: 2;
 }

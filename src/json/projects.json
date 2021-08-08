@@ -209,7 +209,7 @@
   {
     "title": "Inverse Kinematics",
     "date": "10/12/2020",
-    "about": "Módulo y articulaciones de cinemática inversa",
+    "about": "Cinemática inversa en TypeScript",
     "argument": "Experimentar con TypeScript",
     "tools": {
       "old": [],
@@ -235,7 +235,7 @@
   {
     "title": "this.weather-v2",
     "date": "20/01/2021",
-    "about": "Segunda versión del proyecto this.weather",
+    "about": "Segunda versión de this.weather",
     "argument": "Empezar con Angular y familiarizarme con Firebase",
     "tools": {
       "old": [
@@ -263,7 +263,7 @@
   {
     "title": "ABChoose",
     "date": "27/04/2021",
-    "about": "Una manera de ahorrar en consultas a Google Fonts",
+    "about": "Optimización para Google Fonts",
     "argument": "Investigar acerca de tipografías, el Standart Unicode, y cómo funcionan en la web. Experimentar con Axios",
     "tools": {
       "old": [

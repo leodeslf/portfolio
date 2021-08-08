@@ -14,8 +14,9 @@ $green--dark: #0c1617;
 :root {
   color-scheme: light;
   --bg: #{$blue--light};
+  --bg--active: #{lighten($blue--light, 6%)};
   --bg--em: #{$white};
-  --bg--active: #{darken($white, 8%)};
+  --bg--em-active: #{darken($white, 6%)};
   --color: #{$black};
   --color--em: #{$grey--dark};
   --color--anchor: #{$blue};
@@ -28,8 +29,9 @@ $green--dark: #0c1617;
 .dark {
   color-scheme: dark;
   --bg: #{$green--dark};
+  --bg--active: #{lighten($green--dark, 3%)};
   --bg--em: #{$green};
-  --bg--active: #{darken($green, 4%)};
+  --bg--em-active: #{darken($green, 3%)};
   --color: #{$grey--light};
   --color--em: #{$grey};
   --color--anchor: #{$yellow};
@@ -47,10 +49,10 @@ $font-size--small: 15px;
 $font-size--extra-small: 13px;
 
 // Animation.
-$animation-speed--fast: 80ms;
-$animation-speed--medium: 140ms;
-$animation-speed--slow: 480ms;
-$animation-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+$animation-speed--fast: 100ms;
+$animation-speed--medium: 200ms;
+$animation-speed--slow: 600ms;
+$animation-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 // Media queries.
 $media--max-big: 1199px;

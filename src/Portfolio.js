@@ -3,7 +3,7 @@ import { lazy, Suspense } from 'react';
 const ROOT = './components/';
 
 const Projects = lazy(() => import(/* webpackChunkName: "projects" */
-  ROOT + 'projects-stuff/Projects.js'));
+  ROOT + 'Projects.js'));
 const Tools = lazy(() => import(/* webpackChunkName: "tools" */
   ROOT + 'Tools.js'));
 const Cv = lazy(() => import(/* webpackChunkName: "cv" */

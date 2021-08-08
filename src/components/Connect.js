@@ -1,5 +1,5 @@
 export default function Connect() {
-  const email = 'leodeslf@gmail.com'
+  const email = 'leodeslf@gmail.com';
 
   return (
     <section id="connect" className="portfolio__connect portfolio__elem">

@@ -1,0 +1,15 @@
+.portfolio__start {
+  h1 {
+    overflow-y: hidden;
+    display: flex;
+    a {
+      @include animation(appear-from-bottom, $animation-speed--slow);
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+  }
+}
+
+.start__description {
+  @extend .from-zero-opacity;
+}

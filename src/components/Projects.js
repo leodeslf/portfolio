@@ -9,7 +9,7 @@ export default function Projects() {
 
   useEffect(() => {
     fetchWeatherData().then(res => {
-      //if (res === false || res) setWeatherData(res);
+      if (res === false || res) setWeatherData(res);
     });
   }, []);
 

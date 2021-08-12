@@ -831,9 +831,10 @@ ul {
   background-color: var(--bg--em);
   color: var(--color--em);
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
   margin-left: auto;
+  overflow-x: hidden;
   pointer-events: all;
   width: max-content;
 }

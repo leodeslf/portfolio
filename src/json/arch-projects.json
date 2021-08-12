@@ -24,8 +24,7 @@
         "name": "repositorio",
         "link": "https://github.com/leodeslf/postage-stamps"
       }
-    ],
-    "preview": "stamps"
+    ]
   },
   {
     "title": "Le cuenta un pajarito",
@@ -52,5 +51,33 @@
         "link": "https://github.com/leodeslf/le-cuenta-un-pajarito"
       }
     ]
+  },
+  {
+    "title": "Bomberman",
+    "date": "20/08/2021",
+    "about": "Remake de bomberman (NES)",
+    "argument": "Experimentar con Svelte utilizando Vite. Aprender TypeScript avanzado.",
+    "tools": {
+      "old": [
+        "HTML",
+        "SASS",
+        "TypeScript"
+      ],
+      "new": [
+        "Svelte"
+      ]
+    },
+    "res": null,
+    "links": [
+      {
+        "name": "Web",
+        "link": ""
+      },
+      {
+        "name": "repositorio",
+        "link": "https://github.com/leodeslf/bomberman"
+      }
+    ],
+    "preview": "bomberman"
   }
 ]

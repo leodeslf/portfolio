@@ -1,12 +1,5 @@
 .portfolio {
-  max-width: $media--max-medium + 1;
-  padding: 0 4rem;
-  @media screen and (max-width: $media--max-medium) {
-    padding: 0 2rem;
-  }
-  @media screen and (max-width: $media--max-small) {
-    padding: 0 1rem;
-  }
+  padding: 0 1rem;
 }
 
 .portfolio__elem {
@@ -17,6 +10,7 @@
   flex-direction: column;
   justify-content: center;
   margin-bottom: 4rem;
+  max-width: $media--max-small;
   padding-top: 4rem;
   &:first-of-type {
     margin-top: 8rem;

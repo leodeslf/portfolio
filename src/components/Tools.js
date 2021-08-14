@@ -2,11 +2,11 @@ import TOOLS from '../json/tools.json';
 
 export default function Tools() {
   return (
-    <section id="tools" className="portfolio__tools portfolio__elem">
+    <section
+      id="tools"
+      className="portfolio__tools portfolio__elem"
+    >
       <h2>Herramientas</h2>
-      {/* <span className="tools__plant">
-        🌱
-      </span> */}
       <div className="tools__groups">
         {TOOLS.map((toolsGroup, i) =>
           <ToolsGroup {...toolsGroup} key={i} />)}

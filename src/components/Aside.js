@@ -3,11 +3,11 @@ import Settings from './features/Settings';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
-const bigMedia = window.matchMedia('screen and (min-width: 680px)');
+const mediaToShowAside = window.matchMedia('screen and (min-width: 680px)');
 
 export default function Aside() {
   const [visible, setVisible] = useState(false);
-  bigMedia.onchange = e => {
+  mediaToShowAside.onchange = e => {
     if (e.matches) setVisible(false);
   }
 

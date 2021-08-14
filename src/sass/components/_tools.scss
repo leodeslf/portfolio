@@ -13,15 +13,12 @@
     @include card--shadow-card;
     color: var(--color);
   }
-  h3 {
-    color: var(--color);
-  }
 }
 
 .tools__sub-groups {
   display: flex;
   gap: 1rem;
-  > ul {
+  ul {
     @extend .not-bulleted;
     margin-bottom: 0;
     &:not(:first-child) {
@@ -29,8 +26,4 @@
       padding-left: 1rem;
     }
   }
-}
-
-.tools__item {
-  color: inherit;
 }

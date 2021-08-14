@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { initControl, reset } from './control';
+import "./vec.scss";
 
 export default function Vec() {
   useEffect(() => {

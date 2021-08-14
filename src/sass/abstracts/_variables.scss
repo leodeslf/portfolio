@@ -43,35 +43,3 @@ $border-radius: 4px;
 
 $max-width--sections: 51ch;
 $max-width--page: 1024px;
-
-// Default (light) color scheme.
-:root {
-  color-scheme: light;
-  font-weight: $font-weight;
-  --bg: #{$bg};
-  --bg--active: #{lighten($bg, 6%)};
-  --bg--em: #{$bg--em};
-  --bg--em-active: #{darken($bg--em, 6%)};
-  --color: #{$color};
-  --color--em: #{$color--em};
-  --color--anchor: #{$blue};
-  --color--border: #00006014;
-  --color--shadow: #0000600d;
-  --color--shadow-on-dark: #00004020;
-}
-
-// Dark color scheme.
-.dark {
-  color-scheme: dark;
-  font-weight: $font-weight--dark;
-  --bg: #{$bg--dark};
-  --bg--active: #{lighten($bg--dark, 3%)};
-  --bg--em: #{$bg--em-dark};
-  --bg--em-active: #{darken($bg--em-dark, 3%)};
-  --color: #{$color--dark};
-  --color--em: #{$color--em-dark};
-  --color--anchor: #{$yellow};
-  --color--border: #0000002a;
-  --color--shadow: #00000016;
-  --color--shadow-on-dark: #00000020;
-}

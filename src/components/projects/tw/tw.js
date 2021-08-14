@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import PreviewFallback from '../PreviewFallback';
 import { WeatherDataContext } from '../../Projects';
+import "./tw.scss";
 
 export default function TW() {
   const { weatherData } = useContext(WeatherDataContext);

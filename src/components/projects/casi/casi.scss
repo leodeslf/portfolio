@@ -1,3 +1,5 @@
+@import "../../../sass/abstracts/variables";
+
 $color: #ffffff;
 $color--display: #272415;
 
@@ -13,8 +15,8 @@ $light-color: #ffffff4d;
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url("../fonts/DSEG7Classic-Italic.woff2") format("woff2"),
-    url("../fonts/DSEG7Classic-Italic.woff") format("woff");
+  src: url("../../../fonts/DSEG7Classic-Italic.woff2") format("woff2"),
+    url("../../../fonts/DSEG7Classic-Italic.woff") format("woff");
 }
 
 @font-face {
@@ -22,7 +24,7 @@ $light-color: #ffffff4d;
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("../fonts/PrintChar21.woff2") format("woff2"), url("../fonts/PrintChar21.woff") format("woff");
+  src: url("../../../fonts/PrintChar21.woff2") format("woff2"), url("../../../fonts/PrintChar21.woff") format("woff");
 }
 
 #casi {

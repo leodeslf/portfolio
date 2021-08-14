@@ -1,5 +1,6 @@
 .projects__project {
-  @include card--shadow-card;
+  @include box-shadow;
+  @extend .card--base;
   color: var(--color--em);
   display: grid;
   grid-template-areas: "prev prev" "header show-hide" "about show-hide" "details details";

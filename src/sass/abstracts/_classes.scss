@@ -1,17 +1,8 @@
 .card--base {
-  @extend .container--em;
-  border-radius: $border-radius;
-  padding: 1rem;
-}
-
-.container--base {
-  color: var(--color);
-  background-color: var(--bg);
-}
-
-.container--em {
   color: var(--color);
   background-color: var(--bg--em);
+  border-radius: $border-radius;
+  padding: 1rem;
 }
 
 .from-zero-opacity {
@@ -32,12 +23,6 @@
   &--24 {
     height: 24px;
     width: 24px;
-  }
-  svg {
-    @include transition($animation-speed--fast, fill);
-    fill: var(--color--em);
-    height: 100%;
-    width: 100%;
   }
 }
 

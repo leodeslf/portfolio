@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { initControl } from './control';
+import "./tfp.scss";
 
 export default function TFP() {
   useEffect(() => {

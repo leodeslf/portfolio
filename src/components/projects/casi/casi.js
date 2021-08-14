@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import "./casi.scss";
 
 export default function Casi() {
   const limit = 5;

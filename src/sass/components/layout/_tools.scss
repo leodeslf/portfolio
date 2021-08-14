@@ -10,7 +10,8 @@
   color: var(--color--em);
   max-height: min-content;
   &--core {
-    @include card--shadow-card;
+    @include box-shadow;
+    @extend .card--base;
     color: var(--color);
   }
   h3 {

@@ -28,7 +28,8 @@ a {
 }
 
 body {
-  @extend .container--base;
+  color: var(--color);
+  background-color: var(--bg);
 }
 
 em {
@@ -94,6 +95,13 @@ p {
 
 strong {
   font-weight: $font-weight--strong;
+}
+
+svg {
+  @include transition($animation-speed--fast, fill);
+  fill: var(--color--em);
+  height: 100%;
+  width: 100%;
 }
 
 ul {

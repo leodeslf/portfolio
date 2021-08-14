@@ -61,7 +61,8 @@
 }
 
 .aside__button {
-  @include card--shadow-card(2);
+  @include box-shadow(2);
+  @extend .card--base;
   border: none;
   bottom: 2rem;
   display: none;

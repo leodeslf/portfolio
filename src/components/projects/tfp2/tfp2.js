@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Vec2 } from '../../../js/vec.min';
 import { delegateNoiseCtxTo, delegateSkinCtxTo, CFG } from './control';
+import "./tfp2.scss";
 
 const touchAt = new Vec2();
 const touchTo = new Vec2();

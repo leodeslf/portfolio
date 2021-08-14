@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Vec2 } from '../../../js/vec.min';
-import { initControl, setTarget } from './control'
+import { initControl, setTarget } from './control';
+import "./ik.scss";
 
 // Canvas offset on page.
 let canvasOffset = new Vec2();

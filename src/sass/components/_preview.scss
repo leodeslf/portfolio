@@ -1,17 +1,16 @@
-// Preview colors.
 $line--mm: transparent, transparent 5px, var(--color--line) 5px, var(--color--line) 6px;
 $line-cm: transparent, transparent 29px, var(--color--line) 29px, var(--color--line) 30px;
 
 // Default color scheme (light).
 :root {
-  --preview-bg: #4785ff;
+  --preview-bg: #5297ff;
   --color--line: #ffffff1a;
   --color--outline: #ffffff33;
 }
 
 // Dark color scheme.
 .dark {
-  --preview-bg: #09672f;
+  --preview-bg: #00662c;
   --color--line: #ffffff14;
   --color--outline: #ffffff29;
 }
@@ -29,7 +28,6 @@ $line-cm: transparent, transparent 29px, var(--color--line) 29px, var(--color--l
   min-height: 282px;
   outline: 1px solid var(--color--outline);
   outline-offset: -0.5rem;
-  padding: 2rem;
   place-content: center;
   & ::selection {
     background-color: black;
@@ -40,11 +38,6 @@ $line-cm: transparent, transparent 29px, var(--color--line) 29px, var(--color--l
 .preview__body {
   display: flex;
   @include box-shadow(2, $on-dark: true);
-}
-
-.preview__caption {
-  background-color: #0009;
-  padding: 0 1ch;
 }
 
 .preview__canvas {

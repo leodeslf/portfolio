@@ -3,7 +3,7 @@ import Particle from "./particle.js";
 // General state.
 const canvasArray = [];
 const ctxArray = [];
-let w, h;
+let w, h, debounceReset;
 
 // Particles state.
 const particles = 8;
@@ -29,9 +29,13 @@ export function initLiveBG() {
   resetParticles();
   drawParticles();
 
+  // Resize canvas and particles at resize with debouncing.
   window.addEventListener('resize', () => {
-    resetDimentions();
-    resetParticles();
+    clearTimeout(debounceReset);
+    debounceReset = setTimeout(() => {
+      resetDimentions();
+      resetParticles();
+    }, 1000)
   });
 }
 

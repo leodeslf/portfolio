@@ -2,7 +2,7 @@
   color: var(--color--em);
   background-color: var(--bg--em);
   border-radius: $border-radius;
-  font-family: "Courier Prime", monospace;
+  font-family: $font-family--console;
   font-size: 14px;
   margin-top: 0.5rem;
   padding: 0.5rem 1rem 1rem;
@@ -67,22 +67,24 @@
     width: 9px;
   }
   span {
-    background-color: hsl(56, 100%, 65%);
+    background-color: hsl(56, 100%, 60%);
   }
   &::before {
-    background-color: hsl(120, 100%, 65%);
+    background-color: hsl(120, 100%, 60%);
   }
   &::after {
     background-color: hsl(0, 100%, 65%);
   }
-  .dark span {
-    background-color: hsl(56, 70%, 50%);
-  }
-  .dark &::before {
-    background-color: hsl(120, 70%, 50%);
-  }
-  .dark &::after {
-    background-color: hsl(0, 70%, 50%);
+  .dark & {
+    span {
+      background-color: hsl(56, 70%, 45%);
+    }
+    &::before {
+      background-color: hsl(120, 70%, 50%);
+    }
+    &::after {
+      background-color: hsl(0, 70%, 50%);
+    }
   }
 }
 

@@ -17,9 +17,9 @@ $color--em-dark: #90a9a3;
 
 $font-size--title: 64px;
 $font-size--extra-big: 44px;
-$font-size--big: 28px;
-$font-size: 16px;
-$font-size--small: 13px;
+$font-size--big: 22px;
+$font-size: 18px;
+$font-size--small: 14px;
 
 $font-weight: 400;
 $font-weight--dark: 300;
@@ -28,18 +28,21 @@ $font-weight--heading: 700;
 
 $font-family: "Montserrat", sans-serif;
 $font-family--heading: "Lusitana", serif;
+$font-family--console: "Courier Prime", monospace;
 
 $animation-speed--fast: 100ms;
 $animation-speed--medium: 200ms;
 $animation-speed--slow: 480ms;
 $animation-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-$media--max-big: 1023px;
-$media--max-medium: 869px;
-$media--max-small: 679px;
+$media--max-medium: 819px;
+$media--max-small: 699px;
+$media--max-extra-small: 619px;
 
 $border-radius: 4px;
-$content-max-width: 540px;
+
+$max-width--sections: 51ch;
+$max-width--page: 1024px;
 
 // Default (light) color scheme.
 :root {

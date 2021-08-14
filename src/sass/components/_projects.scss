@@ -1,5 +1,5 @@
 .projects__project {
-  @extend .card--base;
+  @include card--shadow-card;
   color: var(--color--em);
   display: grid;
   grid-template-areas: "prev prev" "header show-hide" "about show-hide" "details details";

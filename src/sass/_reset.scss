@@ -14,7 +14,7 @@
   justify-content: space-evenly;
   margin: 0 auto;
   position: relative;
-  max-width: $media--max-big;
+  max-width: $max-width--page;
 }
 
 a {
@@ -89,7 +89,7 @@ html {
 
 p {
   @extend .text-body;
-  max-width: $content-max-width;
+  max-width: $max-width--sections;
 }
 
 strong {

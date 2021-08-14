@@ -13,6 +13,9 @@
     @include card--shadow-card;
     color: var(--color);
   }
+  h3 {
+    font-size: $font-size--small;
+  }
 }
 
 .tools__sub-groups {

@@ -1,5 +1,5 @@
 .aside {
-  @media screen and (max-width: $media--max-small) {
+  @media screen and (max-width: $media--max-extra-small) {
     height: 100vh;
     pointer-events: none;
     position: fixed;
@@ -55,7 +55,7 @@
   > * {
     @extend .from-zero-opacity;
   }
-  @media screen and (max-width: $media--max-small) {
+  @media screen and (max-width: $media--max-extra-small) {
     transform: translateX(100%);
   }
 }
@@ -70,7 +70,7 @@
   position: fixed;
   right: 2rem;
   width: fit-content;
-  @media screen and (max-width: $media--max-small) {
+  @media screen and (max-width: $media--max-extra-small) {
     display: flex;
   }
 }

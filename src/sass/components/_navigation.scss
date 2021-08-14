@@ -21,8 +21,8 @@ a.step {
   line-height: 2;
   padding: 0 2rem 0 1rem;
   text-decoration: none;
-  &:hover,
   &:active,
+  &:hover,
   &.step--active {
     color: var(--color);
   }

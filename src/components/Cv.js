@@ -12,19 +12,18 @@ export default function Cv() {
         </p>
         <p><em>&lt;!-- Vista previa: --&gt;</em></p>
         <p>---</p>
-        <h3><span>#</span> Currículum Vitae</h3>
-        <h4><span>##</span> ORIENTACIÓN EDUCATIVA</h4>
+        <h3>ORIENTACIÓN EDUCATIVA</h3>
         <p>
           <strong>EMT - Informática</strong> - <em>Escuela Superior de
             Informática</em>
         </p>
-        <h4><span>##</span> FORMACIÓN COMPLEMENTARIA</h4>
+        <h3>FORMACIÓN COMPLEMENTARIA</h3>
         <p>
           <strong>Desarrollo Frontend</strong> - <em>Autodidacta</em><br />
           <strong>Testing Funcional de Software</strong> - <em>Fundación
             Forge</em>
         </p>
-        <h4><span>##</span> IDIOMAS</h4>
+        <h3>IDIOMAS</h3>
         <p>
           <strong>Portugués</strong> - <em>Materno</em><br />
           <strong>Inglés</strong> - <em>Intermedio</em>

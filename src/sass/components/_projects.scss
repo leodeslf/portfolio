@@ -1,6 +1,3 @@
-/* .portfolio__projects {
-} */
-
 .projects__project {
   @extend .card--base;
   color: var(--color--em);
@@ -25,39 +22,10 @@
   width: fit-content;
 }
 
-/* .project__new-tools {
-  display: flex;
-  gap: 0.5ch;
-  line-height: 1;
-  margin-bottom: 0.25rem;
-  &::before {
-    align-self: center;
-    content: "Nuevo";
-    line-height: inherit;
-    font-weight: 500;
-  }
-  .dark & {
-    font-weight: 400;
-  }
-}
-
-.new-tools__tool {
-  background-color: var(--color--em);
-  border-radius: $border-radius;
-  color: var(--bg--em);
-  cursor: default;
-  line-height: inherit;
-  padding: 0.3ch 0.6ch;
-  text-transform: uppercase;
-  .dark & {
-    color: var(--bg);
-  }
-} */
-
 .project__title {
   margin-bottom: 0rem;
   margin-right: auto;
-  > a {
+  a {
     align-items: center;
     color: var(--color);
     display: flex;
@@ -85,7 +53,12 @@
   }
 }
 
-.project__details footer {
+.project__new-tool sup {
+  @extend strong;
+  cursor: default;
+}
+
+.project__footer {
   @include border(border-top, 1px);
   padding-top: 1rem;
   display: flex;

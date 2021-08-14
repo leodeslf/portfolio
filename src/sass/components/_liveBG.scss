@@ -6,7 +6,7 @@
   .dark &.live-bg__canvas--birds {
     display: none;
   }
-  &.live-bg__canvas--fireflies {
+  &--fireflies {
     display: none;
     .dark & {
       display: block;

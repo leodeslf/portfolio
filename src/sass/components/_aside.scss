@@ -1,7 +1,4 @@
 .aside {
-  @media screen and (min-width: $media--max-medium + 1) {
-    padding-right: 4rem;
-  }
   @media screen and (max-width: $media--max-small) {
     height: 100vh;
     pointer-events: none;
@@ -10,11 +7,11 @@
     top: 0;
     width: 100vw;
     &[isvisible="true"] {
-      & .aside__close {
+      .aside__close {
         pointer-events: all;
       }
-      & .sticky__slide {
-        /* Like `@include box-shadow; but to the left. */
+      .sticky__slide {
+        // Like `@include box-shadow; but to the left.
         $a: -1px 0 2px 1px;
         $b: -8px 0 8px 0px;
         $c: -12px 0 12px 0px;
@@ -54,8 +51,8 @@
   margin-left: auto;
   overflow-x: hidden;
   pointer-events: all;
-  width: max-content;
-  & > * {
+  min-width: max-content;
+  > * {
     @extend .from-zero-opacity;
   }
   @media screen and (max-width: $media--max-small) {

@@ -19,11 +19,6 @@
   }
 }
 
-@mixin card--shadow-card($index: 1) {
-  @extend .card--base;
-  @include box-shadow($index);
-}
-
 @mixin speed($prop, $speed) {
   #{$prop}: $speed;
   @media (prefers-reduced-motion: reduce) {

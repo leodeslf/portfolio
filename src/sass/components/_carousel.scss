@@ -1,6 +1,6 @@
 .projects__carousel {
   margin-top: 0.5rem;
-  max-width: 54ch;
+  max-width: $content-max-width;
 }
 
 .carousel__controls {
@@ -23,16 +23,16 @@
   place-content: center;
   width: 2.5rem;
   &::before {
+    content: "";
     border-bottom: 8px solid transparent;
     border-radius: 3px;
     border-top: 8px solid transparent;
-    content: "";
   }
 }
 
 .control__next {
-  border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
   &:hover,
   &:active {
     &::before {
@@ -46,8 +46,8 @@
 }
 
 .control__prev {
-  border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
   &:hover,
   &:active {
     &::before {
@@ -66,11 +66,11 @@
 
 .dot {
   align-items: center;
-  justify-content: center;
+  cursor: pointer;
   display: flex;
   height: 2.5rem;
-  cursor: pointer;
-  width: 22px;
+  justify-content: center;
+  width: 28px;
   &:hover,
   &:active {
     &::before {

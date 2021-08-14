@@ -1,47 +1,81 @@
 .connect__card {
-  @include card--shadow-card;
+  border-radius: $border-radius;
+  background-color: var(--bg--em);
   display: flex;
-  gap: 1rem;
   margin-top: 0.5rem;
-  padding-left: 0.5rem;
+  gap: 1rem;
+  padding: 0;
   width: fit-content;
+  position: relative;
+  &::before {
+    @include box-shadow;
+    background-color: transparent;
+    bottom: 0;
+    content: "";
+    height: 1rem;
+    left: 2px;
+    position: absolute;
+    transform: rotateZ(-3deg);
+    transform-origin: left bottom;
+    width: 100%;
+    z-index: -1;
+  }
 }
 
 .connect__data {
   @extend .not-bulleted;
-  display: flex;
-  flex-direction: column;
+  grid-column: 1 / 2;
   margin-bottom: 0;
-  h2 {
-    @extend h3;
-    margin-bottom: 0;
-  }
-  li:not(.data__email) {
-    text-indent: 0.5rem;
+  align-self: center;
+  padding: 0 1rem;
+  li {
+    line-height: 2;
   }
 }
 
 .email-button {
+  background-color: inherit;
+  border: none;
+  border-radius: $border-radius;
+  color: inherit;
+  cursor: copy;
   font-size: inherit;
   font-family: inherit;
   font-weight: inherit;
-  border-radius: $border-radius;
-  border: none;
-  background-color: inherit;
-  cursor: copy;
-  padding-right: 0.5rem;
-  text-indent: 0.5rem;
   gap: 0.5ch;
+  line-height: inherit;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    @include transition($animation-speed--fast, transform);
+    background-color: var(--bg--em);
+    content: "COPIAR";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    transform: translateY(100%);
+    width: 100%;
+  }
+  &:active,
   &:hover {
-    background-color: var(--bg--em-active);
+    &::before {
+      transform: translateY(0%);
+    }
   }
 }
 
 .connect__pic {
-  display: flex;
   align-self: center;
+  display: flex;
+  grid-column: 2 / 3;
+  filter: contrast(0.95);
   img {
     aspect-ratio: 90/132;
-    border-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+  .dark & {
+    filter: brightness(0.85);
   }
 }

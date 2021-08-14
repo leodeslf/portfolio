@@ -6,7 +6,7 @@ export default function TW() {
   const { weatherData } = useContext(WeatherDataContext);
 
   return (
-    (weatherData &&
+    (weatherData.code === 200 &&
       <div className="preview--tw">
         <div
           id="tw__card"
@@ -27,7 +27,6 @@ export default function TW() {
                 title="Bandera nacional"
                 width="16"
                 height="16"
-                loading="lazy"
               />
             </div>
           </div>
@@ -39,8 +38,8 @@ export default function TW() {
           </div>
         </div>
       </div>) ||
-    (!weatherData && <PreviewFallback message={
-      weatherData === null ?
+    (weatherData.code !== 200 && <PreviewFallback message={
+      weatherData.code === undefined ?
         'Cargando...' :
         'Error al consultar OpenWeather.'
     } />)

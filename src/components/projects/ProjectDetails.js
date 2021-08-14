@@ -7,9 +7,17 @@ export default function ProjectDetails(props) {
       <p>{argument}.</p>
       <h4>Herramientas</h4>
       <ul className="project__tools">
-        {[...tools.old, ...tools.new].map((item, i) => (
+        {tools.old.map((item, i) => (
           <li key={i}>
             {item}
+          </li>
+        ))}
+        {tools.new.map((item, i) => (
+          <li
+            className="project__new-tool"
+            key={i}
+          >
+            {item} <sup title="Primer uso de la herramienta.">new</sup>
           </li>
         ))}
       </ul>
@@ -23,10 +31,13 @@ export default function ProjectDetails(props) {
           )}
         </ul>
       </>}
-      <footer>
+      <footer className="project__footer">
         <p className="project__links">
           {links.map(({ name, link }, i) =>
-            <span className="project__link-container" key={i}>
+            <span
+              className="project__link-container"
+              key={i}
+            >
               <a href={link}>{name}</a>
             </span>
           )}.

@@ -4,8 +4,8 @@
     display: flex;
     a {
       @include animation(appear-from-bottom, $animation-speed--slow);
-      color: inherit !important;
-      text-decoration: none !important;
+      color: inherit;
+      text-decoration: none;
     }
   }
 }

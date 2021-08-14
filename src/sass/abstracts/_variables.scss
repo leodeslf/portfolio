@@ -1,64 +1,74 @@
-// Colors.
-$black: #0d0d0d;
-$white: #ffffff;
-$grey--light: #f5f5f5;
-$grey: #90a9a3;
-$grey--dark: #697579;
+$white: #fff;
+$skyblue: #c2e9ff;
+$green: #063727;
+$deep-green: #0b1414;
 $blue: #224aff;
-$blue--light: #c2e9ff;
 $yellow: #ff2;
-$green: #0e392b;
-$green--dark: #0c1617;
 
-// Default color scheme (light).
+$bg: $skyblue;
+$bg--em: $white;
+$bg--dark: $deep-green;
+$bg--em-dark: $green;
+
+$color: #222;
+$color--em: #697579;
+$color--dark: #eee;
+$color--em-dark: #90a9a3;
+
+$font-size--title: 64px;
+$font-size--extra-big: 44px;
+$font-size--big: 28px;
+$font-size: 16px;
+$font-size--small: 13px;
+
+$font-weight: 400;
+$font-weight--dark: 300;
+$font-weight--strong: 600;
+$font-weight--heading: 700;
+
+$font-family: "Montserrat", sans-serif;
+$font-family--heading: "Lusitana", serif;
+
+$animation-speed--fast: 100ms;
+$animation-speed--medium: 200ms;
+$animation-speed--slow: 480ms;
+$animation-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+$media--max-big: 1023px;
+$media--max-medium: 869px;
+$media--max-small: 679px;
+
+$border-radius: 4px;
+$content-max-width: 540px;
+
+// Default (light) color scheme.
 :root {
   color-scheme: light;
-  --bg: #{$blue--light};
-  --bg--active: #{lighten($blue--light, 6%)};
-  --bg--em: #{$white};
-  --bg--em-active: #{darken($white, 6%)};
-  --color: #{$black};
-  --color--em: #{$grey--dark};
+  font-weight: $font-weight;
+  --bg: #{$bg};
+  --bg--active: #{lighten($bg, 6%)};
+  --bg--em: #{$bg--em};
+  --bg--em-active: #{darken($bg--em, 6%)};
+  --color: #{$color};
+  --color--em: #{$color--em};
   --color--anchor: #{$blue};
-  --color--border: #{#00000014};
-  --color--shadow: #{#0000000d};
-  --color--shadow-on-dark: #{#0000001f};
+  --color--border: #00006014;
+  --color--shadow: #0000600d;
+  --color--shadow-on-dark: #00004020;
 }
 
 // Dark color scheme.
 .dark {
   color-scheme: dark;
-  --bg: #{$green--dark};
-  --bg--active: #{lighten($green--dark, 3%)};
-  --bg--em: #{$green};
-  --bg--em-active: #{darken($green, 3%)};
-  --color: #{$grey--light};
-  --color--em: #{$grey};
+  font-weight: $font-weight--dark;
+  --bg: #{$bg--dark};
+  --bg--active: #{lighten($bg--dark, 3%)};
+  --bg--em: #{$bg--em-dark};
+  --bg--em-active: #{darken($bg--em-dark, 3%)};
+  --color: #{$color--dark};
+  --color--em: #{$color--em-dark};
   --color--anchor: #{$yellow};
-  --color--border: #{#0000002a};
-  --color--shadow: #{#00000016};
-  --color--shadow-on-dark: #{#00000026};
+  --color--border: #0000002a;
+  --color--shadow: #00000016;
+  --color--shadow-on-dark: #00000020;
 }
-
-// Font sizes.
-$font-size--title: 47px;
-$font-size--extra-big: 35px;
-$font-size--big: 25px;
-$font-size--normal: 18px;
-$font-size--small: 15px;
-$font-size--extra-small: 13px;
-
-// Animation.
-$animation-speed--fast: 100ms;
-$animation-speed--medium: 200ms;
-$animation-speed--slow: 600ms;
-$animation-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-// Media queries.
-$media--max-big: 1199px;
-$media--max-medium: 959px;
-$media--max-small: 679px;
-$media--max-micro: 359px;
-
-// Others.
-$border-radius: 4px;

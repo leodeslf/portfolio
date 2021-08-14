@@ -2,24 +2,19 @@ export default function Connect() {
   const email = 'leodeslf@gmail.com';
 
   return (
-    <section id="connect" className="portfolio__connect portfolio__elem">
-      <div
-        itemScope
-        itemType="https://schema.org/Person"
-        className="connect__card text--small">
+    <section
+      id="connect"
+      className="portfolio__connect portfolio__elem"
+    >
+      <h2>Conectemos</h2>
+      <div className="connect__card text--small">
         <ul className="connect__data">
           <li>
-            <h2>Contacto</h2>
-          </li>
-          <li
-            itemProp="address"
-            itemScope
-            itemType="https://schema.org/PostalAddress">
-            <span itemProp="addressLocality">Montevideo
-            </span>, <span itemProp="addressRegion">UY</span>
+            <span>Montevideo
+            </span>, <span>UY</span>
           </li>
           <li>
-            <span itemProp="telephone">+598 99 705 972</span>
+            <span>+598 99 705 972</span>
           </li>
           <li className="data__email">
             <button
@@ -55,7 +50,6 @@ export default function Connect() {
             title="A human been."
             width="90"
             height="132"
-            itemProp="image"
             loading="lazy"
           />
         </picture>

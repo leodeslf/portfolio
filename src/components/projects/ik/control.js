@@ -6,6 +6,7 @@ let initialized = false;
 // Canvas rendering context and cfg. vars.
 let ctx;
 const side = 192;
+const speed = 8;
 const joints = 8;
 const jointsLength = (side * .6) / joints;
 const iKModule = new IKModule(
@@ -36,10 +37,10 @@ function run() {
   requestAnimationFrame(run);
 }
 
-// Reduce the distance to the target by 8px at a time.
+// Get closer to the target, if close enough, copy its position.
 function update() {
-  const diff = Vec2.subtract(nextTarget, iKModule.target).normalize().scale(5);
-  if (Vec2.distance(nextTarget, Vec2.add(iKModule.target, diff)) > 5) {
+  const diff = Vec2.subtract(nextTarget, iKModule.target).normalize().scale(speed);
+  if (Vec2.distance(nextTarget, Vec2.add(iKModule.target, diff)) > speed) {
     iKModule.target.add(diff);
   } else {
     iKModule.target.copy(nextTarget);

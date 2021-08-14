@@ -12,12 +12,13 @@ export default async function fetchWeatherData() {
   fetched = true;
 
   const data = await (await fetch(OPEN_WEATHER_URL)).json();
-  return data.cod === 200 ? {
+  return {
+    code: data.cod,
     name: data.name,
     countryCode: data.sys.country,
     temp: Math.round(data.main.temp),
     tempMax: Math.round(data.main.temp_max),
     tempMin: Math.round(data.main.temp_min),
     text: data.weather[0].description,
-  } : false;
+  };
 }

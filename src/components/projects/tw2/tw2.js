@@ -1,27 +1,42 @@
-import { useContext } from 'react';
+import { useEffect, useState } from 'react';
 import PreviewFallback from '../PreviewFallback';
-import { WeatherDataContext } from '../../Projects';
+import { getWeatherData } from '../weather';
 import "./tw2.scss";
 
+let interval;
+
 export default function TW2() {
-  const { weatherData } = useContext(WeatherDataContext);
+  const [data, setData] = useState({ code: undefined });
+
+  const askForData = () => {
+    getWeatherData().then(res => {
+      if (res) {
+        clearInterval(interval);
+        setData(res);
+      }
+    });
+  }
+
+  useEffect(() => {
+    interval = setInterval(askForData, 140);
+  }, []);
 
   return (
-    (weatherData.code === 200 &&
+    (data.code === 200 &&
       <div className="preview--tw2">
         <div
           id="tw2__card"
           className="preview__body"
         >
           <div className="card__content">
-            <span className="card__temp">{weatherData.temp}°</span>
-            <span className="card__name">{weatherData.name}</span>
-            <span className="card__text">{weatherData.text}</span>
+            <span className="card__temp">{data.temp}°</span>
+            <span className="card__name">{data.name}</span>
+            <span className="card__text">{data.text}</span>
           </div>
         </div>
       </div>) ||
-    (weatherData.code !== 200 && <PreviewFallback message={
-      weatherData.code === undefined ?
+    (data.code !== 200 && <PreviewFallback message={
+      data.code === undefined ?
         'Cargando...' :
         'Error al consultar OpenWeather.'
     } />)

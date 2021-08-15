@@ -1,13 +1,28 @@
-import { useContext } from 'react';
+import {  useEffect, useState } from 'react';
 import PreviewFallback from '../PreviewFallback';
-import { WeatherDataContext } from '../../Projects';
 import "./tw.scss";
+import { getWeatherData } from '../weather';
+
+let interval;
 
 export default function TW() {
-  const { weatherData } = useContext(WeatherDataContext);
+  const [data, setData] = useState({ code: undefined });
+
+  const askForData = () => {
+    getWeatherData().then(res => {
+      if (res) {
+        clearInterval(interval);
+        setData(res);
+      }
+    });
+  }
+
+  useEffect(() => {
+    interval = setInterval(askForData, 140);
+  }, []);
 
   return (
-    (weatherData.code === 200 &&
+    (data.code === 200 &&
       <div className="preview--tw">
         <div
           id="tw__card"
@@ -15,13 +30,13 @@ export default function TW() {
         >
           <div className="card__header">
             <span className="card__name">
-              <em>{`${weatherData.name}, ${weatherData.countryCode}`}</em>
+              <em>{`${data.name}, ${data.countryCode}`}</em>
             </span>
             <div className="card__flag">
               <img
                 src={
                   'https://www.countryflags.io/' +
-                  weatherData.countryCode +
+                  data.countryCode +
                   '/shiny/16.png'
                 }
                 alt="Bandera nacional"
@@ -33,14 +48,14 @@ export default function TW() {
           </div>
           <hr />
           <div className="card__temp">
-            <p className="temp__current">{weatherData.temp}°</p>
-            <p className="temp__max"><span>Máx</span>{weatherData.tempMax}°</p>
-            <p className="temp__min"><span>Mín</span>{weatherData.tempMin}°</p>
+            <p className="temp__current">{data.temp}°</p>
+            <p className="temp__max"><span>Máx</span>{data.tempMax}°</p>
+            <p className="temp__min"><span>Mín</span>{data.tempMin}°</p>
           </div>
         </div>
       </div>) ||
-    (weatherData.code !== 200 && <PreviewFallback message={
-      weatherData.code === undefined ?
+    (data.code !== 200 && <PreviewFallback message={
+      data.code === undefined ?
         'Cargando...' :
         'Error al consultar OpenWeather.'
     } />)

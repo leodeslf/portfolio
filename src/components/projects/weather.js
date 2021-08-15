@@ -3,22 +3,28 @@ const OPEN_WEATHER_URL = [
   'appid=b280c897878592322aafe56701248929&',
   'lang=sp&units=metric&q=Montevideo,UY'
 ].join('');
+let data = false;
+let requesting = false;
 
-let fetched = false;
-
-export default async function fetchWeatherData() {
-  // Avoid repeating identical requests.  
-  if (fetched) return null;
-  fetched = true;
-
-  const data = await (await fetch(OPEN_WEATHER_URL)).json();
-  return {
-    code: data.cod,
-    name: data.name,
-    countryCode: data.sys.country,
-    temp: Math.round(data.main.temp),
-    tempMax: Math.round(data.main.temp_max),
-    tempMin: Math.round(data.main.temp_min),
-    text: data.weather[0].description,
+async function fetchWeatherData() {
+  //requesting = false;
+  const json = await (await fetch(OPEN_WEATHER_URL)).json();
+  return data = {
+    code: json.cod,
+    name: json.name,
+    countryCode: json.sys.country,
+    temp: Math.round(json.main.temp),
+    tempMax: Math.round(json.main.temp_max),
+    tempMin: Math.round(json.main.temp_min),
+    text: json.weather[0].description,
   };
+}
+
+export async function getWeatherData() {
+  if (data) return data;
+  if (requesting) return false;
+  if (!requesting) {
+    requesting = true;
+    return await fetchWeatherData();
+  }
 }

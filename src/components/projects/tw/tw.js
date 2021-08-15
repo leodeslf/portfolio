@@ -1,7 +1,7 @@
-import {  useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import PreviewFallback from '../PreviewFallback';
-import "./tw.scss";
 import { getWeatherData } from '../weather';
+import "./tw.scss";
 
 let interval;
 

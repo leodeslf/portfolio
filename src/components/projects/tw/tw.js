@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import PreviewFallback from '../PreviewFallback';
-import { getWeatherData } from '../weather';
+import { getWeatherData, weatherData } from '../weather';
 import "./tw.scss";
 
 let interval;
@@ -18,7 +18,8 @@ export default function TW() {
   }
 
   useEffect(() => {
-    interval = setInterval(askForData, 140);
+    askForData();
+    if (!weatherData) interval = setInterval(askForData, 140);
   }, []);
 
   return (

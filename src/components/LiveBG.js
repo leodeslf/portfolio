@@ -7,9 +7,9 @@ export default function LiveBG() {
   }, []);
 
   return (
-    <>
+    <div className="live-bg">
       <canvas className="live-bg__canvas live-bg__canvas--birds"></canvas>
       <canvas className="live-bg__canvas live-bg__canvas--fireflies"></canvas>
-    </>
+    </div>
   );
 }

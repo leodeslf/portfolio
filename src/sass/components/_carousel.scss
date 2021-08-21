@@ -82,8 +82,8 @@
     background-color: var(--color--em);
     border-radius: 50%;
     content: "";
-    height: 4px;
-    width: 4px;
+    height: 6px;
+    width: 6px;
   }
   &.dot--active {
     &::before {

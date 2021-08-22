@@ -20,10 +20,28 @@ a.step {
   color: inherit;
   line-height: 2;
   padding: 0 2rem 0 1rem;
+  position: relative;
   text-decoration: none;
+  z-index: 0;
   &:active,
   &:hover,
   &.step--active {
     color: var(--color);
+  }
+  &::before {
+    background-color: var(--bg--em-active);
+    border-radius: $border-radius;
+    content: "";
+    height: 2em;
+    left: 0.5rem;
+    right: 0.5rem;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  &.step--active {
+    &::before {
+      opacity: 1;
+    }
   }
 }

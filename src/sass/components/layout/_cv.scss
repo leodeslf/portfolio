@@ -1,15 +1,14 @@
 .cv__preview {
-  color: var(--color--em);
   background-color: var(--bg--em);
   border-radius: $border-radius;
+  color: var(--color--em);
   font-family: $font-family--console;
   font-size: 14px;
   margin-top: 0.5rem;
   padding: 0.5rem 1rem 1rem;
   h3 {
-    font-size: inherit;
     color: #6161ff;
-    font-weight: inherit;
+    font: inherit;
     margin-bottom: 0;
     > span {
       color: var(--color--em);

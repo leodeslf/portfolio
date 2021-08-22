@@ -60,7 +60,7 @@ h2 {
 h1 {
   font-size: $font-size--title;
   @media screen and (max-width: $media--max-medium) {
-    font-size: ($font-size--extra-big + $font-size--title) * 0.5;
+    font-size: ($font-size--title + $font-size--extra-big) * 0.5;
   }
   @media screen and (max-width: $media--max-small) {
     font-size: $font-size--extra-big;
@@ -70,11 +70,12 @@ h1 {
 h2 {
   font-size: $font-size--extra-big;
   @media screen and (max-width: $media--max-small) {
-    font-size: ($font-size--big + $font-size--extra-big) * 0.5;
+    font-size: ($font-size--extra-big + $font-size--big) * 0.5;
   }
 }
 
 h3 {
+  font-family: $font-family--heading;
   font-size: $font-size--big;
   margin-bottom: 0.5em;
 }

@@ -19,7 +19,7 @@ export default function Connect() {
           <li className="data__email">
             <button
               className="email-button"
-              title="Copiar al portapapeles."
+              title="Copiar."
               onClick={() => navigator.clipboard.writeText(email)}
             >
               {email}
@@ -28,11 +28,13 @@ export default function Connect() {
           <li>
             <a
               href="https://github.com/leodeslf"
-              title="Perfil de GitHub.">
+              title="Perfil de GitHub."
+            >
               GitHub
             </a> / <a
               href="https://linkedin.com/in/leodeslf"
-              title="Perfil de LinkedIn">
+              title="Perfil de LinkedIn."
+            >
               LinkedIn
             </a>
           </li>

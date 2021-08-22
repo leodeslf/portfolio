@@ -14,8 +14,7 @@
     "build": "react-scripts build",
     "serve": "serve -s build -p 5002",
     "start": "set PORT=8002 && react-scripts start",
-    "start-bs": "browser-sync start -s build -f --port 6002 --no-open",
-    "sass": "cd src/sass && sass --watch main.scss main.css"
+    "start-bs": "browser-sync start -s build -f --port 6002 --no-open"
   },
   "eslintConfig": {
     "extends": "react-app"

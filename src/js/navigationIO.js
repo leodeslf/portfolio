@@ -1,72 +1,62 @@
+const getY = (element) => element.getBoundingClientRect().y;
 const activeClass = 'step--active';
 
 // Arrays and HTMLCollection of elements to observe and modify.
-let HTMLSections, HTMLSteps, HTMLActiveStep;
+let sections, steps, activeStep;
 
-// Aux. variable that holds the highest section to compare.
-let HTMLHighestSection;
+// Aux. (state) variable to hold the highest visible section.
+let highestVisibleSection;
 
 /**
  * Identify sections and steps. Start observing intersection on sections,
- * so we can update its respective step state.
+ * to update its respective step class.
  */
 export default function initNavigationIO() {
   window.addEventListener('load', () => {
-    HTMLSections = [...document.getElementsByTagName('section')];
-    HTMLSteps = [...document.getElementsByClassName('step')];
-    HTMLActiveStep = document.getElementsByClassName('step--active');
+    sections = [...document.getElementsByTagName('section')];
+    steps = [...document.getElementsByClassName('step')];
+    activeStep = document.getElementsByClassName('step--active');
 
-    const io = new IntersectionObserver(updateHighestSection);
-    for (let item of HTMLSections) io.observe(item);
+    const io = new IntersectionObserver(updateHighestVisibleSection);
+    for (let section of sections) io.observe(section);
   });
 }
 
-function updateHighestSection(entries) {
+function updateHighestVisibleSection(entries) {
+  let activeStepNeedsUpdate = false;
+
   for (let { isIntersecting, target } of entries) {
     /**
-     * Define target as the highest section if it is: 
-     * - Visible;
-     * - Not the current highest;
-     * - Higher than the current highest;
-     * - Or there is no highest.
+     * Set "target" as the "highest visible section" if it is:
+     * - Visible and not the current highest.
+     * - There is no highest or it's higher than it.
      */
-    if (isIntersecting) {
-      if (target !== HTMLHighestSection) {
-        if (!HTMLHighestSection || target.getBoundingClientRect().y <
-          HTMLHighestSection?.getBoundingClientRect().y) {
-          HTMLHighestSection = target;
-        } else continue;
-      } else continue;
+    if (
+      (isIntersecting && target !== highestVisibleSection) &&
+      (!highestVisibleSection || getY(target) < getY(highestVisibleSection))
+    ) {
+      highestVisibleSection = target;
+      activeStepNeedsUpdate = true;
     }
 
     /**
-     * Define the section below the target if it is:
-     * - Not visible.
-     * - Actually the current highest.
+     * Set the section inmediately below "target" as the "highest visible
+     * section" if "target" is:
+     * - The current highest but no longer visible.
      */
-    if (!isIntersecting) {
-      if (HTMLHighestSection === target) {
-        HTMLHighestSection = HTMLSections[HTMLSections.indexOf(target) + 1];
-      }
+    if (!isIntersecting && target === highestVisibleSection) {
+      highestVisibleSection = sections[sections.indexOf(target) + 1];
+      activeStepNeedsUpdate = true;
     }
   }
 
-  updateActiveStep();
+  if (activeStepNeedsUpdate) updateActiveStep();
 }
 
 function updateActiveStep() {
-  // Correspondant step of highest section is already the active one.
-  if (HTMLHighestSection?.classList.contains(activeClass)) return;
+  const i = sections.indexOf(highestVisibleSection);
+  if (i < 0) return;
 
-  const i = HTMLSections.indexOf(HTMLHighestSection);
-
-  // If there is another active step: "move" the class to the right one.
-  if (HTMLActiveStep.length) {
-    HTMLActiveStep.item(0).classList.remove(activeClass);
-    HTMLSteps[i].classList.add(activeClass);
-    return;
-  }
-
-  // Else: no one contains the active class.
-  HTMLSteps[i].classList.add(activeClass);
+  activeStep[0]?.classList.remove(activeClass);
+  steps[i].classList.add(activeClass);
 }

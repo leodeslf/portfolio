@@ -1,0 +1,30 @@
+// Responsive font sizes.
+:root {
+  --size--h1: 73px;
+  --size--h2: 46px;
+  --size--h3: 34px;
+  --size: 19px;
+  --size--small: 14px;
+  --size--extra-small: 13px;
+  font-family: $font-family;
+  font-size: var(--size);
+  line-height: 1.5;
+}
+
+@media screen and (max-width: $media--max-medium) {
+  :root {
+    --size--h1: 60px;
+    --size--h2: 42px;
+    --size--h3: 32px;
+    --size: 18px;
+  }
+}
+
+@media screen and (max-width: $media--max-small) {
+  :root {
+    --size--h1: 50px;
+    --size--h2: 38px;
+    --size--h3: 30px;
+    --size: 17px;
+  }
+}

@@ -7,7 +7,7 @@ export default function Connect() {
       className="portfolio__connect portfolio__elem"
     >
       <h2>Conectemos</h2>
-      <div className="connect__card text--small">
+      <div className="connect__card">
         <ul className="connect__data">
           <li>
             <span>Montevideo

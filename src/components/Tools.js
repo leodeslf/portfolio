@@ -21,7 +21,7 @@ function ToolsGroup(toolsGroup) {
       `tools__group${toolsGroup.core ? ' tools__group--core' : ''}`}
       {...(toolsGroup.core && { title: 'Herramientas principales.' })}
     >
-      <h3 className="text--extra-small">
+      <h3>
         {toolsGroup.title}
       </h3>
       <div className="tools__sub-groups">
@@ -29,7 +29,7 @@ function ToolsGroup(toolsGroup) {
           <ul key={i}>
             {subGroup.map((item, j) =>
               <li
-                className="tools__item text--small"
+                className="tools__item"
                 key={j}
               >
                 {item.value || item}

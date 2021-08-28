@@ -8,7 +8,7 @@ export default function Navigation() {
   }, []);
 
   return (
-    <nav className="stepper-nav text--small">
+    <nav className="stepper-nav">
       <ul className="stepper-nav__list">
         {sections.map(({ fragment, label }, i) =>
           <li key={i}>

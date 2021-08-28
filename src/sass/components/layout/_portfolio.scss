@@ -4,26 +4,18 @@
 
 .portfolio__elem {
   &:not(:first-of-type) {
-    @extend .from-zero-opacity;
+    @extend .from-zero-opacity--delay;
   }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   max-width: $media--max-small;
-  padding-top: 4rem;
+  padding-top: 3rem;
   &:first-of-type {
     margin-top: 8rem;
   }
   &:last-of-type {
-    margin-bottom: 12rem;
-  }
-  @media screen and (max-width: $media--max-medium) {
-    margin-bottom: 3rem;
-    padding-top: 3rem;
-  }
-  @media screen and (max-width: $media--max-small) {
-    margin-bottom: 2rem;
-    padding-top: 2rem;
+    margin-bottom: 11rem;
   }
 }

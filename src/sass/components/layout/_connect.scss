@@ -1,4 +1,5 @@
 .connect__card {
+  @extend .text--small;
   border-radius: $border-radius;
   background-color: var(--bg--em);
   display: flex;

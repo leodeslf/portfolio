@@ -1,9 +1,9 @@
 .cv__preview {
+  @extend .text--small;
   background-color: var(--bg--em);
   border-radius: $border-radius;
   color: var(--color--em);
   font-family: $font-family--console;
-  font-size: 14px;
   margin-top: 0.5rem;
   padding: 0.5rem 1rem 1rem;
   h3 {

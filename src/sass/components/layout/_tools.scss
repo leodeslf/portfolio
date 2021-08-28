@@ -7,6 +7,7 @@
 
 .tools__group {
   @extend .card--base;
+  @extend .text--small;
   color: var(--color--em);
   max-height: min-content;
   &--core {
@@ -15,7 +16,8 @@
     color: var(--color);
   }
   h3 {
-    font-size: $font-size--small;
+    font-size: inherit;
+    margin-bottom: 0.5em;
   }
 }
 

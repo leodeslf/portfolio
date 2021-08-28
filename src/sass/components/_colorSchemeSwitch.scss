@@ -71,7 +71,6 @@ $half-margin: ($label-w - $moon-sun-side) * 0.5;
     transform: rotateZ(45deg);
     width: inherit;
     .dark & {
-      @include transition(0, $transition-props);
       transform: scale(0.1);
     }
   }

@@ -1,6 +1,3 @@
-$line--mm: transparent, transparent 5px, var(--color--line) 5px, var(--color--line) 6px;
-$line-cm: transparent, transparent 29px, var(--color--line) 29px, var(--color--line) 30px;
-
 // Default color scheme (light).
 :root {
   --preview-bg: #5297ff;
@@ -15,6 +12,9 @@ $line-cm: transparent, transparent 29px, var(--color--line) 29px, var(--color--l
   --color--outline: #ffffff29;
 }
 
+$line--mm: transparent, transparent 5px, var(--color--line) 5px, var(--color--line) 6px;
+$line-cm: transparent, transparent 29px, var(--color--line) 29px, var(--color--line) 30px;
+
 .preview {
   background-color: var(--preview-bg);
   background-image: repeating-linear-gradient(to right, $line--mm), repeating-linear-gradient(to right, $line-cm),
@@ -25,9 +25,10 @@ $line-cm: transparent, transparent 29px, var(--color--line) 29px, var(--color--l
   display: grid;
   grid-area: prev;
   margin-bottom: 1rem;
-  min-height: 282px;
+  min-height: 288px;
   outline: 1px solid var(--color--outline);
   outline-offset: -0.5rem;
+  padding: 2rem 3.5rem;
   place-content: center;
   & ::selection {
     background-color: black;
@@ -36,8 +37,8 @@ $line-cm: transparent, transparent 29px, var(--color--line) 29px, var(--color--l
 }
 
 .preview__body {
-  display: flex;
   @include box-shadow(2, $on-dark: true);
+  display: flex;
 }
 
 .preview__canvas {
@@ -45,6 +46,7 @@ $line-cm: transparent, transparent 29px, var(--color--line) 29px, var(--color--l
 }
 
 .preview__caption {
+  @include animation(from-zero-opacity, $animation-speed--fast);
   padding: 0.25rem 1rem;
   background-color: #000d;
   color: white;

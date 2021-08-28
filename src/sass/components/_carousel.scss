@@ -71,23 +71,23 @@
   height: 2.5rem;
   justify-content: center;
   width: 28px;
-  &:hover,
-  &:active {
-    &::before {
-      @extend .dot--active;
-    }
-  }
   &::before {
-    @include transition($animation-speed--fast, background-color);
+    $transition-props: bacground-color, transform, opacity;
+    @include transition($animation-speed--fast, $transition-props);
     background-color: var(--color--em);
     border-radius: 50%;
     content: "";
-    height: 6px;
-    width: 6px;
+    height: 5px;
+    opacity: 50%;
+    width: 5px;
   }
+  &:hover,
+  &:active,
   &.dot--active {
     &::before {
       background-color: var(--color);
+      opacity: 100%;
+      transform: scale(120%);
     }
   }
 }

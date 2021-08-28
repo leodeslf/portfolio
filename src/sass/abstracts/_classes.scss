@@ -5,25 +5,17 @@
   padding: 1rem;
 }
 
-.from-zero-opacity {
-  @include animation(from-zero-opacity, $animation-speed--slow * 2.5);
+.from-zero-opacity--delay {
+  @include animation(from-zero-opacity--delay, $animation-speed--slow * 2.5);
 }
 
 .icon__label {
-  cursor: pointer;
-  &:hover > .icon > svg,
-  &:active > .icon > svg {
-    fill: var(--color);
-  }
+  cursor: pointer;  
 }
 
 .icon {
   display: flex;
   user-select: none;
-  &--24 {
-    height: 24px;
-    width: 24px;
-  }
 }
 
 .not-bulleted {
@@ -41,5 +33,5 @@
 }
 
 .text--small {
-  font-size: $font-size--small;
+  font-size: var(--size--small);
 }

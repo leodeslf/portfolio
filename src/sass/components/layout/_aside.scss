@@ -53,7 +53,7 @@
   pointer-events: all;
   min-width: max-content;
   > * {
-    @extend .from-zero-opacity;
+    @extend .from-zero-opacity--delay;
   }
   @media screen and (max-width: $media--max-extra-small) {
     transform: translateX(100%);
@@ -62,16 +62,48 @@
 
 .aside__button {
   @include box-shadow(2);
-  @extend .card--base;
+  background-color: var(--bg--active);
   border: none;
+  border-radius: 50%;
   bottom: 2rem;
   display: none;
-  padding: 0.75rem;
+  height: 48px;
   pointer-events: all;
   position: fixed;
   right: 2rem;
-  width: fit-content;
+  width: 48px;
+  &:hover,
+  &:active {
+    .aside__button-dots {
+      background-color: var(--color);
+    }
+  }
   @media screen and (max-width: $media--max-extra-small) {
     display: flex;
+  }
+}
+
+.aside__button-dots {
+  @include transition($animation-speed--fast, background-color);
+  width: 16px;
+  height: 2px;
+  background-color: var(--color--em);
+  margin: auto;
+  position: relative;
+  &::before,
+  &::after {
+    position: absolute;
+    flex-shrink: 0;
+    background-color: inherit;
+    content: "";
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+  }
+  &::before {
+    top: -5px;
+  }
+  &::after {
+    bottom: -5px;
   }
 }

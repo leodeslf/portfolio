@@ -24,8 +24,9 @@
 }
 
 .project__title {
-  margin-bottom: 0rem;
   margin-right: auto;
+  margin-bottom: .5rem;
+  line-height: 1;
   a {
     align-items: center;
     color: var(--color);

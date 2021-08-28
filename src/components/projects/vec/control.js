@@ -44,8 +44,8 @@ export function initControl(vecCanvas, vecDebugCanvas) {
   if (oldImgState) ctx.putImageData(oldImgState, 0, 0);
 
   ctx.translate(center, center);
-  ctx.lineWidth = .4;
-  ctx.strokeStyle = '#666';
+  ctx.lineWidth = .5;
+  ctx.strokeStyle = '#555';
 
   debugCanvas = vecDebugCanvas;
   debugCtx = debugCanvas.getContext('2d');

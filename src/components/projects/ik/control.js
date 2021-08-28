@@ -1,99 +1,52 @@
-import IKModule from './IKModule';
 import { Vec2 } from '../../../js/vec.min';
-
-let initialized = false;
+import { run, setCtx, setTarget } from './animation';
 
 // Canvas rendering context and cfg. vars.
-let ctx;
-const side = 192;
-const speed = 8;
-const joints = 8;
-const jointsLength = (side * .6) / joints;
-const iKModule = new IKModule(
-  joints,
-  jointsLength,
-  new Vec2(side - jointsLength, jointsLength),
-  new Vec2(jointsLength, side - jointsLength)
-);
-let nextTarget = Vec2.clone(iKModule.target);
+let canvasOffset = new Vec2();
+let initialized = false;
 
 /**
- * Initialize process, define rendering context from the
- * given canvas and start generating and printing data.
+ * Initialize process, define rendering context and start generating and
+ * printing data.
  */
-export function initControl(ikCtx) {
-  ctx = ikCtx;
-  ctx.lineWidth = 1;
+function initControl(canvas) {
+  setCtx(canvas.getContext('2d'));
   if (!initialized) {
     initialized = true;
     run();
   }
+
+  canvas.addEventListener('mousedown', m => {
+    setTarget(m.offsetX, m.offsetY);
+    window.addEventListener('mouseup', () => {
+      canvas.removeEventListener('mousemove', mouseMove);
+    });
+    canvas.addEventListener('mousemove', mouseMove);
+  });
+
+  canvas.addEventListener('touchstart', t => {
+    t.preventDefault();
+    canvasOffset.xy = [canvas.offsetLeft, canvas.offsetTop];
+    setTarget(
+      t.touches[0].pageX - canvasOffset.x,
+      t.touches[0].pageY - canvasOffset.y
+    );
+    window.addEventListener('touchend', () => {
+      canvas.removeEventListener('touchmove', touchMove);
+    });
+    canvas.addEventListener('touchmove', touchMove, { passive: false });
+  }, { passive: false });
 }
 
-// Function to hanlde the hole process animation.
-function run() {
-  update()
-  draw();
-  requestAnimationFrame(run);
+function mouseMove(e) {
+  setTarget(e.offsetX, e.offsetY);
 }
 
-// Get closer to the target, if close enough, copy its position.
-function update() {
-  const diff = Vec2.subtract(nextTarget, iKModule.target).normalize().scale(speed);
-  if (Vec2.distance(nextTarget, Vec2.add(iKModule.target, diff)) > speed) {
-    iKModule.target.add(diff);
-  } else {
-    iKModule.target.copy(nextTarget);
-  }
+function touchMove(e) {
+  setTarget(
+    e.changedTouches[0].pageX - canvasOffset.x,
+    e.changedTouches[0].pageY - canvasOffset.y
+  );
 }
 
-const PI = 3.1416;
-
-// Draw the anchor, all the joints (heads and tails), and the target.
-function draw() {
-  ctx.clearRect(0, 0, side, side);
-
-  // Anchor.
-  ctx.beginPath();
-  ctx.arc(iKModule.anchor.x, iKModule.anchor.y, 3, 0, 2 * PI);
-  ctx.fillStyle = 'black';
-  ctx.fill();
-  ctx.closePath();
-
-  // Joints.
-  ctx.strokeStyle = 'black';
-  for (let i = 0; i < joints; i++) {
-    ctx.beginPath();
-    ctx.moveTo(iKModule.body[i].base.x, iKModule.body[i].base.y);
-    ctx.lineTo(iKModule.body[i].end.x, iKModule.body[i].end.y);
-    ctx.stroke();
-    ctx.closePath();
-    ctx.beginPath();
-    ctx.arc(iKModule.body[i].base.x, iKModule.body[i].base.y, 2, 0, 2 * PI);
-    ctx.fill();
-    ctx.closePath();
-  }
-
-  // Target joint end.
-  ctx.beginPath();
-  ctx.arc(iKModule.body[0].end.x, iKModule.body[0].end.y, 3, 0, 2 * PI);
-  ctx.fillStyle = 'white';
-  ctx.fill();
-  ctx.strokeStyle = 'black';
-  ctx.stroke();
-  ctx.closePath();
-
-  // Target.
-  ctx.beginPath();
-  ctx.arc(nextTarget.x, nextTarget.y, 2.5, 0, 2 * PI);
-  ctx.fillStyle = 'red';
-  ctx.fill();
-  ctx.closePath();
-
-  iKModule.update();
-}
-
-// To be called when the user clicks/touches the canvas.
-export function setTarget(x, y) {
-  nextTarget.xy = [x, y];
-}
+export { initControl };

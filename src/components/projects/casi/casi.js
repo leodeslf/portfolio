@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import "./casi.scss";
 
 export default function Casi() {
-  const limit = 5;
+  const limit = 7;
   const [answer, setAnswer] = useState(0);
   const [input, setInput] = useState('0');
   const [memory, setMemory] = useState(false);
@@ -56,20 +56,29 @@ export default function Casi() {
     <div className="preview--casi">
       <div
         id="casi"
-        className="preview__body">
+        className="preview__body"
+      >
         <div className="casi__display">
           <p className="casi__feedback">
             {feedback}
           </p>
           <p className="casi__output">
-            <span className="casi__answer">{answer}</span>
+            <span className="casi__answer">
+              {answer}
+            </span>
           </p>
         </div>
         <div className="casi__buttons">
-          <div className="casi__btn" onClick={() => digit(2)}>
+          <div
+            className="casi__btn"
+            onClick={() => digit(2)}
+          >
             <span>2</span>
           </div>
-          <div className="casi__btn" onClick={() => op(add, '+')}>
+          <div
+            className="casi__btn"
+            onClick={() => op(add, '+')}
+          >
             <span>+</span>
           </div>
         </div>

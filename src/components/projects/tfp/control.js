@@ -24,13 +24,14 @@ for (let i = 0; i < spotsN; i++) {
  * Initialize process, define context from the
  * given canvas and start generating and printing data.
  */
-export function initControl(tfpCanvas) {
-  noiseCtx = tfpCanvas.getContext('2d');
-  tfpCanvas.addEventListener('mousedown', nextMode);
+export function initControl(canvas) {
+  noiseCtx = canvas.getContext('2d');
   if (!initialized) {
     initialized = true;
     nextMode();
   } else printImage();
+
+  canvas.addEventListener('mousedown', nextMode);
 }
 
 let modeIndex = -1;

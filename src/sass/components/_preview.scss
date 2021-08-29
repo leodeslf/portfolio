@@ -47,7 +47,6 @@ $line-cm: transparent, transparent 29px, var(--color--line) 29px, var(--color--l
 
 .preview__caption {
   @include animation(from-zero-opacity, $animation-speed--fast);
-  animation-iteration-count: 1;
   background-color: #000d;
   color: white;
   font-family: $font-family--console;

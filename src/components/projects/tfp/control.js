@@ -8,10 +8,27 @@ let noiseCtx;
 const side = 192;
 const noiseData = [];
 const noiseImg = new ImageData(side, side);
+let skinCtx;
+let skinData = [];
+const skinImg = new Image(256, 1);
+skinImg.onload = () => {
+  skinCtx.clearRect(0, 0, 256, 1);
+  skinCtx.drawImage(skinImg, 0, 0);
+  skinData = skinCtx.getImageData(0, 0, 256, 1).data;
+  tryToInit();
+}
 const spots = [
-  [4, -30], [94, -12], [-10, -5], [39, 34], [-15, 88],
-  [-2, 140], [94, 128], [35, 85], [85, 72], [138, 18],
-  [137, 71], [175, 131], [192, 62], [210, 1], [202, 103]
+  [29, 45],
+  [96, 22],
+  [20, 108],
+  [74, 76],
+  [138, 55],
+  [185, 3],
+  [25, 163],
+  [110, 128],
+  [166, 102],
+  [86, 170],
+  [166, 157]
 ];
 const spotsN = spots.length;
 for (let i = 0; i < spotsN; i++) {
@@ -20,21 +37,28 @@ for (let i = 0; i < spotsN; i++) {
   }
 }
 
-/**
- * Initialize process, define context from the
- * given canvas and start generating and printing data.
- */
-export function initControl(canvas) {
-  noiseCtx = canvas.getContext('2d');
-  if (!initialized) {
+// Init noise canvas context.
+export function delegateNoiseCtxTo(ctx) {
+  noiseCtx = ctx;
+  tryToInit();
+  ctx.canvas.addEventListener('mousedown', nextMode);
+}
+
+// Init skin canvas context.
+export function delegateSkinCtxTo(ctx) {
+  skinCtx = ctx;
+  if (!skinImg.src) skinImg.src = './images/tfp-colors.png';
+}
+
+// Initialize only if noise context and skin data are both ready.
+function tryToInit() {
+  if (!initialized && skinData.length) {
     initialized = true;
     nextMode();
   } else printImage();
-
-  canvas.addEventListener('mousedown', nextMode);
 }
 
-let modeIndex = -1;
+let modeIndex = 1;
 let toFade, factor, shift;
 
 // Run next available mode of worley noise.
@@ -44,23 +68,23 @@ function nextMode() {
   // Set specific cfg. for each mode.
   switch (modeIndex) {
     case 0:
-      toFade = true; factor = 3; shift = 0;
+      toFade = true; factor = 3; shift = 4;
       generateImageData(WOLREY.st);
       break;
     case 1:
-      toFade = false; factor = 4; shift = -15;
+      toFade = false; factor = 4; shift = -22;
       generateImageData(WOLREY.nd);
       break;
     case 2:
-      toFade = false; factor = 3.6; shift = 0;
+      toFade = false; factor = 3; shift = 12;
       generateImageData(WOLREY.ndMinusSt);
       break;
     case 3:
-      toFade = false; factor = 5; shift = -2;
+      toFade = false; factor = 5; shift = 0;
       generateImageData(WOLREY.chebyshev);
       break;
     case 4:
-      toFade = false; factor = 30; shift = -2.4;
+      toFade = false; factor = 40; shift = -2.4;
       generateImageData(WOLREY.manhattan);
       break;
     default: return;
@@ -81,22 +105,23 @@ function generateImageData(mode) {
 }
 
 // Output cfg.
-const colorRange = 255;
-const colorRangeInverse = 1 / colorRange;
+const colorRangeInverse = 1 / 255;
 
 // Use distances as pixel colors.
 function printImage() {
   for (let y = 0; y < side; y++) {
     for (let x = 0; x < side; x++) {
-      const i = index(x, y);
+      let i = index(x, y);
       let value = (noiseData[i] + shift) * factor;
-      if (toFade) value = fade(value * colorRangeInverse) * colorRange;
-      if (value > colorRange) value = colorRange;
-      else if (value < 0) value = 0;
-      noiseImg.data[i * 4 + 0] = value;
-      noiseImg.data[i * 4 + 1] = value;
-      noiseImg.data[i * 4 + 2] = value;
-      noiseImg.data[i * 4 + 3] = 255;
+      if (toFade) value = fade(value * colorRangeInverse) * 255;
+      if (value < 0) value = 0;
+      if (value > 255) value = 255;
+      value = Math.trunc(value) * 4;
+      i *= 4;
+      noiseImg.data[i + 0] = skinData[value + 0];
+      noiseImg.data[i + 1] = skinData[value + 1];
+      noiseImg.data[i + 2] = skinData[value + 2];
+      noiseImg.data[i + 3] = skinData[value + 3];
     }
   }
   noiseCtx.clearRect(0, 0, side, side);

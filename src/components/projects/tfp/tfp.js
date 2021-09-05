@@ -1,10 +1,15 @@
 import { useEffect } from 'react';
-import { initControl } from './control';
+import { delegateNoiseCtxTo, delegateSkinCtxTo } from './control';
 import "./tfp.scss";
 
 export default function TFP() {
   useEffect(() => {
-    initControl(document.getElementById('tfp__canvas'));
+    delegateNoiseCtxTo(
+      document.getElementById('tfp__canvas').getContext('2d')
+    );
+    delegateSkinCtxTo(
+      document.getElementById('tfp__skin-canvas').getContext('2d')
+    );
   }, []);
 
   return (
@@ -15,6 +20,7 @@ export default function TFP() {
         height="192"
         width="192"
       />
+      <canvas id="tfp__skin-canvas" />
     </div>
   );
 }

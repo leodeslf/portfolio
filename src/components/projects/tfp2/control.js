@@ -5,8 +5,8 @@ let initialized = false;
 
 // Canvas rendering context and cfg. vars.
 let noiseCtx;
-let noiseData = [];
 const side = 192;
+const noiseData = [];
 const noiseImg = new ImageData(side, side);
 let skinCtx;
 let skinData = [];
@@ -18,25 +18,21 @@ skinImg.onload = () => {
   tryToInit();
 }
 const RGBACenter = 127;
-const PixelSize = 4; // Pixels per data.
-const inversePixelSize = 1 / PixelSize;
-const index = (x, y) => Math.trunc(
-  inversePixelSize * y *
-  inversePixelSize * side +
-  inversePixelSize * x
-);
-const pixel = [0, 0, 0, 0];
+const PixelSize = 6; // Pixels per data.
+const inverse = 1 / PixelSize;
+const index = (x, y) => inverse * y * inverse * side + inverse * x;
+const pixel = [0, 0, 0];
 
 export const CFG = {
   // Animation.
-  step: 0.01,
-  seed: 0.0,
+  step: .01,
+  seed: .0,
   // Noise.
-  frequency: 1.0,
-  amplitude: 2.0,
+  frequency: 1,
+  amplitude: 1.8,
   octaves: 2,
-  lacunarity: 2.0,
-  persistence: 0.5,
+  lacunarity: 2,
+  persistence: .5,
   // View.
   traslation: new Vec2(),
   scale: 1 / side,
@@ -54,7 +50,7 @@ export function delegateNoiseCtxTo(ctx) {
 // Init skin canvas context.
 export function delegateSkinCtxTo(ctx) {
   skinCtx = ctx;
-  if (!skinImg.src) skinImg.src = './images/skin-tfp2.png';
+  if (!skinImg.src) skinImg.src = './images/tfp2-colors.png';
 }
 
 // Initialize only if noise context and skin data are both ready.
@@ -94,20 +90,23 @@ function printFrame() {
     for (let x = 0; x < side; x += CFG.pixelSize) {
       let value = noiseData[index(x, y)];
       // Read skin data a single time (RGBA).
-      pixel[0] = skinData[value * 4 + 0];
-      pixel[1] = skinData[value * 4 + 1];
-      pixel[2] = skinData[value * 4 + 2];
-      pixel[3] = skinData[value * 4 + 3];
+      if (value < 0) value = 0;
+      if (value > 255) value = 255;
+      value *= 4;
+      pixel[0] = skinData[value + 0];
+      pixel[1] = skinData[value + 1];
+      pixel[2] = skinData[value + 2];
+      pixel[3] = skinData[value + 3];
       // Use skin data multiple times to fill the pixel size.
       for (let subY = 0; subY < CFG.pixelSize; subY++) {
         //if (y + subY >= side) break;
         for (let subX = 0; subX < CFG.pixelSize; subX++) {
           //if (x + subX >= side) break;
-          const pixelIndex = (y + subY) * side + x + subX;
-          noiseImg.data[pixelIndex * 4 + 0] = pixel[0];
-          noiseImg.data[pixelIndex * 4 + 1] = pixel[1];
-          noiseImg.data[pixelIndex * 4 + 2] = pixel[2];
-          noiseImg.data[pixelIndex * 4 + 3] = pixel[3];
+          const pixelIndex = ((y + subY) * side + x + subX) * 4;
+          noiseImg.data[pixelIndex + 0] = pixel[0];
+          noiseImg.data[pixelIndex + 1] = pixel[1];
+          noiseImg.data[pixelIndex + 2] = pixel[2];
+          noiseImg.data[pixelIndex + 3] = pixel[3];
         }
       }
     }

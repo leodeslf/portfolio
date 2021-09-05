@@ -1,8 +1,14 @@
 @import "../../../sass/abstracts/variables", "../../../sass/abstracts/mixins";
 
+.preview--vec,
+#vec__canvas,
+#vec__debug-canvas {
+  border-radius: 50%;
+  border-bottom-right-radius: $border-radius;
+}
+
 .preview--vec {
   position: relative;
-  border-radius: 50%;
   &:hover #vec__debug-canvas {
     opacity: 1;
   }
@@ -13,7 +19,6 @@
 
 #vec__canvas {
   background-color: white;
-  border-radius: 50%;
   cursor: pointer;
   user-select: none;
 }
@@ -21,7 +26,6 @@
 #vec__debug-canvas {
   @include transition($animation-speed--fast, opacity);
   background-color: #fffa;
-  border-radius: 50%;
   box-shadow: none;
   left: 0;
   opacity: 0;

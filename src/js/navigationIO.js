@@ -1,11 +1,7 @@
 const getY = (element) => element.getBoundingClientRect().y;
 const activeClass = 'step--active';
 
-// Arrays and HTMLCollection of elements to observe and modify.
-let sections, steps, activeStep;
-
-// Aux. (state) variable to hold the highest visible section.
-let highestVisibleSection;
+let sections, steps, activeStep, highestVisibleSection;
 
 /**
  * Identify sections and steps. Start observing intersection on sections,
@@ -55,6 +51,8 @@ function updateHighestVisibleSection(entries) {
 
 function updateActiveStep() {
   const i = sections.indexOf(highestVisibleSection);
+
+  // If no sections are visible on screen (i = -1).
   if (i < 0) return;
 
   activeStep[0]?.classList.remove(activeClass);

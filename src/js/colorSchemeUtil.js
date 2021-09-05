@@ -6,7 +6,7 @@ const metaThemeColor = document.querySelector('meta[name="theme-color"]');
 export function updatDocument(isDark) {
   if (isDark) {
     document.documentElement.classList.add('dark');
-    metaThemeColor.setAttribute('content', '#104134');
+    metaThemeColor.setAttribute('content', '#063727');
   } else {
     document.documentElement.classList.remove('dark');
     metaThemeColor.setAttribute('content', '#fff');

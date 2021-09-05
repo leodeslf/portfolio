@@ -9,17 +9,8 @@ let w, h, debounceReset;
 const particles = 8;
 const particleSystem = [];
 let particlesRAF;
-
-// Birds state.
-const birdLenUnit = 4;
-const birdColor = '#25f3';
-const humerusLen = birdLenUnit;
-const ulnaLen = humerusLen * 2;
-const birdRevOffset = -.8;
-
-// Fireflies state.
-const fireflyRadius = .5;
-const fireflyColor = '#ff2c';
+const birdColor = '#fffc';
+const fireflyColor = '#ff28';
 
 export function initLiveBG() {
   canvasArray[0] = document.getElementsByClassName('live-bg__canvas--birds')[0];
@@ -55,7 +46,7 @@ function resetDimentions() {
 function resetParticles() {
   cancelAnimationFrame(particlesRAF);
   for (let i = 0; i < particles; i++) {
-    particleSystem[i] = new Particle(0, 0, w, h);
+    particleSystem[i] = new Particle(0, 0, w, h, 4 + Math.random() * 4);
   }
   initParticlesAnimation();
 }
@@ -71,24 +62,27 @@ function drawParticles() {
   ctxArray[0].clearRect(0, 0, w, h);
   ctxArray[1].clearRect(0, 0, w, h);
   for (let i = 0; i < particles; i++) {
-    const { pos, rev } = particleSystem[i];
+    let { pos, rev, size } = particleSystem[i];
+    size *= 1
 
     // Birds.
-    const humerusY = Math.sin(rev);
-    const ulnaY = Math.sin(rev + birdRevOffset);
+    const innerY = Math.sin(rev);
+    const outerY = Math.sin(rev - .8);
+    ctxArray[0].translate(pos.x, pos.y);
     ctxArray[0].beginPath();
-    ctxArray[0].moveTo(pos.x - ulnaLen, pos.y + ulnaY * birdLenUnit * 1.2);
-    ctxArray[0].lineTo(pos.x - humerusLen, pos.y + humerusY * birdLenUnit * 0.6);
-    ctxArray[0].lineTo(pos.x, pos.y);
-    ctxArray[0].lineTo(pos.x + humerusLen, pos.y + humerusY * birdLenUnit * 0.6);
-    ctxArray[0].lineTo(pos.x + ulnaLen, pos.y + ulnaY * birdLenUnit * 1.2);
+    ctxArray[0].moveTo(-size, outerY * size * .7);
+    ctxArray[0].lineTo(-size * .5, innerY * size * 0.25);
+    ctxArray[0].lineTo(0, 0);
+    ctxArray[0].lineTo(size * .5, innerY * size * 0.25);
+    ctxArray[0].lineTo(size, outerY * size * .7);
     ctxArray[0].stroke();
-    ctxArray[0].closePath();
+    ctxArray[0].beginPath();
+    ctxArray[0].translate(-pos.x, -pos.y);
 
     // Fireflies.
-    const size = fireflyRadius * (Math.sin(rev * .4));
+    const r = size * Math.sin(rev * .3) / 6;
     ctxArray[1].beginPath();
-    ctxArray[1].arc(pos.x, pos.y, size >= 0 ? size : 0, 0, 360);
+    ctxArray[1].arc(pos.x, pos.y, r >= 0 ? r : 0, 0, 360);
     ctxArray[1].fill();
     ctxArray[1].closePath();
   }

@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { side } from '../previewUtil';
 import { delegateNoiseCtxTo, delegateSkinCtxTo } from './control';
 import "./tfp.scss";
 
@@ -15,10 +16,10 @@ export default function TFP() {
   return (
     <div className="preview--tfp">
       <canvas
-        className="preview__canvas preview__body"
+        className="preview__canvas preview__body preview--live"
         id="tfp__canvas"
-        height="192"
-        width="192"
+        height={side}
+        width={side}
       />
       <canvas id="tfp__skin-canvas" />
     </div>

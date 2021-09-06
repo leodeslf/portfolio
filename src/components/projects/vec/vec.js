@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { side } from '../previewUtil';
 import { initControl, reset } from './control';
 import "./vec.scss";
 
@@ -13,16 +14,17 @@ export default function Vec() {
   return (
     <div className="preview--vec">
       <canvas
-        className="preview__body"
+        className="preview__canvas preview__body preview--live"
         id="vec__canvas"
-        height="192"
-        width="192"
+        height={side}
+        width={side}
         onClick={reset}
       />
       <canvas
         id="vec__debug-canvas"
-        height="192"
-        width="192"
+        className="preview__canvas"
+        height={side}
+        width={side}
       />
     </div>
   );

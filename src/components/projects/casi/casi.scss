@@ -1,14 +1,4 @@
-@import "../../../sass/abstracts/variables";
-
-$color: #ffffff;
-$color--display: #272415;
-
-$bg: #383b47;
-$bg--button: #787887;
-$bg--display: #b2ac7a;
-
-$shadow-color: #00000033;
-$light-color: #ffffff4d;
+@import "../../../sass/abstracts/variables", "../blueprint.scss";
 
 @font-face {
   font-family: "DSEG7 Classic Italic";
@@ -28,25 +18,21 @@ $light-color: #ffffff4d;
 }
 
 #casi {
-  background-color: $bg;
+  @extend .blueprint;
   border-radius: 9px;
-  display: block;
-  padding: 1.15rem 1rem 1rem;
+  flex-direction: column;
+  padding: 1.15em 1em 1em;
   width: fit-content;
 }
 
 .casi__display {
-  background-color: $bg--display;
-  border-radius: 3px;
-  box-shadow: 0 2px 2px 1px $shadow-color inset, 0 0 2px 1px $shadow-color inset, 0 -1px 1px $shadow-color,
-    0 -1px 2px $shadow-color, 0 1px 1px $light-color, 0 1px 2px $light-color;
-  color: $color--display;
+  @extend .blueprint;
+  border-radius: $border-radius;
   display: grid;
   justify-items: right;
-  gap: 0.2rem;
-  margin-bottom: 1rem;
-  padding: 0.5rem 0.5rem 0.25rem;
-  text-shadow: 0 1px 1px #0000004d;
+  gap: 0.2em;
+  margin-bottom: 1em;
+  padding: 0.5em 0.5em 0.25em;
   & > p {
     margin-bottom: 0;
   }
@@ -55,7 +41,7 @@ $light-color: #ffffff4d;
 .casi__feedback {
   font-family: "Print Char 21", monospace;
   font-size: 16px;
-  min-width: 5ch;
+  min-width: 7ch;
   text-align: right;
 }
 
@@ -67,16 +53,14 @@ $light-color: #ffffff4d;
 
 .casi__buttons {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.5em;
   justify-content: space-between;
   user-select: none;
 }
 
 .casi__btn {
-  background-color: $bg--button;
-  border: 1px solid #ffffff14;
-  border-radius: 3px;
-  box-shadow: 0 2px 3px $shadow-color, 0 2px 2px $shadow-color;
+  @extend .blueprint;
+  border-radius: $border-radius;
   cursor: pointer;
   display: grid;
   font-size: 20px;
@@ -84,8 +68,4 @@ $light-color: #ffffff4d;
   padding: 1px 0;
   place-content: center;
   width: 4.25ch;
-}
-
-.casi__btn:active {
-  box-shadow: 0 1px 3px $shadow-color, 0 1px 2px $shadow-color;
 }

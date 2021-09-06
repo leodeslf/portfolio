@@ -1,11 +1,11 @@
 import { Vec2 } from '../../../js/vec.min';
+import { side } from '../previewUtil';
 import { perlin3D } from './perlin';
 
 let initialized = false;
 
 // Canvas rendering context and cfg. vars.
 let noiseCtx;
-const side = 192;
 const noiseData = [];
 const noiseImg = new ImageData(side, side);
 let skinCtx;
@@ -18,18 +18,18 @@ skinImg.onload = () => {
   tryToInit();
 }
 const RGBACenter = 127;
-const PixelSize = 6; // Pixels per data.
+const PixelSize = 4; // Pixels per data.
 const inverse = 1 / PixelSize;
 const index = (x, y) => inverse * y * inverse * side + inverse * x;
 const pixel = [0, 0, 0];
 
 export const CFG = {
   // Animation.
-  step: .01,
+  step: .012,
   seed: .0,
   // Noise.
   frequency: 1,
-  amplitude: 1.8,
+  amplitude: 2,
   octaves: 2,
   lacunarity: 2,
   persistence: .5,

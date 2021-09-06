@@ -1,4 +1,5 @@
 import { Vec2 } from '../../../js/vec.min';
+import { side } from '../previewUtil';
 
 // First time.
 let justStarted = true;
@@ -6,15 +7,14 @@ let raf;
 
 // Util vars.
 const PI = 3.1416;
-const side = 192;
 const center = side * .5;
 
 // Ratios for different patterns.
-const ratios = [[9, 7], /* [17, 10], */[45, 38],/*  [64, 41],  */[85, 48], /* [100, 73] */];
-const innerRadius = center * .32;
+const ratios = [[9, 7], [31, 23]];
+const innerRadius = center * .35;
 let ratioIndex = 1;
 let ratio = ratios[ratioIndex][0] / ratios[ratioIndex][1];
-let degreesPerFrame = 4.8;
+let degreesPerFrame = 5;
 const rotationSpeed = 2 * PI / (360 / degreesPerFrame);
 
 // Minor axis, revs arround the main axis.
@@ -44,13 +44,11 @@ export function initControl(vecCanvas, vecDebugCanvas) {
   if (oldImgState) ctx.putImageData(oldImgState, 0, 0);
 
   ctx.translate(center, center);
-  ctx.lineWidth = .5;
-  ctx.strokeStyle = '#555';
+  ctx.strokeStyle = '#0004';
 
   debugCanvas = vecDebugCanvas;
   debugCtx = debugCanvas.getContext('2d');
   debugCtx.translate(center, center);
-  debugCtx.lineWidth = .8;
 
   // Avoid repeating animations.
   if (!oldImgState) draw();
@@ -99,18 +97,18 @@ function drawDebug() {
   debugCtx.clearRect(-center, -center, side, side);
 
   // Lines.
+  debugCtx.strokeStyle = 'black';
   debugCtx.beginPath();
   debugCtx.moveTo(0, 0);
   debugCtx.lineTo(path.x, path.y);
   debugCtx.lineTo(path.x + pen.x, path.y + pen.y);
-  debugCtx.strokeStyle = 'black';
   debugCtx.stroke();
   debugCtx.closePath();
 
   // Dots.
+  debugCtx.fillStyle = 'black';
   debugCtx.beginPath();
   debugCtx.arc(0, 0, 2, 0, 2 * PI);
-  debugCtx.fillStyle = 'black';
   debugCtx.fill();
   debugCtx.closePath();
   debugCtx.beginPath();
@@ -119,6 +117,7 @@ function drawDebug() {
   debugCtx.closePath();
 
   // Circles.
+  debugCtx.strokeStyle = '#0004';
   debugCtx.beginPath();
   debugCtx.arc(0, 0, innerRadius, 0, PI * 2);
   debugCtx.stroke();
@@ -129,9 +128,9 @@ function drawDebug() {
   debugCtx.closePath();
 
   // Pen tip.
+  debugCtx.fillStyle = 'red';
   debugCtx.beginPath();
   debugCtx.arc(path.x + pen.x, path.y + pen.y, 3, 0, PI * 2);
-  debugCtx.fillStyle = 'red';
   debugCtx.fill();
   debugCtx.closePath();
 }

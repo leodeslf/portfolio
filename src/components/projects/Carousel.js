@@ -11,7 +11,6 @@ export default function Carousel() {
 
   return (
     <div className="projects__carousel">
-      <Project {...PROJECTS[index]} />
       <div className="carousel__controls">
         <div
           className="control__prev"
@@ -31,6 +30,7 @@ export default function Carousel() {
           onClick={goToNext}
         ></div>
       </div>
+      <Project {...PROJECTS[index]} />
     </div>
   );
 }

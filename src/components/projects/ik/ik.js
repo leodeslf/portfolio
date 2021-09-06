@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
+import { side } from '../previewUtil';
 import { initControl } from './control';
 import "./ik.scss";
-
 
 export default function IK() {
   useEffect(() => {
@@ -11,10 +11,10 @@ export default function IK() {
   return (
     <div className="preview--ik">
       <canvas
-        className="preview__canvas preview__body"
+        className="preview__canvas preview__body preview--live"
         id="ik__canvas"
-        height="192"
-        width="192"
+        height={side}
+        width={side}
       />
     </div>
   );

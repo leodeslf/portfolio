@@ -1,11 +1,11 @@
 import WOLREY from "./worley";
 import { Vec2 } from '../../../js/vec.min';
+import { side } from "../previewUtil";
 
 let initialized = false;
 
 // Canvas context and cfg. vars.
 let noiseCtx;
-const side = 192;
 const noiseData = [];
 const noiseImg = new ImageData(side, side);
 let skinCtx;
@@ -18,22 +18,26 @@ skinImg.onload = () => {
   tryToInit();
 }
 const spots = [
-  [29, 45],
-  [96, 22],
-  [20, 108],
-  [74, 76],
-  [138, 55],
-  [185, 3],
-  [25, 163],
-  [110, 128],
-  [166, 102],
-  [86, 170],
-  [166, 157]
+  /* [29, 45], [96, 22], [20, 108],
+  [74, 76], [138, 55], [185, 3],
+  [25, 163], [110, 128], [166, 102],
+  [86, 170], [166, 157], [200, 200] */
+  [.15, .15], [.50, .15], [.85, .15],
+  [.15, .50], [.50, .50], [.85, .50],
+  [.15, .85], [.50, .85], [.85, .85]
 ];
+/* 
+
+*/
 const spotsN = spots.length;
 for (let i = 0; i < spotsN; i++) {
+  const rnd = Vec2.random();
+  rnd.magnitude = .1;
   spots[i] = {
-    pos: new Vec2(spots[i][0], spots[i][1])
+    pos: new Vec2(
+      side * (rnd.x + spots[i][0]),
+      side * (rnd.y + spots[i][1])
+    )
   }
 }
 
@@ -49,6 +53,7 @@ export function delegateSkinCtxTo(ctx) {
   skinCtx = ctx;
   if (!skinImg.src) skinImg.src = './images/tfp-colors.png';
 }
+
 
 // Initialize only if noise context and skin data are both ready.
 function tryToInit() {
@@ -76,7 +81,7 @@ function nextMode() {
       generateImageData(WOLREY.nd);
       break;
     case 2:
-      toFade = false; factor = 3; shift = 12;
+      toFade = false; factor = 3.4; shift = 5;
       generateImageData(WOLREY.ndMinusSt);
       break;
     case 3:

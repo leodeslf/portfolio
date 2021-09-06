@@ -47,7 +47,6 @@ export default function TW() {
               />
             </div>
           </div>
-          <hr />
           <div className="card__temp">
             <p className="temp__current">{data.temp}°</p>
             <p className="temp__max"><span>Máx</span>{data.tempMax}°</p>

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Vec2 } from '../../../js/vec.min';
+import { side } from '../previewUtil';
 import { delegateNoiseCtxTo, delegateSkinCtxTo, CFG } from './control';
 import "./tfp2.scss";
 
@@ -29,10 +30,10 @@ export default function TFP2() {
   return (
     <div className="preview--tfp2">
       <canvas
-        className="preview__canvas preview__body"
+        className="preview__canvas preview__body preview--live"
         id="tfp2__canvas"
-        height="192"
-        width="192"
+        height={side}
+        width={side}
       />
       <canvas id="tfp2__skin-canvas" />
     </div>

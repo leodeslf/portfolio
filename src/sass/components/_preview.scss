@@ -1,8 +1,9 @@
 // Default color scheme (light).
 :root {
-  --preview-bg: #5297ff;
+  --preview-bg: #3b89ff;
   --color--line: #ffffff1a;
   --color--outline: #ffffff33;
+  --canvas-border-color: white;
 }
 
 // Dark color scheme.
@@ -10,6 +11,7 @@
   --preview-bg: #00662c;
   --color--line: #ffffff14;
   --color--outline: #ffffff29;
+  --canvas-border-color: black;
 }
 
 $line--mm: transparent, transparent 5px, var(--color--line) 5px, var(--color--line) 6px;
@@ -25,7 +27,7 @@ $line-cm: transparent, transparent 29px, var(--color--line) 29px, var(--color--l
   display: grid;
   grid-area: prev;
   margin-bottom: 1rem;
-  min-height: 288px;
+  min-height: 290px;
   outline: 1px solid var(--color--outline);
   outline-offset: -0.5rem;
   padding: 2rem 3.5rem;
@@ -37,12 +39,14 @@ $line-cm: transparent, transparent 29px, var(--color--line) 29px, var(--color--l
 }
 
 .preview__body {
-  @include box-shadow(2, $on-dark: true);
   display: flex;
+  &.preview--live {
+    @include box-shadow(2, $on-dark: true);
+  }
 }
 
 .preview__canvas {
-  border-radius: $border-radius;
+  border: 9px solid var(--bg--active);
 }
 
 .preview__caption {

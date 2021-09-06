@@ -1,4 +1,5 @@
 .cv__preview {
+  @include box-shadow;
   @extend .text--small;
   background-color: var(--bg--em);
   border-radius: $border-radius;

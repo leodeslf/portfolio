@@ -1,25 +1,11 @@
 .connect__card {
+  @include box-shadow;
   @extend .text--small;
   border-radius: $border-radius;
   background-color: var(--bg--em);
   display: flex;
   margin-top: 0.5rem;
   width: fit-content;
-  position: relative;
-  &::before {
-    @include box-shadow;
-    background-color: transparent;
-    border-radius: 0.5rem;
-    bottom: 0;
-    content: "";
-    height: 1rem;
-    left: 0;
-    position: absolute;
-    transform: rotateZ(-2deg);
-    transform-origin: left bottom;
-    width: 100%;
-    z-index: -1;
-  }
 }
 
 .connect__data {

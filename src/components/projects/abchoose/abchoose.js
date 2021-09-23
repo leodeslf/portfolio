@@ -7,14 +7,9 @@ export default function Abchoose() {
         id="abchoose"
         className="preview__body"
       >
-        <a href="https://abchoose.netlify.app/">
-          ABChoose
-        </a>
-        <div className="abchoose__gallery">
-          <span className="gallery__item">A</span>
-          <span className="gallery__item">A</span>
-          <span className="gallery__item">A</span>
-        </div>
+        <span className="item">A</span>
+        <span className="item">A</span>
+        <span className="item">A</span>
       </div>
     </div>
   );

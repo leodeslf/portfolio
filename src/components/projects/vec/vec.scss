@@ -1,6 +1,6 @@
-@import "../../../sass/abstracts/variables", "../../../sass/abstracts/mixins";
+@import "../blueprint.scss";
 
-.preview--vec,
+/* .preview--vec,
 #vec__canvas,
 #vec__debug-canvas {
   border-radius: 50%;
@@ -32,4 +32,54 @@
   position: absolute;
   top: 0;
   z-index: 2;
+} */
+
+a.preview--vec {
+  background-color: mix(burlywood, peru, 75%);
+  border-radius: 2px;
+  color: #000d;
+  font-family: monospace;
+  justify-content: center;
+  line-height: 1.25;
+  outline: 1px solid #fff3;
+  outline-offset: -1px;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  &::after,
+  .vec__box-symbols,
+  .vec__npm-sticker {
+    position: absolute;
+  }
+  &::after {
+    background-color: #fff3;
+    content: "";
+    height: 1.5ch;
+    top: 0;
+    width: 3ch;
+  }
+  .vec__box-symbols {
+    bottom: 0.5rem;
+    left: 0.75rem;
+    font-size: 18px;
+    transform: translateY(4px);
+  }
+  .vec__npm-sticker {
+    background-color: #f00b;
+    bottom: 0.5rem;
+    color: white;
+    font-size: 12px;
+    padding: 0 5px 1px;
+    right: 0.5rem;
+  }
+  > p {
+    margin-bottom: 0;
+  }
+  pre {
+    font-size: 10px;
+    font-weight: 600;
+  }
+  .dark & {
+    background-color: mix(burlywood, peru, 25%);
+  }
 }

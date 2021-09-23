@@ -1,13 +1,13 @@
 @import "../../../sass/abstracts/variables", "../blueprint.scss";
 
-@font-face {
+/* @font-face {
   font-family: "Oleo Script";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url(https://fonts.gstatic.com/l/font?kit=rax5HieDvtMOe0iICsUccBhfqU2Zs335QNCd&skey=d18666d540079220&v=v9)
     format("woff2");
-}
+} */
 
 @font-face {
   font-family: "Faustina";
@@ -38,8 +38,11 @@
 #abchoose {
   @extend .blueprint;
   border-radius: $border-radius;
-  flex-direction: column;
-  > a {
+  /* flex-direction: column; */
+  padding: 1em;
+  display: flex;
+  gap: 0.5em;
+  /* > a {
     border-bottom: 1px solid white;
     color: inherit;
     display: flex;
@@ -56,16 +59,13 @@
       right: -1.5rem;
       position: absolute;
     }
-  }
+  } */
 }
 
-.abchoose__gallery {
-  padding: 1em;
-  display: flex;
-  gap: 0.5em;
-}
+/* .abchoose__gallery {
+} */
 
-.gallery__item {
+.item {
   @extend .blueprint;
   border-radius: 3px;
   display: flex;

@@ -7,7 +7,6 @@ let weatherData = false;
 let requesting = false;
 
 async function fetchWeatherData() {
-  //requesting = false;
   const json = await (await fetch(OPEN_WEATHER_URL)).json();
   return weatherData = {
     code: json.cod,

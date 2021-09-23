@@ -10,19 +10,12 @@ export default function Project(props) {
 
   return (
     <article className="projects__project">
-      <div className="project__preview preview">
+      <div className="preview">
         <Suspense fallback={<PreviewFallback message="Cargando..." />}>
           <Preview />
         </Suspense>
       </div>
       <header className="project__header">
-        {/* {tools.new.length > 0 &&
-          <span className="project__new-tools text--extra-small">
-            {tools.new.map((tool, i) =>
-              <span key={i} className="new-tools__tool">
-                {tool}
-              </span>)}
-          </span>} */}
         <h3 className="project__title">
           <a href={links[0].link} title={links[0].name}>
             {title}

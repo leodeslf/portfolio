@@ -7,10 +7,12 @@ let interval;
 
 export default function TW2() {
   const [data, setData] = useState({ code: undefined });
+  const [mounted, setMounted] = useState(true);
 
   const askForData = () => {
     getWeatherData().then(res => {
-      if (res) {
+      // If component gets aa valid response and it's mounted.
+      if (res && mounted) {
         clearInterval(interval);
         setData(res);
       }
@@ -18,9 +20,10 @@ export default function TW2() {
   }
 
   useEffect(() => {
-    askForData();
+    if (data.code ?? true) askForData();
     if (!weatherData) interval = setInterval(askForData, 140);
-  }, []);
+    return () => setMounted(false);
+  });
 
   return (
     (data.code === 200 &&

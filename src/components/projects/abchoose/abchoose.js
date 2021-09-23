@@ -1,6 +1,6 @@
 import './abchoose.scss';
 
-export default function abchoose() {
+export default function Abchoose() {
   return (
     <div className="preview--abchoose">
       <div

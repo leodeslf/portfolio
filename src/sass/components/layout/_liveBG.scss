@@ -6,7 +6,9 @@
 }
 
 .live-bg__canvas {
-  filter: blur(0px);
+  &--birds {
+    filter: drop-shadow(0 0 4px #00f8);
+  }
   .dark &--birds {
     display: none;
   }

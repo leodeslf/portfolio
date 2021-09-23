@@ -25,7 +25,7 @@
 
 .project__title {
   margin-right: auto;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   line-height: 1;
   a {
     align-items: center;
@@ -46,10 +46,8 @@
 
 .project__details {
   @extend .text--small;
-  @include border(border-top, 1px);
   grid-area: details;
-  margin-top: calc(1rem + 2px);
-  padding-top: 1rem;
+  margin-top: 1rem;
   h4 {
     color: var(--color);
   }
@@ -60,11 +58,8 @@
   cursor: default;
 }
 
-.project__footer {
-  @include border(border-top, 1px);
-  padding-top: 1rem;
-  display: flex;
-}
+/* .project__footer {
+} */
 
 .project__link-container {
   &::after {

@@ -4,9 +4,9 @@ import ShowHide from '../features/ShowHide';
 import ProjectDetails from './ProjectDetails';
 
 export default function Project(props) {
-  const { title, about, links, preview } = props;
-  const Preview = lazy(() => import(/* webpackChunkName: "preview" */
-    `./${preview}/${preview}.js`));
+  const { title, about, links, previewName } = props;
+  const Preview = lazy(() => import(/* webpackChunkName: "previewName" */
+    `./${previewName}/${previewName}.js`));
 
   return (
     <article className="projects__project">
@@ -26,7 +26,7 @@ export default function Project(props) {
         {about}.
       </p>
       <ShowHide
-        id={preview}
+        id={previewName}
         defaultChecked={false}
         content={<ProjectDetails {...props} />}
       />

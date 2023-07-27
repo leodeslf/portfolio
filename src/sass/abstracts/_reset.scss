@@ -24,6 +24,7 @@ a {
 body {
   color: var(--color);
   background-color: var(--bg);
+  min-block-size: 100%;
 }
 
 em {
@@ -39,7 +40,6 @@ h3 {
 
 h1,
 h2 {
-  @include transition($animation-speed--fast, font-size);
   line-height: 1;
   margin-bottom: 1rem;
 }
@@ -50,6 +50,7 @@ h1 {
 
 h2 {
   font-size: var(--size--h2);
+  margin-bottom: 2rem;
 }
 
 h3 {
@@ -63,12 +64,15 @@ h4 {
 
 html {
   scroll-behavior: smooth;
+  block-size: 100%;
+}
+
+main {
+  max-width: $max-width--sections;
 }
 
 p {
-  @include transition($animation-speed--fast, font-size);
   @extend .text-body;
-  max-width: $max-width--sections;
 }
 
 strong {

@@ -1,40 +1,4 @@
-@import "../blueprint.scss";
-
-/* .preview--vec,
-#vec__canvas,
-#vec__debug-canvas {
-  border-radius: 50%;
-}
-
-.preview--vec {
-  position: relative;
-  &:hover #vec__debug-canvas {
-    opacity: 1;
-  }
-  &.finish #vec__debug-canvas {
-    animation: blink 1 $animation-speed--slow $animation-function;
-  }
-}
-
-#vec__canvas {
-  background-color: white;
-  cursor: pointer;
-  user-select: none;
-}
-
-#vec__debug-canvas {
-  @include transition($animation-speed--fast, opacity);
-  background-color: #fffa;
-  box-shadow: none;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  z-index: 2;
-} */
-
-a.preview--vec {
+#vec {
   background-color: mix(burlywood, peru, 75%);
   border-radius: 2px;
   color: #000d;
@@ -46,40 +10,41 @@ a.preview--vec {
   padding: 1rem;
   position: relative;
   text-decoration: none;
-  &::after,
-  .vec__box-symbols,
-  .vec__npm-sticker {
-    position: absolute;
-  }
   &::after {
     background-color: #fff3;
     content: "";
     height: 1.5ch;
+    position: absolute;
     top: 0;
     width: 3ch;
-  }
-  .vec__box-symbols {
-    bottom: 0.5rem;
-    left: 0.75rem;
-    font-size: 18px;
-    transform: translateY(4px);
-  }
-  .vec__npm-sticker {
-    background-color: #f00b;
-    bottom: 0.5rem;
-    color: white;
-    font-size: 12px;
-    padding: 0 5px 1px;
-    right: 0.5rem;
-  }
-  > p {
-    margin-bottom: 0;
   }
   pre {
     font-size: 10px;
     font-weight: 600;
+    text-align: center;
   }
   .dark & {
     background-color: mix(burlywood, peru, 25%);
   }
+}
+
+.vec__box-symbols,
+.vec__npm-sticker {
+  position: absolute;
+}
+
+.vec__box-symbols {
+  bottom: 0.5rem;
+  left: 0.75rem;
+  font-size: 18px;
+  transform: translateY(4px);
+}
+
+.vec__npm-sticker {
+  background-color: #f00b;
+  bottom: 0.5rem;
+  color: white;
+  font-size: 12px;
+  padding: 0 5px 1px;
+  right: 0.5rem;
 }

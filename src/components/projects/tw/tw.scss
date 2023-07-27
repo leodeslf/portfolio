@@ -1,6 +1,6 @@
 @import "../../../sass/abstracts/variables", "../blueprint.scss";
 
-#tw__card {
+#tw {
   @extend .blueprint;
   border-radius: $border-radius;
   flex-direction: column;
@@ -9,42 +9,46 @@
     border: none;
     margin-top: 1px;
   }
-  .card__header {
-    align-items: center;
-    border-bottom: 1px white solid;
-    display: flex;
-    font-size: 14px;
-    justify-content: space-between;
-    padding: 0 0.75em;
-    position: relative;
-    &::after {
-      border-bottom: 1px dashed #fff8;
-      bottom: -1px;
-      content: "";
-      left: -1.5rem;
-      right: -1.5rem;
-      position: absolute;
-    }
+}
+
+.tw__header {
+  align-items: center;
+  border-bottom: 1px white solid;
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  padding: 0 0.75em;
+  position: relative;
+  &::after {
+    border-bottom: 1px dashed #fff8;
+    bottom: -1px;
+    content: "";
+    left: -1.5rem;
+    right: -1.5rem;
+    position: absolute;
   }
-  .card__name {
-    margin: 8px 0;
-    margin-right: 1em;
-  }
-  .card__flag {
-    display: grid;
-    height: fit-content;
-  }
-  .card__temp {
-    display: grid;
-    grid-template-areas:
-      "temp tempMax"
-      "temp tempMin";
-    grid-template-rows: min-content;
-    margin: 2px 0 4px;
-    padding: 0 8px;
-    p {
-      margin-bottom: 0;
-    }
+}
+
+.tw__name {
+  margin: 8px 0;
+  margin-right: 1em;
+}
+
+.tw__flag {
+  display: grid;
+  height: fit-content;
+}
+
+.tw__temp {
+  display: grid;
+  grid-template-areas:
+    "temp tempMax"
+    "temp tempMin";
+  grid-template-rows: min-content;
+  margin: 2px 0 4px;
+  padding: 0 8px;
+  p {
+    margin-bottom: 0;
   }
   .temp__current {
     grid-area: temp;

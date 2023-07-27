@@ -6,12 +6,13 @@
     right: 0;
     top: 0;
     width: 100vw;
-    &[isvisible="true"] {
-      .aside__close {
+    z-index: 100;
+    &.visible {
+      .aside__close-btn {
         pointer-events: all;
       }
-      .sticky__slide {
-        // Like `@include box-shadow; but to the left.
+      .aside__slide {
+        // Like `@include box-shadow;` but to the left.
         $a: -1px 0 2px 1px;
         $b: -8px 0 8px 0px;
         $c: -12px 0 12px 0px;
@@ -22,45 +23,18 @@
   }
 }
 
-.aside__close {
+.aside__close-btn {
   background-color: transparent;
+  border: none;
   height: 100vh;
-  user-select: none;
+  padding: 0;
   pointer-events: none;
   position: fixed;
+  user-select: none;
   width: 100vw;
 }
 
-.aside__sticky {
-  @include animation(appear-from-top, $animation-speed--slow * 1.5);
-  display: flex;
-  overflow-x: hidden;
-  position: sticky;
-  height: 100vh;
-  right: 0;
-  top: 0;
-}
-
-.sticky__slide {
-  @include transition($animation-speed--medium, transform);
-  background-color: var(--bg--em);
-  color: var(--color--em);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-left: auto;
-  overflow-x: hidden;
-  pointer-events: all;
-  min-width: max-content;
-  > * {
-    @extend .from-zero-opacity--delay;
-  }
-  @media screen and (max-width: $media--max-extra-small) {
-    transform: translateX(100%);
-  }
-}
-
-.aside__button {
+.aside__open-btn {
   @include box-shadow(2);
   background-color: var(--bg--active);
   border: none;
@@ -72,9 +46,10 @@
   position: fixed;
   right: 2rem;
   width: 48px;
+  z-index: 99;
   &:hover,
   &:active {
-    .aside__button-dots {
+    .aside__open-btn-lines {
       background-color: var(--color);
     }
   }
@@ -83,7 +58,7 @@
   }
 }
 
-.aside__button-dots {
+.aside__open-btn-lines {
   @include transition($animation-speed--fast, background-color);
   width: 16px;
   height: 2px;
@@ -105,5 +80,34 @@
   }
   &::after {
     bottom: -5px;
+  }
+}
+
+.aside__sticky {
+  @include animation(appear-from-top, $animation-speed--slow * 1.5);
+  display: flex;
+  overflow-x: hidden;
+  position: sticky;
+  height: 100vh;
+  right: 0;
+  top: 0;
+}
+
+.aside__slide {
+  @include transition($animation-speed--medium, transform);
+  background-color: var(--bg--em);
+  color: var(--color--em);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: auto;
+  overflow-x: hidden;
+  pointer-events: all;
+  min-width: max-content;
+  > * {
+    @extend .from-zero-opacity--delay;
+  }
+  @media screen and (max-width: $media--max-extra-small) {
+    transform: translateX(100%);
   }
 }

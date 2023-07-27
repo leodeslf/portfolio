@@ -11,3 +11,5 @@ export default function Start() {
     </section>
   );
 }
+
+// TODO https://kizu.dev/fit-to-width-text/

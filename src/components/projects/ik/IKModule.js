@@ -1,8 +1,8 @@
 import IKJoint from "./IKJoint";
 
 export default class IKModule {
+  body = [];
   constructor(joints, jointsLength, target, anchor) {
-    this.body = [];
     this.joints = joints;
     for (let i = 0; i < joints; i++) {
       if (i === 0)

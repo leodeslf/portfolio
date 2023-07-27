@@ -3,15 +3,16 @@
   @extend .card--base;
   color: var(--color--em);
   display: grid;
-  grid-template-areas: "prev prev" "header show-hide" "about show-hide" "details details";
+  grid-template-areas: "prev prev" "header header" "about show-hide" "details details";
   grid-template-columns: auto min-content;
+  width: fit-content;
 }
 
 .show-hide__label {
   align-self: flex-end;
   justify-self: right;
   grid-area: show-hide;
-  margin-left: 1rem;
+  margin-left: 1ch;
 }
 
 .show-hide__content {
@@ -20,6 +21,7 @@
 
 .project__header {
   grid-area: header;
+  margin-top: 1.5rem;
   width: fit-content;
 }
 
@@ -41,6 +43,7 @@
 .project__about {
   @extend .text--small;
   grid-area: about;
+  align-self: center;
   margin-bottom: 0;
 }
 
@@ -54,12 +57,8 @@
 }
 
 .project__new-tool sup {
-  @extend strong;
-  cursor: default;
+  color: var(--color);
 }
-
-/* .project__footer {
-} */
 
 .project__link-container {
   &::after {

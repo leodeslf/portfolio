@@ -1,6 +1,6 @@
 // Default color scheme (light).
 :root {
-  --preview-bg: #3b89ff;
+  --preview-bg: hsl(210, 100%, 70%);
   --color--line: #ffffff1a;
   --color--outline: #ffffff33;
   --canvas-border-color: white;
@@ -21,16 +21,15 @@ $line-cm: transparent, transparent 29px, var(--color--line) 29px, var(--color--l
   background-color: var(--preview-bg);
   background-image: repeating-linear-gradient(to right, $line--mm), repeating-linear-gradient(to right, $line-cm),
     repeating-linear-gradient($line--mm), repeating-linear-gradient($line-cm);
-  border: 0.5rem solid var(--preview-bg);
+  border: 8px solid var(--preview-bg);
   border-radius: $border-radius;
   color: white;
   display: grid;
   grid-area: prev;
-  margin-bottom: 1rem;
-  min-height: 293px;
+  height: 270px;
+  width: 270px;
   outline: 1px solid var(--color--outline);
-  outline-offset: -0.5rem;
-  padding: 2rem 3.5rem;
+  outline-offset: -8px;
   place-content: center;
   & ::selection {
     background-color: black;
@@ -40,8 +39,10 @@ $line-cm: transparent, transparent 29px, var(--color--line) 29px, var(--color--l
 
 .preview__body {
   display: flex;
-  &.preview--live {
+  &--interactive {
     @include box-shadow(2, $on-dark: true);
+    cursor: pointer;
+    user-select: none;
   }
 }
 

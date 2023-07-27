@@ -12,24 +12,12 @@
     ]
   },
   {
-    "title": "Familiarizado",
+    "title": "Otras",
     "subGroups": [
       [
-        "GitFlow",
-        "Scrum",
-        "SOLID",
-        "BEM"
-      ],
-      [
-        "OOP",
-        "RWD",
-        "WPO",
-        "SEO"
-      ],
-      [
-        "Markdown",
         "TypeScript",
         "Angular",
+        "Svelte",
         "Vue"
       ]
     ]

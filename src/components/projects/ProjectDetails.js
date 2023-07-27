@@ -1,5 +1,5 @@
 export default function ProjectDetails(props) {
-  const { argument, tools, res, links } = props;
+  const { argument, tools,/*  res, */ links } = props;
 
   return (
     <div className="project__details">
@@ -21,7 +21,7 @@ export default function ProjectDetails(props) {
           </li>
         ))}
       </ul>
-      {res && <>
+      {/* {res && <>
         <h4>Recursos</h4>
         <ul className="project__rsc">
           {res.map(({ name, link, linkName }, i) =>
@@ -30,7 +30,7 @@ export default function ProjectDetails(props) {
             </li>
           )}
         </ul>
-      </>}
+      </>} */}
       <footer className="project__footer">
         <p className="project__links">
           {links.map(({ name, link }, i) =>

@@ -1,9 +1,6 @@
-/* $size--small: 14px;
-$size--extra-small: 13px; */
-
 // Responsive font sizes.
 :root {
-  --size--h1: 73px;
+  --size--h1: 66px;
   --size--h2: 46px;
   --size--h3: 34px;
   --size: 19px;
@@ -25,7 +22,7 @@ $size--extra-small: 13px; */
 
 @media screen and (max-width: $media--max-small) {
   :root {
-    --size--h1: 50px;
+    --size--h1: 52px;
     --size--h2: 38px;
     --size--h3: 30px;
     --size: 17px;

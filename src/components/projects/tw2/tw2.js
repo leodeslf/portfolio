@@ -1,46 +1,31 @@
-import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import fetchWeather from '../fetchWeather';
+import { set as setWeather } from '../../../stores/weatherSlice';
 import PreviewFallback from '../PreviewFallback';
-import { getWeatherData, weatherData } from '../weather';
 import "./tw2.scss";
 
-let interval;
-
 export default function TW2() {
-  const [data, setData] = useState({ code: undefined });
-  const [mounted, setMounted] = useState(true);
+  const dispatch = useDispatch();
+  const { weather } = useSelector(state => state);
 
-  const askForData = () => {
-    getWeatherData().then(res => {
-      // If component gets aa valid response and it's mounted.
-      if (res && mounted) {
-        clearInterval(interval);
-        setData(res);
-      }
-    });
+  if (!weather.code) {
+    (async () => { dispatch(setWeather(await fetchWeather())); })();
   }
 
-  useEffect(() => {
-    if (data.code ?? true) askForData();
-    if (!weatherData) interval = setInterval(askForData, 140);
-    return () => setMounted(false);
-  });
-
   return (
-    (data.code === 200 &&
-      <div className="preview--tw2">
-        <div
-          id="tw2__card"
-          className="preview__body"
-        >
-          <div className="card__content">
-            <span className="card__temp">{data.temp}°</span>
-            <span className="card__name">{data.name}</span>
-            <span className="card__text">{data.text}</span>
-          </div>
+    (weather.code === 200 &&
+      <div
+        id="tw2"
+        className="preview__body"
+      >
+        <div className="tw2__content">
+          <span className="tw2__temp">{weather.temp}°</span>
+          <span className="tw2__name">{weather.name}</span>
+          <span className="tw2__text">{weather.text}</span>
         </div>
       </div>) ||
-    (data.code !== 200 && <PreviewFallback message={
-      data.code === undefined ?
+    (weather.code !== 200 && <PreviewFallback message={
+      weather.code === undefined ?
         'Cargando...' :
         'Error al consultar OpenWeather.'
     } />)

@@ -1,35 +1,31 @@
 import { Vec2 } from '../../../js/vec.min';
-import { run, setCtx, setTarget } from './animation';
+import { run, setContext, setTarget } from './animation';
 
-// Canvas rendering context and cfg. vars.
-let canvasOffset = new Vec2();
-let initialized = false;
+let
+  canvasOffset = new Vec2(),
+  initialized = false;
 
-/**
- * Initialize process, define rendering context and start generating and
- * printing data.
- */
 function initControl(canvas) {
-  setCtx(canvas.getContext('2d'));
+  setContext(canvas.getContext('2d'));
   if (!initialized) {
     initialized = true;
     run();
   }
 
-  canvas.addEventListener('mousedown', m => {
-    setTarget(m.offsetX, m.offsetY);
+  canvas.addEventListener('mousedown', mouse => {
+    setTarget(mouse.offsetX, mouse.offsetY);
     window.addEventListener('mouseup', () => {
       canvas.removeEventListener('mousemove', mouseMove);
     });
     canvas.addEventListener('mousemove', mouseMove);
   });
 
-  canvas.addEventListener('touchstart', t => {
-    t.preventDefault();
+  canvas.addEventListener('touchstart', touch => {
+    touch.preventDefault();
     canvasOffset.xy = [canvas.offsetLeft, canvas.offsetTop];
     setTarget(
-      t.touches[0].pageX - canvasOffset.x,
-      t.touches[0].pageY - canvasOffset.y
+      touch.touches[0].pageX - canvasOffset.x,
+      touch.touches[0].pageY - canvasOffset.y
     );
     window.addEventListener('touchend', () => {
       canvas.removeEventListener('touchmove', touchMove);
@@ -38,14 +34,14 @@ function initControl(canvas) {
   }, { passive: false });
 }
 
-function mouseMove(e) {
-  setTarget(e.offsetX, e.offsetY);
+function mouseMove(mouse) {
+  setTarget(mouse.offsetX, mouse.offsetY);
 }
 
-function touchMove(e) {
+function touchMove(touch) {
   setTarget(
-    e.changedTouches[0].pageX - canvasOffset.x,
-    e.changedTouches[0].pageY - canvasOffset.y
+    touch.changedTouches[0].pageX - canvasOffset.x,
+    touch.changedTouches[0].pageY - canvasOffset.y
   );
 }
 

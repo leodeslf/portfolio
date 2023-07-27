@@ -2,7 +2,7 @@
   {
     "title": "Vec.js",
     "date": "07/12/2018",
-    "about": "Librería de vectores para JavaScript",
+    "about": "Vectores para JavaScript",
     "argument": "Familiarizarme con JavaScript. Aprender a crear paquetes con NPM",
     "tools": {
       "old": [],
@@ -13,7 +13,7 @@
     "res": null,
     "links": [
       {
-        "name": "Paquete (NPM)",
+        "name": "Paquete NPM",
         "link": "https://www.npmjs.com/package/@leodeslf/vec.js"
       },
       {
@@ -21,7 +21,7 @@
         "link": "https://github.com/leodeslf/vector"
       }
     ],
-    "preview": "vec"
+    "previewName": "vec"
   },
   {
     "title": "TFP",
@@ -89,12 +89,12 @@
         "link": "https://github.com/leodeslf/tfp"
       }
     ],
-    "preview": "tfp"
+    "previewName": "tfp"
   },
   {
     "title": "this.weather",
     "date": "10/06/2019",
-    "about": "Un medio de acceso al estado del tiempo",
+    "about": "App del estado del tiempo",
     "argument": "Experimentar con APIs y escenas 3D (Three.js). Empezar con React y SASS",
     "tools": {
       "old": [
@@ -149,12 +149,12 @@
         "link": "https://github.com/leodeslf/this.weather"
       }
     ],
-    "preview": "tw"
+    "previewName": "tw"
   },
   {
     "title": "TFP v2",
     "date": "04/07/2020",
-    "about": "Segunda versión del proyecto TFP",
+    "about": "Segunda versión de TFP",
     "argument": "Migrar de GitHub Pages a Netlify. Optimizar performance, control de datos, experiencia e interfaz de usuario",
     "tools": {
       "old": [
@@ -176,12 +176,12 @@
         "link": "https://github.com/leodeslf/tfp-v2"
       }
     ],
-    "preview": "tfp2"
+    "previewName": "tfp2"
   },
   {
     "title": "CASI",
     "date": "02/12/2020",
-    "about": "Calculadora basada en la Casio fx-82MS",
+    "about": "Calculadora (Casio fx-82MS)",
     "argument": "Experimentar con Vue",
     "tools": {
       "old": [
@@ -204,7 +204,7 @@
         "link": "https://github.com/leodeslf/casi"
       }
     ],
-    "preview": "casi"
+    "previewName": "casi"
   },
   {
     "title": "Inverse Kinematics",
@@ -226,11 +226,15 @@
     ],
     "links": [
       {
+        "name": "Paquete NPM",
+        "link": "https://www.npmjs.com/package/@leodeslf/inverse-kinematics"
+      },
+      {
         "name": "Repositorio",
         "link": "https://github.com/leodeslf/inverse-kinematics"
       }
     ],
-    "preview": "ik"
+    "previewName": "ik"
   },
   {
     "title": "this.weather-v2",
@@ -258,21 +262,23 @@
         "link": "https://github.com/leodeslf/this-weather-v2"
       }
     ],
-    "preview": "tw2"
+    "previewName": "tw2"
   },
   {
     "title": "ABChoose",
     "date": "27/04/2021",
     "about": "Optimización para Google Fonts",
-    "argument": "Investigar acerca de tipografías, el Standart Unicode, y cómo funcionan en la web. Experimentar con Axios",
+    "argument": "Investigar acerca de tipografías y el Unicode Standard en la web. Experimentar con Axios. Comenzar con Redux",
     "tools": {
       "old": [
         "HTML",
         "JavaScript",
-        "React",
+        "React",        
         "SASS"
       ],
-      "new": []
+      "new": [
+        "Redux"
+      ]
     },
     "res": [
       {
@@ -288,14 +294,68 @@
     ],
     "links": [
       {
-        "name": "Web (Netlify)",
-        "link": "https://abchoose.netlify.app/"
+        "name": "Web (Vercel)",
+        "link": "https://abchoose.vercel.app/"
       },
       {
         "name": "repositorio",
         "link": "https://github.com/leodeslf/abchoose"
       }
     ],
-    "preview": "abchoose"
+    "previewName": "abchoose"
+  },
+  {
+    "title": "Ephy",
+    "date": "19/09/2021",
+    "about": "Curvas cicloidales",
+    "argument": "Experimentar con Svelte",
+    "tools": {
+      "old": [
+        "HTML",
+        "JavaScript",
+        "SASS"
+      ],
+      "new": [
+        "Svelte"
+      ]
+    },
+    "res": [
+      {
+        "name": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Epicycloid",
+        "linkName": "Epicycloid"
+      },
+      {
+        "name": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Epitrochoid",
+        "linkName": "Epitrochoid"
+      },
+      {
+        "name": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Hypocycloid",
+        "linkName": "Hypocycloid"
+      },
+      {
+        "name": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Hypotrochoid",
+        "linkName": "Hypotrochoid"
+      },
+      {
+        "name": "Visual Dictionary",
+        "link": "http://xahlee.info/SpecialPlaneCurves_dir/EpiHypocycloid_dir/epiHypocycloid.html",
+        "linkName": "Epicycloid and Hypocycloid"
+      }
+    ],
+    "links": [
+      {
+        "name": "Web (Vercel)",
+        "link": "https://ephy.vercel.app/"
+      },
+      {
+        "name": "repositorio",
+        "link": "https://github.com/leodeslf/ephy"
+      }
+    ],
+    "previewName": "ephy"
   }
 ]

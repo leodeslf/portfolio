@@ -1,5 +1,8 @@
 .footer {
   padding: 1rem;
   font-size: var(--size--extra-small);
+  text-align: center;
+  & p {
+    padding-right: 2px;
+  }
 }
-

@@ -2,15 +2,13 @@ import './abchoose.scss';
 
 export default function Abchoose() {
   return (
-    <div className="preview--abchoose">
-      <div
-        id="abchoose"
-        className="preview__body"
-      >
-        <span className="item">A</span>
-        <span className="item">A</span>
-        <span className="item">A</span>
-      </div>
+    <div
+      id="abchoose"
+      className="preview__body"
+    >
+      <span className="abchoose__item">A</span>
+      <span className="abchoose__item">A</span>
+      <span className="abchoose__item">A</span>
     </div>
   );
 }

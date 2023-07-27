@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import sections from '../json/sections.json';
-import initNavigationIO from '../js/navigationIO';
+import initNavigationFeedback from '../js/navigationFeedback';
 
 export default function Navigation() {
   useEffect(() => {
-    initNavigationIO();
+    initNavigationFeedback();
   }, []);
 
   return (

@@ -11,7 +11,6 @@ export default function Cv() {
           <span className="cv__buttons"><span></span></span>
         </p>
         <p><em>&lt;!-- Vista previa: --&gt;</em></p>
-        <p>---</p>
         <h3>ORIENTACIÓN EDUCATIVA</h3>
         <p>
           <strong>EMT - Informática</strong> - <em>Escuela Superior de
@@ -28,7 +27,6 @@ export default function Cv() {
           <strong>Portugués</strong> - <em>Materno</em><br />
           <strong>Inglés</strong> - <em>Intermedio</em>
         </p>
-        <p>---</p>
         <p>
           [<a
             href="./res/Leonardo_de_SLF-Desarrollo_Frontend-CV_2021.pdf"

@@ -1,6 +1,6 @@
 import { Vec2 } from '../../../js/vec.min';
 
-const WOLREY = {
+const Worley = {
 	// First closest.
 	st(spots, pixel) {
 		let st = Infinity;
@@ -43,7 +43,7 @@ const WOLREY = {
 		}
 		return stAndNd[1] - stAndNd[0];
 	},
-	// Distance with Chebyshev metric.
+	// First closest (with Chebyshev metric).
 	chebyshev(spots, pixel) {
 		let st = Infinity;
 		const n = spots.length;
@@ -53,7 +53,7 @@ const WOLREY = {
 		}
 		return st;
 	},
-	// Distance with Manhattan metric.
+	// First closest (with Manhattan metric).
 	manhattan(spots, pixel) {
 		let st = Infinity;
 		const n = spots.length;
@@ -63,7 +63,7 @@ const WOLREY = {
 		}
 		return st;
 	},
-	// Distance with Minkowski metric.
+	// First closest (with Minkowski metric).
 	minkowski(spots, pixel) {
 		let st = Infinity;
 		const n = spots.length;
@@ -75,4 +75,4 @@ const WOLREY = {
 	}
 }
 
-export default WOLREY;
+export default Worley;

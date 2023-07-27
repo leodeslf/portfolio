@@ -1,64 +1,44 @@
-import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import fetchWeather from '../fetchWeather';
+import { set as setWeather } from '../../../stores/weatherSlice';
 import PreviewFallback from '../PreviewFallback';
-import { getWeatherData, weatherData } from '../weather';
 import "./tw.scss";
 
-let interval;
-
 export default function TW() {
-  const [data, setData] = useState({ code: undefined });
-  const [mounted, setMounted] = useState(true);
+  const dispatch = useDispatch();
+  const { weather } = useSelector(state => state);
 
-  const askForData = () => {
-    getWeatherData().then(res => {
-      // If component gets aa valid response and it's mounted.
-      if (res && mounted) {
-        clearInterval(interval);
-        setData(res);
-      }
-    });
+  if (!weather.code) {
+    (async () => { dispatch(setWeather(await fetchWeather())); })();
   }
 
-  useEffect(() => {
-    if (data.code ?? true) askForData();
-    if (!weatherData) interval = setInterval(askForData, 140);
-    return () => setMounted(false);
-  });
-
   return (
-    (data.code === 200 &&
-      <div className="preview--tw">
-        <div
-          id="tw__card"
-          className="preview__body"
-        >
-          <div className="card__header">
-            <span className="card__name">
-              <em>{`${data.name}, ${data.countryCode}`}</em>
-            </span>
-            <div className="card__flag">
-              <img
-                src={
-                  'https://www.countryflags.io/' +
-                  data.countryCode +
-                  '/shiny/16.png'
-                }
-                alt="Bandera nacional"
-                title="Bandera nacional"
-                width="16"
-                height="16"
-              />
-            </div>
-          </div>
-          <div className="card__temp">
-            <p className="temp__current">{data.temp}°</p>
-            <p className="temp__max"><span>Máx</span>{data.tempMax}°</p>
-            <p className="temp__min"><span>Mín</span>{data.tempMin}°</p>
+    (weather.code === 200 &&
+      <div
+        id="tw"
+        className="preview__body"
+      >
+        <div className="tw__header">
+          <span className="tw__name">
+            <em>{`${weather.name}, ${weather.countryCode}`}</em>
+          </span>
+          <div className="tw__flag">
+            <img
+              src={`https://flagcdn.com/h20/${weather.countryCode}.png`}
+              alt="Bandera nacional"
+              title="Bandera nacional"
+              width="16"
+              height="12" />
           </div>
         </div>
+        <div className="tw__temp">
+          <p className="temp__current">{weather.temp}°</p>
+          <p className="temp__max"><span>Máx</span>{weather.tempMax}°</p>
+          <p className="temp__min"><span>Mín</span>{weather.tempMin}°</p>
+        </div>
       </div>) ||
-    (data.code !== 200 && <PreviewFallback message={
-      data.code ?? true ?
+    (weather.code !== 200 && <PreviewFallback message={
+      weather.code ?? true ?
         'Cargando...' :
         'Error al consultar OpenWeather.'
     } />)

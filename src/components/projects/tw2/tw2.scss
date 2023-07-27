@@ -1,36 +1,38 @@
 @import "../../../sass/abstracts/variables", "../blueprint.scss";
 
-#tw2__card {
+#tw2 {
   @extend .blueprint;
   border-radius: $border-radius;
-  padding: 0.25em 1.25em 0 1em;
+  padding: 0.2em 0.8em;
   width: fit-content;
-  .card__content {
-    display: grid;
-    grid-template-areas:
-      "temp name"
-      "temp text";
-    grid-template-rows: max-content min-content;
-  }
-  .card__temp {
-    grid-area: temp;
-    font-size: 50px;
-    font-weight: 300;
-    margin-right: 15px;
-  }
-  .card__name {
-    grid-area: name;
-    font-size: 1em;
-    font-weight: 500;
-    margin-top: 0.75em;
-    max-width: 18ch;
-  }
-  .card__text {
-    font-size: 0.8em;
-    grid-area: text;
-    justify-self: left;
-    margin-bottom: 0.75em;
-    max-width: 18ch;
-    text-transform: capitalize;
-  }
+}
+
+.tw2__content {
+  display: grid;
+  grid-template-areas:
+    "temp name"
+    "temp text";
+  grid-template-rows: auto min-content;
+}
+
+.tw2__temp {
+  grid-area: temp;
+  font-size: 40px;
+  font-weight: 300;
+  margin-right: 15px;
+}
+
+.tw2__name {
+  grid-area: name;
+  font-size: 0.8em;
+  font-weight: 500;
+  margin-top: 0.5em;
+}
+
+.tw2__text {
+  font-size: 0.7em;
+  grid-area: text;
+  justify-self: left;
+  margin-bottom: 0.5em;
+  text-transform: capitalize;
 }

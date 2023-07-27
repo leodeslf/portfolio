@@ -3,10 +3,7 @@ export default function About() {
     <section id="about" className="portfolio__about portfolio__elem">
       <h2>Sobre mí</h2>
       <p>
-        Siempre atraído tanto por el <em>Diseño</em> como por la <em>
-          Programación</em>, encontré casi por accidente el balance perfecto
-        entre ambas áreas: el Desarrollo Frontend. Desde entonces, me
-        dediqué a <em>aprender haciendo</em> como autodidacta.
+        Aprendiz a tiempo completo, extremadamente curioso e inquieto. Perfeccionista incansable en lo que hago y optimista con mis objetivos. Motivado por construir mucho más que tecnología, con mucho más que un equipo de trabajo.
       </p>
     </section>
   );

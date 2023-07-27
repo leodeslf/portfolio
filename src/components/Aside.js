@@ -3,39 +3,36 @@ import Settings from './features/Settings';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
-const mediaToShowAside = window.matchMedia('screen and (min-width: 630px)');
+const min630vw = window.matchMedia('screen and (min-width: 630px)');
 
 export default function Aside() {
-  const [visible, setVisible] = useState(false);
-  mediaToShowAside.onchange = e => {
-    if (e.matches) setVisible(false);
-  }
+  const [visible, setVisible] = useState(min630vw.matches);
+  min630vw.onchange = e => setVisible(e.matches ? true : false);
 
   return (
     <>
       <button
-        className="aside__button icon__label"
+        className="aside__open-btn icon__label"
         onClick={() => setVisible(true)}
         aria-label="Mostrar menú."
         aria-controls="Menú"
         aria-expanded={visible + ""}
       >
-        <span className="aside__button-dots icon"></span>
+        <span className="aside__open-btn-lines icon"></span>
       </button>
       <aside
-        className="aside"
-        isvisible={visible + ""}
+        id="Menú"
+        className={`aside${visible ? ' visible' : ''}`}
       >
-        <div
-          className="aside__close"
+        <button
+          className="aside__close-btn"
           onClick={() => setVisible(false)}
-          role="button"
           aria-label="Ocultar menú."
           aria-controls="Menú"
           aria-expanded={visible + ""}
-        />
+        ></button>
         <div className="aside__sticky">
-          <div className="sticky__slide">
+          <div className="aside__slide">
             <Settings />
             <Navigation />
             <Footer />
@@ -45,10 +42,3 @@ export default function Aside() {
     </>
   );
 }
-
-/* <span className="icon icon--24">
-          <svg viewBox="0 0 24 24">
-            <path d="M0 0h24v24H0z" fill="none" />
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-          </svg>
-        </span> */

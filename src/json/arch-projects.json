@@ -24,7 +24,8 @@
         "name": "repositorio",
         "link": "https://github.com/leodeslf/postage-stamps"
       }
-    ]
+    ],
+    "preview": null
   },
   {
     "title": "Le cuenta un pajarito",
@@ -50,7 +51,34 @@
         "name": "repositorio",
         "link": "https://github.com/leodeslf/le-cuenta-un-pajarito"
       }
-    ]
+    ],
+    "preview": null
+  },
+  {
+    "title": "Set renderer",
+    "date": "22/04/2021",
+    "about": "Renderizado de sets Julia y Mandelbrot",
+    "argument": "Ganar más experiencia con Angular",
+    "tools": {
+      "old": [
+        "HTML",
+        "SASS",
+        "TypeScript",
+        "Angular"
+      ]
+    },
+    "res": null,
+    "links": [
+      {
+        "name": "Web (Vercel)",
+        "link": "https://set-renderer.vercel.app/"
+      },
+      {
+        "name": "repositorio",
+        "link": "https://github.com/leodeslf/set-renderer"
+      }
+    ],
+    "preview": null
   },
   {
     "title": "Bomberman",
@@ -75,9 +103,9 @@
       },
       {
         "name": "repositorio",
-        "link": "https://github.com/leodeslf/bomberman"
+        "link": ""
       }
     ],
-    "preview": "bomberman"
+    "preview": null
   }
 ]

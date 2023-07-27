@@ -1,6 +1,12 @@
-import React from 'react';
 import { render } from 'react-dom';
 import Portfolio from './Portfolio';
 import './sass/main.scss';
+import store from './stores/store';
+import { Provider } from 'react-redux';
 
-render(<Portfolio />, document.getElementById('root'));
+render(
+  <Provider store={store}>
+    <Portfolio />
+  </Provider>,
+  document.getElementById('root')
+);

@@ -1,12 +1,12 @@
 export default function Connect() {
-  const email = 'leodeslf@gmail.com';
+  const email = 'hello@leodeslf.com';
 
   return (
     <section
       id="connect"
       className="portfolio__connect portfolio__elem"
     >
-      <h2>Conectemos</h2>
+      <h2>Contacto</h2>
       <div className="connect__card">
         <ul className="connect__data">
           <li>
@@ -26,6 +26,13 @@ export default function Connect() {
             </button>
           </li>
           <li>
+            <a
+              rel="me"
+              href="https://fosstodon.org/@leodeslf"
+              title="Perfil de Mastodon."
+            >
+              Mastodon
+            </a> /
             <a
               href="https://github.com/leodeslf"
               title="Perfil de GitHub."
